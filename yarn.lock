@@ -1006,17 +1006,6 @@
     lodash "^4.17.11"
     to-fast-properties "^2.0.0"
 
-"@bluebase/babel-preset-bluebase@^2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@bluebase/babel-preset-bluebase/-/babel-preset-bluebase-2.4.1.tgz#ecd63c38679bd795b3d5419deec79ce716f74b4e"
-  integrity sha512-x8PNUVOmUhLNOh2N8SvsgvjuLRGrTCxHIaQS+7T5d3e/lrrffLdqjOF8M4kPZQq9B4Dc5rjdrbtq5prCv/HUnw==
-  dependencies:
-    "@babel/plugin-proposal-class-properties" "^7.2.1"
-    "@babel/plugin-proposal-object-rest-spread" "^7.2.0"
-    "@babel/preset-env" "^7.2.0"
-    "@babel/preset-react" "^7.0.0"
-    "@babel/preset-typescript" "^7.1.0"
-
 "@bluebase/cli-essentials@^0.0.4":
   version "0.0.4"
   resolved "https://registry.yarnpkg.com/@bluebase/cli-essentials/-/cli-essentials-0.0.4.tgz#9e53bb39a1ca0253ac99fab163b48f58ff5f8af4"
@@ -1028,19 +1017,16 @@
     react-native-web "^0.9.10"
     webpack "^4.28.2"
 
-"@bluebase/code-standards@^1.0.1":
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@bluebase/code-standards/-/code-standards-1.0.1.tgz#a9d4cc807a8ea03614f9d6ad9820beeb6e01ed85"
-  integrity sha512-V5lr4CKtnC6PhBSMPwCKAmKInR4mazAcdKGRxsSs4LmWvJQmN9W9nrG2MLYhbVmLdsvqWqSzBdxn4YKNro/qyA==
+"@bluebase/code-standards@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@bluebase/code-standards/-/code-standards-1.0.2.tgz#2e0e9f62a647c86f81c221220a1acf547d27b839"
+  integrity sha512-EHKOZttaYtR3ILYVWMUf4i1ECKh/RcfxmaC6vBtm8PjH8gVXk37g8eI4bADdW704VVoStKhq7+7MlXxsQW5KEA==
   dependencies:
     "@babel/plugin-proposal-class-properties" "^7.2.1"
     "@babel/plugin-proposal-object-rest-spread" "^7.2.0"
     "@babel/preset-env" "^7.2.0"
     "@babel/preset-react" "^7.0.0"
     "@babel/preset-typescript" "^7.1.0"
-    enzyme-adapter-react-16 "^1.10.0"
-    jest-enzyme "^7.0.2"
-    jsdom "^13.2.0"
     metro-react-native-babel-preset "^0.53.0"
     tslint "^5.11.0"
     tslint-config-airbnb "^5.11.0"
@@ -1069,18 +1055,6 @@
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@bluebase/storybook-addon/-/storybook-addon-3.0.0.tgz#b38c1bb66f026898f00cbbf8cc4c13fcb0bfe93c"
   integrity sha512-RdByeuapaJG7Vp8xcu07M5TUy5hXUgYCfmJ+UJ35gJ+R1BjxsQfmGKpcn2antxT74fmAYNob5qcPN4Kta02F3A==
-
-"@blueeast/tslint-config-blueeast@^0.7.0":
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/@blueeast/tslint-config-blueeast/-/tslint-config-blueeast-0.7.0.tgz#db67e57e9c890df7f5962f6e5f8759be3432564c"
-  integrity sha512-SJHwqDKmv8Z91yr0DyN1ghwnieLj6kl2KaeNFhQb6OtGJQ2t5ORUFg5abe30GYsxTI8bhpSDfZbDldU4lb6nkw==
-  dependencies:
-    tslint "^5.11.0"
-    tslint-config-airbnb "^5.11.0"
-    tslint-config-prettier "^1.15.0"
-    tslint-eslint-rules "^5.4.0"
-    tslint-react "^3.6.0"
-    typescript "^3.1.4"
 
 "@cnakazawa/watch@^1.0.3":
   version "1.0.3"
