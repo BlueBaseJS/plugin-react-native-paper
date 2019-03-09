@@ -6,10 +6,10 @@ const Divider = getComponent('Divider');
 
 storiesOf('Divider', module)
 
-.add('With default props', () => (
+.add('Default props', () => (
 	<div style={{ padding: 20 }}><Divider /></div>
 ))
 
-.add('inset set to true', () => (
+.add('Inset', () => (
 	<div style={{ padding: 20 }}><Divider inset /></div>
 ));

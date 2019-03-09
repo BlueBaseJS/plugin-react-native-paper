@@ -1,4 +1,5 @@
 import { Divider } from './components/Divider';
+import { ListSubheader } from './components/ListSubheader';
 import { createPlugin } from '@bluebase/core';
 
 export default createPlugin({
@@ -10,5 +11,6 @@ export default createPlugin({
 
 	components: {
 		Divider,
+		ListSubheader,
 	},
 });
