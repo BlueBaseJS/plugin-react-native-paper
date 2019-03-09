@@ -67,3 +67,15 @@ On the Travis settings for the repository `https://travis-ci.org/<me>/<myrepo>/s
 
 `NPM_TOKEN=<token>`
 and make sure to mark "Display value in build log" as "Off".
+
+**Step 3**
+
+Add the following to your `package.json`:
+
+```
+"publishConfig": {
+	"access": "public"
+}
+```
+
+This is required if you are working on a scoped package and want to have it published publically.

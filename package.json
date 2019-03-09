@@ -132,5 +132,8 @@
     "singleQuote": true,
     "useTabs": true,
     "trailingComma": "es5"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
