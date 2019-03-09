@@ -1,4 +1,8 @@
 import { Divider } from './components/Divider';
+import { DrawerItem } from './components/DrawerItem';
+import { DrawerSection } from './components/DrawerSection';
+import { ListItem } from './components/ListItem';
+import { ListSection } from './components/ListSection';
 import { ListSubheader } from './components/ListSubheader';
 import { createPlugin } from '@bluebase/core';
 
@@ -11,6 +15,10 @@ export default createPlugin({
 
 	components: {
 		Divider,
+		DrawerItem,
+		DrawerSection,
+		ListItem,
+		ListSection,
 		ListSubheader,
 	},
 });

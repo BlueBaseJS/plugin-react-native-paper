@@ -41,7 +41,7 @@ Just make sure that you never, ever list your environment variables on your buil
 
 **Step 1:**
 
-From the get the codacy project token project settings.
+From the get the codacy project token project settings at `https://app.codacy.com/app/<me>/<myrepo>/settings/coverage`.
 CODACY_PROJECT_TOKEN
 
 **Step 2:**
