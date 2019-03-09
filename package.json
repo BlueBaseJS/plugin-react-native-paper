@@ -25,7 +25,7 @@
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "info": "npm-scripts-info",
     "build": "run-s clean && run-p build:* && cp -r ./dist/src/* ./dist && rm -r ./dist/src",
-    "build:main": "tsc -p tsconfig.json",
+    "build:main": "tsc -p tsconfig.json && babel ./src --out-dir dist --extensions \".ts,.tsx\"",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:tslint": "tslint --fix --project .",
@@ -76,11 +76,12 @@
     "tslib": "^1.9.3"
   },
   "devDependencies": {
+    "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@bluebase/cli-essentials": "^0.0.4",
+    "@bluebase/code-standards": "^1.0.1",
     "@bluebase/core": "^4.0.0-aplha.10",
     "@bluebase/storybook-addon": "^3.0.0",
-    "@blueeast/tslint-config-blueeast": "^0.7.0",
     "@storybook/addon-a11y": "^5.0.1",
     "@storybook/addon-actions": "^5.0.1",
     "@storybook/addon-info": "^5.0.1",
