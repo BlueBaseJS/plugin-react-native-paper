@@ -1,12 +1,14 @@
 <div align="center">
 	<img width=125 height=125 src="assets/common/logo.png">
   <h1>
-		BlueBase + Material UI (web)
+		BlueBase + Material UI
 	</h1>
-  <p>[Material UI](https://material-ui.com/) comes to BlueBase!.</p>
+  <p><a href="https://material-ui.com/">Material UI</a>  (web) comes to BlueBase!</p>
 </div>
 
-<hr />## 🎊 Status
+<hr />
+
+## 🎊 Status
 
 [![MIT license](https://img.shields.io/badge/license-MIT-brightgreen.svg)](http://opensource.org/licenses/MIT)
 [![npm version](https://img.shields.io/npm/v/@bluebase/plugin-material-ui.svg?style=flat)](https://npmjs.org/package/@bluebase/plugin-material-ui "View this project on npm")
@@ -20,5 +22,5 @@
 
 | 🌏 Web | 🖥 Electron | 📱 React Native |
 | :---: | :--------: | :------------: |
-|✅|❌|❌|
+|✅|✅|❌|
 
