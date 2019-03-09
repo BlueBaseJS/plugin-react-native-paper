@@ -38,6 +38,8 @@
 
 		"importHelpers": true,
 
+		"skipLibCheck": true,
+
 		"jsx": "react",
 
 		"lib": ["es2017"],
@@ -45,7 +47,6 @@
 		"typeRoots": ["node_modules/@types"],
 		"baseUrl": ".",
 		"paths": {
-			"@bluebase/core": ["src"],
 			"*": ["typings/*"]
 		}
 	},
