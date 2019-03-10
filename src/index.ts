@@ -1,4 +1,5 @@
-import { createPlugin } from '@bluebase/core';
+import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
+import { withReactNativePaper } from './withReactNativePaper';
 
 export default createPlugin({
 	categories: ['ui'],
@@ -8,4 +9,11 @@ export default createPlugin({
 	version: '0.0.1',
 
 	components: {},
+
+	filters: {
+		'bluebase.boot.end': (bootOptions: BootOptions, _ctx: any, BB: BlueBase) => {
+			BB.Components.addHocs('BlueBaseContent', withReactNativePaper);
+			return bootOptions;
+		}
+	}
 });
