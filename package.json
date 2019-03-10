@@ -12,7 +12,7 @@
   "config": {},
   "size-limit": [
     {
-      "limit": "3 KB",
+      "limit": "10 KB",
       "webpack": false,
       "path": "dist/**/!(*.test).js"
     }
@@ -24,7 +24,7 @@
     "watch:test": "jest --watch",
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "info": "npm-scripts-info",
-    "build": "run-s clean && run-p build:* && cp -r ./dist/src/* ./dist && rm -r ./dist/src",
+    "build": "run-s clean && run-p build:* && cp -r ./dist/src/* ./dist && rm -r ./dist/src && yarn run size",
     "build:main": "tsc -p tsconfig.json && babel ./src --out-dir dist --extensions \".ts,.tsx,.js,.jsx\"",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
