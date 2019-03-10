@@ -1,5 +1,9 @@
+import { BlueBase } from '@bluebase/core';
 import Plugin from '../index';
 
-test('Divider component with inset prop=true', () => {
-	expect(Plugin.name).toBe('Material UI');
+test('Plugin should be correctly registered', async () => {
+	const BB = new BlueBase();
+	await BB.Plugins.register(Plugin);
+
+	expect(BB.Plugins.has('material-ui')).toBeTruthy();
 });

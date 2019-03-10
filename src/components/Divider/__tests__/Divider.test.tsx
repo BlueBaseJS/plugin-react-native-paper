@@ -16,10 +16,3 @@ test('Divider component with inset prop=false', () => {
   );
 	expect(divider.props().inset).toEqual(false);
 });
-
-test('Divider component with inset prop=false', () => {
-	const divider = shallow(
-    <Divider classes={{}} />
-  );
-	expect(divider.props().classes).toEqual({});
-});
