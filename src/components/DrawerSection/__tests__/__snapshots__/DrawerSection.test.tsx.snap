@@ -1,7 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`DrawerSection should forward title prop as subheader=null 1`] = `
-<WithStyles(List)
-  subheader={null}
-/>
-`;
