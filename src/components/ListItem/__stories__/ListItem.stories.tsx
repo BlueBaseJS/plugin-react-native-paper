@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
 // import { withInfo } from '@storybook/addon-info';
+import { Text } from 'react-native';
 import { withKnobs } from '@storybook/addon-knobs';
 
 const ListItem = getComponent<ListItemProps>('ListItem');
@@ -18,7 +19,7 @@ stories.add('Default props', () => (
 ));
 
 stories.add('With Left Element & Right', () => (
-	<ListItem title="Item 1" left={<div>x</div>} right={<div>x</div>} />
+	<ListItem title="Item 1" left={<Text>L</Text>} right={<Text>R</Text>} />
 ));
 
 stories.add('onPress listener', () => (

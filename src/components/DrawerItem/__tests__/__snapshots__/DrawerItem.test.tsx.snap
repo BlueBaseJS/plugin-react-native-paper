@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DrawerItem should forward left and right as children, set inset to true 1`] = `
+<WithStyles(ListItem)
+  button={false}
+>
+  <WithStyles(ListItemIcon)>
+    <Icon_Noop
+      name="rocket"
+    />
+  </WithStyles(ListItemIcon)>
+  <WithStyles(ListItemText)
+    inset={true}
+    primary="Item 1"
+  />
+  <Text>
+    R
+  </Text>
+</WithStyles(ListItem)>
+`;
