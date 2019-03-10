@@ -1,8 +1,12 @@
+import { DividerProps } from '@bluebase/components';
 import MUIDivider from '@material-ui/core/Divider';
+import { componentMapper } from '@bluebase/component-mapper';
 
-// export {
-// 	Divider
-// };
-import React from 'react';
+export const Divider = componentMapper<DividerProps>(
+	MUIDivider,
+	{
+		variant: ({ inset }: DividerProps) => inset === true ? 'inset' : 'fullWidth',
+	},
+	{ rest: true }
+);
 
-export const Divider = (props: any) => <MUIDivider {...props} />;

@@ -1,5 +1,5 @@
 module.exports = {
   "presets": [
-    "expo"
+    "@bluebase/code-standards/babel.config"
   ]
 };
