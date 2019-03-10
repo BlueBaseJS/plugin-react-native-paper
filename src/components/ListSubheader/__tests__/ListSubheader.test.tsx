@@ -16,10 +16,3 @@ test('ListSubheader component with inset prop=false', () => {
   );
 	expect(listSubheader.props().inset).toEqual(false);
 });
-
-test('ListSubheader component with inset prop=false', () => {
-	const listSubheader = shallow(
-    <ListSubheader classes={{}} />
-  );
-	expect(listSubheader.props().classes).toEqual({});
-});
