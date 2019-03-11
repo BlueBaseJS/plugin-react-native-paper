@@ -2,9 +2,6 @@ import { BootOptions } from '@bluebase/core';
 import commonBootOptions from '../common/bluebase';
 import deepmerge from 'deepmerge';
 
-// tslint:disable-next-line: sort-imports
-import DummyPlugin from './sample'; // TODO: Only for evaluation, remove this
-
 
 /**
  * Add your platform specific configs here.
@@ -13,10 +10,7 @@ import DummyPlugin from './sample'; // TODO: Only for evaluation, remove this
  */
 const bootOptions: Partial<BootOptions> = {
 
-	plugins: [
-		// TODO: Only for evaluation, remove this
-		DummyPlugin
-	],
+	plugins: [],
 };
 
 export default deepmerge(commonBootOptions, bootOptions);
