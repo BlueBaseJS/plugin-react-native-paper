@@ -1,5 +1,9 @@
+import { BlueBase } from '@bluebase/core';
 import Plugin from '../index';
 
-test('Plugin name should be React Native Paper', () => {
-	expect(Plugin.name).toBe('React Native Paper');
+test('Plugin should be correctly registered', async () => {
+	const BB = new BlueBase();
+	await BB.Plugins.register(Plugin);
+
+	expect(BB.Plugins.has('@bluebase/plugin-react-native-paper')).toBeTruthy();
 });

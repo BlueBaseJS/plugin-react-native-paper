@@ -11,7 +11,7 @@ script:
   -  yarn run test
   -  yarn run report-coverage
   -  yarn run build
-  -  yarn run size 
+  -  yarn run size
 before_install:
 # package-lock.json was introduced in npm@5
   - '[[ $(node -v) =~ ^v9.*$ ]] || npm install -g npm@latest' # skipped when using node 9
