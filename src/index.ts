@@ -1,11 +1,22 @@
-import { createPlugin } from '@bluebase/core';
+import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
+import { Button, Divider } from './components';
+import { withReactNativePaper } from './withReactNativePaper';
 
 export default createPlugin({
-	categories: ['ui'],
 	description: 'React Native Paper comes to BlueBase!',
-	key: 'react-native-paper',
+	key: '@bluebase/plugin-react-native-paper',
 	name: 'React Native Paper',
-	version: '0.0.1',
+	version: '1.0.0',
 
-	components: {},
+	components: {
+		Button,
+		Divider,
+	},
+
+	filters: {
+		'bluebase.boot.end': (bootOptions: BootOptions, _ctx: any, BB: BlueBase) => {
+			BB.Components.addHocs('BlueBaseContent', withReactNativePaper);
+			return bootOptions;
+		},
+	},
 });

@@ -3,7 +3,7 @@
   <h1>
 		BlueBase + React Native Paper
 	</h1>
-  <p><a href="https://callstack.github.io/react-native-paper/">React Native Paper</a> comes to BlueBase!</p>
+  <p>React Native Paper comes to BlueBase!</p>
 </div>
 
 <hr />
@@ -22,9 +22,9 @@
 
 | 🌏 Web | 🖥 Electron | 📱 React Native |
 | :---: | :--------: | :------------: |
-|✅|✅|✅|
+|✅|✅|❌|
 
 ## Docs
 
-- [Storybook](https://bluebasejs.github.io/plugin-react-native-paper/storybook/)
-- [API Docs](https://bluebasejs.github.io/plugin-react-native-paper/)
+- [Storybook](https://BlueBaseJS.github.io/plugin-react-native-paper/storybook/)
+- [API Docs](https://BlueBaseJS.github.io/plugin-react-native-paper/)
