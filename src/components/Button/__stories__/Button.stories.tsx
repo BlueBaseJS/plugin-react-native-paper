@@ -18,19 +18,19 @@ stories
 
 .add('Contained Buttons', () => (
 	<React.Fragment>
-		<Button variant="contained">
+		<Button variant="contained" onPress={() => console.log('Button onPress')}>
 			Default
 		</Button>
-		<Button variant="contained" color="primary">
+		<Button variant="contained" color="primary" onPress={() => console.log('Button onPress')}>
 			Primary
 		</Button>
-		<Button variant="contained" color="secondary">
+		<Button variant="contained" color="secondary" onPress={() => console.log('Button onPress')}>
 			Secondary
 		</Button>
-		<Button variant="contained" color="secondary" disabled>
+		<Button variant="contained" color="secondary" disabled onPress={() => console.log('Button onPress')}>
 			Disabled
 		</Button>
-		<Button variant="contained">
+		<Button variant="contained" onPress={() => console.log('Button onPress')}>
 			Link
 		</Button>
 	</React.Fragment>

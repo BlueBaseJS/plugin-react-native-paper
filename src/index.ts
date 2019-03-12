@@ -1,5 +1,5 @@
 import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
-import { Button } from './components';
+import { Button, Divider } from './components';
 import { withReactNativePaper } from './withReactNativePaper';
 
 export default createPlugin({
@@ -9,13 +9,14 @@ export default createPlugin({
 	version: '1.0.0',
 
 	components: {
-		Button
+		Button,
+		Divider,
 	},
 
 	filters: {
 		'bluebase.boot.end': (bootOptions: BootOptions, _ctx: any, BB: BlueBase) => {
 			BB.Components.addHocs('BlueBaseContent', withReactNativePaper);
 			return bootOptions;
-		}
-	}
+		},
+	},
 });
