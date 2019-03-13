@@ -29,3 +29,43 @@
 
 - [Storybook](https://BlueBaseJS.github.io/plugin-react-native-paper/storybook/)
 - [API Docs](https://BlueBaseJS.github.io/plugin-react-native-paper/)
+
+## Installation
+
+Install the plugin as a dependency in your project:
+
+```bash
+yarn add @bluebase/plugin-react-native-paper
+```
+
+The easiest way to add a new plugin is pass it as a prop to the `BlueBaseApp` component.
+
+```ts
+import { BlueBaseApp } from '@bluebase/core';
+import Plugin from '@bluebase/plugin-react-native-paper';
+
+export const App = () => (
+  <BlueBaseApp plugins={[Plugin]} />
+);
+```
+
+Typically, in a large project you would be using BlueBase CLI. In your BlueBase project created by the CLI, add the plugin in the `plugins` field in your `bluebase.ts` file:
+
+```ts
+export default {
+
+    // ...other bluebase.ts properties
+
+    plugins: [
+			import('@bluebase/plugin-react-native-paper')
+		]
+}
+```
+
+## Components
+
+This plugin registers following plugins in BlueBase:
+
+- [x] Button
+- [x] Divider
+- [x] TextInput
