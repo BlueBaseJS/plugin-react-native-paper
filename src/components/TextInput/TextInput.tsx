@@ -44,9 +44,10 @@ export const TextInput = componentMapper<TextInputProps>(MUITextInput, {
 				return 'search';
 			case 'url':
 				return 'url';
-		}
 
-		return 'text';
+			default:
+				return 'text';
+		}
 	},
 
 	rows: 'numberOfLines',
