@@ -4,29 +4,6 @@ import { shallow } from 'enzyme';
 
 describe('TextInput', () => {
 
-	test('TextInput should get disabled=true', () => {
-		const component = shallow(
-			<TextInput disabled />
-		);
-		expect(component.props().disabled).toEqual(true);
-	});
-
-	test('TextInput should get disabled=true if there is no disabled prop & editable=false', () => {
-		const component = shallow(
-			<TextInput editable={false} />
-		);
-		expect(component.props().disabled).toEqual(true);
-	});
-
-
-	test('TextInput should get disabled=undefined if there is no disabled or editable prop', () => {
-		const component = shallow(
-			<TextInput  />
-		);
-		expect(component.props().disabled).toBeUndefined();
-		// expect(component).toMatchSnapshot();
-	});
-
 	test('TextInput should not call any onChange callbacks, when none are provided', () => {
 
 		const onChange = jest.fn();
@@ -101,6 +78,202 @@ describe('TextInput', () => {
 		expect(onChange).toBeCalledTimes(0);
 		expect(onChangeText).toBeCalledTimes(1);
 		expect(onChangeText).toBeCalledWith('Wow');
+	});
+
+	describe('autoCorrect prop', () => {
+
+		it('should set autoCorrect to "on" by default', () => {
+			const component = shallow(
+				<TextInput />
+			);
+
+			expect(component.props().autoCorrect).toBe('on');
+			// expect(component).toMatchSnapshot();
+		});
+
+		it('should set autoCorrect to "on" when autoCorrect prop is true', () => {
+			const component = shallow(
+				<TextInput autoCorrect />
+			);
+
+			expect(component.props().autoCorrect).toBe('on');
+		});
+
+		it('should set autoCorrect to "off" when autoCorrect prop is false', () => {
+			const component = shallow(
+				<TextInput autoCorrect={false} />
+			);
+
+			expect(component.props().autoCorrect).toBe('off');
+		});
+
+	});
+
+	describe('disabled prop', () => {
+
+		it('should set disabled to "false" by default', () => {
+			const component = shallow(
+				<TextInput />
+			);
+
+			expect(component.props().disabled).toBe(false);
+			// expect(component).toMatchSnapshot();
+		});
+
+		it('should set disabled to "false" when editable prop is true', () => {
+			const component = shallow(
+				<TextInput editable />
+			);
+
+			expect(component.props().disabled).toBe(false);
+		});
+
+		it('should set disabled to "true" when editable prop is false', () => {
+			const component = shallow(
+				<TextInput editable={false} />
+			);
+
+			expect(component.props().disabled).toBe(true);
+		});
+
+		it('should set disabled to "true" when disabled prop is true', () => {
+			const component = shallow(
+				<TextInput disabled editable />
+			);
+
+			expect(component.props().disabled).toBe(true);
+		});
+
+		it('should set disabled to "false" when disabled prop is false', () => {
+			const component = shallow(
+				<TextInput disabled={false} editable={false} />
+			);
+
+			expect(component.props().disabled).toBe(false);
+		});
+
+	});
+
+	describe('spellCheck prop', () => {
+
+		it('should set spellCheck to "true" by default', () => {
+			const component = shallow(
+				<TextInput />
+			);
+
+			expect(component.props().spellCheck).toBe(true);
+			// expect(component).toMatchSnapshot();
+		});
+
+		it('should set spellCheck to "true" when autoCorrect prop is true', () => {
+			const component = shallow(
+				<TextInput autoCorrect />
+			);
+
+			expect(component.props().spellCheck).toBe(true);
+		});
+
+		it('should set spellCheck to "false" when autoCorrect prop is false', () => {
+			const component = shallow(
+				<TextInput autoCorrect={false} />
+			);
+
+			expect(component.props().spellCheck).toBe(false);
+		});
+
+		it('should set spellCheck to "true" when spellCheck prop is true', () => {
+			const component = shallow(
+				<TextInput spellCheck autoCorrect={false} />
+			);
+
+			expect(component.props().spellCheck).toBe(true);
+		});
+
+		it('should set spellCheck to "false" when spellCheck prop is false', () => {
+			const component = shallow(
+				<TextInput spellCheck={false} autoCorrect />
+			);
+
+			expect(component.props().spellCheck).toBe(false);
+		});
+
+	});
+
+	describe('type prop', () => {
+
+		it('should set type to "text" by default', () => {
+			const component = shallow(
+				<TextInput />
+			);
+
+			expect(component.props().type).toBe('text');
+			// expect(component).toMatchSnapshot();
+		});
+
+		it('should set type to as is', () => {
+			const component = shallow(
+				<TextInput type="bar" />
+			);
+
+			expect(component.props().type).toBe('bar');
+		});
+
+		it('should set type to "text" when an unknown keyboardType prop is set', () => {
+			const component = shallow(
+				<TextInput keyboardType={'foo' as any} />
+			);
+
+			expect(component.props().type).toBe('text');
+		});
+
+		it('should set type to "email" when keyboardType prop is "email-address"', () => {
+			const component = shallow(
+				<TextInput keyboardType="email-address" />
+			);
+
+			expect(component.props().type).toBe('email');
+		});
+
+		it('should set type to "number" when keyboardType prop is "numeric"', () => {
+			const component = shallow(
+				<TextInput keyboardType="numeric" />
+			);
+
+			expect(component.props().type).toBe('number');
+		});
+
+		it('should set type to "tel" when keyboardType prop is "phone-pad"', () => {
+			const component = shallow(
+				<TextInput keyboardType="phone-pad" />
+			);
+
+			expect(component.props().type).toBe('tel');
+		});
+
+		it('should set type to "search" when keyboardType prop is "web-search"', () => {
+			const component = shallow(
+				<TextInput keyboardType="web-search" />
+			);
+
+			expect(component.props().type).toBe('search');
+		});
+
+		it('should set type to "url" when keyboardType prop is "url"', () => {
+			const component = shallow(
+				<TextInput keyboardType="url" />
+			);
+
+			expect(component.props().type).toBe('url');
+		});
+
+		it('should set type to "password" when secureTextEntry prop is true', () => {
+			const component = shallow(
+				<TextInput secureTextEntry keyboardType="url" />
+			);
+
+			expect(component.props().type).toBe('password');
+		});
+
 	});
 
 });
