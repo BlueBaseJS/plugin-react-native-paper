@@ -234,6 +234,14 @@ describe('TextInput', () => {
 			expect(component.props().type).toBe('email');
 		});
 
+		it('should set type to "number" when keyboardType prop is "number-pad"', () => {
+			const component = shallow(
+				<TextInput keyboardType="number-pad" />
+			);
+
+			expect(component.props().type).toBe('number');
+		});
+
 		it('should set type to "number" when keyboardType prop is "numeric"', () => {
 			const component = shallow(
 				<TextInput keyboardType="numeric" />
@@ -248,6 +256,14 @@ describe('TextInput', () => {
 			);
 
 			expect(component.props().type).toBe('tel');
+		});
+
+		it('should set type to "search" when keyboardType prop is "search"', () => {
+			const component = shallow(
+				<TextInput keyboardType={'search' as any} />
+			);
+
+			expect(component.props().type).toBe('search');
 		});
 
 		it('should set type to "search" when keyboardType prop is "web-search"', () => {
