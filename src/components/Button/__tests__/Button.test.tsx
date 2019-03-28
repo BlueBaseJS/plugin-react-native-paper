@@ -9,14 +9,14 @@ test('Button component should use title prop to show children', () => {
     <Button title="Foo" />
 	);
 	// expect(component).toMatchSnapshot();
-	expect(component.childAt(0).childAt(0).text()).toEqual('Foo');
+	expect(component.childAt(0).text()).toEqual('Foo');
 });
 
 test('Button component should use children prop to show content', () => {
 	const component = shallow(
     <Button title="Foo">
-			<Text>Bar</Text>
-		</Button>
+		<Text>Bar</Text>
+	</Button>
   );
 	expect(component.childAt(0).childAt(0).text()).toEqual('Bar');
 });
