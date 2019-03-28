@@ -1035,18 +1035,18 @@
     tslint-react "^3.6.0"
     typescript "^3.1.4"
 
-"@bluebase/component-mapper@^1.3.0":
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/@bluebase/component-mapper/-/component-mapper-1.3.0.tgz#1a968f9596497f9f03458bb10b99a3e4666f6e4c"
-  integrity sha512-kC57RQSUVTBlWisUF9fU3Hv9hXBN5n6yuU685HpsSJjpgQ8a5btb7t4WMZq/pLmZpxeq6BH7U/6HpApVusmbKQ==
+"@bluebase/component-mapper@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@bluebase/component-mapper/-/component-mapper-1.3.1.tgz#2b57d752de510437f1ae249a95d6f603e563b09f"
+  integrity sha512-xX0tlMvg2dnnEtrzDiNVO5YIVVOJ0ngFodllgOsZcanTxbwjGH1habcNAqxVMQX/uI/DZh1VTbKommIqD6FbBg==
   dependencies:
     deepmerge "^3.2.0"
     tslib "^1.9.3"
 
-"@bluebase/components@^1.10.0":
-  version "1.10.0"
-  resolved "https://registry.yarnpkg.com/@bluebase/components/-/components-1.10.0.tgz#00e57218a043ce451f18059087df765bd57286fb"
-  integrity sha512-SCuxBKnOkrzE10d1jfOItezurFdgTOF+VmQ4rFjk7Mx8OH8pAH+9YraV7w3IrB5k6jqUD9LZ4apiu1C2Pf0stg==
+"@bluebase/components@^1.11.0":
+  version "1.11.0"
+  resolved "https://registry.yarnpkg.com/@bluebase/components/-/components-1.11.0.tgz#72b1e958cf4964df47774500b6d3bdc8fb7ae389"
+  integrity sha512-Ndx8IVXdJzJPxd+p/xS71fQoJt/ukU9Nu8lIwFJGLhQESst1DowwF6ylnPGdFfc/hbVB+sc4IG2cUaNJqhTX+w==
   dependencies:
     deepmerge "^3.2.0"
     tslib "^1.9.3"
