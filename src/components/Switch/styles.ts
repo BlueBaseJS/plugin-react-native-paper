@@ -2,7 +2,6 @@ import { SwitchProps } from '@bluebase/components';
 import { Theme } from '@material-ui/core';
 
 export const styles = ({ color }: SwitchProps, theme: Theme) => {
-
 	// If color is NOT primary, secondary or default then create custom styles
 	if (color === 'primary' || color === 'secondary' || color === 'default') {
 		return {};
@@ -41,7 +40,9 @@ export const styles = ({ color }: SwitchProps, theme: Theme) => {
 				// tslint:disable-next-line: object-literal-sort-keys
 				'& + $bar': {
 					backgroundColor:
-						theme.palette.type === 'light' ? theme.palette.common.black : theme.palette.common.white,
+						theme.palette.type === 'light'
+							? theme.palette.common.black
+							: theme.palette.common.white,
 				},
 			},
 		},
