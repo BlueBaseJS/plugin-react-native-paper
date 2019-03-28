@@ -14,9 +14,7 @@ export const withPropsStyles = ( style: any ) => {
 
 			const hoc = withStyles(proxy)(component);
 
-			return props.children
-			?	createElement(hoc, { ...props, ref }, props.children)
-			:	createElement(hoc, { ...props, ref });
+			return createElement(hoc, { ...props, ref }, props.children);
 		});
 	};
 
