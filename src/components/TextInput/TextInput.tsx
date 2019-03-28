@@ -59,7 +59,7 @@ export const TextInput = componentMapper<TextInputProps>(MUITextInput, {
 		'autoCorrect',
 		'editable',
 		'keyboardType',
-		'multiline',
+		// 'multiline',
 		'numberOfLines',
 		'secureTextEntry',
 		'style',

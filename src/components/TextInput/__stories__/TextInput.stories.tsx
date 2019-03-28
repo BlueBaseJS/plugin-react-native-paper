@@ -1,10 +1,10 @@
+import { text, withKnobs } from '@storybook/addon-knobs';
 import React from 'react';
 import { TextInputProps } from '@bluebase/components';
-// import { action } from '@storybook/addon-actions';
+import { action } from '@storybook/addon-actions';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
 import { withInfo } from '@storybook/addon-info';
-import { withKnobs } from '@storybook/addon-knobs';
 
 const TextInput = getComponent<TextInputProps>('TextInput');
 
@@ -15,95 +15,108 @@ stories.addDecorator(withKnobs);
 
 stories
 
-.add('TextInputs', () => (
-	<React.Fragment>
-		<TextInput
-			id="standard-name"
-			label="Name"
-			// value={text('value', 'Jon Doe')}
-			// onChangeText={action('text input: ')}
-		/>
+.add('Simple Example', () => (
+	<TextInput
+		id="standard-name"
+		label="Name"
+		onChangeText={action('onChangeText: ')}
+		helperText="Try typing something awesome in the text field above"
+	/>
+))
 
-		<TextInput
-			id="standard-uncontrolled"
-			label="Uncontrolled"
-			defaultValue="foo"
-		/>
+.add('Value Prop', () => (
+	<TextInput
+		id="standard-name"
+		label="Name"
+		value={text('value', 'Jon Doe')}
+	/>
+))
 
-		<TextInput
-			required
-			id="standard-required"
-			label="Required"
-			defaultValue="Hello World"
-		/>
+.add('Required Field', () => (
+	<TextInput
+		required
+		id="standard-name"
+		label="Name"
+		helperText="This field is required because required prop is set to true"
+	/>
+))
 
-		<TextInput
-			error
-			id="standard-error"
-			label="Error"
-			defaultValue="Hello World"
-		/>
+.add('Error State', () => (
+	<TextInput
+		error
+		id="standard-error"
+		label="Name"
+		defaultValue="Hello World"
+		helperText="You can't just Hello World anywhere!"
+	/>
+))
 
-		<TextInput
-			disabled
-			id="standard-disabled"
-			label="Disabled"
-			defaultValue="Hello World"
-		/>
+.add('Disabled State', () => (
+	<TextInput
+		disabled
+		id="standard-disabled"
+		label="Disabled"
+		value="Hello World"
+	/>
+))
 
-		<TextInput
-			id="standard-password-input"
-			label="Password"
-			type="password"
-			autoComplete="current-password"
-		/>
+.add('Password Field', () => (
+	<TextInput
+		secureTextEntry
+		id="standard-password-input"
+		label="Password"
+		autoComplete="current-password"
+	/>
+))
 
-		<TextInput
-			id="standard-multiline-flexible"
-			label="Multiline"
-			multiline
-			numberOfLines={4}
-		/>
+.add('Multiline Flexible', () => (
+	<TextInput
+		id="standard-multiline-flexible"
+		label="Multiline"
+		multiline
+	/>
+))
 
-		<TextInput
-			id="standard-multiline-static"
-			label="Multiline"
-			multiline
-			numberOfLines={4}
-			defaultValue="Default Value"
-		/>
 
-		<TextInput
-			id="standard-helperText"
-			label="Helper text"
-			defaultValue="Default Value"
-			helperText="Some important text"
-		/>
+.add('Multiline Static', () => (
+	<TextInput
+		id="standard-multiline-static"
+		label="Multiline"
+		multiline
+		numberOfLines={4}
+		defaultValue="Default Value"
+	/>
+))
 
-		<TextInput
-			id="standard-with-placeholder"
-			label="With placeholder"
-			placeholder="Placeholder"
-		/>
+.add('Placeholder', () => (
+	<TextInput
+		id="standard-with-placeholder"
+		label="With placeholder"
+		placeholder="Placeholder"
+	/>
+))
 
-		<TextInput
-			id="standard-textarea"
-			label="With placeholder multiline"
-			placeholder="Placeholder"
-			multiline
-		/>
+.add('With placeholder multiline', () => (
+	<TextInput
+		id="standard-textarea"
+		label="With placeholder multiline"
+		placeholder="Placeholder"
+		multiline
+	/>
+))
 
-		<TextInput
-			id="standard-number"
-			label="Number"
-			type="number"
-		/>
+.add('Number Field', () => (
+	<TextInput
+		id="standard-number"
+		label="Number"
+		type="number"
+	/>
+))
 
-		<TextInput
-			id="standard-search"
-			label="Search field"
-			type="search"
-		/>
-
-	</React.Fragment>
+.add('Search field', () => (
+	<TextInput
+		id="standard-search"
+		label="Search field"
+		type="search"
+	/>
 ));

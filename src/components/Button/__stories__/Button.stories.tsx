@@ -1,6 +1,5 @@
 import { ButtonProps } from '@bluebase/components';
 import React from 'react';
-import { View } from 'react-native';
 import { action } from '@storybook/addon-actions';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
@@ -76,50 +75,49 @@ stories
 
 .add('Sizes', () => (
 	<React.Fragment>
-		<View>
-			<Button size="small">
-				Small
-			</Button>
-			<Button size="medium">
-				Medium
-			</Button>
-			<Button size="large">
-				Large
-			</Button>
-		</View>
-		<View>
-			<Button variant="outlined" size="small" color="primary">
-				Small
-			</Button>
-			<Button variant="outlined" size="medium" color="primary">
-				Medium
-			</Button>
-			<Button variant="outlined" size="large" color="primary">
-				Large
-			</Button>
-		</View>
-		<View>
-			<Button variant="contained" size="small" color="primary">
-				Small
-			</Button>
-			<Button variant="contained" size="medium" color="primary">
-				Medium
-			</Button>
-			<Button variant="contained" size="large" color="primary">
-				Large
-			</Button>
-		</View>
+		<Button size="small">
+			Small
+		</Button>
+		<Button size="medium">
+			Medium
+		</Button>
+		<Button size="large">
+			Large
+		</Button>
+		<Button variant="outlined" size="small" color="primary">
+			Small
+		</Button>
+		<Button variant="outlined" size="medium" color="primary">
+			Medium
+		</Button>
+		<Button variant="outlined" size="large" color="primary">
+			Large
+		</Button>
+		<Button variant="contained" size="small" color="primary">
+			Small
+		</Button>
+		<Button variant="contained" size="medium" color="primary">
+			Medium
+		</Button>
+		<Button variant="contained" size="large" color="primary">
+			Large
+		</Button>
 	</React.Fragment>
 ))
 
 
-.add('width', () => (
-	<View>
-		<View style={{ padding: 8 }}>
-			<Button color="primary">Normal</Button>
-		</View>
-		<View style={{ padding: 8 }}>
-			<Button color="primary" fullWidth={true} >Full Width</Button>
-		</View>
-	</View>
+.add('Width', () => (
+	<React.Fragment>
+		<Button color="primary">Normal</Button>
+		<Button color="primary" fullWidth={true} >Full Width</Button>
+	</React.Fragment>
+))
+
+
+.add('Title Prop', () => (
+	<React.Fragment>
+		<Button color="primary" title="Contained" variant="contained" />
+		<Button color="secondary" title="Outlined" variant="outlined" />
+		<Button color="primary" title="Text" variant="text" />
+	</React.Fragment>
 ));
