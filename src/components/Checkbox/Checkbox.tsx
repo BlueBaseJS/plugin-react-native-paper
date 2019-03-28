@@ -1,11 +1,11 @@
+import { CheckboxProps } from '@bluebase/components';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import MUICheckbox from '@material-ui/core/Checkbox';
 import React from 'react';
-import { CheckboxProps } from '@bluebase/components';
 import { objectMapper } from '@bluebase/component-mapper';
 import { withPropsStyles } from '../../withPropsStyles';
 
-const styles = ({ color }: CheckboxProps, _theme: any) => {
+const styles = ({ color }: CheckboxProps, theme: any) => {
 
 	// If color is NOT primary, secondary or default then create custom styles
 	if (color === 'primary' || color === 'secondary' || color === 'default') {
@@ -18,19 +18,19 @@ const styles = ({ color }: CheckboxProps, _theme: any) => {
 	}
 
 	return {
-		bar: {},
-		checked: {},
-		switchBase: {
+		root: {
 			// color,
 			// tslint:disable-next-line: object-literal-sort-keys
 			'&$checked': {
 				color,
-				// tslint:disable-next-line: object-literal-sort-keys
-				'& + $bar': {
-					backgroundColor: color,
-				},
+			},
+			'&$disabled': {
+				color: theme.palette.action.disabled,
 			},
 		},
+		// tslint:disable-next-line: object-literal-sort-keys
+		checked: {},
+		disabled: {},
 	};
 };
 

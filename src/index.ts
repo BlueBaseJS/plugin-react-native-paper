@@ -1,4 +1,5 @@
 import { Button } from './components/Button';
+import { Checkbox } from './components/Checkbox';
 import { Divider } from './components/Divider';
 import { DrawerItem } from './components/DrawerItem';
 import { DrawerSection } from './components/DrawerSection';
@@ -18,6 +19,7 @@ export default createPlugin({
 
 	components: {
 		Button,
+		Checkbox,
 		Divider,
 		DrawerItem,
 		DrawerSection,
