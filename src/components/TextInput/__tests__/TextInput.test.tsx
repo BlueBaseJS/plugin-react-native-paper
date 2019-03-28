@@ -82,29 +82,29 @@ describe('TextInput', () => {
 
 	describe('autoCorrect prop', () => {
 
-		it('should set autoCorrect to "on" by default', () => {
+		it('should be "undefined" by default', () => {
 			const component = shallow(
 				<TextInput />
 			);
 
-			expect(component.props().autoCorrect).toBe('on');
+			expect(component.props().autoCorrect).toBe(undefined);
 			// expect(component).toMatchSnapshot();
 		});
 
-		it('should set autoCorrect to "on" when autoCorrect prop is true', () => {
+		it('should be "undefined" when autoCorrect prop is true', () => {
 			const component = shallow(
 				<TextInput autoCorrect />
 			);
 
-			expect(component.props().autoCorrect).toBe('on');
+			expect(component.props().autoCorrect).toBe(undefined);
 		});
 
-		it('should set autoCorrect to "off" when autoCorrect prop is false', () => {
+		it('should be "undefined" when autoCorrect prop is false', () => {
 			const component = shallow(
 				<TextInput autoCorrect={false} />
 			);
 
-			expect(component.props().autoCorrect).toBe('off');
+			expect(component.props().autoCorrect).toBe(undefined);
 		});
 
 	});
@@ -156,45 +156,45 @@ describe('TextInput', () => {
 
 	describe('spellCheck prop', () => {
 
-		it('should set spellCheck to "true" by default', () => {
+		it('should set spellCheck to "undefined" by default', () => {
 			const component = shallow(
 				<TextInput />
 			);
 
-			expect(component.props().spellCheck).toBe(true);
+			expect(component.props().spellCheck).toBe(undefined);
 			// expect(component).toMatchSnapshot();
 		});
 
-		it('should set spellCheck to "true" when autoCorrect prop is true', () => {
+		it('should be "undefined" when autoCorrect prop is true', () => {
 			const component = shallow(
 				<TextInput autoCorrect />
 			);
 
-			expect(component.props().spellCheck).toBe(true);
+			expect(component.props().spellCheck).toBe(undefined);
 		});
 
-		it('should set spellCheck to "false" when autoCorrect prop is false', () => {
+		it('should be "undefined" when autoCorrect prop is false', () => {
 			const component = shallow(
 				<TextInput autoCorrect={false} />
 			);
 
-			expect(component.props().spellCheck).toBe(false);
+			expect(component.props().spellCheck).toBe(undefined);
 		});
 
-		it('should set spellCheck to "true" when spellCheck prop is true', () => {
+		it('should be "undefined" when spellCheck prop is true', () => {
 			const component = shallow(
 				<TextInput spellCheck autoCorrect={false} />
 			);
 
-			expect(component.props().spellCheck).toBe(true);
+			expect(component.props().spellCheck).toBe(undefined);
 		});
 
-		it('should set spellCheck to "false" when spellCheck prop is false', () => {
+		it('should be "undefined" when spellCheck prop is false', () => {
 			const component = shallow(
 				<TextInput spellCheck={false} autoCorrect />
 			);
 
-			expect(component.props().spellCheck).toBe(false);
+			expect(component.props().spellCheck).toBe(undefined);
 		});
 
 	});
