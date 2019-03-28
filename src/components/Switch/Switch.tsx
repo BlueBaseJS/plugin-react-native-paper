@@ -3,36 +3,10 @@ import MUISwitch from '@material-ui/core/Switch';
 import React from 'react';
 import { SwitchProps } from '@bluebase/components';
 import { objectMapper } from '@bluebase/component-mapper';
+import { styles } from './styles';
 import { withPropsStyles } from '../../withPropsStyles';
 
-const styles = ({ color }: SwitchProps, _theme: any) => {
 
-	// If color is NOT primary, secondary or default then create custom styles
-	if (color === 'primary' || color === 'secondary' || color === 'default') {
-		return {};
-	}
-
-	// If color is undefined, then use defaults
-	if (color === undefined) {
-		return {};
-	}
-
-	return {
-		bar: {},
-		checked: {},
-		switchBase: {
-			// color,
-			// tslint:disable-next-line: object-literal-sort-keys
-			'&$checked': {
-				color,
-				// tslint:disable-next-line: object-literal-sort-keys
-				'& + $bar': {
-					backgroundColor: color,
-				},
-			},
-		},
-	};
-};
 
 const map = {
 	checked: 'value',

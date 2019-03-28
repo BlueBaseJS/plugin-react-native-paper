@@ -1,6 +1,8 @@
 import React from 'react';
 import { Switch } from '../Switch';
+import { createMuiTheme } from '@material-ui/core/styles';
 import { mount } from 'enzyme';
+import { styles } from '../styles';
 
 describe('Switch', () => {
 
@@ -11,6 +13,15 @@ describe('Switch', () => {
 
 		// expect(component).toMatchSnapshot();
 		expect(component.find('Switch').first().prop('checked')).toEqual(true);
+	});
+
+	it('should have different colors in dark mode', () => {
+
+		const theme = createMuiTheme({ palette: { type: 'dark' } });
+
+		const classes = styles({ color: 'red' }, theme);
+
+		expect((classes as any).disabled['& + $bar'].opacity).toBe(0.1);
 	});
 
 	it('should set the checked to false when value is false', () => {
