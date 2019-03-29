@@ -18,13 +18,13 @@ const map = {
 		return;
 	},
 
-	onChange: ({ onChange, onValueChange }: any) => (event: object, checked: boolean)  => {
+	onChange: ({ onChange, onValueChange }: any) => (event: any, checked: boolean)  => {
 		if (onChange) {
 			onChange(event, checked);
 		}
 
 		if (onValueChange) {
-			onValueChange(checked);
+			onValueChange(event.target.value, checked);
 		}
 	}
 

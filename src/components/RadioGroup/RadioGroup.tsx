@@ -3,7 +3,11 @@ import { RadioGroupProps } from '@bluebase/components';
 import { componentMapper } from '@bluebase/component-mapper';
 
 export const RadioGroup = componentMapper<RadioGroupProps>(MuiRadioGroup, {
-	onChange: ({ onValueChange }: RadioGroupProps) => (_event: object, value: any)  => {
+	onChange: ({ onChange, onValueChange }: any) => (event: any, value: string | number | boolean)  => {
+		if (onChange) {
+			onChange(event, value);
+		}
+
 		if (onValueChange) {
 			onValueChange(value);
 		}
