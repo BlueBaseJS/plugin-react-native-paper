@@ -25,12 +25,12 @@ stories
 		<Radio
 			onValueChange={action('Checked')}
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Radio
 			onValueChange={action('Checked')}
 			label="Checked"
-			value
+			checked
 		/>
 		<Radio
 			onValueChange={action('Checked')}
@@ -40,7 +40,7 @@ stories
 		<Radio
 			onValueChange={action('Checked')}
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 	</View>
@@ -56,13 +56,13 @@ stories
 			onValueChange={action('Checked')}
 			color="primary"
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Radio
 			onValueChange={action('Checked')}
 			color="primary"
 			label="Checked"
-			value
+			checked
 		/>
 		<Radio
 			onValueChange={action('Checked')}
@@ -74,7 +74,7 @@ stories
 			onValueChange={action('Checked')}
 			color="primary"
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 	</View>
@@ -90,13 +90,13 @@ stories
 			onValueChange={action('Checked')}
 			color="secondary"
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Radio
 			onValueChange={action('Checked')}
 			color="secondary"
 			label="Checked"
-			value
+			checked
 		/>
 		<Radio
 			onValueChange={action('Checked')}
@@ -108,7 +108,7 @@ stories
 			onValueChange={action('Checked')}
 			color="secondary"
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 	</View>
@@ -124,13 +124,13 @@ stories
 			onValueChange={action('Checked')}
 			color="default"
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Radio
 			onValueChange={action('Checked')}
 			color="default"
 			label="Checked"
-			value
+			checked
 		/>
 		<Radio
 			onValueChange={action('Checked')}
@@ -142,7 +142,7 @@ stories
 			onValueChange={action('Checked')}
 			color="default"
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 	</View>
@@ -158,13 +158,13 @@ stories
 			onValueChange={action('Checked')}
 			color="#9c27b0"
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Radio
 			onValueChange={action('Checked')}
 			color="#9c27b0"
 			label="Checked"
-			value
+			checked
 		/>
 		<Radio
 			onValueChange={action('Checked')}
@@ -176,7 +176,7 @@ stories
 			onValueChange={action('Checked')}
 			color="#9c27b0"
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 	</View>
@@ -187,31 +187,31 @@ stories
 		<Radio
 			onValueChange={action('Checked')}
 			label="Undefined"
-			value
+			checked
 		/>
 		<Radio
 			onValueChange={action('Checked')}
 			label="bottom"
 			labelPlacement="bottom"
-			value
+			checked
 		/>
 		<Radio
 			onValueChange={action('Checked')}
 			label="end"
 			labelPlacement="end"
-			value
+			checked
 		/>
 		<Radio
 			onValueChange={action('Checked')}
 			label="start"
 			labelPlacement="start"
-			value
+			checked
 		/>
 		<Radio
 			onValueChange={action('Checked')}
 			label="top"
 			labelPlacement="top"
-			value
+			checked
 		/>
 	</View>
 ))

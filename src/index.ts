@@ -7,6 +7,7 @@ import { ListItem } from './components/ListItem';
 import { ListSection } from './components/ListSection';
 import { ListSubheader } from './components/ListSubheader';
 import { Radio } from './components/Radio';
+import { RadioGroup } from './components/RadioGroup';
 import { Switch } from './components/Switch';
 import { TextInput } from './components/TextInput';
 import { createPlugin } from '@bluebase/core';
@@ -28,6 +29,7 @@ export default createPlugin({
 		ListSection,
 		ListSubheader,
 		Radio,
+		RadioGroup,
 		Switch,
 		TextInput,
 	},

@@ -4,18 +4,18 @@ import { mount } from 'enzyme';
 
 describe('Radio', () => {
 
-	it('should set the checked to true when value is true', () => {
+	it('should set the checked to true when checked is true', () => {
 		const component = mount(
-			<Radio value />
+			<Radio checked />
 		);
 
 		// expect(component).toMatchSnapshot();
 		expect(component.find('Radio').first().prop('checked')).toEqual(true);
 	});
 
-	it('should set the checked to false when value is false', () => {
+	it('should set the checked to false when checked is false', () => {
 		const component = mount(
-			<Radio value={false} />
+			<Radio checked={false} />
 		);
 
 		expect(component.find('Radio').first().prop('checked')).toEqual(false);
