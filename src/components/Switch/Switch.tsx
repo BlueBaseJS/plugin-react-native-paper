@@ -9,8 +9,6 @@ import { withPropsStyles } from '../../withPropsStyles';
 
 
 const map = {
-	checked: 'value',
-
 	// If color is primary, secondary or default set as is
 	color: ({ color }: SwitchProps) => {
 		if (color === 'primary' || color === 'secondary' || color === 'default') {
@@ -20,9 +18,13 @@ const map = {
 		return;
 	},
 
-	onChange: ({ onValueChange }: SwitchProps) => (_event: object, checked: boolean)  => {
+	onChange: ({ onChange, onValueChange }: any) => (event: any, checked: boolean)  => {
+		if (onChange) {
+			onChange(event, checked);
+		}
+
 		if (onValueChange) {
-			onValueChange(checked);
+			onValueChange(event.target.value, checked);
 		}
 	}
 

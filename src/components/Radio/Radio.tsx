@@ -1,11 +1,11 @@
-import { CheckboxProps } from '@bluebase/components';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import MUICheckbox from '@material-ui/core/Checkbox';
+import MUIRadio from '@material-ui/core/Radio';
+import { RadioProps } from '@bluebase/components';
 import React from 'react';
 import { objectMapper } from '@bluebase/component-mapper';
 import { withPropsStyles } from '../../withPropsStyles';
 
-const styles = ({ color }: CheckboxProps, theme: any) => {
+const styles = ({ color }: RadioProps, theme: any) => {
 
 	// If color is NOT primary, secondary or default then create custom styles
 	if (color === 'primary' || color === 'secondary' || color === 'default') {
@@ -36,7 +36,7 @@ const styles = ({ color }: CheckboxProps, theme: any) => {
 
 const map = {
 	// If color is primary, secondary or default set as is
-	color: ({ color }: CheckboxProps) => {
+	color: ({ color }: RadioProps) => {
 		if (color === 'primary' || color === 'secondary' || color === 'default') {
 			return color;
 		}
@@ -56,7 +56,7 @@ const map = {
 
 };
 
-export const Checkbox = withPropsStyles(styles)((props: CheckboxProps) => {
+export const Radio = withPropsStyles(styles)((props: RadioProps) => {
 
 	const { label } = props;
 
@@ -66,11 +66,11 @@ export const Checkbox = withPropsStyles(styles)((props: CheckboxProps) => {
 		delete newProps.color;
 	}
 
-	const node = <MUICheckbox {...newProps} />;
+	const node = <MUIRadio {...newProps} />;
 
 	if (!label) {
 		return node;
 	}
 
 	return (<FormControlLabel {...newProps} control={node} />);
-}) as React.ComponentType<CheckboxProps>;
+}) as React.ComponentType<RadioProps>;

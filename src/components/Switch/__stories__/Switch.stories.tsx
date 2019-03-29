@@ -25,12 +25,12 @@ stories
 		<Switch
 			onValueChange={action('Checked D')}
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
 			label="Checked"
-			value
+			checked
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
@@ -40,7 +40,7 @@ stories
 		<Switch
 			onValueChange={action('Checked D')}
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 	</View>
@@ -56,13 +56,13 @@ stories
 			onValueChange={action('Checked D')}
 			color="primary"
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
 			color="primary"
 			label="Checked"
-			value
+			checked
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
@@ -74,7 +74,7 @@ stories
 			onValueChange={action('Checked D')}
 			color="primary"
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 	</View>
@@ -90,13 +90,13 @@ stories
 			onValueChange={action('Checked D')}
 			color="secondary"
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
 			color="secondary"
 			label="Checked"
-			value
+			checked
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
@@ -108,7 +108,7 @@ stories
 			onValueChange={action('Checked D')}
 			color="secondary"
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 	</View>
@@ -124,13 +124,13 @@ stories
 			onValueChange={action('Checked D')}
 			color="default"
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
 			color="default"
 			label="Checked"
-			value
+			checked
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
@@ -142,7 +142,7 @@ stories
 			onValueChange={action('Checked D')}
 			color="default"
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 	</View>
@@ -158,13 +158,13 @@ stories
 			onValueChange={action('Checked D')}
 			color="#9c27b0"
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
 			color="#9c27b0"
 			label="Checked"
-			value
+			checked
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
@@ -176,7 +176,7 @@ stories
 			onValueChange={action('Checked D')}
 			color="#9c27b0"
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 	</View>
@@ -187,31 +187,31 @@ stories
 		<Switch
 			onValueChange={action('Checked D')}
 			label="Undefined"
-			value
+			checked
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
 			label="bottom"
 			labelPlacement="bottom"
-			value
+			checked
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
 			label="end"
 			labelPlacement="end"
-			value
+			checked
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
 			label="start"
 			labelPlacement="start"
-			value
+			checked
 		/>
 		<Switch
 			onValueChange={action('Checked D')}
 			label="top"
 			labelPlacement="top"
-			value
+			checked
 		/>
 	</View>
 ))

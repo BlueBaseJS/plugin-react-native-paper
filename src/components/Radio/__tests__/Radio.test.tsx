@@ -1,62 +1,62 @@
-import { Checkbox } from '../Checkbox';
+import { Radio } from '../Radio';
 import React from 'react';
 import { mount } from 'enzyme';
 
-describe('Checkbox', () => {
+describe('Radio', () => {
 
 	it('should set the checked to true when checked is true', () => {
 		const component = mount(
-			<Checkbox checked />
+			<Radio checked />
 		);
 
 		// expect(component).toMatchSnapshot();
-		expect(component.find('Checkbox').first().prop('checked')).toEqual(true);
+		expect(component.find('Radio').first().prop('checked')).toEqual(true);
 	});
 
 	it('should set the checked to false when checked is false', () => {
 		const component = mount(
-			<Checkbox checked={false} />
+			<Radio checked={false} />
 		);
 
-		expect(component.find('Checkbox').first().prop('checked')).toEqual(false);
+		expect(component.find('Radio').first().prop('checked')).toEqual(false);
 	});
 
 	it('should pass the color as is when set to "primary"', () => {
 		const component = mount(
-			<Checkbox color="primary" />
+			<Radio color="primary" />
 		);
 
-		expect(component.find('Checkbox').first().prop('color')).toEqual('primary');
+		expect(component.find('Radio').first().prop('color')).toEqual('primary');
 	});
 
 	it('should pass the color as is when set to "secondary"', () => {
 		const component = mount(
-			<Checkbox color="secondary" />
+			<Radio color="secondary" />
 		);
 
-		expect(component.find('Checkbox').first().prop('color')).toEqual('secondary');
+		expect(component.find('Radio').first().prop('color')).toEqual('secondary');
 	});
 
 	it('should pass the color as is when set to "default"', () => {
 		const component = mount(
-			<Checkbox color="default" />
+			<Radio color="default" />
 		);
 
-		expect(component.find('Checkbox').first().prop('color')).toEqual('default');
+		expect(component.find('Radio').first().prop('color')).toEqual('default');
 	});
 
 	it('should set the color prop to undefined and create classed for custom colors', () => {
 		const component = mount(
-			<Checkbox color="red" />
+			<Radio color="red" />
 		);
 		// expect(component).toMatchSnapshot();
-		expect(component.find('WithStyles(Checkbox)').first().prop('classes')).toBeTruthy();
-		expect(component.find('WithStyles(Checkbox)').first().prop('color')).toEqual(undefined);
+		expect(component.find('WithStyles(Radio)').first().prop('classes')).toBeTruthy();
+		expect(component.find('WithStyles(Radio)').first().prop('color')).toEqual(undefined);
 	});
 
 	it('should set the label component', () => {
 		const component = mount(
-			<Checkbox label="Foo" />
+			<Radio label="Foo" />
 		);
 		// expect(component).toMatchSnapshot();
 		expect(component.find('FormControlLabel').length).toBeGreaterThan(0);
@@ -67,13 +67,13 @@ describe('Checkbox', () => {
 
 		const cb = jest.fn();
 		const component = mount(
-			<Checkbox label="Foo" onValueChange={cb} />
+			<Radio label="Foo" onValueChange={cb} />
 		);
 
-		const checkbox = component.find('Checkbox').first();
-		const onChange = checkbox.prop('onChange') as any;
+		const radio = component.find('Radio').first();
+		const onChange = radio.prop('onChange') as any;
 
-		onChange({ target: { value: checkbox.prop('value') } }, true);
+		onChange({ target: { value: radio.prop('value') } }, true);
 
 		// expect(component).toMatchSnapshot();
 		expect(cb).toBeCalledTimes(1);
@@ -84,13 +84,13 @@ describe('Checkbox', () => {
 
 		const cb = jest.fn();
 		const component = mount(
-			<Checkbox label="Foo" value="foo" onValueChange={cb} />
+			<Radio label="Foo" value="foo" onValueChange={cb} />
 		);
 
-		const checkbox = component.find('Checkbox').first();
-		const onChange = checkbox.prop('onChange') as any;
+		const radio = component.find('Radio').first();
+		const onChange = radio.prop('onChange') as any;
 
-		onChange({ target: { value: checkbox.prop('value') } }, true);
+		onChange({ target: { value: radio.prop('value') } }, true);
 
 		// expect(component).toMatchSnapshot();
 		expect(cb).toBeCalledTimes(1);
@@ -102,10 +102,10 @@ describe('Checkbox', () => {
 		const cb = jest.fn();
 
 		const component = mount(
-			<Checkbox label="Foo" onChange={cb} />
+			<Radio label="Foo" onChange={cb} />
 		);
 
-		const onChange = component.find('Checkbox').first().prop('onChange') as any;
+		const onChange = component.find('Radio').first().prop('onChange') as any;
 
 		onChange('foo', true);
 
