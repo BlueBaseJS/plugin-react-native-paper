@@ -25,12 +25,12 @@ stories
 		<Checkbox
 			onValueChange={action('Checked')}
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
 			label="Checked"
-			value
+			checked
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
@@ -40,7 +40,7 @@ stories
 		<Checkbox
 			onValueChange={action('Checked')}
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 		<Checkbox
@@ -51,7 +51,7 @@ stories
 		<Checkbox
 			onValueChange={action('Checked')}
 			label="Checked (Indeterminate)"
-			value
+			checked
 			indeterminate
 		/>
 	</View>
@@ -67,13 +67,13 @@ stories
 			onValueChange={action('Checked')}
 			color="primary"
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
 			color="primary"
 			label="Checked"
-			value
+			checked
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
@@ -85,7 +85,7 @@ stories
 			onValueChange={action('Checked')}
 			color="primary"
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 		<Checkbox
@@ -98,7 +98,7 @@ stories
 			onValueChange={action('Checked')}
 			color="primary"
 			label="Checked (Indeterminate)"
-			value
+			checked
 			indeterminate
 		/>
 	</View>
@@ -114,13 +114,13 @@ stories
 			onValueChange={action('Checked')}
 			color="secondary"
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
 			color="secondary"
 			label="Checked"
-			value
+			checked
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
@@ -132,7 +132,7 @@ stories
 			onValueChange={action('Checked')}
 			color="secondary"
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 		<Checkbox
@@ -145,7 +145,7 @@ stories
 			onValueChange={action('Checked')}
 			color="secondary"
 			label="Checked (Indeterminate)"
-			value
+			checked
 			indeterminate
 		/>
 	</View>
@@ -161,13 +161,13 @@ stories
 			onValueChange={action('Checked')}
 			color="default"
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
 			color="default"
 			label="Checked"
-			value
+			checked
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
@@ -179,7 +179,7 @@ stories
 			onValueChange={action('Checked')}
 			color="default"
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 		<Checkbox
@@ -192,7 +192,7 @@ stories
 			onValueChange={action('Checked')}
 			color="default"
 			label="Checked (Indeterminate)"
-			value
+			checked
 			indeterminate
 		/>
 	</View>
@@ -208,13 +208,13 @@ stories
 			onValueChange={action('Checked')}
 			color="#9c27b0"
 			label="Unchecked"
-			value={false}
+			checked={false}
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
 			color="#9c27b0"
 			label="Checked"
-			value
+			checked
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
@@ -226,7 +226,7 @@ stories
 			onValueChange={action('Checked')}
 			color="#9c27b0"
 			label="Checked (Disabled)"
-			value
+			checked
 			disabled
 		/>
 		<Checkbox
@@ -239,7 +239,7 @@ stories
 			onValueChange={action('Checked')}
 			color="#9c27b0"
 			label="Checked (Indeterminate)"
-			value
+			checked
 			indeterminate
 		/>
 	</View>
@@ -250,31 +250,31 @@ stories
 		<Checkbox
 			onValueChange={action('Checked')}
 			label="Undefined"
-			value
+			checked
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
 			label="bottom"
 			labelPlacement="bottom"
-			value
+			checked
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
 			label="end"
 			labelPlacement="end"
-			value
+			checked
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
 			label="start"
 			labelPlacement="start"
-			value
+			checked
 		/>
 		<Checkbox
 			onValueChange={action('Checked')}
 			label="top"
 			labelPlacement="top"
-			value
+			checked
 		/>
 	</View>
 ))

@@ -4,18 +4,18 @@ import { mount } from 'enzyme';
 
 describe('Checkbox', () => {
 
-	it('should set the checked to true when value is true', () => {
+	it('should set the checked to true when checked is true', () => {
 		const component = mount(
-			<Checkbox value />
+			<Checkbox checked />
 		);
 
 		// expect(component).toMatchSnapshot();
 		expect(component.find('Checkbox').first().prop('checked')).toEqual(true);
 	});
 
-	it('should set the checked to false when value is false', () => {
+	it('should set the checked to false when checked is false', () => {
 		const component = mount(
-			<Checkbox value={false} />
+			<Checkbox checked={false} />
 		);
 
 		expect(component.find('Checkbox').first().prop('checked')).toEqual(false);
