@@ -6,9 +6,9 @@ import { styles } from '../styles';
 
 describe('Switch', () => {
 
-	it('should set the checked to true when value is true', () => {
+	it('should set the checked to true when checked is true', () => {
 		const component = mount(
-			<Switch value />
+			<Switch checked />
 		);
 
 		// expect(component).toMatchSnapshot();
@@ -24,9 +24,9 @@ describe('Switch', () => {
 		expect((classes as any).disabled['& + $bar'].opacity).toBe(0.1);
 	});
 
-	it('should set the checked to false when value is false', () => {
+	it('should set the checked to false when checked is false', () => {
 		const component = mount(
-			<Switch value={false} />
+			<Switch checked={false} />
 		);
 
 		expect(component.find('Switch').first().prop('checked')).toEqual(false);
