@@ -39,7 +39,7 @@ stories.addDecorator(withInfo);
 stories.addDecorator(withKnobs);
 
 stories.add('Uncontrolled', () => (
-	<RadioGroup onValueChange={action('Uncontrolled RadioGroup')}>
+	<RadioGroup onValueChange={action('Uncontrolled RadioGroup')} label="Options" helperText="Chose any">
 		<Radio label="Option A" value="option-a" />
 		<Radio label="Option B" value="option-b" />
 		<Radio label="Option C" value="option-c" />
