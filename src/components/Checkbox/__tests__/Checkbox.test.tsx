@@ -101,8 +101,9 @@ describe('Checkbox', () => {
 
 		const cb = jest.fn();
 
+		const CHECKBOX = Checkbox as any;
 		const component = mount(
-			<Checkbox label="Foo" onChange={cb} />
+			<CHECKBOX label="Foo" onChange={cb} />
 		);
 
 		const onChange = component.find('Checkbox').first().prop('onChange') as any;

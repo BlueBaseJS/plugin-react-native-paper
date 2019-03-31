@@ -112,8 +112,10 @@ describe('Switch', () => {
 
 		const cb = jest.fn();
 
+		const SWITCH = Switch as any;
+
 		const component = mount(
-			<Switch label="Foo" onChange={cb} />
+			<SWITCH label="Foo" onChange={cb} />
 		);
 
 		const onChange = component.find('Switch').first().prop('onChange') as any;
