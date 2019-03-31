@@ -15,6 +15,7 @@ export const styles = ({ color }: SwitchProps, theme: Theme) => {
 	return {
 		bar: {},
 		checked: {},
+		icon: {},
 		switchBase: {
 			// color,
 			// tslint:disable-next-line: object-literal-sort-keys

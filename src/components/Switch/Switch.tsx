@@ -34,13 +34,13 @@ export const Switch = withPropsStyles(styles)((props: SwitchProps) => {
 
 	const newProps = objectMapper(props, map, { rest: true, ignore: ['onValueChange'] });
 
-	const { label, labelPlacement, ...common } = newProps;
+	const { label, labelPlacement, classes, ...common } = newProps;
 
-	if (Object.keys(newProps.classes).length > 0) {
-		delete newProps.color;
+	if (Object.keys(classes).length > 0) {
+		delete common.color;
 	}
 
-	const node = <MUISwitch {...common} />;
+	const node = <MUISwitch classes={classes} {...common} />;
 
 	if (!label) {
 		return node;

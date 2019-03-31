@@ -56,7 +56,7 @@ describe('Switch', () => {
 		expect(component.find('Switch').first().prop('color')).toEqual('default');
 	});
 
-	it('should set the color prop to undefined and create classed for custom colors', () => {
+	it('should set the color prop to undefined and create classes for custom colors', () => {
 		const component = mount(
 			<Switch color="red" />
 		);
