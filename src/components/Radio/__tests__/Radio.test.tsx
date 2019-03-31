@@ -101,8 +101,10 @@ describe('Radio', () => {
 
 		const cb = jest.fn();
 
+		const RADIO = Radio as any;
+
 		const component = mount(
-			<Radio label="Foo" onChange={cb} />
+			<RADIO label="Foo" onChange={cb} />
 		);
 
 		const onChange = component.find('Radio').first().prop('onChange') as any;
