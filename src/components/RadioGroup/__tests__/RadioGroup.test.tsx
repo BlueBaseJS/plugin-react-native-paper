@@ -50,6 +50,47 @@ describe('RadioGroup', () => {
 		expect(cb).toBeCalledWith('foo', true);
 	});
 
+	it('should display label & helperText', () => {
+
+		const component = mount(
+			<RadioGroup label="FooBar" helperText="description">
+				<Radio label="Option A" value="option-a" />
+				<Radio label="Option B" value="option-b" />
+				<Radio label="Option C" value="option-c" />
+			</RadioGroup>
+		);
+
+		// expect(component).toMatchSnapshot();
+		const label = component.find('FormLabel');
+		const helperText = component.find('FormHelperText');
+
+		expect(label.getElements()).toHaveLength(1);
+		expect(label.text()).toBe('FooBar');
+
+		expect(helperText.getElements()).toHaveLength(1);
+		expect(helperText.text()).toBe('description');
+
+	});
+
+	it('should NOT display label or helperText', () => {
+
+		const component = mount(
+			<RadioGroup>
+				<Radio label="Option A" value="option-a" />
+				<Radio label="Option B" value="option-b" />
+				<Radio label="Option C" value="option-c" />
+			</RadioGroup>
+		);
+
+		// expect(component).toMatchSnapshot();
+		const label = component.find('FormLabel');
+		const helperText = component.find('FormHelperText');
+
+		expect(label.getElements()).toHaveLength(0);
+
+		expect(helperText.getElements()).toHaveLength(0);
+	});
+
 });
 
 

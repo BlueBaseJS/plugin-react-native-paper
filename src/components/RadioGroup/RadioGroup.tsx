@@ -25,9 +25,9 @@ export const RadioGroup = componentMapper<RadioGroupProps>(MuiRadioGroup, {
 
 		return (
 			<FormControl component="fieldset">
-				<FormLabel component="legend">{label}</FormLabel>
+				{label ? <FormLabel component="legend">{label}</FormLabel> : null}
 				<Component {...rest} />
-				<FormHelperText>{helperText}</FormHelperText>
+				{helperText ? <FormHelperText>{helperText}</FormHelperText> : null}
 			</FormControl>
 		);
 	}
