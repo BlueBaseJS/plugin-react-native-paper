@@ -1,12 +1,22 @@
+import { Theme, withStyles } from '@material-ui/core';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
-import InputLabel from '@material-ui/core/InputLabel';
+import FormLabel from '@material-ui/core/FormLabel';
 import MUISlider from '@material-ui/lab/Slider';
 import React from 'react';
-import { SliderProps, View } from '@bluebase/components';
+import { SliderProps } from '@bluebase/components';
 import { componentMapper } from '@bluebase/component-mapper';
 
-export const Slider = componentMapper<SliderProps>(MUISlider, {
+const styles = (theme: Theme) => ({
+	helperText: {
+		marginTop: theme.spacing.unit * 2
+	},
+	label: {
+		marginBottom: theme.spacing.unit * 2
+	},
+});
+
+export const Slider = withStyles(styles)(componentMapper<SliderProps>(MUISlider, {
 
 	max: 'maximumValue',
 	min: 'minimumValue',
@@ -31,6 +41,7 @@ export const Slider = componentMapper<SliderProps>(MUISlider, {
 			id,
 			label,
 			required,
+			classes,
 			...props
 		} = newProps;
 
@@ -41,12 +52,10 @@ export const Slider = componentMapper<SliderProps>(MUISlider, {
 
 		return (
 			<FormControl {...formControlProps}>
-				<View>
-					{label ? <InputLabel htmlFor={id}>{label}</InputLabel> : null}
-					<Component id={id} {...props} />
-				</View>
-				{helperText ? <FormHelperText>{helperText}</FormHelperText> : null}
+				{label ? <FormLabel className={classes.label} htmlFor={id}>{label}</FormLabel> : null}
+				<Component id={id} {...props} />
+				{helperText ? <FormHelperText className={classes.helperText}>{helperText}</FormHelperText> : null}
 			</FormControl>
 		);
 	}
-});
+}));
