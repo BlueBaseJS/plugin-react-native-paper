@@ -58,19 +58,31 @@ const map = {
 
 export const Radio = withPropsStyles(styles)((props: RadioProps) => {
 
-	const { label } = props;
-
 	const newProps = objectMapper(props, map, { rest: true, ignore: ['onValueChange'] });
 
-	if (Object.keys(newProps.classes).length > 0) {
-		delete newProps.color;
+	const { label, labelPlacement, classes, ...common } = newProps;
+
+	if (Object.keys(classes).length > 0) {
+		delete common.color;
 	}
 
-	const node = <MUIRadio {...newProps} />;
+	const node = (
+		<MUIRadio
+			classes={classes}
+			{...common}
+		/>
+	);
 
 	if (!label) {
 		return node;
 	}
 
-	return (<FormControlLabel {...newProps} control={node} />);
+	return (
+		<FormControlLabel
+			{...common}
+			label={label}
+			labelPlacement={labelPlacement}
+			control={node}
+		/>
+	);
 }) as React.ComponentType<RadioProps>;

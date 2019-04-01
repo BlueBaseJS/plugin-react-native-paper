@@ -94,5 +94,5 @@ export const Picker = (props: PickerProps & { PickerItem?: typeof BBPickerItem }
 
 Picker.defaultProps = {
 	...PickerDefaultProps,
-	BBPickerItem,
+	PickerItem: BBPickerItem,
 };

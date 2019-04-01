@@ -3,16 +3,16 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 
-test('Divider component with inset prop=true', () => {
+test('Divider component with inset variant=inset', () => {
 	const divider = shallow(
     <Divider inset={true} />
-  );
-	expect(divider.props().inset).toEqual(true);
+	);
+	expect(divider.props().variant).toBe('inset');
 });
 
-test('Divider component with inset prop=false', () => {
+test('Divider component with inset variant=fullWidth', () => {
 	const divider = shallow(
     <Divider inset={false} />
   );
-	expect(divider.props().inset).toEqual(false);
+	expect(divider.props().variant).toBe('fullWidth');
 });

@@ -7,6 +7,6 @@ export const Divider = componentMapper<DividerProps>(
 	{
 		variant: ({ inset }: DividerProps) => inset === true ? 'inset' : 'fullWidth',
 	},
-	{ rest: true }
+	{ rest: true, ignore: ['inset'] }
 );
 
