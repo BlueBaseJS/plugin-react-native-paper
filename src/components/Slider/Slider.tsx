@@ -58,4 +58,4 @@ export const Slider = withStyles(styles)(componentMapper<SliderProps>(MUISlider,
 			</FormControl>
 		);
 	}
-}));
+})) as React.ComponentType<SliderProps>;
