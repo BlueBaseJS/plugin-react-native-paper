@@ -82,12 +82,12 @@ export const Picker = (props: PickerProps & { PickerItem?: typeof BBPickerItem }
 
 	return (
 		<FormControl {...formControlProps}>
-			<InputLabel htmlFor={id}>{label}</InputLabel>
+			{label ? <InputLabel htmlFor={id}>{label}</InputLabel> : null}
 			<Select {...selectProps} >
 				{placeholder ? <PickerItem value="" label={placeholder} disabled /> : null}
 				{children}
 			</Select>
-      <FormHelperText>{helperText}</FormHelperText>
+      {helperText ? <FormHelperText>{helperText}</FormHelperText> : null}
 		</FormControl>
 	);
 };

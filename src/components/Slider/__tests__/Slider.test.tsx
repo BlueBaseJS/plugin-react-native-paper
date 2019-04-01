@@ -68,6 +68,39 @@ describe('Slider', () => {
 		expect(cb).toBeCalledWith('foo', 54);
 	});
 
+	it('should display label & helperText', () => {
+
+		const component = mount(
+			<Slider label="FooBar" helperText="description" />
+		);
+
+		// expect(component).toMatchSnapshot();
+		const label = component.find('FormLabel');
+		const helperText = component.find('FormHelperText');
+
+		expect(label.getElements()).toHaveLength(1);
+		expect(label.text()).toBe('FooBar');
+
+		expect(helperText.getElements()).toHaveLength(1);
+		expect(helperText.text()).toBe('description');
+
+	});
+
+	it('should NOT display label or helperText', () => {
+
+		const component = mount(
+			<Slider />
+		);
+
+		// expect(component).toMatchSnapshot();
+		const label = component.find('FormLabel');
+		const helperText = component.find('FormHelperText');
+
+		expect(label.getElements()).toHaveLength(0);
+
+		expect(helperText.getElements()).toHaveLength(0);
+	});
+
 });
 
 
