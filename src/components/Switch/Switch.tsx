@@ -40,11 +40,23 @@ export const Switch = withPropsStyles(styles)((props: SwitchProps) => {
 		delete common.color;
 	}
 
-	const node = <MUISwitch classes={classes} {...common} />;
+	const node = (
+		<MUISwitch
+			classes={classes}
+			{...common}
+		/>
+	);
 
 	if (!label) {
 		return node;
 	}
 
-	return (<FormControlLabel {...common} label={label} labelPlacement={labelPlacement} control={node} />);
+	return (
+		<FormControlLabel
+			{...common}
+			label={label}
+			labelPlacement={labelPlacement}
+			control={node}
+		/>
+	);
 }) as React.ComponentType<SwitchProps>;
