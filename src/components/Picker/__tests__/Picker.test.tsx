@@ -189,6 +189,65 @@ describe('Picker', () => {
 		expect(cb).toBeCalledTimes(1);
 	});
 
+	it('should display label & helperText', () => {
+
+		(_Picker as any).Item = PickerItem;
+		const Picker = _Picker as any;
+
+		const component = mount(
+		<Picker
+			label="Language"
+			helperText="description"
+			name="language"
+			id="language-simple"
+			// mode="default"
+		>
+			<Picker.Item label="Java" value="java" />
+			<Picker.Item label="JavaScript" value="js" />
+			<Picker.Item label="PHP" value="php" />
+		</Picker>
+		);
+
+		// expect(component).toMatchSnapshot();
+		const label = component.find('FormLabel');
+		const helperText = component.find('FormHelperText');
+
+		expect(label.getElements()).toHaveLength(1);
+		expect(label.text()).toBe('Language');
+
+		expect(helperText.getElements()).toHaveLength(1);
+		expect(helperText.text()).toBe('description');
+
+	});
+
+	it('should NOT display label or helperText', () => {
+
+		(_Picker as any).Item = PickerItem;
+		const Picker = _Picker as any;
+
+		const component = mount(
+		<Picker
+			// label="Language"
+			// helperText="description"
+			name="language"
+			id="language-simple"
+			// mode="default"
+		>
+			<Picker.Item label="Java" value="java" />
+			<Picker.Item label="JavaScript" value="js" />
+			<Picker.Item label="PHP" value="php" />
+		</Picker>
+		);
+
+		// expect(component).toMatchSnapshot();
+		const label = component.find('FormLabel');
+		const helperText = component.find('FormHelperText');
+
+		expect(label.getElements()).toHaveLength(0);
+
+		expect(helperText.getElements()).toHaveLength(0);
+	});
+
 });
 
 
