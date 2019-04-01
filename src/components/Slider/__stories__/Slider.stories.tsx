@@ -42,6 +42,42 @@ stories
 	</View>
 ))
 
+.add('Label + HelperText', () => (
+	<View style={{ padding: 20 }}>
+		<ControlledSlider
+			maximumValue={32}
+			minimumValue={16}
+			step={1}
+			label="Temperature"
+			helperText="Set your desired temperature"
+		/>
+	</View>
+))
+
+.add('Required', () => (
+	<View style={{ padding: 20 }}>
+		<ControlledSlider
+			maximumValue={32}
+			minimumValue={16}
+			step={1}
+			label="Temperature"
+			required
+		/>
+	</View>
+))
+
+.add('Error', () => (
+	<View style={{ padding: 20 }}>
+		<ControlledSlider
+			maximumValue={32}
+			minimumValue={16}
+			step={1}
+			label="Temperature"
+			helperText="Something went wrong!"
+		/>
+	</View>
+))
+
 .add('Disabled', () => (
 	<View style={{ padding: 20 }}>
 		<Slider

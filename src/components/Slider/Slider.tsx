@@ -1,7 +1,10 @@
+import FormControl from '@material-ui/core/FormControl';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import InputLabel from '@material-ui/core/InputLabel';
 import MUISlider from '@material-ui/lab/Slider';
-import { SliderProps } from '@bluebase/components';
+import React from 'react';
+import { SliderProps, View } from '@bluebase/components';
 import { componentMapper } from '@bluebase/component-mapper';
-
 
 export const Slider = componentMapper<SliderProps>(MUISlider, {
 
@@ -18,4 +21,32 @@ export const Slider = componentMapper<SliderProps>(MUISlider, {
 		}
 	}
 
-}, { rest: true, ignore: ['onValueChange'] });
+}, {
+	ignore: ['onValueChange'],
+	rest: true,
+	render(newProps: any, Component: any) {
+		const {
+			error,
+			helperText,
+			id,
+			label,
+			required,
+			...props
+		} = newProps;
+
+		const formControlProps = {
+			error,
+			required,
+		};
+
+		return (
+			<FormControl {...formControlProps}>
+				<View>
+					{label ? <InputLabel htmlFor={id}>{label}</InputLabel> : null}
+					<Component id={id} {...props} />
+				</View>
+				{helperText ? <FormHelperText>{helperText}</FormHelperText> : null}
+			</FormControl>
+		);
+	}
+});
