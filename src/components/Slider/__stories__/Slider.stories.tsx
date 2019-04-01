@@ -69,6 +69,7 @@ stories
 .add('Error', () => (
 	<View style={{ padding: 20 }}>
 		<ControlledSlider
+			error
 			maximumValue={32}
 			minimumValue={16}
 			step={1}
