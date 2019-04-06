@@ -7,7 +7,7 @@ import deepmerge from 'deepmerge';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
 
-const CAPTION_COLOR = '#f44336';
+const CAPTION_COLOR = 'rgba(0, 0, 0, 0.38)';
 const ERROR_COLOR = '#f44336';
 
 describe('RadioGroup', () => {

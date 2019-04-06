@@ -17,7 +17,7 @@ test('render and contained button with primary color', (done) => {
 	setTimeout(() => {
 		// expect(rendered).toMatchSnapshot();
 
-		const style: any[] = (rendered as any).toJSON().children[0].props.style;
+		const style: any[] = (rendered as any).toJSON().props.style;
 		// const style = deepmerge.all(styleProp.filter(x => x !== undefined));
 
 		expect((style as any).backgroundColor).toBe('#3f51b5');
@@ -35,7 +35,7 @@ test('render and outline button with secondary color', (done) => {
 	);
 
 	setTimeout(() => {
-		const style: any[] = (rendered as any).toJSON().children[0].props.style;
+		const style: any[] = (rendered as any).toJSON().props.style;
 		expect((style as any).backgroundColor).toBe('transparent');
 
 		// Text
