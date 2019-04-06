@@ -8,7 +8,7 @@ import {
 	Radio,
 	RadioGroup,
 	Switch,
-	TextInput
+	TextInput,
 } from './components';
 import { withReactNativePaper } from './withReactNativePaper';
 
