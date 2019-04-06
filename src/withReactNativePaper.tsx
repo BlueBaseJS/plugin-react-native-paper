@@ -1,19 +1,28 @@
 import { DefaultTheme, Provider } from 'react-native-paper';
-import { ThemeConsumer, ThemeContextData } from '@bluebase/core';
+import { ThemeContext, ThemeContextData } from '@bluebase/core';
+import { Font } from 'expo';
 import React from 'react';
 
-// const theme = {
-// 	...DefaultTheme,
-// 	colors: {
-// 		...DefaultTheme.colors,
-// 		accent: 'yellow',
-// 		primary: 'tomato',
-// 	},
-// };
+export const withReactNativePaper = (Component: React.ComponentType<any>) => {
 
-export const withReactNativePaper = (Component: React.ComponentType<any>) => (props: any) => (
-	<ThemeConsumer>
-		{({ theme }: ThemeContextData) => {
+	return class ReactNativePaperProvider extends React.Component {
+		static contextType = ThemeContext;
+
+		readonly state = {
+			isFontLoaded: false
+		};
+
+		async componentWillMount() {
+			await Font.loadAsync({ 'Material Icons': require('react-native-vector-icons/Fonts/MaterialIcons.ttf') });
+			this.setState({ isFontLoaded: true });
+		}
+
+		render() {
+			if (!this.state.isFontLoaded) {
+				return null;
+			}
+
+			const { theme }: ThemeContextData = this.context;
 
 			const rnpTheme = {
 				...DefaultTheme,
@@ -33,9 +42,9 @@ export const withReactNativePaper = (Component: React.ComponentType<any>) => (pr
 
 			return (
 				<Provider theme={rnpTheme}>
-					<Component {...props} />
+					<Component {...this.props} />
 				</Provider>
 			);
-		}}
-	</ThemeConsumer>
-);
+		}
+	};
+};

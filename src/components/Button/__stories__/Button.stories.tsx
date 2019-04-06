@@ -38,17 +38,17 @@ stories
 
 .add('Text Buttons', () => (
 	<React.Fragment>
-		<Button>Default</Button>
-		<Button color="primary">
+		<Button onPress={() => console.log('Button onPress')}>Default</Button>
+		<Button color="primary" onPress={() => console.log('Button onPress')}>
 			Primary
 		</Button>
-		<Button color="secondary">
+		<Button color="secondary" onPress={() => console.log('Button onPress')}>
 			Secondary
 		</Button>
-		<Button disabled>
+		<Button disabled onPress={() => console.log('Button onPress')}>
 			Disabled
 		</Button>
-		<Button>
+		<Button onPress={() => console.log('Button onPress')}>
 			Link
 		</Button>
 	</React.Fragment>
@@ -56,19 +56,19 @@ stories
 
 .add('Outlined Buttons', () => (
 	<React.Fragment>
-		<Button variant="outlined">
+		<Button variant="outlined" onPress={() => console.log('Button onPress')}>
 			Default
 		</Button>
-		<Button variant="outlined" color="primary">
+		<Button variant="outlined" color="primary" onPress={() => console.log('Button onPress')}>
 			Primary
 		</Button>
-		<Button variant="outlined" color="secondary">
+		<Button variant="outlined" color="secondary" onPress={() => console.log('Button onPress')}>
 			Secondary
 		</Button>
-		<Button variant="outlined" disabled>
+		<Button variant="outlined" disabled onPress={() => console.log('Button onPress')}>
 			Disabled
 		</Button>
-		<Button variant="outlined">
+		<Button variant="outlined" onPress={() => console.log('Button onPress')}>
 			Link
 		</Button>
 	</React.Fragment>
@@ -77,35 +77,35 @@ stories
 .add('Sizes', () => (
 	<React.Fragment>
 		<View>
-			<Button size="small">
+			<Button size="small" onPress={() => console.log('Button onPress')}>
 				Small
 			</Button>
-			<Button size="medium">
+			<Button size="medium" onPress={() => console.log('Button onPress')}>
 				Medium
 			</Button>
-			<Button size="large">
+			<Button size="large" onPress={() => console.log('Button onPress')}>
 				Large
 			</Button>
 		</View>
 		<View>
-			<Button variant="outlined" size="small" color="primary">
+			<Button variant="outlined" size="small" color="primary" onPress={() => console.log('Button onPress')}>
 				Small
 			</Button>
-			<Button variant="outlined" size="medium" color="primary">
+			<Button variant="outlined" size="medium" color="primary" onPress={() => console.log('Button onPress')}>
 				Medium
 			</Button>
-			<Button variant="outlined" size="large" color="primary">
+			<Button variant="outlined" size="large" color="primary" onPress={() => console.log('Button onPress')}>
 				Large
 			</Button>
 		</View>
 		<View>
-			<Button variant="contained" size="small" color="primary">
+			<Button variant="contained" size="small" color="primary" onPress={() => console.log('Button onPress')}>
 				Small
 			</Button>
-			<Button variant="contained" size="medium" color="primary">
+			<Button variant="contained" size="medium" color="primary" onPress={() => console.log('Button onPress')}>
 				Medium
 			</Button>
-			<Button variant="contained" size="large" color="primary">
+			<Button variant="contained" size="large" color="primary" onPress={() => console.log('Button onPress')}>
 				Large
 			</Button>
 		</View>
@@ -116,10 +116,17 @@ stories
 .add('width', () => (
 	<View>
 		<View style={{ padding: 8 }}>
-			<Button color="primary">Normal</Button>
+			<Button variant="contained" color="primary" onPress={() => console.log('Button onPress')}>Normal</Button>
 		</View>
 		<View style={{ padding: 8 }}>
-			<Button color="primary" fullWidth={true} >Full Width</Button>
+			<Button
+				variant="contained"
+				color="primary"
+				fullWidth={true}
+				onPress={() => console.log('Button onPress')}
+			>
+				Full Width
+			</Button>
 		</View>
 	</View>
 ));
