@@ -51,3 +51,10 @@ console.error = (message: any) => {
 
 	originalConsoleError(message);
 };
+
+
+jest.mock('expo', () => ({
+	Font: {
+		loadAsync: () => Promise.resolve()
+	}
+}));

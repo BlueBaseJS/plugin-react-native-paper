@@ -6,6 +6,7 @@ import TestRenderer from 'react-test-renderer';
 import { Text } from 'react-native';
 import deepmerge from 'deepmerge';
 
+
 const Button = getComponent('Button');
 
 test('Plugin should be correctly registered', async () => {

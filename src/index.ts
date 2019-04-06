@@ -1,5 +1,15 @@
 import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
-import { Button, Divider, TextInput } from './components';
+import {
+	Button,
+	Checkbox,
+	Divider,
+	FormControlLabel,
+	FormHelperText,
+	Radio,
+	RadioGroup,
+	Switch,
+	TextInput
+} from './components';
 import { withReactNativePaper } from './withReactNativePaper';
 
 export default createPlugin({
@@ -10,7 +20,13 @@ export default createPlugin({
 
 	components: {
 		Button,
+		Checkbox,
 		Divider,
+		FormControlLabel,
+		FormHelperText,
+		Radio,
+		RadioGroup,
+		Switch,
 		TextInput,
 	},
 

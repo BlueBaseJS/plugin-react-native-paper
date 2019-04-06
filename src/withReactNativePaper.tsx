@@ -1,8 +1,7 @@
 import { DefaultTheme, Provider } from 'react-native-paper';
 import { ThemeContext, ThemeContextData } from '@bluebase/core';
+import { Font } from 'expo';
 import React from 'react';
-
-const { Font } = require('expo');
 
 export const withReactNativePaper = (Component: React.ComponentType<any>) => {
 
@@ -14,7 +13,7 @@ export const withReactNativePaper = (Component: React.ComponentType<any>) => {
 		};
 
 		async componentWillMount() {
-			await Font.loadAsync({ 'Material Icons': require('@expo/vector-icons/fonts/MaterialIcons.ttf') });
+			await Font.loadAsync({ 'Material Icons': require('react-native-vector-icons/Fonts/MaterialIcons.ttf') });
 			this.setState({ isFontLoaded: true });
 		}
 
