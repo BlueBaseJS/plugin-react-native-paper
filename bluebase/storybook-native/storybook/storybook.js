@@ -1,6 +1,5 @@
 import React from 'react';
 import { getStorybookUI, configure, addDecorator } from '@storybook/react-native';
-import CenterView from './CenterView';
 
 import './rn-addons';
 
@@ -11,10 +10,6 @@ import BRConfigs from '../bluebase';
 
 // BlueBase
 addDecorator(BlueBaseDecorator(BRConfigs));
-
-// CenterView
-const CenterViewDecorator = (storyFn) => (<CenterView>{storyFn()}</CenterView>);
-addDecorator(CenterViewDecorator);
 
 // import stories
 configure(() => {
