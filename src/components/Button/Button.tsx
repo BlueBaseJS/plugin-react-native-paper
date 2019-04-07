@@ -23,11 +23,11 @@ const ButtonComponent = (props: ButtonProps) => (
 	<ThemeConsumer>
 		{({ theme }: ThemeContextData) => {
 
-			const { children, color, variant, ...rest } = props;
+			const { children, color, title, variant, ...rest } = props;
 			const rnpColor = (color === 'secondary') ? theme.palette.secondary.main : theme.palette.primary.main;
 
 			return (
-				<RNP_Button {...rest} mode={variant} color={rnpColor}>{children}</RNP_Button>
+				<RNP_Button {...rest} mode={variant} color={rnpColor}>{children || title}</RNP_Button>
 			);
 		}}
 	</ThemeConsumer>

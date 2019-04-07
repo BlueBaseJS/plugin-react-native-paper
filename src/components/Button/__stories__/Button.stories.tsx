@@ -129,4 +129,26 @@ stories
 			</Button>
 		</View>
 	</View>
+))
+
+
+.add('Title', () => (
+	<Button
+		variant="contained"
+		color="primary"
+		fullWidth={true}
+		onPress={() => console.log('Button onPress')}
+		title="Button Title"
+	/>
+))
+
+.add('Loading', () => (
+	<Button
+		variant="contained"
+		color="primary"
+		fullWidth={true}
+		onPress={() => console.log('Button onPress')}
+		title="Button Title"
+		loading
+	/>
 ));
