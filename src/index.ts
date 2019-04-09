@@ -1,3 +1,5 @@
+import { BottomNavigation } from './components/BottomNavigation';
+import { BottomNavigationAction } from './components/BottomNavigationAction';
 import { Button } from './components/Button';
 import { Checkbox } from './components/Checkbox';
 import { Divider } from './components/Divider';
@@ -12,6 +14,8 @@ import { Radio } from './components/Radio';
 import { RadioGroup } from './components/RadioGroup';
 import { Slider } from './components/Slider';
 import { Switch } from './components/Switch';
+import { Tab } from './components/Tab';
+import { Tabs } from './components/Tabs';
 import { TextInput } from './components/TextInput';
 import { createPlugin } from '@bluebase/core';
 
@@ -23,6 +27,8 @@ export default createPlugin({
 	version: '0.0.1',
 
 	components: {
+		BottomNavigation,
+		BottomNavigationAction,
 		Button,
 		Checkbox,
 		Divider,
@@ -37,6 +43,8 @@ export default createPlugin({
 		RadioGroup,
 		Slider,
 		Switch,
+		Tab,
+		Tabs,
 		TextInput,
 	},
 });
