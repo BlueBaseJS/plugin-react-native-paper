@@ -1,3 +1,4 @@
+import { DrawerActions, DrawerLayout } from './components/DrawerLayout';
 import { BottomNavigation } from './components/BottomNavigation';
 import { BottomNavigationAction } from './components/BottomNavigationAction';
 import { Button } from './components/Button';
@@ -32,7 +33,9 @@ export default createPlugin({
 		Button,
 		Checkbox,
 		Divider,
+		DrawerActions,
 		DrawerItem,
+		DrawerLayout,
 		DrawerSection,
 		ListItem,
 		ListSection,
