@@ -79,7 +79,7 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.3.4",
     "@bluebase/cli-essentials": "^0.0.4",
-    "@bluebase/code-standards": "^1.0.2",
+    "@bluebase/code-standards": "^1.1.0",
     "@bluebase/core": "^4.0.0-aplha.10",
     "@bluebase/storybook-addon": "^3.0.0",
     "@storybook/addon-a11y": "^5.0.1",
@@ -125,12 +125,12 @@
     "react-native-typescript-transformer": "^1.2.12",
     "react-test-renderer": "^16.8.4",
     "schedule": "^0.5.0",
-    "size-limit": "^0.22.0",
+    "size-limit": "^1.0.1",
     "trash-cli": "^1.4.0",
     "ts-jest": "^24.0.0",
     "tslint": "^5.13.1",
     "typedoc": "^0.14.2",
-    "typescript": "3.3.3333"
+    "typescript": "3.4.3"
   },
   "peerDependencies": {
     "@bluebase/core": "^4.*",

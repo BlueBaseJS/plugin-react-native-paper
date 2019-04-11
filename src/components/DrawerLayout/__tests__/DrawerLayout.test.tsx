@@ -1,4 +1,4 @@
-import { DrawerActions, DrawerLayout, DrawerLayoutState } from '../DrawerLayout';
+import { DrawerActions, DrawerLayout, DrawerLayoutState } from '../';
 import { BlueBaseApp } from '@bluebase/core';
 import Plugin from '../../../';
 import React from 'react';
