@@ -1,5 +1,6 @@
-import { DrawerActionsObject, DrawerActionsProps, DrawerLayoutProps, View, } from '@bluebase/components';
+import { DrawerActionsObject, DrawerLayoutProps, View, } from '@bluebase/components';
 import Drawer from '@material-ui/core/Drawer';
+import { DrawerContext } from './DrawerContext';
 import React from 'react';
 import { Theme } from '@material-ui/core/styles';
 import { withPropsStyles } from '../../withPropsStyles';
@@ -7,40 +8,6 @@ import { withPropsStyles } from '../../withPropsStyles';
 export interface DrawerLayoutState extends DrawerActionsObject {
 	open: boolean,
 }
-
-export const DrawerContext: React.Context<DrawerActionsObject> = React.createContext({
-	// closeDrawer: () => { return; },
-	// openDrawer: () => { return; },
-	// toggleDrawer: () => { return; },
-} as any);
-
-export const DrawerActions = (props: DrawerActionsProps) => React.createElement(DrawerContext.Consumer, props);
-
-const styles = (props: DrawerLayoutProps, theme: Theme) => ({
-	content: {
-		flexGrow: 1,
-		marginLeft: 0,
-		transition: theme.transitions.create('margin', {
-			duration: theme.transitions.duration.leavingScreen,
-			easing: theme.transitions.easing.sharp,
-		}),
-	},
-	contentShift: {
-		marginLeft: props.drawerWidth,
-		transition: theme.transitions.create('margin', {
-			duration: theme.transitions.duration.enteringScreen,
-			easing: theme.transitions.easing.easeOut,
-		}),
-	},
-	drawer: {
-		flexShrink: 0,
-		width: props.drawerWidth,
-	},
-	drawerPaper: {
-		position: 'absolute',
-		width: props.drawerWidth,
-	},
-});
 
 type DrawerLayoutPropsInternal = DrawerLayoutProps & { classes: any };
 
@@ -73,9 +40,7 @@ export class DrawerLayoutComponent extends React.Component<DrawerLayoutPropsInte
 			anchor: drawerPosition,
 			children: renderNavigationView && renderNavigationView(),
 			className: classes.drawer,
-			classes: {
-				paper: classes.drawerPaper,
-			},
+			classes: { paper: classes.drawerPaper },
 			onBackdropClick: () => this.state.toggleDrawer(),
 			onClose: onDrawerClose,
 			onRendered: onDrawerOpen,
@@ -101,5 +66,30 @@ export class DrawerLayoutComponent extends React.Component<DrawerLayoutPropsInte
 	}
 }
 
+const styles = (props: DrawerLayoutProps, theme: Theme) => ({
+	content: {
+		flexGrow: 1,
+		marginLeft: 0,
+		transition: theme.transitions.create('margin', {
+			duration: theme.transitions.duration.leavingScreen,
+			easing: theme.transitions.easing.sharp,
+		}),
+	},
+	contentShift: {
+		marginLeft: props.drawerWidth,
+		transition: theme.transitions.create('margin', {
+			duration: theme.transitions.duration.enteringScreen,
+			easing: theme.transitions.easing.easeOut,
+		}),
+	},
+	drawer: {
+		flexShrink: 0,
+		width: props.drawerWidth,
+	},
+	drawerPaper: {
+		position: 'absolute',
+		width: props.drawerWidth,
+	},
+});
 
 export const DrawerLayout = withPropsStyles(styles)(DrawerLayoutComponent) as React.ComponentType<DrawerLayoutProps>;
