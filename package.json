@@ -17,6 +17,11 @@
       "path": "dist/**/!(*.test).js"
     }
   ],
+  "remarkConfig": {
+    "plugins": [
+      "remark-preset-lint-recommended"
+    ]
+  },
   "scripts": {
     "start": "yarn run storybook",
     "clean": "rimraf coverage dist tmp",
@@ -29,10 +34,12 @@
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
     "fix:tslint": "tslint --fix --project .",
+    "fix:md": "remark . -o",
     "test": "run-s build test:*",
     "test:only": "jest --coverage",
     "test:lint": "npm run lint",
     "test:prettier": "prettier \"src/**/*.ts\" --list-different",
+    "test:md": "remark . -f",
     "commit": "git-cz",
     "report-coverage": "codecov && cat ./coverage/lcov.info | codacy-coverage",
     "doc": "run-s doc:html && run-s doc:build-storybook && opn docs/index.html",
@@ -124,6 +131,8 @@
     "react-dom": "^16.8.4",
     "react-native-typescript-transformer": "^1.2.12",
     "react-test-renderer": "^16.8.4",
+    "remark-cli": "^6.0.1",
+    "remark-preset-lint-recommended": "^3.0.2",
     "schedule": "^0.5.0",
     "size-limit": "^1.0.1",
     "trash-cli": "^1.4.0",
