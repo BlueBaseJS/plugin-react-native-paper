@@ -9,6 +9,9 @@ import { DrawerSection } from './components/DrawerSection';
 import { ListItem } from './components/ListItem';
 import { ListSection } from './components/ListSection';
 import { ListSubheader } from './components/ListSubheader';
+
+import { Menu } from './components/Menu/Menu.component';
+import { MenuItem } from './components/Menu/MenuItem.component';
 import { Picker } from './components/Picker';
 import { PickerItem } from './components/PickerItem';
 import { Radio } from './components/Radio';
@@ -40,6 +43,8 @@ export default createPlugin({
 		ListItem,
 		ListSection,
 		ListSubheader,
+		Menu,
+		MenuItem,
 		Picker,
 		PickerItem,
 		Radio,
