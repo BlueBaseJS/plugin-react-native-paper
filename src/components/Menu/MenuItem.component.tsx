@@ -7,7 +7,6 @@ const MenuItem = (props: any) => {
     <MuiMenuItem onClick={props.onDismiss} {...props}>
       {props.title}
     </MuiMenuItem>
-
 	);
 };
 export { MenuItem };
