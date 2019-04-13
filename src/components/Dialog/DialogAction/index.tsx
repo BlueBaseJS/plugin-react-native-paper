@@ -4,10 +4,10 @@ import React from 'react';
 const DialogAction = (props: any) => {
 
 	return (
-    <MuiDialogActions {...props}>
-      {props.children}
-    </MuiDialogActions>
-  );
+		<MuiDialogActions {...props}>
+			{props.children}
+		</MuiDialogActions>
+	);
 };
 export { DialogAction };
 
