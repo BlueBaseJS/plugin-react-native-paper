@@ -1,5 +1,5 @@
 
-import { CardProps, CardActionsProps, CardHeaderProps, CardContentProps, CardCoverProps } from '@bluebase/components';
+import { CardProps, CardActionsProps, CardHeaderProps, CardContentProps } from '@bluebase/components';
 import Avatar from '@material-ui/core/Avatar';
 import Collapse from '@material-ui/core/Collapse';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
@@ -19,7 +19,7 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs';
 
 const Card = getComponent<CardProps>('Card');
-const CardMedia = getComponent<CardCoverProps>('CardMedia');
+// const CardMedia = getComponent<CardCoverProps>('CardMedia');
 const CardContent = getComponent<CardContentProps>('CardContent');
 const CardActions = getComponent<CardActionsProps>('CardActions');
 const CardHeader = getComponent<CardHeaderProps>('CardHeader');
@@ -58,11 +58,11 @@ function RecipeReviewCard() {
         title="Shrimp and Chorizo Paella"
         description="September 14, 2016"
       />
-      <CardMedia
+      {/* <CardMedia
 
-        source={require('./paella.jpg')}
+        source="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
       // title="Paella dish"
-      />
+      /> */}
       <CardContent>
         <Typography component="p">
           This impressive paella is a perfect party dish and a fun meal to cook together with your
