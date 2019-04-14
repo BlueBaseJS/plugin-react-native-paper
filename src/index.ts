@@ -2,6 +2,11 @@ import { DrawerActions, DrawerLayout } from './components/DrawerLayout';
 import { BottomNavigation } from './components/BottomNavigation';
 import { BottomNavigationAction } from './components/BottomNavigationAction';
 import { Button } from './components/Button';
+import { Card } from './components/Card/Card.component';
+import { CardActions } from './components/Card/CardFooter.component';
+import { CardContent } from './components/Card/CardBody.component';
+import { CardHeader } from './components/Card/CardHeader.component';
+import { CardMedia } from './components/Card/CardMedia.component';
 import { Checkbox } from './components/Checkbox';
 import { Divider } from './components/Divider';
 import { DrawerItem } from './components/DrawerItem';
@@ -31,6 +36,11 @@ export default createPlugin({
 		BottomNavigation,
 		BottomNavigationAction,
 		Button,
+		Card,
+		CardActions,
+		CardContent,
+		CardHeader,
+		CardMedia,
 		Checkbox,
 		Divider,
 		DrawerActions,
