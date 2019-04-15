@@ -1077,10 +1077,10 @@
     deepmerge "^3.2.0"
     tslib "^1.9.3"
 
-"@bluebase/core@^4.0.0-aplha.10":
-  version "4.0.0-aplha.14"
-  resolved "https://registry.yarnpkg.com/@bluebase/core/-/core-4.0.0-aplha.14.tgz#da304d71aafc0cf985982a03357432f60fcf60d0"
-  integrity sha512-fLFnCuUxirz853tf/bFotc6MUMddUvyhfMP5PQNdnE8K4pLoeECTpLvFaPtY/UKd2YbosiSbN98r6fmyEJICbg==
+"@bluebase/core@^4.0.0-aplha.17":
+  version "4.0.0-aplha.17"
+  resolved "https://registry.yarnpkg.com/@bluebase/core/-/core-4.0.0-aplha.17.tgz#d23bf2181ea3a0925b848576ddbc082deeedbf16"
+  integrity sha512-z+zgvyhbFlURrPqoSXCebdlgAf/Pr9ECP5cfa9kzMGwbBkM7Fth6MhkJf5HLunkQm714CvgPNYiQWD93MJ7HgA==
   dependencies:
     deepmerge "^3.2.0"
     hoist-non-react-statics "^3.3.0"
@@ -1091,6 +1091,7 @@
     lodash.isstring "^4.0.1"
     lodash.kebabcase "^4.1.1"
     react-loadable "^5.5.0"
+    rtl-detect "^1.0.2"
     tslib "^1.9.3"
 
 "@bluebase/storybook-addon@^3.0.0":
@@ -12791,6 +12792,11 @@ rsvp@^4.8.4:
   version "4.8.4"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-4.8.4.tgz#b50e6b34583f3dd89329a2f23a8a2be072845911"
   integrity sha512-6FomvYPfs+Jy9TfXmBpBuMWNH94SgCsZmJKcanySzgNNP6LjWxBvyLTa9KaMfDDM5oxRfrKDB0r/qeRsLwnBfA==
+
+rtl-detect@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/rtl-detect/-/rtl-detect-1.0.2.tgz#8eca316f5c6563d54df4e406171dd7819adda67f"
+  integrity sha512-5X1422hvphzg2a/bo4tIDbjFjbJUOaPZwqE6dnyyxqwFqfR+tBcvfqapJr0o0VygATVCGKiODEewhZtKF+90AA==
 
 run-applescript@^3.0.0:
   version "3.2.0"
