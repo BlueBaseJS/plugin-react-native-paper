@@ -1,0 +1,35 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+const core_1 = require("@bluebase/core");
+const __1 = require("../");
+const components_1 = require("@bluebase/components");
+const react_1 = tslib_1.__importDefault(require("react"));
+const react_test_renderer_1 = tslib_1.__importDefault(require("react-test-renderer"));
+const react_native_1 = require("react-native");
+const deepmerge_1 = tslib_1.__importDefault(require("deepmerge"));
+test('render and contained button with primary color', (done) => {
+    const rendered = react_test_renderer_1.default.create(react_1.default.createElement(core_1.BlueBaseApp, { components: { Button: __1.Button } },
+        react_1.default.createElement(components_1.Button, { variant: "contained", color: "primary" })));
+    setTimeout(() => {
+        // expect(rendered).toMatchSnapshot();
+        const style = rendered.toJSON().props.style;
+        // const style = deepmerge.all(styleProp.filter(x => x !== undefined));
+        expect(style.backgroundColor).toBe('#3f51b5');
+        done();
+    });
+});
+test('render and outline button with secondary color', (done) => {
+    const rendered = react_test_renderer_1.default.create(react_1.default.createElement(core_1.BlueBaseApp, { components: { Button: __1.Button } },
+        react_1.default.createElement(components_1.Button, { variant: "outlined", color: "secondary" })));
+    setTimeout(() => {
+        const style = rendered.toJSON().props.style;
+        expect(style.backgroundColor).toBe('transparent');
+        // Text
+        const textProps = rendered.root.findByType(react_native_1.Text).props;
+        const textStyle = deepmerge_1.default(textProps.style[0], deepmerge_1.default.all(textProps.style[1].filter((x) => x !== undefined)));
+        expect(textStyle.color).toBe('#f50057');
+        done();
+    });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL2FkbmFuL0Rlc2t0b3AvcGx1Z2luLXJlYWN0LW5hdGl2ZS1wYXBlci9zcmMvY29tcG9uZW50cy9CdXR0b24vX190ZXN0c19fL0J1dHRvbi50ZXN0LnRzeCIsIm1hcHBpbmdzIjoiOzs7QUFBQSx5Q0FBNkM7QUFDN0MsMkJBQTZCO0FBQzdCLHFEQUEyRDtBQUMzRCwwREFBMEI7QUFDMUIsc0ZBQStDO0FBQy9DLCtDQUFvQztBQUNwQyxrRUFBa0M7QUFFbEMsSUFBSSxDQUFDLGdEQUFnRCxFQUFFLENBQUMsSUFBSSxFQUFFLEVBQUU7SUFFL0QsTUFBTSxRQUFRLEdBQUcsNkJBQVksQ0FBQyxNQUFNLENBQ2pDLDhCQUFDLGtCQUFXLElBQUMsVUFBVSxFQUFFLEVBQUUsTUFBTSxFQUFOLFVBQU0sRUFBRTtRQUNwQyw4QkFBQyxtQkFBUyxJQUFDLE9BQU8sRUFBQyxXQUFXLEVBQUMsS0FBSyxFQUFDLFNBQVMsR0FBRyxDQUNwQyxDQUNkLENBQUM7SUFFRixVQUFVLENBQUMsR0FBRyxFQUFFO1FBQ2Ysc0NBQXNDO1FBRXRDLE1BQU0sS0FBSyxHQUFXLFFBQWdCLENBQUMsTUFBTSxFQUFFLENBQUMsS0FBSyxDQUFDLEtBQUssQ0FBQztRQUM1RCx1RUFBdUU7UUFFdkUsTUFBTSxDQUFFLEtBQWEsQ0FBQyxlQUFlLENBQUMsQ0FBQyxJQUFJLENBQUMsU0FBUyxDQUFDLENBQUM7UUFDdkQsSUFBSSxFQUFFLENBQUM7SUFDUixDQUFDLENBQUMsQ0FBQztBQUVKLENBQUMsQ0FBQyxDQUFDO0FBRUgsSUFBSSxDQUFDLGdEQUFnRCxFQUFFLENBQUMsSUFBSSxFQUFFLEVBQUU7SUFFL0QsTUFBTSxRQUFRLEdBQUcsNkJBQVksQ0FBQyxNQUFNLENBQ2pDLDhCQUFDLGtCQUFXLElBQUMsVUFBVSxFQUFFLEVBQUUsTUFBTSxFQUFOLFVBQU0sRUFBRTtRQUNwQyw4QkFBQyxtQkFBUyxJQUFDLE9BQU8sRUFBQyxVQUFVLEVBQUMsS0FBSyxFQUFDLFdBQVcsR0FBRyxDQUNyQyxDQUNkLENBQUM7SUFFRixVQUFVLENBQUMsR0FBRyxFQUFFO1FBQ2YsTUFBTSxLQUFLLEdBQVcsUUFBZ0IsQ0FBQyxNQUFNLEVBQUUsQ0FBQyxLQUFLLENBQUMsS0FBSyxDQUFDO1FBQzVELE1BQU0sQ0FBRSxLQUFhLENBQUMsZUFBZSxDQUFDLENBQUMsSUFBSSxDQUFDLGFBQWEsQ0FBQyxDQUFDO1FBRTNELE9BQU87UUFDUCxNQUFNLFNBQVMsR0FBRyxRQUFRLENBQUMsSUFBSSxDQUFDLFVBQVUsQ0FBQyxtQkFBSSxDQUFDLENBQUMsS0FBSyxDQUFDO1FBRXZELE1BQU0sU0FBUyxHQUFRLG1CQUFTLENBQy9CLFNBQVMsQ0FBQyxLQUFLLENBQUMsQ0FBQyxDQUFDLEVBQ2xCLG1CQUFTLENBQUMsR0FBRyxDQUNaLFNBQVMsQ0FBQyxLQUFLLENBQUMsQ0FBQyxDQUFDLENBQUMsTUFBTSxDQUFDLENBQUMsQ0FBTSxFQUFFLEVBQUUsQ0FBQyxDQUFDLEtBQUssU0FBUyxDQUFDLENBQ3RELENBQ0QsQ0FBQztRQUVGLE1BQU0sQ0FBRSxTQUFpQixDQUFDLEtBQUssQ0FBQyxDQUFDLElBQUksQ0FBQyxTQUFTLENBQUMsQ0FBQztRQUNqRCxJQUFJLEVBQUUsQ0FBQztJQUNSLENBQUMsQ0FBQyxDQUFDO0FBRUosQ0FBQyxDQUFDLENBQUMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiL1VzZXJzL2FkbmFuL0Rlc2t0b3AvcGx1Z2luLXJlYWN0LW5hdGl2ZS1wYXBlci9zcmMvY29tcG9uZW50cy9CdXR0b24vX190ZXN0c19fL0J1dHRvbi50ZXN0LnRzeCJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgeyBCbHVlQmFzZUFwcCB9IGZyb20gJ0BibHVlYmFzZS9jb3JlJztcbmltcG9ydCB7IEJ1dHRvbiB9IGZyb20gJy4uLyc7XG5pbXBvcnQgeyBCdXR0b24gYXMgQkJfQnV0dG9uIH0gZnJvbSAnQGJsdWViYXNlL2NvbXBvbmVudHMnO1xuaW1wb3J0IFJlYWN0IGZyb20gJ3JlYWN0JztcbmltcG9ydCBUZXN0UmVuZGVyZXIgZnJvbSAncmVhY3QtdGVzdC1yZW5kZXJlcic7XG5pbXBvcnQgeyBUZXh0IH0gZnJvbSAncmVhY3QtbmF0aXZlJztcbmltcG9ydCBkZWVwbWVyZ2UgZnJvbSAnZGVlcG1lcmdlJztcblxudGVzdCgncmVuZGVyIGFuZCBjb250YWluZWQgYnV0dG9uIHdpdGggcHJpbWFyeSBjb2xvcicsIChkb25lKSA9PiB7XG5cblx0Y29uc3QgcmVuZGVyZWQgPSBUZXN0UmVuZGVyZXIuY3JlYXRlKFxuICAgIDxCbHVlQmFzZUFwcCBjb21wb25lbnRzPXt7IEJ1dHRvbiB9fT5cblx0XHRcdDxCQl9CdXR0b24gdmFyaWFudD1cImNvbnRhaW5lZFwiIGNvbG9yPVwicHJpbWFyeVwiIC8+XG5cdFx0PC9CbHVlQmFzZUFwcD5cblx0KTtcblxuXHRzZXRUaW1lb3V0KCgpID0+IHtcblx0XHQvLyBleHBlY3QocmVuZGVyZWQpLnRvTWF0Y2hTbmFwc2hvdCgpO1xuXG5cdFx0Y29uc3Qgc3R5bGU6IGFueVtdID0gKHJlbmRlcmVkIGFzIGFueSkudG9KU09OKCkucHJvcHMuc3R5bGU7XG5cdFx0Ly8gY29uc3Qgc3R5bGUgPSBkZWVwbWVyZ2UuYWxsKHN0eWxlUHJvcC5maWx0ZXIoeCA9PiB4ICE9PSB1bmRlZmluZWQpKTtcblxuXHRcdGV4cGVjdCgoc3R5bGUgYXMgYW55KS5iYWNrZ3JvdW5kQ29sb3IpLnRvQmUoJyMzZjUxYjUnKTtcblx0XHRkb25lKCk7XG5cdH0pO1xuXG59KTtcblxudGVzdCgncmVuZGVyIGFuZCBvdXRsaW5lIGJ1dHRvbiB3aXRoIHNlY29uZGFyeSBjb2xvcicsIChkb25lKSA9PiB7XG5cblx0Y29uc3QgcmVuZGVyZWQgPSBUZXN0UmVuZGVyZXIuY3JlYXRlKFxuICAgIDxCbHVlQmFzZUFwcCBjb21wb25lbnRzPXt7IEJ1dHRvbiB9fT5cblx0XHRcdDxCQl9CdXR0b24gdmFyaWFudD1cIm91dGxpbmVkXCIgY29sb3I9XCJzZWNvbmRhcnlcIiAvPlxuXHRcdDwvQmx1ZUJhc2VBcHA+XG5cdCk7XG5cblx0c2V0VGltZW91dCgoKSA9PiB7XG5cdFx0Y29uc3Qgc3R5bGU6IGFueVtdID0gKHJlbmRlcmVkIGFzIGFueSkudG9KU09OKCkucHJvcHMuc3R5bGU7XG5cdFx0ZXhwZWN0KChzdHlsZSBhcyBhbnkpLmJhY2tncm91bmRDb2xvcikudG9CZSgndHJhbnNwYXJlbnQnKTtcblxuXHRcdC8vIFRleHRcblx0XHRjb25zdCB0ZXh0UHJvcHMgPSByZW5kZXJlZC5yb290LmZpbmRCeVR5cGUoVGV4dCkucHJvcHM7XG5cblx0XHRjb25zdCB0ZXh0U3R5bGU6IGFueSA9IGRlZXBtZXJnZShcblx0XHRcdHRleHRQcm9wcy5zdHlsZVswXSxcblx0XHRcdGRlZXBtZXJnZS5hbGwoXG5cdFx0XHRcdHRleHRQcm9wcy5zdHlsZVsxXS5maWx0ZXIoKHg6IGFueSkgPT4geCAhPT0gdW5kZWZpbmVkKVxuXHRcdFx0KVxuXHRcdCk7XG5cblx0XHRleHBlY3QoKHRleHRTdHlsZSBhcyBhbnkpLmNvbG9yKS50b0JlKCcjZjUwMDU3Jyk7XG5cdFx0ZG9uZSgpO1xuXHR9KTtcblxufSk7XG4iXSwidmVyc2lvbiI6M30=

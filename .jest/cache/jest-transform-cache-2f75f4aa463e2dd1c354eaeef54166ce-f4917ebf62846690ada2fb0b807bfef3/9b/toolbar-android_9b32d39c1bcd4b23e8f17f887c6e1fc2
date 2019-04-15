@@ -1,0 +1,297 @@
+4e9941a78a3a2075117b479a042fd26f
+var _interopRequireWildcard = require("@babel/runtime/helpers/interopRequireWildcard");
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = createToolbarAndroidComponent;
+
+var _extends2 = _interopRequireDefault(require("@babel/runtime/helpers/extends"));
+
+var _objectSpread2 = _interopRequireDefault(require("@babel/runtime/helpers/objectSpread"));
+
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+var _classCallCheck2 = _interopRequireDefault(require("@babel/runtime/helpers/classCallCheck"));
+
+var _createClass2 = _interopRequireDefault(require("@babel/runtime/helpers/createClass"));
+
+var _possibleConstructorReturn2 = _interopRequireDefault(require("@babel/runtime/helpers/possibleConstructorReturn"));
+
+var _getPrototypeOf3 = _interopRequireDefault(require("@babel/runtime/helpers/getPrototypeOf"));
+
+var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
+
+var _inherits2 = _interopRequireDefault(require("@babel/runtime/helpers/inherits"));
+
+var _defineProperty2 = _interopRequireDefault(require("@babel/runtime/helpers/defineProperty"));
+
+var _isEqual = _interopRequireDefault(require("lodash/isEqual"));
+
+var _pick = _interopRequireDefault(require("lodash/pick"));
+
+var _react = _interopRequireWildcard(require("react"));
+
+var _propTypes = _interopRequireDefault(require("prop-types"));
+
+var _reactNative = require("./react-native");
+
+var ICON_PROP_NAMES = ['iconSize', 'iconColor', 'titleColor'];
+var LOGO_ICON_PROP_NAMES = [].concat(ICON_PROP_NAMES, ['logoName']);
+var NAV_ICON_PROP_NAMES = [].concat(ICON_PROP_NAMES, ['navIconName']);
+var OVERFLOW_ICON_PROP_NAMES = [].concat(ICON_PROP_NAMES, ['overflowIconName']);
+var ACTIONS_PROP_NAMES = [].concat(ICON_PROP_NAMES, ['actions']);
+
+var arePropsEqual = function arePropsEqual(keys) {
+  return function (prevProps, nextProps) {
+    return (0, _isEqual.default)((0, _pick.default)(prevProps, keys), (0, _pick.default)(nextProps, keys));
+  };
+};
+
+var areLogoIconPropsEqual = arePropsEqual(LOGO_ICON_PROP_NAMES);
+var areNavIconPropsEqual = arePropsEqual(NAV_ICON_PROP_NAMES);
+var areOverflowIconPropsEqual = arePropsEqual(OVERFLOW_ICON_PROP_NAMES);
+var areActionPropsEqual = arePropsEqual(ACTIONS_PROP_NAMES);
+
+function createToolbarAndroidComponent(IconNamePropType, getImageSource) {
+  var _class, _temp;
+
+  return _temp = _class = function (_PureComponent) {
+    (0, _inherits2.default)(IconToolbarAndroid, _PureComponent);
+
+    function IconToolbarAndroid() {
+      var _getPrototypeOf2;
+
+      var _this;
+
+      (0, _classCallCheck2.default)(this, IconToolbarAndroid);
+
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      _this = (0, _possibleConstructorReturn2.default)(this, (_getPrototypeOf2 = (0, _getPrototypeOf3.default)(IconToolbarAndroid)).call.apply(_getPrototypeOf2, [this].concat(args)));
+      (0, _defineProperty2.default)((0, _assertThisInitialized2.default)(_this), "state", {
+        logo: undefined,
+        navIcon: undefined,
+        overflowIcon: undefined,
+        actions: undefined
+      });
+      return _this;
+    }
+
+    (0, _createClass2.default)(IconToolbarAndroid, [{
+      key: "componentDidMount",
+      value: function componentDidMount() {
+        this.updateLogoIconSource();
+        this.updateNavIconSource();
+        this.updateOverflowIconSource();
+        this.updateActionIconSources();
+      }
+    }, {
+      key: "componentDidUpdate",
+      value: function componentDidUpdate(prevProps) {
+        if (!areLogoIconPropsEqual(prevProps, this.props)) {
+          this.updateLogoIconSource();
+        }
+
+        if (!areNavIconPropsEqual(prevProps, this.props)) {
+          this.updateNavIconSource();
+        }
+
+        if (!areOverflowIconPropsEqual(prevProps, this.props)) {
+          this.updateOverflowIconSource();
+        }
+
+        if (!areActionPropsEqual(prevProps, this.props)) {
+          this.updateActionIconSources();
+        }
+      }
+    }, {
+      key: "updateLogoIconSource",
+      value: function updateLogoIconSource() {
+        var _this$props, logoName, iconSize, iconColor, titleColor, logo;
+
+        return _regenerator.default.async(function updateLogoIconSource$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this$props = this.props, logoName = _this$props.logoName, iconSize = _this$props.iconSize, iconColor = _this$props.iconColor, titleColor = _this$props.titleColor;
+
+                if (!logoName) {
+                  _context.next = 8;
+                  break;
+                }
+
+                _context.next = 4;
+                return _regenerator.default.awrap(getImageSource(logoName, iconSize, iconColor || titleColor));
+
+              case 4:
+                logo = _context.sent;
+                this.setState({
+                  logo: logo
+                });
+                _context.next = 9;
+                break;
+
+              case 8:
+                if (this.state.logo) {
+                  this.setState({
+                    logo: undefined
+                  });
+                }
+
+              case 9:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, null, this);
+      }
+    }, {
+      key: "updateNavIconSource",
+      value: function updateNavIconSource() {
+        var _this$props2, navIconName, iconSize, iconColor, titleColor, navIcon;
+
+        return _regenerator.default.async(function updateNavIconSource$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _this$props2 = this.props, navIconName = _this$props2.navIconName, iconSize = _this$props2.iconSize, iconColor = _this$props2.iconColor, titleColor = _this$props2.titleColor;
+
+                if (!navIconName) {
+                  _context2.next = 8;
+                  break;
+                }
+
+                _context2.next = 4;
+                return _regenerator.default.awrap(getImageSource(navIconName, iconSize, iconColor || titleColor));
+
+              case 4:
+                navIcon = _context2.sent;
+                this.setState({
+                  navIcon: navIcon
+                });
+                _context2.next = 9;
+                break;
+
+              case 8:
+                if (this.state.navIcon) {
+                  this.setState({
+                    navIcon: undefined
+                  });
+                }
+
+              case 9:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, null, this);
+      }
+    }, {
+      key: "updateOverflowIconSource",
+      value: function updateOverflowIconSource() {
+        var _this$props3, overflowIconName, iconSize, iconColor, titleColor, overflowIcon;
+
+        return _regenerator.default.async(function updateOverflowIconSource$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _this$props3 = this.props, overflowIconName = _this$props3.overflowIconName, iconSize = _this$props3.iconSize, iconColor = _this$props3.iconColor, titleColor = _this$props3.titleColor;
+
+                if (!overflowIconName) {
+                  _context3.next = 8;
+                  break;
+                }
+
+                _context3.next = 4;
+                return _regenerator.default.awrap(getImageSource(overflowIconName, iconSize, iconColor || titleColor));
+
+              case 4:
+                overflowIcon = _context3.sent;
+                this.setState({
+                  overflowIcon: overflowIcon
+                });
+                _context3.next = 9;
+                break;
+
+              case 8:
+                if (this.state.overflowIcon) {
+                  this.setState({
+                    overflowIcon: undefined
+                  });
+                }
+
+              case 9:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, null, this);
+      }
+    }, {
+      key: "updateActionIconSources",
+      value: function updateActionIconSources() {
+        var _this$props4, actions, iconSize, iconColor, titleColor, updatedActions;
+
+        return _regenerator.default.async(function updateActionIconSources$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _this$props4 = this.props, actions = _this$props4.actions, iconSize = _this$props4.iconSize, iconColor = _this$props4.iconColor, titleColor = _this$props4.titleColor;
+                _context4.next = 3;
+                return _regenerator.default.awrap(Promise.all((actions || []).map(function (action) {
+                  if (action.iconName) {
+                    return getImageSource(action.iconName, action.iconSize || iconSize, action.iconColor || iconColor || titleColor).then(function (icon) {
+                      return (0, _objectSpread2.default)({}, action, {
+                        icon: icon
+                      });
+                    });
+                  }
+
+                  return Promise.resolve(action);
+                })));
+
+              case 3:
+                updatedActions = _context4.sent;
+                this.setState({
+                  actions: updatedActions
+                });
+
+              case 5:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, null, this);
+      }
+    }, {
+      key: "render",
+      value: function render() {
+        return _react.default.createElement(_reactNative.ToolbarAndroid, (0, _extends2.default)({}, this.props, this.state));
+      }
+    }]);
+    return IconToolbarAndroid;
+  }(_react.PureComponent), (0, _defineProperty2.default)(_class, "propTypes", {
+    logoName: IconNamePropType,
+    navIconName: IconNamePropType,
+    overflowIconName: IconNamePropType,
+    actions: _propTypes.default.arrayOf(_propTypes.default.shape({
+      title: _propTypes.default.string.isRequired,
+      iconName: IconNamePropType,
+      iconSize: _propTypes.default.number,
+      iconColor: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]),
+      show: _propTypes.default.oneOf(['always', 'ifRoom', 'never']),
+      showWithText: _propTypes.default.bool
+    })),
+    iconSize: _propTypes.default.number,
+    iconColor: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number]),
+    titleColor: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.number])
+  }), (0, _defineProperty2.default)(_class, "defaultProps", {
+    iconSize: 24
+  }), _temp;
+}
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInRvb2xiYXItYW5kcm9pZC5qcyJdLCJuYW1lcyI6WyJJQ09OX1BST1BfTkFNRVMiLCJMT0dPX0lDT05fUFJPUF9OQU1FUyIsIk5BVl9JQ09OX1BST1BfTkFNRVMiLCJPVkVSRkxPV19JQ09OX1BST1BfTkFNRVMiLCJBQ1RJT05TX1BST1BfTkFNRVMiLCJhcmVQcm9wc0VxdWFsIiwia2V5cyIsInByZXZQcm9wcyIsIm5leHRQcm9wcyIsImFyZUxvZ29JY29uUHJvcHNFcXVhbCIsImFyZU5hdkljb25Qcm9wc0VxdWFsIiwiYXJlT3ZlcmZsb3dJY29uUHJvcHNFcXVhbCIsImFyZUFjdGlvblByb3BzRXF1YWwiLCJjcmVhdGVUb29sYmFyQW5kcm9pZENvbXBvbmVudCIsIkljb25OYW1lUHJvcFR5cGUiLCJnZXRJbWFnZVNvdXJjZSIsImxvZ28iLCJ1bmRlZmluZWQiLCJuYXZJY29uIiwib3ZlcmZsb3dJY29uIiwiYWN0aW9ucyIsInVwZGF0ZUxvZ29JY29uU291cmNlIiwidXBkYXRlTmF2SWNvblNvdXJjZSIsInVwZGF0ZU92ZXJmbG93SWNvblNvdXJjZSIsInVwZGF0ZUFjdGlvbkljb25Tb3VyY2VzIiwicHJvcHMiLCJsb2dvTmFtZSIsImljb25TaXplIiwiaWNvbkNvbG9yIiwidGl0bGVDb2xvciIsInNldFN0YXRlIiwic3RhdGUiLCJuYXZJY29uTmFtZSIsIm92ZXJmbG93SWNvbk5hbWUiLCJQcm9taXNlIiwiYWxsIiwibWFwIiwiYWN0aW9uIiwiaWNvbk5hbWUiLCJ0aGVuIiwiaWNvbiIsInJlc29sdmUiLCJ1cGRhdGVkQWN0aW9ucyIsIlB1cmVDb21wb25lbnQiLCJQcm9wVHlwZXMiLCJhcnJheU9mIiwic2hhcGUiLCJ0aXRsZSIsInN0cmluZyIsImlzUmVxdWlyZWQiLCJudW1iZXIiLCJvbmVPZlR5cGUiLCJzaG93Iiwib25lT2YiLCJzaG93V2l0aFRleHQiLCJib29sIl0sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUNB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WCxFQUFtQkosbUJBQVVNLE1BQTdCLENBQXBCLENBZk07QUFnQmpCckIsSUFBQUEsVUFBVSxFQUFFZSxtQkFBVU8sU0FBVixDQUFvQixDQUFDUCxtQkFBVUksTUFBWCxFQUFtQkosbUJBQVVNLE1BQTdCLENBQXBCO0FBaEJLLEdBRHJCLHlEQW9Cd0I7QUFDcEJ2QixJQUFBQSxRQUFRLEVBQUU7QUFEVSxHQXBCeEI7QUF1SEQiLCJzb3VyY2VzQ29udGVudCI6WyIvKiBlc2xpbnQtZGlzYWJsZSByZWFjdC9uby11bnVzZWQtcHJvcC10eXBlcyAqL1xuaW1wb3J0IGlzRXF1YWwgZnJvbSAnbG9kYXNoL2lzRXF1YWwnO1xuaW1wb3J0IHBpY2sgZnJvbSAnbG9kYXNoL3BpY2snO1xuaW1wb3J0IFJlYWN0LCB7IFB1cmVDb21wb25lbnQgfSBmcm9tICdyZWFjdCc7XG5pbXBvcnQgUHJvcFR5cGVzIGZyb20gJ3Byb3AtdHlwZXMnO1xuaW1wb3J0IHsgVG9vbGJhckFuZHJvaWQgfSBmcm9tICcuL3JlYWN0LW5hdGl2ZSc7XG5cbmNvbnN0IElDT05fUFJPUF9OQU1FUyA9IFsnaWNvblNpemUnLCAnaWNvbkNvbG9yJywgJ3RpdGxlQ29sb3InXTtcbmNvbnN0IExPR09fSUNPTl9QUk9QX05BTUVTID0gWy4uLklDT05fUFJPUF9OQU1FUywgJ2xvZ29OYW1lJ107XG5jb25zdCBOQVZfSUNPTl9QUk9QX05BTUVTID0gWy4uLklDT05fUFJPUF9OQU1FUywgJ25hdkljb25OYW1lJ107XG5jb25zdCBPVkVSRkxPV19JQ09OX1BST1BfTkFNRVMgPSBbLi4uSUNPTl9QUk9QX05BTUVTLCAnb3ZlcmZsb3dJY29uTmFtZSddO1xuY29uc3QgQUNUSU9OU19QUk9QX05BTUVTID0gWy4uLklDT05fUFJPUF9OQU1FUywgJ2FjdGlvbnMnXTtcblxuY29uc3QgYXJlUHJvcHNFcXVhbCA9IGtleXMgPT4gKHByZXZQcm9wcywgbmV4dFByb3BzKSA9PlxuICBpc0VxdWFsKHBpY2socHJldlByb3BzLCBrZXlzKSwgcGljayhuZXh0UHJvcHMsIGtleXMpKTtcblxuY29uc3QgYXJlTG9nb0ljb25Qcm9wc0VxdWFsID0gYXJlUHJvcHNFcXVhbChMT0dPX0lDT05fUFJPUF9OQU1FUyk7XG5jb25zdCBhcmVOYXZJY29uUHJvcHNFcXVhbCA9IGFyZVByb3BzRXF1YWwoTkFWX0lDT05fUFJPUF9OQU1FUyk7XG5jb25zdCBhcmVPdmVyZmxvd0ljb25Qcm9wc0VxdWFsID0gYXJlUHJvcHNFcXVhbChPVkVSRkxPV19JQ09OX1BST1BfTkFNRVMpO1xuY29uc3QgYXJlQWN0aW9uUHJvcHNFcXVhbCA9IGFyZVByb3BzRXF1YWwoQUNUSU9OU19QUk9QX05BTUVTKTtcblxuZXhwb3J0IGRlZmF1bHQgZnVuY3Rpb24gY3JlYXRlVG9vbGJhckFuZHJvaWRDb21wb25lbnQoXG4gIEljb25OYW1lUHJvcFR5cGUsXG4gIGdldEltYWdlU291cmNlXG4pIHtcbiAgcmV0dXJuIGNsYXNzIEljb25Ub29sYmFyQW5kcm9pZCBleHRlbmRzIFB1cmVDb21wb25lbnQge1xuICAgIHN0YXRpYyBwcm9wVHlwZXMgPSB7XG4gICAgICBsb2dvTmFtZTogSWNvbk5hbWVQcm9wVHlwZSxcbiAgICAgIG5hdkljb25OYW1lOiBJY29uTmFtZVByb3BUeXBlLFxuICAgICAgb3ZlcmZsb3dJY29uTmFtZTogSWNvbk5hbWVQcm9wVHlwZSxcbiAgICAgIGFjdGlvbnM6IFByb3BUeXBlcy5hcnJheU9mKFxuICAgICAgICBQcm9wVHlwZXMuc2hhcGUoe1xuICAgICAgICAgIHRpdGxlOiBQcm9wVHlwZXMuc3RyaW5nLmlzUmVxdWlyZWQsXG4gICAgICAgICAgaWNvbk5hbWU6IEljb25OYW1lUHJvcFR5cGUsXG4gICAgICAgICAgaWNvblNpemU6IFByb3BUeXBlcy5udW1iZXIsXG4gICAgICAgICAgaWNvbkNvbG9yOiBQcm9wVHlwZXMub25lT2ZUeXBlKFtQcm9wVHlwZXMuc3RyaW5nLCBQcm9wVHlwZXMubnVtYmVyXSksXG4gICAgICAgICAgc2hvdzogUHJvcFR5cGVzLm9uZU9mKFsnYWx3YXlzJywgJ2lmUm9vbScsICduZXZlciddKSxcbiAgICAgICAgICBzaG93V2l0aFRleHQ6IFByb3BUeXBlcy5ib29sLFxuICAgICAgICB9KVxuICAgICAgKSxcbiAgICAgIGljb25TaXplOiBQcm9wVHlwZXMubnVtYmVyLFxuICAgICAgaWNvbkNvbG9yOiBQcm9wVHlwZXMub25lT2ZUeXBlKFtQcm9wVHlwZXMuc3RyaW5nLCBQcm9wVHlwZXMubnVtYmVyXSksXG4gICAgICB0aXRsZUNvbG9yOiBQcm9wVHlwZXMub25lT2ZUeXBlKFtQcm9wVHlwZXMuc3RyaW5nLCBQcm9wVHlwZXMubnVtYmVyXSksXG4gICAgfTtcblxuICAgIHN0YXRpYyBkZWZhdWx0UHJvcHMgPSB7XG4gICAgICBpY29uU2l6ZTogMjQsXG4gICAgfTtcblxuICAgIHN0YXRlID0ge1xuICAgICAgbG9nbzogdW5kZWZpbmVkLFxuICAgICAgbmF2SWNvbjogdW5kZWZpbmVkLFxuICAgICAgb3ZlcmZsb3dJY29uOiB1bmRlZmluZWQsXG4gICAgICBhY3Rpb25zOiB1bmRlZmluZWQsXG4gICAgfTtcblxuICAgIGNvbXBvbmVudERpZE1vdW50KCkge1xuICAgICAgdGhpcy51cGRhdGVMb2dvSWNvblNvdXJjZSgpO1xuICAgICAgdGhpcy51cGRhdGVOYXZJY29uU291cmNlKCk7XG4gICAgICB0aGlzLnVwZGF0ZU92ZXJmbG93SWNvblNvdXJjZSgpO1xuICAgICAgdGhpcy51cGRhdGVBY3Rpb25JY29uU291cmNlcygpO1xuICAgIH1cblxuICAgIGNvbXBvbmVudERpZFVwZGF0ZShwcmV2UHJvcHMpIHtcbiAgICAgIGlmICghYXJlTG9nb0ljb25Qcm9wc0VxdWFsKHByZXZQcm9wcywgdGhpcy5wcm9wcykpIHtcbiAgICAgICAgdGhpcy51cGRhdGVMb2dvSWNvblNvdXJjZSgpO1xuICAgICAgfVxuICAgICAgaWYgKCFhcmVOYXZJY29uUHJvcHNFcXVhbChwcmV2UHJvcHMsIHRoaXMucHJvcHMpKSB7XG4gICAgICAgIHRoaXMudXBkYXRlTmF2SWNvblNvdXJjZSgpO1xuICAgICAgfVxuICAgICAgaWYgKCFhcmVPdmVyZmxvd0ljb25Qcm9wc0VxdWFsKHByZXZQcm9wcywgdGhpcy5wcm9wcykpIHtcbiAgICAgICAgdGhpcy51cGRhdGVPdmVyZmxvd0ljb25Tb3VyY2UoKTtcbiAgICAgIH1cbiAgICAgIGlmICghYXJlQWN0aW9uUHJvcHNFcXVhbChwcmV2UHJvcHMsIHRoaXMucHJvcHMpKSB7XG4gICAgICAgIHRoaXMudXBkYXRlQWN0aW9uSWNvblNvdXJjZXMoKTtcbiAgICAgIH1cbiAgICB9XG5cbiAgICBhc3luYyB1cGRhdGVMb2dvSWNvblNvdXJjZSgpIHtcbiAgICAgIGNvbnN0IHsgbG9nb05hbWUsIGljb25TaXplLCBpY29uQ29sb3IsIHRpdGxlQ29sb3IgfSA9IHRoaXMucHJvcHM7XG4gICAgICBpZiAobG9nb05hbWUpIHtcbiAgICAgICAgY29uc3QgbG9nbyA9IGF3YWl0IGdldEltYWdlU291cmNlKFxuICAgICAgICAgIGxvZ29OYW1lLFxuICAgICAgICAgIGljb25TaXplLFxuICAgICAgICAgIGljb25Db2xvciB8fCB0aXRsZUNvbG9yXG4gICAgICAgICk7XG4gICAgICAgIHRoaXMuc2V0U3RhdGUoeyBsb2dvIH0pO1xuICAgICAgICAvLyBlc2xpbnQtZGlzYWJsZS1uZXh0LWxpbmUgcmVhY3QvZGVzdHJ1Y3R1cmluZy1hc3NpZ25tZW50XG4gICAgICB9IGVsc2UgaWYgKHRoaXMuc3RhdGUubG9nbykge1xuICAgICAgICB0aGlzLnNldFN0YXRlKHsgbG9nbzogdW5kZWZpbmVkIH0pO1xuICAgICAgfVxuICAgIH1cblxuICAgIGFzeW5jIHVwZGF0ZU5hdkljb25Tb3VyY2UoKSB7XG4gICAgICBjb25zdCB7IG5hdkljb25OYW1lLCBpY29uU2l6ZSwgaWNvbkNvbG9yLCB0aXRsZUNvbG9yIH0gPSB0aGlzLnByb3BzO1xuICAgICAgaWYgKG5hdkljb25OYW1lKSB7XG4gICAgICAgIGNvbnN0IG5hdkljb24gPSBhd2FpdCBnZXRJbWFnZVNvdXJjZShcbiAgICAgICAgICBuYXZJY29uTmFtZSxcbiAgICAgICAgICBpY29uU2l6ZSxcbiAgICAgICAgICBpY29uQ29sb3IgfHwgdGl0bGVDb2xvclxuICAgICAgICApO1xuICAgICAgICB0aGlzLnNldFN0YXRlKHsgbmF2SWNvbiB9KTtcbiAgICAgICAgLy8gZXNsaW50LWRpc2FibGUtbmV4dC1saW5lIHJlYWN0L2Rlc3RydWN0dXJpbmctYXNzaWdubWVudFxuICAgICAgfSBlbHNlIGlmICh0aGlzLnN0YXRlLm5hdkljb24pIHtcbiAgICAgICAgdGhpcy5zZXRTdGF0ZSh7IG5hdkljb246IHVuZGVmaW5lZCB9KTtcbiAgICAgIH1cbiAgICB9XG5cbiAgICBhc3luYyB1cGRhdGVPdmVyZmxvd0ljb25Tb3VyY2UoKSB7XG4gICAgICBjb25zdCB7IG92ZXJmbG93SWNvbk5hbWUsIGljb25TaXplLCBpY29uQ29sb3IsIHRpdGxlQ29sb3IgfSA9IHRoaXMucHJvcHM7XG4gICAgICBpZiAob3ZlcmZsb3dJY29uTmFtZSkge1xuICAgICAgICBjb25zdCBvdmVyZmxvd0ljb24gPSBhd2FpdCBnZXRJbWFnZVNvdXJjZShcbiAgICAgICAgICBvdmVyZmxvd0ljb25OYW1lLFxuICAgICAgICAgIGljb25TaXplLFxuICAgICAgICAgIGljb25Db2xvciB8fCB0aXRsZUNvbG9yXG4gICAgICAgICk7XG4gICAgICAgIHRoaXMuc2V0U3RhdGUoeyBvdmVyZmxvd0ljb24gfSk7XG4gICAgICAgIC8vIGVzbGludC1kaXNhYmxlLW5leHQtbGluZSByZWFjdC9kZXN0cnVjdHVyaW5nLWFzc2lnbm1lbnRcbiAgICAgIH0gZWxzZSBpZiAodGhpcy5zdGF0ZS5vdmVyZmxvd0ljb24pIHtcbiAgICAgICAgdGhpcy5zZXRTdGF0ZSh7IG92ZXJmbG93SWNvbjogdW5kZWZpbmVkIH0pO1xuICAgICAgfVxuICAgIH1cblxuICAgIGFzeW5jIHVwZGF0ZUFjdGlvbkljb25Tb3VyY2VzKCkge1xuICAgICAgY29uc3QgeyBhY3Rpb25zLCBpY29uU2l6ZSwgaWNvbkNvbG9yLCB0aXRsZUNvbG9yIH0gPSB0aGlzLnByb3BzO1xuICAgICAgY29uc3QgdXBkYXRlZEFjdGlvbnMgPSBhd2FpdCBQcm9taXNlLmFsbChcbiAgICAgICAgKGFjdGlvbnMgfHwgW10pLm1hcChhY3Rpb24gPT4ge1xuICAgICAgICAgIGlmIChhY3Rpb24uaWNvbk5hbWUpIHtcbiAgICAgICAgICAgIHJldHVybiBnZXRJbWFnZVNvdXJjZShcbiAgICAgICAgICAgICAgYWN0aW9uLmljb25OYW1lLFxuICAgICAgICAgICAgICBhY3Rpb24uaWNvblNpemUgfHwgaWNvblNpemUsXG4gICAgICAgICAgICAgIGFjdGlvbi5pY29uQ29sb3IgfHwgaWNvbkNvbG9yIHx8IHRpdGxlQ29sb3JcbiAgICAgICAgICAgICkudGhlbihpY29uID0+ICh7IC4uLmFjdGlvbiwgaWNvbiB9KSk7XG4gICAgICAgICAgfVxuICAgICAgICAgIHJldHVybiBQcm9taXNlLnJlc29sdmUoYWN0aW9uKTtcbiAgICAgICAgfSlcbiAgICAgICk7XG4gICAgICB0aGlzLnNldFN0YXRlKHsgYWN0aW9uczogdXBkYXRlZEFjdGlvbnMgfSk7XG4gICAgfVxuXG4gICAgcmVuZGVyKCkge1xuICAgICAgcmV0dXJuIDxUb29sYmFyQW5kcm9pZCB7Li4udGhpcy5wcm9wc30gey4uLnRoaXMuc3RhdGV9IC8+O1xuICAgIH1cbiAgfTtcbn1cbiJdfQ==

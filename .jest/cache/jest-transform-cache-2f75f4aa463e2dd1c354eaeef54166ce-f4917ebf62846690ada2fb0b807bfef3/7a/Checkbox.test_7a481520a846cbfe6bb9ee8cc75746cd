@@ -1,0 +1,182 @@
+d0ecb0cf4d47ab4c97948b18ee7032ea
+"use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"));
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var tslib_1 = require("tslib");
+
+var core_1 = require("@bluebase/core");
+
+var Checkbox_1 = require("../Checkbox");
+
+var react_1 = tslib_1.__importDefault(require("react"));
+
+var components_1 = require("@bluebase/components");
+
+var enzyme_1 = require("enzyme");
+
+var enzyme_async_helpers_1 = require("enzyme-async-helpers");
+
+describe.only('Checkbox', function () {
+  it('should set the status to checked when checked is true', function () {
+    var component = enzyme_1.mount(react_1.default.createElement(Checkbox_1.Checkbox, {
+      checked: true
+    }));
+    expect(component.childAt(0).prop('status')).toEqual('checked');
+  });
+  it('should set the status to unchecked when checked is false', function () {
+    var component = enzyme_1.mount(react_1.default.createElement(Checkbox_1.Checkbox, {
+      checked: false
+    }));
+    expect(component.childAt(0).prop('status')).toEqual('unchecked');
+  });
+  it('should set the status to indeterminate when indeterminate flag is true', function () {
+    var component = enzyme_1.mount(react_1.default.createElement(Checkbox_1.Checkbox, {
+      checked: false,
+      indeterminate: true
+    }));
+    expect(component.childAt(0).prop('status')).toEqual('indeterminate');
+  });
+  it('should pass the color as is when set to "primary"', function _callee() {
+    var BBCheckbox, component;
+    return _regenerator.default.async(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            BBCheckbox = components_1.getComponent('Checkbox');
+            component = enzyme_1.mount(react_1.default.createElement(core_1.BlueBaseApp, {
+              components: {
+                Checkbox: Checkbox_1.Checkbox
+              }
+            }, react_1.default.createElement(BBCheckbox, {
+              color: "primary"
+            })));
+            _context.next = 4;
+            return _regenerator.default.awrap(enzyme_async_helpers_1.waitForElement(component, BBCheckbox));
+
+          case 4:
+            expect(component.find('TouchableHighlight').last().prop('color')).toEqual('#3f51b5');
+
+          case 5:
+          case "end":
+            return _context.stop();
+        }
+      }
+    });
+  });
+  it('should pass the color as is when set to "secondary"', function _callee2() {
+    var BBCheckbox, component;
+    return _regenerator.default.async(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            BBCheckbox = components_1.getComponent('Checkbox');
+            component = enzyme_1.mount(react_1.default.createElement(core_1.BlueBaseApp, {
+              components: {
+                Checkbox: Checkbox_1.Checkbox
+              }
+            }, react_1.default.createElement(BBCheckbox, {
+              color: "secondary"
+            })));
+            _context2.next = 4;
+            return _regenerator.default.awrap(enzyme_async_helpers_1.waitForElement(component, BBCheckbox));
+
+          case 4:
+            expect(component.find('TouchableHighlight').last().prop('color')).toEqual('#f50057');
+
+          case 5:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    });
+  });
+  it('should pass the color as is when set to "default"', function _callee3() {
+    var BBCheckbox, component;
+    return _regenerator.default.async(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            BBCheckbox = components_1.getComponent('Checkbox');
+            component = enzyme_1.mount(react_1.default.createElement(core_1.BlueBaseApp, {
+              components: {
+                Checkbox: Checkbox_1.Checkbox
+              }
+            }, react_1.default.createElement(BBCheckbox, {
+              color: "default"
+            })));
+            _context3.next = 4;
+            return _regenerator.default.awrap(enzyme_async_helpers_1.waitForElement(component, BBCheckbox));
+
+          case 4:
+            expect(component.find('TouchableHighlight').last().prop('color')).toEqual('');
+
+          case 5:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    });
+  });
+  it('should set the color prop to undefined and create classes for custom colors', function _callee4() {
+    var BBCheckbox, component;
+    return _regenerator.default.async(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            BBCheckbox = components_1.getComponent('Checkbox');
+            component = enzyme_1.mount(react_1.default.createElement(core_1.BlueBaseApp, {
+              components: {
+                Checkbox: Checkbox_1.Checkbox
+              }
+            }, react_1.default.createElement(BBCheckbox, {
+              color: "red"
+            })));
+            _context4.next = 4;
+            return _regenerator.default.awrap(enzyme_async_helpers_1.waitForElement(component, BBCheckbox));
+
+          case 4:
+            expect(component.find('TouchableHighlight').last().prop('color')).toEqual('red');
+
+          case 5:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    });
+  });
+  it('should set the label component', function _callee5() {
+    var BBCheckbox, component;
+    return _regenerator.default.async(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            BBCheckbox = components_1.getComponent('Checkbox');
+            component = enzyme_1.mount(react_1.default.createElement(core_1.BlueBaseApp, {
+              components: {
+                Checkbox: Checkbox_1.Checkbox
+              }
+            }, react_1.default.createElement(BBCheckbox, {
+              label: "Foo"
+            })));
+            _context5.next = 4;
+            return _regenerator.default.awrap(enzyme_async_helpers_1.waitForElement(component, BBCheckbox));
+
+          case 4:
+            expect(component.find('Checkbox Text').last().text()).toEqual('Foo');
+
+          case 5:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    });
+  });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG5hbi9EZXNrdG9wL3BsdWdpbi1yZWFjdC1uYXRpdmUtcGFwZXIvc3JjL2NvbXBvbmVudHMvQ2hlY2tib3gvX190ZXN0c19fL0NoZWNrYm94LnRlc3QudHN4Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7Ozs7Ozs7OztBQUFBLElBQUEsTUFBQSxHQUFBLE9BQUEsQ0FBQSxnQkFBQSxDQUFBOztBQUNBLElBQUEsVUFBQSxHQUFBLE9BQUEsQ0FBQSxhQUFBLENBQUE7O0FBQ0EsSUFBQSxPQUFBLEdBQUEsT0FBQSxDQUFBLGVBQUEsQ0FBQSxPQUFBLENBQUEsT0FBQSxDQUFBLENBQUE7O0FBQ0EsSUFBQSxZQUFBLEdBQUEsT0FBQSxDQUFBLHNCQUFBLENBQUE7O0FBQ0EsSUFBQSxRQUFBLEdBQUEsT0FBQSxDQUFBLFFBQUEsQ0FBQTs7QUFDQSxJQUFBLHNCQUFBLEdBQUEsT0FBQSxDQUFBLHNCQUFBLENBQUE7O0FBRUEsUUFBUSxDQUFDLElBQVQsQ0FBYyxVQUFkLEVBQTBCLFlBQUs7QUFFOUIsRUFBQSxFQUFFLENBQUMsdURBQUQsRUFBMEQsWUFBSztBQUNoRSxRQUFNLFNBQVMsR0FBRyxRQUFBLENBQUEsS0FBQSxDQUNqQixPQUFBLENBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxVQUFBLENBQUEsUUFBRCxFQUFTO0FBQUMsTUFBQSxPQUFPLEVBQUE7QUFBUixLQUFULENBRGlCLENBQWxCO0FBS0EsSUFBQSxNQUFNLENBQUMsU0FBUyxDQUFDLE9BQVYsQ0FBa0IsQ0FBbEIsRUFBcUIsSUFBckIsQ0FBMEIsUUFBMUIsQ0FBRCxDQUFOLENBQTRDLE9BQTVDLENBQW9ELFNBQXBEO0FBQ0EsR0FQQyxDQUFGO0FBU0EsRUFBQSxFQUFFLENBQUMsMERBQUQsRUFBNkQsWUFBSztBQUNuRSxRQUFNLFNBQVMsR0FBRyxRQUFBLENBQUEsS0FBQSxDQUNqQixPQUFBLENBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxVQUFBLENBQUEsUUFBRCxFQUFTO0FB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RixZQUFBLE1BQU0sQ0FBQyxTQUFTLENBQUMsSUFBVixDQUFlLG9CQUFmLEVBQXFDLElBQXJDLEdBQTRDLElBQTVDLENBQWlELE9BQWpELENBQUQsQ0FBTixDQUFrRSxPQUFsRSxDQUEwRSxLQUExRTs7QUFaaUY7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsR0FBaEYsQ0FBRjtBQWVBLEVBQUEsRUFBRSxDQUFDLGdDQUFELEVBQW1DO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUM5QixZQUFBLFVBRDhCLEdBQ2pCLFlBQUEsQ0FBQSxZQUFBLENBQWEsVUFBYixDQURpQjtBQUc5QixZQUFBLFNBSDhCLEdBR2xCLFFBQUEsQ0FBQSxLQUFBLENBQ2pCLE9BQUEsQ0FBQSxPQUFBLENBQUEsYUFBQSxDQUFDLE1BQUEsQ0FBQSxXQUFELEVBQVk7QUFBQyxjQUFBLFVBQVUsRUFBRTtBQUFFLGdCQUFBLFFBQVEsRUFBUixVQUFBLENBQUE7QUFBRjtBQUFiLGFBQVosRUFDQyxPQUFBLENBQUEsT0FBQSxDQUFBLGFBQUEsQ0FBQyxVQUFELEVBQVc7QUFBQyxjQUFBLEtBQUssRUFBQztBQUFQLGFBQVgsQ0FERCxDQURpQixDQUhrQjtBQUFBO0FBQUEsOENBUzlCLHNCQUFBLENBQUEsY0FBQSxDQUFlLFNBQWYsRUFBaUMsVUFBakMsQ0FUOEI7O0FBQUE7QUFZcEMsWUFBQSxNQUFNLENBQUMsU0FBUyxDQUFDLElBQVYsQ0FBZSxlQUFmLEVBQWdDLElBQWhDLEdBQXVDLElBQXZDLEVBQUQsQ0FBTixDQUFzRCxPQUF0RCxDQUE4RCxLQUE5RDs7QUFab0M7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsR0FBbkMsQ0FBRjtBQWVBLENBMUdEIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgQmx1ZUJhc2VBcHAgfSBmcm9tICdAYmx1ZWJhc2UvY29yZSc7XG5pbXBvcnQgeyBDaGVja2JveCB9IGZyb20gJy4uL0NoZWNrYm94JztcbmltcG9ydCBSZWFjdCBmcm9tICdyZWFjdCc7XG5pbXBvcnQgeyBnZXRDb21wb25lbnQgfSBmcm9tICdAYmx1ZWJhc2UvY29tcG9uZW50cyc7XG5pbXBvcnQgeyBtb3VudCB9IGZyb20gJ2VuenltZSc7XG5pbXBvcnQgeyB3YWl0Rm9yRWxlbWVudCB9IGZyb20gJ2VuenltZS1hc3luYy1oZWxwZXJzJztcblxuZGVzY3JpYmUub25seSgnQ2hlY2tib3gnLCAoKSA9PiB7XG5cblx0aXQoJ3Nob3VsZCBzZXQgdGhlIHN0YXR1cyB0byBjaGVja2VkIHdoZW4gY2hlY2tlZCBpcyB0cnVlJywgKCkgPT4ge1xuXHRcdGNvbnN0IGNvbXBvbmVudCA9IG1vdW50KFxuXHRcdFx0PENoZWNrYm94IGNoZWNrZWQgLz5cblx0XHQpO1xuXG5cdFx0Ly8gZXhwZWN0KGNvbXBvbmVudCkudG9NYXRjaFNuYXBzaG90KCk7XG5cdFx0ZXhwZWN0KGNvbXBvbmVudC5jaGlsZEF0KDApLnByb3AoJ3N0YXR1cycpKS50b0VxdWFsKCdjaGVja2VkJyk7XG5cdH0pO1xuXG5cdGl0KCdzaG91bGQgc2V0IHRoZSBzdGF0dXMgdG8gdW5jaGVja2VkIHdoZW4gY2hlY2tlZCBpcyBmYWxzZScsICgpID0+IHtcblx0XHRjb25zdCBjb21wb25lbnQgPSBtb3VudChcblx0XHRcdDxDaGVja2JveCBjaGVja2VkPXtmYWxzZX0gLz5cblx0XHQpO1xuXG5cdFx0ZXhwZWN0KGNvbXBvbmVudC5jaGlsZEF0KDApLnByb3AoJ3N0YXR1cycpKS50b0VxdWFsKCd1bmNoZWNrZWQnKTtcblx0fSk7XG5cblx0aXQoJ3Nob3VsZCBzZXQgdGhlIHN0YXR1cyB0byBpbmRldGVybWluYXRlIHdoZW4gaW5kZXRlcm1pbmF0ZSBmbGFnIGlzIHRydWUnLCAoKSA9PiB7XG5cdFx0Y29uc3QgY29tcG9uZW50ID0gbW91bnQoXG5cdFx0XHQ8Q2hlY2tib3ggY2hlY2tlZD17ZmFsc2V9IGluZGV0ZXJtaW5hdGUgLz5cblx0XHQpO1xuXG5cdFx0Ly8gZXhwZWN0KGNvbXBvbmVudCkudG9NYXRjaFNuYXBzaG90KCk7XG5cdFx0ZXhwZWN0KGNvbXBvbmVudC5jaGlsZEF0KDApLnByb3AoJ3N0YXR1cycpKS50b0VxdWFsKCdpbmRldGVybWluYXRlJyk7XG5cdH0pO1xuXG5cdGl0KCdzaG91bGQgcGFzcyB0aGUgY29sb3IgYXMgaXMgd2hlbiBzZXQgdG8gXCJwcmltYXJ5XCInLCBhc3luYyAoKSA9PiB7XG5cblx0XHRjb25zdCBCQkNoZWNrYm94ID0gZ2V0Q29tcG9uZW50KCdDaGVja2JveCcpO1xuXG5cdFx0Y29uc3QgY29tcG9uZW50ID0gbW91bnQoXG5cdFx0XHQ8Qmx1ZUJhc2VBcHAgY29tcG9uZW50cz17eyBDaGVja2JveCB9fT5cblx0XHRcdFx0PEJCQ2hlY2tib3ggY29sb3I9XCJwcmltYXJ5XCIgLz5cblx0XHRcdDwvQmx1ZUJhc2VBcHA+XG5cdFx0KTtcblxuXHRcdGF3YWl0IHdhaXRGb3JFbGVtZW50KGNvbXBvbmVudCBhcyBhbnksIEJCQ2hlY2tib3gpO1xuXG5cdFx0Ly8gZXhwZWN0KGNvbXBvbmVudCkudG9NYXRjaFNuYXBzaG90KCk7XG5cdFx0ZXhwZWN0KGNvbXBvbmVudC5maW5kKCdUb3VjaGFibGVIaWdobGlnaHQnKS5sYXN0KCkucHJvcCgnY29sb3InKSkudG9FcXVhbCgnIzNmNTFiNScpO1xuXHR9KTtcblxuXHRpdCgnc2hvdWxkIHBhc3MgdGhlIGNvbG9yIGFzIGlzIHdoZW4gc2V0IHRvIFwic2Vjb25kYXJ5XCInLCBhc3luYyAoKSA9PiB7XG5cblx0XHRjb25zdCBCQkNoZWNrYm94ID0gZ2V0Q29tcG9uZW50KCdDaGVja2JveCcpO1xuXG5cdFx0Y29uc3QgY29tcG9uZW50ID0gbW91bnQoXG5cdFx0XHQ8Qmx1ZUJhc2VBcHAgY29tcG9uZW50cz17eyBDaGVja2JveCB9fT5cblx0XHRcdFx0PEJCQ2hlY2tib3ggY29sb3I9XCJzZWNvbmRhcnlcIiAvPlxuXHRcdFx0PC9CbHVlQmFzZUFwcD5cblx0XHQpO1xuXG5cdFx0YXdhaXQgd2FpdEZvckVsZW1lbnQoY29tcG9uZW50IGFzIGFueSwgQkJDaGVja2JveCk7XG5cblx0XHQvLyBleHBlY3QoY29tcG9uZW50KS50b01hdGNoU25hcHNob3QoKTtcblx0XHRleHBlY3QoY29tcG9uZW50LmZpbmQoJ1RvdWNoYWJsZUhpZ2hsaWdodCcpLmxhc3QoKS5wcm9wKCdjb2xvcicpKS50b0VxdWFsKCcjZjUwMDU3Jyk7XG5cdH0pO1xuXG5cdGl0KCdzaG91bGQgcGFzcyB0aGUgY29sb3IgYXMgaXMgd2hlbiBzZXQgdG8gXCJkZWZhdWx0XCInLCBhc3luYyAoKSA9PiB7XG5cblx0XHRjb25zdCBCQkNoZWNrYm94ID0gZ2V0Q29tcG9uZW50KCdDaGVja2JveCcpO1xuXG5cdFx0Y29uc3QgY29tcG9uZW50ID0gbW91bnQoXG5cdFx0XHQ8Qmx1ZUJhc2VBcHAgY29tcG9uZW50cz17eyBDaGVja2JveCB9fT5cblx0XHRcdFx0PEJCQ2hlY2tib3ggY29sb3I9XCJkZWZhdWx0XCIgLz5cblx0XHRcdDwvQmx1ZUJhc2VBcHA+XG5cdFx0KTtcblxuXHRcdGF3YWl0IHdhaXRGb3JFbGVtZW50KGNvbXBvbmVudCBhcyBhbnksIEJCQ2hlY2tib3gpO1xuXG5cdFx0ZXhwZWN0KGNvbXBvbmVudC5maW5kKCdUb3VjaGFibGVIaWdobGlnaHQnKS5sYXN0KCkucHJvcCgnY29sb3InKSkudG9FcXVhbCgnJyk7XG5cdFx0Ly8gZXhwZWN0KGNvbXBvbmVudCkudG9NYXRjaFNuYXBzaG90KCk7XG5cdH0pO1xuXG5cdGl0KCdzaG91bGQgc2V0IHRoZSBjb2xvciBwcm9wIHRvIHVuZGVmaW5lZCBhbmQgY3JlYXRlIGNsYXNzZXMgZm9yIGN1c3RvbSBjb2xvcnMnLCBhc3luYyAoKSA9PiB7XG5cdFx0Y29uc3QgQkJDaGVja2JveCA9IGdldENvbXBvbmVudCgnQ2hlY2tib3gnKTtcblxuXHRcdGNvbnN0IGNvbXBvbmVudCA9IG1vdW50KFxuXHRcdFx0PEJsdWVCYXNlQXBwIGNvbXBvbmVudHM9e3sgQ2hlY2tib3ggfX0+XG5cdFx0XHRcdDxCQkNoZWNrYm94IGNvbG9yPVwicmVkXCIgLz5cblx0XHRcdDwvQmx1ZUJhc2VBcHA+XG5cdFx0KTtcblxuXHRcdGF3YWl0IHdhaXRGb3JFbGVtZW50KGNvbXBvbmVudCBhcyBhbnksIEJCQ2hlY2tib3gpO1xuXG5cdFx0Ly8gZXhwZWN0KGNvbXBvbmVudCkudG9NYXRjaFNuYXBzaG90KCk7XG5cdFx0ZXhwZWN0KGNvbXBvbmVudC5maW5kKCdUb3VjaGFibGVIaWdobGlnaHQnKS5sYXN0KCkucHJvcCgnY29sb3InKSkudG9FcXVhbCgncmVkJyk7XG5cdH0pO1xuXG5cdGl0KCdzaG91bGQgc2V0IHRoZSBsYWJlbCBjb21wb25lbnQnLCBhc3luYyAoKSA9PiB7XG5cdFx0Y29uc3QgQkJDaGVja2JveCA9IGdldENvbXBvbmVudCgnQ2hlY2tib3gnKTtcblxuXHRcdGNvbnN0IGNvbXBvbmVudCA9IG1vdW50KFxuXHRcdFx0PEJsdWVCYXNlQXBwIGNvbXBvbmVudHM9e3sgQ2hlY2tib3ggfX0+XG5cdFx0XHRcdDxCQkNoZWNrYm94IGxhYmVsPVwiRm9vXCIgLz5cblx0XHRcdDwvQmx1ZUJhc2VBcHA+XG5cdFx0KTtcblxuXHRcdGF3YWl0IHdhaXRGb3JFbGVtZW50KGNvbXBvbmVudCBhcyBhbnksIEJCQ2hlY2tib3gpO1xuXG5cdFx0Ly8gZXhwZWN0KGNvbXBvbmVudCkudG9NYXRjaFNuYXBzaG90KCk7XG5cdFx0ZXhwZWN0KGNvbXBvbmVudC5maW5kKCdDaGVja2JveCBUZXh0JykubGFzdCgpLnRleHQoKSkudG9FcXVhbCgnRm9vJyk7XG5cdH0pO1xuXG59KTtcblxuXG4iXX0=

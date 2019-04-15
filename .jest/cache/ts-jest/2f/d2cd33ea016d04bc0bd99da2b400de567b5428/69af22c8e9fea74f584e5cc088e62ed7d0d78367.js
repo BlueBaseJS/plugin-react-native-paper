@@ -1,0 +1,61 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+const core_1 = require("@bluebase/core");
+const Radio_1 = require("../Radio");
+const react_1 = tslib_1.__importDefault(require("react"));
+const components_1 = require("@bluebase/components");
+const enzyme_1 = require("enzyme");
+const enzyme_async_helpers_1 = require("enzyme-async-helpers");
+describe.only('Radio', () => {
+    it('should set the status to checked when checked is true', () => {
+        const component = enzyme_1.mount(react_1.default.createElement(Radio_1.Radio, { checked: true }));
+        // expect(component).toMatchSnapshot();
+        expect(component.childAt(0).prop('status')).toEqual('checked');
+    });
+    it('should set the status to unchecked when checked is false', () => {
+        const component = enzyme_1.mount(react_1.default.createElement(Radio_1.Radio, { checked: false }));
+        expect(component.childAt(0).prop('status')).toEqual('unchecked');
+    });
+    it('should pass the color as is when set to "primary"', async () => {
+        const BBRadio = components_1.getComponent('Radio');
+        const component = enzyme_1.mount(react_1.default.createElement(core_1.BlueBaseApp, { components: { Radio: Radio_1.Radio } },
+            react_1.default.createElement(BBRadio, { color: "primary" })));
+        await enzyme_async_helpers_1.waitForElement(component, BBRadio);
+        // expect(component).toMatchSnapshot();
+        expect(component.find('TouchableHighlight').last().prop('color')).toEqual('#3f51b5');
+    });
+    it('should pass the color as is when set to "secondary"', async () => {
+        const BBRadio = components_1.getComponent('Radio');
+        const component = enzyme_1.mount(react_1.default.createElement(core_1.BlueBaseApp, { components: { Radio: Radio_1.Radio } },
+            react_1.default.createElement(BBRadio, { color: "secondary" })));
+        await enzyme_async_helpers_1.waitForElement(component, BBRadio);
+        // expect(component).toMatchSnapshot();
+        expect(component.find('TouchableHighlight').last().prop('color')).toEqual('#f50057');
+    });
+    it('should pass the color as is when set to "default"', async () => {
+        const BBRadio = components_1.getComponent('Radio');
+        const component = enzyme_1.mount(react_1.default.createElement(core_1.BlueBaseApp, { components: { Radio: Radio_1.Radio } },
+            react_1.default.createElement(BBRadio, { color: "default" })));
+        await enzyme_async_helpers_1.waitForElement(component, BBRadio);
+        expect(component.find('TouchableHighlight').last().prop('color')).toEqual('');
+        // expect(component).toMatchSnapshot();
+    });
+    it('should set the color prop to undefined and create classes for custom colors', async () => {
+        const BBRadio = components_1.getComponent('Radio');
+        const component = enzyme_1.mount(react_1.default.createElement(core_1.BlueBaseApp, { components: { Radio: Radio_1.Radio } },
+            react_1.default.createElement(BBRadio, { color: "red" })));
+        await enzyme_async_helpers_1.waitForElement(component, BBRadio);
+        // expect(component).toMatchSnapshot();
+        expect(component.find('TouchableHighlight').last().prop('color')).toEqual('red');
+    });
+    it('should set the label component', async () => {
+        const BBRadio = components_1.getComponent('Radio');
+        const component = enzyme_1.mount(react_1.default.createElement(core_1.BlueBaseApp, { components: { Radio: Radio_1.Radio } },
+            react_1.default.createElement(BBRadio, { label: "Foo" })));
+        await enzyme_async_helpers_1.waitForElement(component, BBRadio);
+        // expect(component).toMatchSnapshot();
+        expect(component.find('Radio Text').last().text()).toEqual('Foo');
+    });
+});
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL2FkbmFuL0Rlc2t0b3AvcGx1Z2luLXJlYWN0LW5hdGl2ZS1wYXBlci9zcmMvY29tcG9uZW50cy9SYWRpby9fX3Rlc3RzX18vUmFkaW8udGVzdC50c3giLCJtYXBwaW5ncyI6Ijs7O0FBQUEseUNBQTZDO0FBQzdDLG9DQUFpQztBQUNqQywwREFBMEI7QUFDMUIscURBQW9EO0FBQ3BELG1DQUErQjtBQUMvQiwrREFBc0Q7QUFFdEQsUUFBUSxDQUFDLElBQUksQ0FBQyxPQUFPLEVBQUUsR0FBRyxFQUFFO0lBRTNCLEVBQUUsQ0FBQyx1REFBdUQsRUFBRSxHQUFHLEVBQUU7UUFDaEUsTUFBTSxTQUFTLEdBQUcsY0FBSyxDQUN0Qiw4QkFBQyxhQUFLLElBQUMsT0FBTyxTQUFHLENBQ2pCLENBQUM7UUFFRix1Q0FBdUM7UUFDdkMsTUFBTSxDQUFDLFNBQVMsQ0FBQyxPQUFPLENBQUMsQ0FBQyxDQUFDLENBQUMsSUFBSSxDQUFDLFFBQVEsQ0FBQyxDQUFDLENBQUMsT0FBTyxDQUFDLFNBQVMsQ0FBQyxDQUFDO0lBQ2hFLENBQUMsQ0FBQyxDQUFDO0lBRUgsRUFBRSxDQUFDLDBEQUEwRCxFQUFFLEdBQUcsRUFBRTtRQUNuRSxNQUFNLFNBQVMsR0FBRyxjQUFLLENBQ3RCLDhCQUFDLGFBQUssSUFBQyxPQUFPLEVBQUUsS0FBSyxHQUFJLENBQ3pCLENBQUM7UUFFRixNQUFNLENBQUMsU0FBUyxDQUFDLE9BQU8sQ0FBQyxDQUFDLENBQUMsQ0FBQyxJQUFJLENBQUMsUUFBUSxDQUFDLENBQUMsQ0FBQyxPQUFPLENBQUMsV0FBVyxDQUFDLENBQUM7SUFDbEUsQ0FBQyxDQUFDLENBQUM7SUFFSCxFQUFFLENBQUMsbURBQW1ELEVBQUUsS0FBSyxJQUFJLEVBQUU7UUFFbEUsTUFBTSxPQUFPLEdBQUcseUJBQVksQ0FBQyxPQUFPLENBQUMsQ0FBQztRQUV0QyxNQUFNLFNBQVMsR0FBRyxjQUFLLENBQ3RCLDhCQUFDLGtCQUFXLElBQUMsVUFBVSxFQUFFLEVBQUUsS0FBSyxFQUFMLGFBQUssRUFB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LE1BQU0scUNBQWMsQ0FBQyxTQUFnQixFQUFFLE9BQU8sQ0FBQyxDQUFDO1FBRWhELHVDQUF1QztRQUN2QyxNQUFNLENBQUMsU0FBUyxDQUFDLElBQUksQ0FBQyxZQUFZLENBQUMsQ0FBQyxJQUFJLEVBQUUsQ0FBQyxJQUFJLEVBQUUsQ0FBQyxDQUFDLE9BQU8sQ0FBQyxLQUFLLENBQUMsQ0FBQztJQUNuRSxDQUFDLENBQUMsQ0FBQztBQUVKLENBQUMsQ0FBQyxDQUFDIiwibmFtZXMiOltdLCJzb3VyY2VzIjpbIi9Vc2Vycy9hZG5hbi9EZXNrdG9wL3BsdWdpbi1yZWFjdC1uYXRpdmUtcGFwZXIvc3JjL2NvbXBvbmVudHMvUmFkaW8vX190ZXN0c19fL1JhZGlvLnRlc3QudHN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IEJsdWVCYXNlQXBwIH0gZnJvbSAnQGJsdWViYXNlL2NvcmUnO1xuaW1wb3J0IHsgUmFkaW8gfSBmcm9tICcuLi9SYWRpbyc7XG5pbXBvcnQgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0IHsgZ2V0Q29tcG9uZW50IH0gZnJvbSAnQGJsdWViYXNlL2NvbXBvbmVudHMnO1xuaW1wb3J0IHsgbW91bnQgfSBmcm9tICdlbnp5bWUnO1xuaW1wb3J0IHsgd2FpdEZvckVsZW1lbnQgfSBmcm9tICdlbnp5bWUtYXN5bmMtaGVscGVycyc7XG5cbmRlc2NyaWJlLm9ubHkoJ1JhZGlvJywgKCkgPT4ge1xuXG5cdGl0KCdzaG91bGQgc2V0IHRoZSBzdGF0dXMgdG8gY2hlY2tlZCB3aGVuIGNoZWNrZWQgaXMgdHJ1ZScsICgpID0+IHtcblx0XHRjb25zdCBjb21wb25lbnQgPSBtb3VudChcblx0XHRcdDxSYWRpbyBjaGVja2VkIC8+XG5cdFx0KTtcblxuXHRcdC8vIGV4cGVjdChjb21wb25lbnQpLnRvTWF0Y2hTbmFwc2hvdCgpO1xuXHRcdGV4cGVjdChjb21wb25lbnQuY2hpbGRBdCgwKS5wcm9wKCdzdGF0dXMnKSkudG9FcXVhbCgnY2hlY2tlZCcpO1xuXHR9KTtcblxuXHRpdCgnc2hvdWxkIHNldCB0aGUgc3RhdHVzIHRvIHVuY2hlY2tlZCB3aGVuIGNoZWNrZWQgaXMgZmFsc2UnLCAoKSA9PiB7XG5cdFx0Y29uc3QgY29tcG9uZW50ID0gbW91bnQoXG5cdFx0XHQ8UmFkaW8gY2hlY2tlZD17ZmFsc2V9IC8+XG5cdFx0KTtcblxuXHRcdGV4cGVjdChjb21wb25lbnQuY2hpbGRBdCgwKS5wcm9wKCdzdGF0dXMnKSkudG9FcXVhbCgndW5jaGVja2VkJyk7XG5cdH0pO1xuXG5cdGl0KCdzaG91bGQgcGFzcyB0aGUgY29sb3IgYXMgaXMgd2hlbiBzZXQgdG8gXCJwcmltYXJ5XCInLCBhc3luYyAoKSA9PiB7XG5cblx0XHRjb25zdCBCQlJhZGlvID0gZ2V0Q29tcG9uZW50KCdSYWRpbycpO1xuXG5cdFx0Y29uc3QgY29tcG9uZW50ID0gbW91bnQoXG5cdFx0XHQ8Qmx1ZUJhc2VBcHAgY29tcG9uZW50cz17eyBSYWRpbyB9fT5cblx0XHRcdFx0PEJCUmFkaW8gY29sb3I9XCJwcmltYXJ5XCIgLz5cblx0XHRcdDwvQmx1ZUJhc2VBcHA+XG5cdFx0KTtcblxuXHRcdGF3YWl0IHdhaXRGb3JFbGVtZW50KGNvbXBvbmVudCBhcyBhbnksIEJCUmFkaW8pO1xuXG5cdFx0Ly8gZXhwZWN0KGNvbXBvbmVudCkudG9NYXRjaFNuYXBzaG90KCk7XG5cdFx0ZXhwZWN0KGNvbXBvbmVudC5maW5kKCdUb3VjaGFibGVIaWdobGlnaHQnKS5sYXN0KCkucHJvcCgnY29sb3InKSkudG9FcXVhbCgnIzNmNTFiNScpO1xuXHR9KTtcblxuXHRpdCgnc2hvdWxkIHBhc3MgdGhlIGNvbG9yIGFzIGlzIHdoZW4gc2V0IHRvIFwic2Vjb25kYXJ5XCInLCBhc3luYyAoKSA9PiB7XG5cblx0XHRjb25zdCBCQlJhZGlvID0gZ2V0Q29tcG9uZW50KCdSYWRpbycpO1xuXG5cdFx0Y29uc3QgY29tcG9uZW50ID0gbW91bnQoXG5cdFx0XHQ8Qmx1ZUJhc2VBcHAgY29tcG9uZW50cz17eyBSYWRpbyB9fT5cblx0XHRcdFx0PEJCUmFkaW8gY29sb3I9XCJzZWNvbmRhcnlcIiAvPlxuXHRcdFx0PC9CbHVlQmFzZUFwcD5cblx0XHQpO1xuXG5cdFx0YXdhaXQgd2FpdEZvckVsZW1lbnQoY29tcG9uZW50IGFzIGFueSwgQkJSYWRpbyk7XG5cblx0XHQvLyBleHBlY3QoY29tcG9uZW50KS50b01hdGNoU25hcHNob3QoKTtcblx0XHRleHBlY3QoY29tcG9uZW50LmZpbmQoJ1RvdWNoYWJsZUhpZ2hsaWdodCcpLmxhc3QoKS5wcm9wKCdjb2xvcicpKS50b0VxdWFsKCcjZjUwMDU3Jyk7XG5cdH0pO1xuXG5cdGl0KCdzaG91bGQgcGFzcyB0aGUgY29sb3IgYXMgaXMgd2hlbiBzZXQgdG8gXCJkZWZhdWx0XCInLCBhc3luYyAoKSA9PiB7XG5cblx0XHRjb25zdCBCQlJhZGlvID0gZ2V0Q29tcG9uZW50KCdSYWRpbycpO1xuXG5cdFx0Y29uc3QgY29tcG9uZW50ID0gbW91bnQoXG5cdFx0XHQ8Qmx1ZUJhc2VBcHAgY29tcG9uZW50cz17eyBSYWRpbyB9fT5cblx0XHRcdFx0PEJCUmFkaW8gY29sb3I9XCJkZWZhdWx0XCIgLz5cblx0XHRcdDwvQmx1ZUJhc2VBcHA+XG5cdFx0KTtcblxuXHRcdGF3YWl0IHdhaXRGb3JFbGVtZW50KGNvbXBvbmVudCBhcyBhbnksIEJCUmFkaW8pO1xuXG5cdFx0ZXhwZWN0KGNvbXBvbmVudC5maW5kKCdUb3VjaGFibGVIaWdobGlnaHQnKS5sYXN0KCkucHJvcCgnY29sb3InKSkudG9FcXVhbCgnJyk7XG5cdFx0Ly8gZXhwZWN0KGNvbXBvbmVudCkudG9NYXRjaFNuYXBzaG90KCk7XG5cdH0pO1xuXG5cdGl0KCdzaG91bGQgc2V0IHRoZSBjb2xvciBwcm9wIHRvIHVuZGVmaW5lZCBhbmQgY3JlYXRlIGNsYXNzZXMgZm9yIGN1c3RvbSBjb2xvcnMnLCBhc3luYyAoKSA9PiB7XG5cdFx0Y29uc3QgQkJSYWRpbyA9IGdldENvbXBvbmVudCgnUmFkaW8nKTtcblxuXHRcdGNvbnN0IGNvbXBvbmVudCA9IG1vdW50KFxuXHRcdFx0PEJsdWVCYXNlQXBwIGNvbXBvbmVudHM9e3sgUmFkaW8gfX0+XG5cdFx0XHRcdDxCQlJhZGlvIGNvbG9yPVwicmVkXCIgLz5cblx0XHRcdDwvQmx1ZUJhc2VBcHA+XG5cdFx0KTtcblxuXHRcdGF3YWl0IHdhaXRGb3JFbGVtZW50KGNvbXBvbmVudCBhcyBhbnksIEJCUmFkaW8pO1xuXG5cdFx0Ly8gZXhwZWN0KGNvbXBvbmVudCkudG9NYXRjaFNuYXBzaG90KCk7XG5cdFx0ZXhwZWN0KGNvbXBvbmVudC5maW5kKCdUb3VjaGFibGVIaWdobGlnaHQnKS5sYXN0KCkucHJvcCgnY29sb3InKSkudG9FcXVhbCgncmVkJyk7XG5cdH0pO1xuXG5cdGl0KCdzaG91bGQgc2V0IHRoZSBsYWJlbCBjb21wb25lbnQnLCBhc3luYyAoKSA9PiB7XG5cdFx0Y29uc3QgQkJSYWRpbyA9IGdldENvbXBvbmVudCgnUmFkaW8nKTtcblxuXHRcdGNvbnN0IGNvbXBvbmVudCA9IG1vdW50KFxuXHRcdFx0PEJsdWVCYXNlQXBwIGNvbXBvbmVudHM9e3sgUmFkaW8gfX0+XG5cdFx0XHRcdDxCQlJhZGlvIGxhYmVsPVwiRm9vXCIgLz5cblx0XHRcdDwvQmx1ZUJhc2VBcHA+XG5cdFx0KTtcblxuXHRcdGF3YWl0IHdhaXRGb3JFbGVtZW50KGNvbXBvbmVudCBhcyBhbnksIEJCUmFkaW8pO1xuXG5cdFx0Ly8gZXhwZWN0KGNvbXBvbmVudCkudG9NYXRjaFNuYXBzaG90KCk7XG5cdFx0ZXhwZWN0KGNvbXBvbmVudC5maW5kKCdSYWRpbyBUZXh0JykubGFzdCgpLnRleHQoKSkudG9FcXVhbCgnRm9vJyk7XG5cdH0pO1xuXG59KTtcbiJdLCJ2ZXJzaW9uIjozfQ==

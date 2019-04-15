@@ -92,11 +92,11 @@
   "devDependencies": {
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
+    "@bluebase/core": "^4.0.0-aplha.17",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-transform-flow-strip-types": "^7.4.0",
     "@bluebase/cli-essentials": "^0.0.4",
     "@bluebase/code-standards": "^1.0.3",
-    "@bluebase/core": "^4.0.0-aplha.13",
     "@bluebase/storybook-addon": "^3.0.0",
     "@blueeast/tslint-config-blueeast": "^0.7.0",
     "@storybook/addon-actions": "^5.0.6",
@@ -147,7 +147,6 @@
     "typescript": "3.4.1"
   },
   "peerDependencies": {
-    "@bluebase/core": "^4.*",
     "react": "^16.*"
   },
   "prettier": {

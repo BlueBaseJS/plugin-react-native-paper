@@ -1,0 +1,46 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const tslib_1 = require("tslib");
+jest.mock('expo', () => ({
+    Font: {
+        loadAsync: () => Promise.resolve()
+    }
+}));
+require("jest-enzyme");
+require("react-native");
+const enzyme_adapter_react_16_1 = tslib_1.__importDefault(require("enzyme-adapter-react-16"));
+const enzyme_1 = tslib_1.__importDefault(require("enzyme"));
+/**
+ * Set up DOM in node.js environment for Enzyme to mount to
+ */
+const { JSDOM } = require('jsdom');
+const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
+const { window } = jsdom;
+function copyProps(src, target) {
+    Object.defineProperties(target, Object.assign({}, Object.getOwnPropertyDescriptors(src), Object.getOwnPropertyDescriptors(target)));
+}
+global.window = window;
+global.document = window.document;
+global.navigator = {
+    userAgent: 'node.js',
+};
+copyProps(window, global);
+/**
+ * Set up Enzyme to mount to DOM, simulate events,
+ * and inspect the DOM in tests.
+ */
+enzyme_1.default.configure({ adapter: new enzyme_adapter_react_16_1.default() });
+/**
+ * Ignore some expected warnings
+ * see: https://jestjs.io/docs/en/tutorial-react.html#snapshot-testing-with-mocks-enzyme-and-react-16
+ * see https://github.com/Root-App/react-native-mock-render/issues/6
+ */
+const originalConsoleError = console.error;
+// tslint:disable-next-line: no-console
+console.error = (message) => {
+    if (message.startsWith('Warning:')) {
+        return;
+    }
+    originalConsoleError(message);
+};
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL2FkbmFuL0Rlc2t0b3AvcGx1Z2luLXJlYWN0LW5hdGl2ZS1wYXBlci90ZXN0cy9zZXR1cC50cyIsIm1hcHBpbmdzIjoiOzs7QUF1REEsSUFBSSxDQUFDLElBQUksQ0FBQyxNQUFNLEVBQUUsR0FBRyxFQUFFLENBQUMsQ0FBQztJQUN4QixJQUFJLEVBQUU7UUFDTCxTQUFTLEVBQUUsR0FBRyxFQUFFLENBQUMsT0FBTyxDQUFDLE9BQU8sRUFBRTtLQUNsQztDQUNELENBQUMsQ0FBQyxDQUFDO0FBM0RKLHVCQUFxQjtBQUNyQix3QkFBc0I7QUFDdEIsOEZBQThDO0FBQzlDLDREQUE0QjtBQUU1Qjs7R0FFRztBQUNILE1BQU0sRUFBRSxLQUFLLEVBQUUsR0FBRyxPQUFPLENBQUMsT0FBTyxDQUFDLENBQUM7QUFFbkMsTUFBTSxLQUFLLEdBQUcsSUFBSSxLQUFLLENBQUMsMkNBQTJDLENBQUMsQ0FBQztBQUNyRSxNQUFNLEVBQUUsTUFBTSxFQUFFLEdBQUcsS0FBSyxDQUFDO0FBRXpCLFNBQVMsU0FBUyxDQUFDLEdBQVEsRUFBRSxNQUFXO0lBQ3ZDLE1BQU0sQ0FBQyxnQkFBZ0IsQ0FBQyxNQUFNLG9CQUMxQixNQUFNLENBQUMseUJBQXlCLENBQUMsR0FBRyxDQUFDLEVBQ3JDLE1BQU0sQ0FBQyx5QkFBeUIsQ0FBQyxNQUFNLENBQUMsRUFDMUMsQ0FBQztBQUNKLENBQUM7QUFRRCxNQUFNLENBQUMsTUFBTSxHQUFHLE1BQU0sQ0FBQztBQUN2QixNQUFNLENBQUMsUUFBUSxHQUFHLE1BQU0sQ0FBQyxRQUFRLENBQUM7QUFDbEMsTUFBTSxDQUFDLFNBQVMsR0FBRztJQUNsQixTQUFTLEVBQUUsU0FBUztDQUNwQixDQUFDO0FBQ0YsU0FBUyxDQUFDLE1BQU0sRUFBRSxNQUFNLENBQUMsQ0FBQztBQUUxQjs7O0dBR0c7QUFDSCxnQkFBTSxDQUFDLFNBQVMsQ0FBQyxFQUFFLE9BQU8sRUFBRSxJQUFJLGlDQUFPLEVBQUUsRUFBRSxDQUFDLENBQUM7QUFFN0M7Ozs7R0FJRztBQUNILE1BQU0sb0JBQW9CLEdBQUcsT0FBTyxDQUFDLEtBQUssQ0FBQztBQUMzQyx1Q0FBdUM7QUFDdkMsT0FBTyxDQUFDLEtBQUssR0FBRyxDQUFDLE9BQVksRUFBRSxFQUFFO0lBQ2hDLElBQUksT0FBTyxDQUFDLFVBQVUsQ0FBQyxVQUFVLENBQUMsRUFBRTtRQUNuQyxPQUFPO0tBQ1A7SUFFRCxvQkFBb0IsQ0FBQyxPQUFPLENBQUMsQ0FBQztBQUMvQixDQUFDLENBQUMiLCJuYW1lcyI6W10sInNvdXJjZXMiOlsiL1VzZXJzL2FkbmFuL0Rlc2t0b3AvcGx1Z2luLXJlYWN0LW5hdGl2ZS1wYXBlci90ZXN0cy9zZXR1cC50cyJdLCJzb3VyY2VzQ29udGVudCI6WyJpbXBvcnQgJ2plc3QtZW56eW1lJztcbmltcG9ydCAncmVhY3QtbmF0aXZlJztcbmltcG9ydCBBZGFwdGVyIGZyb20gJ2VuenltZS1hZGFwdGVyLXJlYWN0LTE2JztcbmltcG9ydCBFbnp5bWUgZnJvbSAnZW56eW1lJztcblxuLyoqXG4gKiBTZXQgdXAgRE9NIGluIG5vZGUuanMgZW52aXJvbm1lbnQgZm9yIEVuenltZSB0byBtb3VudCB0b1xuICovXG5jb25zdCB7IEpTRE9NIH0gPSByZXF1aXJlKCdqc2RvbScpO1xuXG5jb25zdCBqc2RvbSA9IG5ldyBKU0RPTSgnPCFkb2N0eXBlIGh0bWw+PGh0bWw+PGJvZHk+PC9ib2R5PjwvaHRtbD4nKTtcbmNvbnN0IHsgd2luZG93IH0gPSBqc2RvbTtcblxuZnVuY3Rpb24gY29weVByb3BzKHNyYzogYW55LCB0YXJnZXQ6IGFueSkge1xuXHRPYmplY3QuZGVmaW5lUHJvcGVydGllcyh0YXJnZXQsIHtcblx0XHQuLi5PYmplY3QuZ2V0T3duUHJvcGVydHlEZXNjcmlwdG9ycyhzcmMpLFxuXHRcdC4uLk9iamVjdC5nZXRPd25Qcm9wZXJ0eURlc2NyaXB0b3JzKHRhcmdldCksXG5cdH0pO1xufVxuXG5kZWNsYXJlIGNvbnN0IGdsb2JhbDoge1xuXHRkb2N1bWVudDogYW55LFxuXHRuYXZpZ2F0b3I6IGFueSxcblx0d2luZG93OiBhbnksXG59O1xuXG5nbG9iYWwud2luZG93ID0gd2luZG93O1xuZ2xvYmFsLmRvY3VtZW50ID0gd2luZG93LmRvY3VtZW50O1xuZ2xvYmFsLm5hdmlnYXRvciA9IHtcblx0dXNlckFnZW50OiAnbm9kZS5qcycsXG59O1xuY29weVByb3BzKHdpbmRvdywgZ2xvYmFsKTtcblxuLyoqXG4gKiBTZXQgdXAgRW56eW1lIHRvIG1vdW50IHRvIERPTSwgc2ltdWxhdGUgZXZlbnRzLFxuICogYW5kIGluc3BlY3QgdGhlIERPTSBpbiB0ZXN0cy5cbiAqL1xuRW56eW1lLmNvbmZpZ3VyZSh7IGFkYXB0ZXI6IG5ldyBBZGFwdGVyKCkgfSk7XG5cbi8qKlxuICogSWdub3JlIHNvbWUgZXhwZWN0ZWQgd2FybmluZ3NcbiAqIHNlZTogaHR0cHM6Ly9qZXN0anMuaW8vZG9jcy9lbi90dXRvcmlhbC1yZWFjdC5odG1sI3NuYXBzaG90LXRlc3Rpbmctd2l0aC1tb2Nrcy1lbnp5bWUtYW5kLXJlYWN0LTE2XG4gKiBzZWUgaHR0cHM6Ly9naXRodWIuY29tL1Jvb3QtQXBwL3JlYWN0LW5hdGl2ZS1tb2NrLXJlbmRlci9pc3N1ZXMvNlxuICovXG5jb25zdCBvcmlnaW5hbENvbnNvbGVFcnJvciA9IGNvbnNvbGUuZXJyb3I7XG4vLyB0c2xpbnQ6ZGlzYWJsZS1uZXh0LWxpbmU6IG5vLWNvbnNvbGVcbmNvbnNvbGUuZXJyb3IgPSAobWVzc2FnZTogYW55KSA9PiB7XG5cdGlmIChtZXNzYWdlLnN0YXJ0c1dpdGgoJ1dhcm5pbmc6JykpIHtcblx0XHRyZXR1cm47XG5cdH1cblxuXHRvcmlnaW5hbENvbnNvbGVFcnJvcihtZXNzYWdlKTtcbn07XG5cblxuamVzdC5tb2NrKCdleHBvJywgKCkgPT4gKHtcblx0Rm9udDoge1xuXHRcdGxvYWRBc3luYzogKCkgPT4gUHJvbWlzZS5yZXNvbHZlKClcblx0fVxufSkpOyJdLCJ2ZXJzaW9uIjozfQ==
