@@ -1,7 +1,6 @@
 import MuiCardActions from '@material-ui/core/CardActions';
 import React from 'react';
 
-
 const CardActions = (props: any) => {
 
 	return (
