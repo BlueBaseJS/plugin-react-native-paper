@@ -1,3 +1,4 @@
+import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 import { DrawerActions, DrawerLayout } from './components/DrawerLayout';
 import { BottomNavigation } from './components/BottomNavigation';
 import { BottomNavigationAction } from './components/BottomNavigationAction';
@@ -18,7 +19,7 @@ import { Switch } from './components/Switch';
 import { Tab } from './components/Tab';
 import { Tabs } from './components/Tabs';
 import { TextInput } from './components/TextInput';
-import { createPlugin } from '@bluebase/core';
+import { withTheme } from './withTheme';
 
 export default createPlugin({
 	categories: ['ui'],
@@ -49,5 +50,12 @@ export default createPlugin({
 		Tab,
 		Tabs,
 		TextInput,
+	},
+
+	filters: {
+		'bluebase.boot.end': (bootOptions: BootOptions, _ctx: any, BB: BlueBase) => {
+			BB.Components.addHocs('BlueBaseContent', withTheme);
+			return bootOptions;
+		},
 	},
 });
