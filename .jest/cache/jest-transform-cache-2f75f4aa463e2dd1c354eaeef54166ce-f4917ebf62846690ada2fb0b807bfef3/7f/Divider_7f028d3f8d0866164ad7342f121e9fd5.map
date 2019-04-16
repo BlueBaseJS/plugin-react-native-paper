@@ -1,1 +1,0 @@
-{"version":3,"sources":["/Users/adnan/Desktop/plugin-react-native-paper/src/components/Divider/Divider.tsx"],"names":[],"mappings":";;;;;;AAAA,IAAA,oBAAA,GAAA,OAAA,CAAA,oBAAA,CAAA;;AAAS,OAAA,CAAA,OAAA,GAAA,oBAAA,CAAA,OAAA","sourcesContent":["export { Divider } from 'react-native-paper';\n"]}

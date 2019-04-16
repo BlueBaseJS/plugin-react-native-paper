@@ -1,5 +1,0 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var react_native_paper_1 = require("react-native-paper");
-exports.Divider = react_native_paper_1.Divider;
-//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJmaWxlIjoiL1VzZXJzL2FkbmFuL0Rlc2t0b3AvcGx1Z2luLXJlYWN0LW5hdGl2ZS1wYXBlci9zcmMvY29tcG9uZW50cy9EaXZpZGVyL0RpdmlkZXIudHN4IiwibWFwcGluZ3MiOiI7O0FBQUEseURBQTZDO0FBQXBDLHVDQUFBLE9BQU8sQ0FBQSIsIm5hbWVzIjpbXSwic291cmNlcyI6WyIvVXNlcnMvYWRuYW4vRGVza3RvcC9wbHVnaW4tcmVhY3QtbmF0aXZlLXBhcGVyL3NyYy9jb21wb25lbnRzL0RpdmlkZXIvRGl2aWRlci50c3giXSwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IHsgRGl2aWRlciB9IGZyb20gJ3JlYWN0LW5hdGl2ZS1wYXBlcic7XG4iXSwidmVyc2lvbiI6M30=
