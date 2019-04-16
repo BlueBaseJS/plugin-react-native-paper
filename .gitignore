@@ -6,8 +6,6 @@ npm-debug.log*
 # Dependencies
 node_modules/
 
-# Coverage
-coverage
 
 # Docs
 docs/
