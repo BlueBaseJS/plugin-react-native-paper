@@ -20,31 +20,31 @@
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">38.89% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>18/18</span>
+        <span class='fraction'>7/18</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>8/8</span>
+        <span class='fraction'>0/8</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>3/3</span>
+        <span class='fraction'>0/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>14/14</span>
+        <span class='fraction'>7/14</span>
       </div>
     </div>
     <p class="quiet">
       Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
     </p>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line low'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -81,32 +81,32 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-yes">2x</span>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -125,23 +125,23 @@ import React from 'react';
 import { componentMapper } from '@bluebase/component-mapper';
 &nbsp;
 export const RadioGroup = componentMapper&lt;RadioGroupProps&gt;(MuiRadioGroup, {
-	onChange: ({ onChange, onValueChange }: any) =&gt; (event: any, value: string | number | boolean)  =&gt; {
-		if (onChange) {
-			onChange(event, value);
+	onChange: <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >({ o</span></span>nChange, o</span>nValueChange }: any) =&gt; <span class="fstat-no" title="function not covered" >(</span>e</span>vent: any, value: string | number | boolean)  =&gt; {
+<span class="cstat-no" title="statement not covered" >		if (onChange) {</span>
+<span class="cstat-no" title="statement not covered" >			onChange(</span>event, value);
 		}
 &nbsp;
-		if (onValueChange) {
-			onValueChange(value);
+<span class="cstat-no" title="statement not covered" >		if (onValueChange) {</span>
+<span class="cstat-no" title="statement not covered" >			onValueChange(</span>value);
 		}
 	}
-}, {
+}, <span class="fstat-no" title="function not covered" >{</span>
 	ignore: ['onValueChange'],
 	rest: true,
 	render(props: any, Component: any) {
 &nbsp;
-		const { helperText, label, ...rest } = props;
+		const { helperText, label, <span class="cstat-no" title="statement not covered" >...rest } = <span class="cstat-no" title="statement not covered" ><span class="cstat-no" title="statement not covered" >p</span>rops;</span></span>
 &nbsp;
-		return (
+<span class="cstat-no" title="statement not covered" >		return (</span>
 			&lt;FormControl component="fieldset"&gt;
 				{label ? &lt;FormLabel component="legend"&gt;{label}&lt;/FormLabel&gt; : null}
 				&lt;Component {...rest} /&gt;
@@ -157,7 +157,7 @@ export const RadioGroup = componentMapper&lt;RadioGroupProps&gt;(MuiRadioGroup, 
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Apr 16 2019 15:02:11 GMT+0500 (Pakistan Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Tue Apr 16 2019 16:00:44 GMT+0500 (Pakistan Standard Time)
 </div>
 </div>
 <script src="../../../prettify.js"></script>

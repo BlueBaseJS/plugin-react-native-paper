@@ -1,11 +1,11 @@
 import { Avatar } from '../Avatar';
-import React from 'react';
-import { shallow, mount } from 'enzyme';
 import { BlueBaseApp } from '@bluebase/core';
 import Plugin from '../../../index';
+import React from 'react';
+import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
 
-const path = 'https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg';
+const path = 'https://via.placeholder.com/300/09f.png%20C/O%20https://placeholder.com/';
 
 
 
@@ -33,57 +33,70 @@ test('avatar component should  return  source Image', async () => {
 
 
 
-test('avatar component should  return  source Image', () => {
+test('avatar component should  return  source Image', async () => {
 
 
-	shallow(
+	const wrapper = mount(
+    <BlueBaseApp plugins={[Plugin]}>
 
+      <Avatar
+        type="image"
+        image={path as any}
+      />
 
-    <Avatar type="image" image={{ uri: 'https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg' }} />
+    </BlueBaseApp>
   );
-  // expect(component).toMatchSnapshot();
-  // 	expect(component.find('Avatar').first().prop('src')).toEqual('https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg');
+
+	await waitForElement(wrapper, Avatar);
+
+	const sourceProp: any = wrapper.find('Avatar BlueBaseImage').first().prop('source');
+	expect(sourceProp).toBe(path);
+
 });
 
 
 
-test('avatar component should  return  source Image', () => {
 
 
-	shallow(
 
 
-    <Avatar type="image" src="https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg" />
+
+test('avatar component should  return   type =icon', async () => {
+
+
+	const wrapper = mount(
+    <BlueBaseApp plugins={[Plugin]}>
+      <Avatar type="icon" />
+
+
+    </BlueBaseApp>
   );
-  // expect(component).toMatchSnapshot();
-  // 	expect(component.find('Avatar').first().prop('src')).toEqual('https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg');
+
+	await waitForElement(wrapper, Avatar);
+
+	const sourceProp: any = wrapper.find('Avatar').first().prop('type');
+	expect(sourceProp).toBe('icon');
+
 });
 
 
 
-test('avatar component should  return  source Image', () => {
+test('avatar component should  return  source Image', async () => {
 
 
-	shallow(
+	const wrapper = mount(
+    <BlueBaseApp plugins={[Plugin]}>
+      <Avatar type="text" text="N" />
 
 
-    <Avatar type="text" src="https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg" />
+    </BlueBaseApp>
   );
-  // expect(component).toMatchSnapshot();
-  // 	expect(component.find('Avatar').first().prop('src')).toEqual('https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg');
+
+	await waitForElement(wrapper, Avatar);
+
+	const sourceProp: any = wrapper.find('Avatar').first().prop('text');
+	expect(sourceProp).toBe('N');
+
 });
 
-
-
-test('avatar component should  return  source Image', () => {
-
-
-	shallow(
-
-
-    <Avatar type="icon" src="https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg" />
-  );
-  // expect(component).toMatchSnapshot();
-  // 	expect(component.find('Avatar').first().prop('src')).toEqual('https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg');
-});
 
