@@ -1,11 +1,12 @@
+import { BlueBaseImage, Icon, Text } from '@bluebase/components';
 import React from 'react';
-import { getComponent } from '@bluebase/components';
-const BluebaseImage = getComponent('BluebaseImage');
 
 
-const CardCover = () => {
+const CardCover = (props: any) => {
+	const ImageSource = props.image && props.image.uri ? { uri: props.image.uri } : props.image;
+
 	return (
-		<BluebaseImage />
+		<BluebaseImage style={props.style} source={ImageSource} />
 	);
 };
 

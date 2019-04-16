@@ -16,7 +16,7 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs';
 
 const Card = getComponent<CardProps>('Card');
-const CardMedia = getComponent<CardCoverProps>('CardMedia');
+const CardCover = getComponent<CardCoverProps>('CardCover');
 const CardContent = getComponent<CardContentProps>('CardContent');
 const CardActions = getComponent<CardActionsProps>('CardActions');
 const CardHeader = getComponent<CardHeaderProps>('CardHeader');
@@ -54,10 +54,12 @@ function RecipeReviewCard() {
         }
         title="Shrimp and Chorizo Paella"
         description="September 14, 2016"
-      />
-      <CardMedia
+      >
+      {}
+      </CardHeader>
+      <CardCover
 
-       source="https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180"
+        source={{ uri: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180' }}
       // title="Paella dish"
       />
       <CardContent>
