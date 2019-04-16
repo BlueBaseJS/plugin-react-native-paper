@@ -10,8 +10,8 @@ import { ListItem } from './components/ListItem';
 import { ListSection } from './components/ListSection';
 import { ListSubheader } from './components/ListSubheader';
 
-import { Menu } from './components/Menu/Menu.component';
-import { MenuItem } from './components/Menu/MenuItem.component';
+import { Menu } from './components/Menu/Menu';
+import { MenuItem } from './components/Menu/MenuItem';
 import { Picker } from './components/Picker';
 import { PickerItem } from './components/PickerItem';
 import { Radio } from './components/Radio';
