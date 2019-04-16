@@ -1069,10 +1069,10 @@
     deepmerge "^3.2.0"
     tslib "^1.9.3"
 
-"@bluebase/components@^3.0.0":
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/@bluebase/components/-/components-3.0.0.tgz#049b471de332c187891b540e86467563e75bc9e5"
-  integrity sha512-xy7+VzoWPBoRug8IqfJG62/83LrXw3KWDc6yqdkunSAqjq9ES0Vqe4OUjjKxXud+Xeu2eEkFgGJGGrMSPj3Xgg==
+"@bluebase/components@^4.1.1":
+  version "4.1.1"
+  resolved "https://registry.yarnpkg.com/@bluebase/components/-/components-4.1.1.tgz#1d69d9f9e0bcd71a94991bb3740456fdc87fa6b6"
+  integrity sha512-aLph4tlnimY1Ekmqm8Cw5uBu6ZcbH8h4khk0Avf+hFqiZjlmb2WL/CslYcNZD00BgZ0xdW2PW7//adt1gX0FDQ==
   dependencies:
     deepmerge "^3.2.0"
     tslib "^1.9.3"
