@@ -1,4 +1,3 @@
-import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 import {
 	Avatar,
 	Button,
@@ -10,8 +9,9 @@ import {
 	RadioGroup,
 	Switch,
 	TextInput,
-
 } from './components';
+import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
+
 import { withReactNativePaper } from './withReactNativePaper';
 
 export default createPlugin({
