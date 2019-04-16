@@ -8,8 +8,6 @@ cache:
 
 node_js:
   - 10
-  - 9
-  - 8
 
 script:
   -  yarn run test
