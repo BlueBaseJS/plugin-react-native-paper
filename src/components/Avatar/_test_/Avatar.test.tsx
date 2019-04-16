@@ -2,10 +2,10 @@ import { Avatar } from '../Avatar';
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import { BlueBaseApp } from '@bluebase/core';
-import Plugin from '../../../index';
 import { waitForElement } from 'enzyme-async-helpers';
+import Plugin from '../../../index';
 
-const path = 'https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg';
+const path = 'https://placeimg.com/1000/480/people';
 
 
 
@@ -31,59 +31,4 @@ test('avatar component should  return  source Image', async () => {
 
 });
 
-
-
-test('avatar component should  return  source Image', () => {
-
-
-	shallow(
-
-
-    <Avatar type="image" image={{ uri: 'https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg' }} />
-  );
-  // expect(component).toMatchSnapshot();
-  // 	expect(component.find('Avatar').first().prop('src')).toEqual('https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg');
-});
-
-
-
-test('avatar component should  return  source Image', () => {
-
-
-	shallow(
-
-
-    <Avatar type="image" src="https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg" />
-  );
-  // expect(component).toMatchSnapshot();
-  // 	expect(component.find('Avatar').first().prop('src')).toEqual('https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg');
-});
-
-
-
-test('avatar component should  return  source Image', () => {
-
-
-	shallow(
-
-
-    <Avatar type="text" src="https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg" />
-  );
-  // expect(component).toMatchSnapshot();
-  // 	expect(component.find('Avatar').first().prop('src')).toEqual('https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg');
-});
-
-
-
-test('avatar component should  return  source Image', () => {
-
-
-	shallow(
-
-
-    <Avatar type="icon" src="https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg" />
-  );
-  // expect(component).toMatchSnapshot();
-  // 	expect(component.find('Avatar').first().prop('src')).toEqual('https://s3-us-west-2.amazonaws.com/bluerainimages/water-dispenser.svg');
-});
 

@@ -8,12 +8,12 @@ const AvatarComponent = (props: any) => {
 	}
 
 	if (props.type === 'Text') {
-		return <Avatar.Text {...props} />;
+		return <Avatar.Text label={props.text} {...props} />;
 	}
 
 	const ImageSource = props.image && props.image.uri ? { uri: props.image.uri } : props.image;
 
-	return <Avatar.Image source={ImageSource} />;
+	return <Avatar.Image size={props.size} source={ImageSource} />;
 };
 
 export { AvatarComponent as Avatar };
