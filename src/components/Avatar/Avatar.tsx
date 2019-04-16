@@ -1,5 +1,5 @@
 
-import { BlueBaseImage, Icon, Text, AvatarProps, AvatarDefaultProps } from '@bluebase/components';
+import { AvatarDefaultProps, AvatarProps, BlueBaseImage, Icon, Text, } from '@bluebase/components';
 
 import MuiAvatar from '@material-ui/core/Avatar';
 import React from 'react';
