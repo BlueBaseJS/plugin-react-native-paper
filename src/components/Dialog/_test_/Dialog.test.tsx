@@ -6,7 +6,7 @@ import { shallow } from 'enzyme';
 
 test('Dialog component should use child prop to show children', () => {
 	const component = shallow(
-    <Dialog>
+    <Dialog open={true}>
       <Text>Dialog</Text>
     </Dialog>
   );

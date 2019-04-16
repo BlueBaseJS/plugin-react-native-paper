@@ -1,14 +1,3 @@
-import MuiDialogTitle from '@material-ui/core/DialogTitle';
-import React from 'react';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
-
-const DialogTitle = (props: any) => {
-
-	return (
-		<MuiDialogTitle  {...props}>
-			{props.children}
-		</MuiDialogTitle>
-	);
-
-};
 export { DialogTitle };

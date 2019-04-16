@@ -4,7 +4,7 @@ import { BottomNavigationAction } from './components/BottomNavigationAction';
 import { Button } from './components/Button';
 import { Checkbox } from './components/Checkbox';
 import { Dialog } from './components/Dialog';
-import { DialogAction } from './components/Dialog/DialogAction';
+import { DialogActions } from './components/Dialog/DialogAction';
 import { DialogContent } from './components/Dialog/DialogContent';
 import { DialogTitle } from './components/Dialog/DialogTitle';
 import { Divider } from './components/Divider';
@@ -37,7 +37,7 @@ export default createPlugin({
 		Button,
 		Checkbox,
 		Dialog,
-		DialogAction,
+		DialogActions,
 		DialogContent,
 		DialogTitle,
 		Divider,

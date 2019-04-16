@@ -1,13 +1,13 @@
-import { DialogAction } from '../index';
+import { DialogActions } from '../index';
 import React from 'react';
 import { Text } from 'react-native';
 import { shallow } from 'enzyme';
 
 test('DialogAction component should use child prop to show children', () => {
 	const component = shallow(
-    <DialogAction>
+    <DialogActions>
       <Text>DialogAction</Text>
-    </DialogAction>
+    </DialogActions>
   );
   // expect(component).toMatchSnapshot();
 	expect(component.childAt(0).childAt(0).text()).toEqual('DialogAction');

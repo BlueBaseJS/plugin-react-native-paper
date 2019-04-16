@@ -1,13 +1,4 @@
-import MuiDialogActions from '@material-ui/core/DialogActions';
-import React from 'react';
+import DialogActions from '@material-ui/core/DialogActions';
 
-const DialogAction = (props: any) => {
-
-	return (
-		<MuiDialogActions {...props}>
-			{props.children}
-		</MuiDialogActions>
-	);
-};
-export { DialogAction };
+export { DialogActions };
 

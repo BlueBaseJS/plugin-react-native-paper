@@ -1,13 +1,4 @@
-import MuiDialogContent from '@material-ui/core/DialogContent';
-import React from 'react';
+import DialogContent from '@material-ui/core/DialogContent';
 
-const DialogContent = (props: any) => {
-
-	return (
-		<MuiDialogContent {...props}>
-			{props.children}
-		</MuiDialogContent>
-	);
-};
 export { DialogContent };
 

@@ -7,7 +7,7 @@ import { withInfo } from '@storybook/addon-info';
 import { withKnobs } from '@storybook/addon-knobs';
 
 
-const DialogAction = getComponent<DialogActionsProps>('DialogAction');
+const DialogAction = getComponent<DialogActionsProps>('DialogActions');
 
 const stories = storiesOf('DialogAction', module);
 
