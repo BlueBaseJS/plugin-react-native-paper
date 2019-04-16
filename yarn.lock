@@ -1070,7 +1070,7 @@
     deepmerge "^3.2.0"
     tslib "^1.9.3"
 
-"@bluebase/components@^3.0.0":
+"@bluebase/components@^3.5.0":
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/@bluebase/components/-/components-3.5.0.tgz#9cf1f765bef89112e223e07c5a8fddd673e6a875"
   integrity sha512-LXwitjUzXhasW9aKr45+b1VhCcorS6wIqAAHU1owsfuj6bTTCP17xPiTHjRkJLmqkHyTSCyPbxyN9J1fkRhcqw==
@@ -1078,7 +1078,8 @@
     deepmerge "^3.2.0"
     tslib "^1.9.3"
 
-"@bluebase/core@^4.0.0-aplha.10":
+
+"@bluebase/core@^4.0.0-aplha.17":
   version "4.0.0-aplha.17"
   resolved "https://registry.yarnpkg.com/@bluebase/core/-/core-4.0.0-aplha.17.tgz#d23bf2181ea3a0925b848576ddbc082deeedbf16"
   integrity sha512-z+zgvyhbFlURrPqoSXCebdlgAf/Pr9ECP5cfa9kzMGwbBkM7Fth6MhkJf5HLunkQm714CvgPNYiQWD93MJ7HgA==
