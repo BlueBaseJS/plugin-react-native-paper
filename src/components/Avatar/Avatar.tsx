@@ -24,9 +24,9 @@ export const Avatar = (props: any) => {
 	}
 
 	return (
-			<MuiAvatar {...props} >
-				<Text style={style}>{text}</Text>
-			</MuiAvatar>
+		<MuiAvatar {...props} >
+			<Text style={style}>{text}</Text>
+		</MuiAvatar>
 	);
 
 };
