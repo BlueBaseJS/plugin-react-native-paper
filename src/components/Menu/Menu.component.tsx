@@ -1,13 +1,14 @@
+import { MenuDefaultProps, MenuProps } from '@bluebase/components';
+
 import MuiMenu from '@material-ui/core/Menu';
-import React from 'react';
+import { componentMapper } from '@bluebase/component-mapper';
 
 
-const Menu = (props: any) => {
-	return (
-    <MuiMenu anchorEl={props.anchor} open={props.visible} onClose={props.onDismiss} {...props}>
-      {props.children}
-    </MuiMenu>
+export const Menu = componentMapper<MenuProps>(MuiMenu, {
+	anchorEl: 'anchor',
+	onClose: 'onDismiss',
+	open: 'visible',
 
-	);
-};
-export { Menu };
+	children: ({ children }: MenuProps) => children,
+
+}, { rest: true, defaultProps: MenuDefaultProps });
