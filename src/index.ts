@@ -5,6 +5,10 @@ import { BottomNavigation } from './components/BottomNavigation';
 import { BottomNavigationAction } from './components/BottomNavigationAction';
 import { Button } from './components/Button';
 import { Checkbox } from './components/Checkbox';
+import { Dialog } from './components/Dialog';
+import { DialogActions } from './components/Dialog/DialogAction';
+import { DialogContent } from './components/Dialog/DialogContent';
+import { DialogTitle } from './components/Dialog/DialogTitle';
 import { Divider } from './components/Divider';
 import { DrawerItem } from './components/DrawerItem';
 import { DrawerSection } from './components/DrawerSection';
@@ -35,6 +39,10 @@ export default createPlugin({
 		BottomNavigationAction,
 		Button,
 		Checkbox,
+		Dialog,
+		DialogActions,
+		DialogContent,
+		DialogTitle,
 		Divider,
 		DrawerActions,
 		DrawerItem,
