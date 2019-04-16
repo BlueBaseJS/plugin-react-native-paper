@@ -5,8 +5,12 @@ cache:
     - node_modules
 # notifications:
 #   email: false
+
 node_js:
-  - lts/*
+  - 10
+  - 9
+  - 8
+
 script:
   -  yarn run test
   -  yarn run report-coverage
