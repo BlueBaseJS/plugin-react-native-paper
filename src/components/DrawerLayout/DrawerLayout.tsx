@@ -70,6 +70,7 @@ const styles = (props: DrawerLayoutProps, theme: Theme) => ({
 	content: {
 		flexGrow: 1,
 		marginLeft: 0,
+		overflowY: 'auto',
 		transition: theme.transitions.create('margin', {
 			duration: theme.transitions.duration.leavingScreen,
 			easing: theme.transitions.easing.sharp,
