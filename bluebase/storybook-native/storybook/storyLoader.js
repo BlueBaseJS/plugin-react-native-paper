@@ -6,6 +6,11 @@
 
 function loadStories() {
   require('../../../src/components/Button/__stories__/Button.stories');
+  require('../../../src/components/Card/_stories_/Card.stories');
+  require('../../../src/components/CardActions/_stories_/CardAction.stories');
+  require('../../../src/components/CardContent/_stories_/CardContent.stories');
+  require('../../../src/components/CardCover/_stories_/CardCover.stories');
+  require('../../../src/components/CardTitle/_stories_/CardTitle.stories');
   require('../../../src/components/Checkbox/__stories__/Checkbox.stories');
   require('../../../src/components/Divider/__stories__/Divider.stories');
   require('../../../src/components/Radio/__stories__/Radio.stories');
@@ -17,6 +22,11 @@ function loadStories() {
 
 const stories = [
   '../../../src/components/Button/__stories__/Button.stories',
+  '../../../src/components/Card/_stories_/Card.stories',
+  '../../../src/components/CardActions/_stories_/CardAction.stories',
+  '../../../src/components/CardContent/_stories_/CardContent.stories',
+  '../../../src/components/CardCover/_stories_/CardCover.stories',
+  '../../../src/components/CardTitle/_stories_/CardTitle.stories',
   '../../../src/components/Checkbox/__stories__/Checkbox.stories',
   '../../../src/components/Divider/__stories__/Divider.stories',
   '../../../src/components/Radio/__stories__/Radio.stories',
