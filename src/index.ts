@@ -4,6 +4,11 @@ import { Avatar } from './components/Avatar';
 import { BottomNavigation } from './components/BottomNavigation';
 import { BottomNavigationAction } from './components/BottomNavigationAction';
 import { Button } from './components/Button';
+import { Card } from './components/Card';
+import { CardActions } from './components/CardActions';
+import { CardContent } from './components/CardContent';
+import { CardCover } from './components/CardCover';
+import { CardHeader } from './components/CardHeader';
 import { Checkbox } from './components/Checkbox';
 import { Dialog } from './components/Dialog';
 import { DialogActions } from './components/DialogAction';
@@ -40,6 +45,11 @@ export default createPlugin({
 		BottomNavigation,
 		BottomNavigationAction,
 		Button,
+		Card,
+		CardActions,
+		CardContent,
+		CardCover,
+		CardHeader,
 		Checkbox,
 		Dialog,
 		DialogActions,
