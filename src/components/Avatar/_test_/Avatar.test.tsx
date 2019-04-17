@@ -55,27 +55,18 @@ test('avatar component should  return  source Image', async () => {
 });
 
 
-
-
-
-
-
-
 test('avatar component should  return   type =icon', async () => {
-
 
 	const wrapper = mount(
     <BlueBaseApp plugins={[Plugin]}>
-      <Avatar type="icon" />
-
-
+      <Avatar type="icon" icon="inbox" />
     </BlueBaseApp>
   );
 
 	await waitForElement(wrapper, Avatar);
 
-	const sourceProp: any = wrapper.find('Avatar').first().prop('type');
-	expect(sourceProp).toBe('icon');
+	const sourceProp: any = wrapper.find('Avatar Icon').last().prop('name');
+	expect(sourceProp).toBe('inbox');
 
 });
 
@@ -94,7 +85,7 @@ test('avatar component should  return  source Image', async () => {
 
 	await waitForElement(wrapper, Avatar);
 
-	const sourceProp: any = wrapper.find('Avatar').first().prop('text');
+	const sourceProp: any = wrapper.find('Avatar').first().text();
 	expect(sourceProp).toBe('N');
 
 });
