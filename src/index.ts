@@ -1,4 +1,6 @@
+import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 import { DrawerActions, DrawerLayout } from './components/DrawerLayout';
+import { Avatar } from './components/Avatar';
 import { BottomNavigation } from './components/BottomNavigation';
 import { BottomNavigationAction } from './components/BottomNavigationAction';
 import { Button } from './components/Button';
@@ -8,11 +10,17 @@ import { CardContent } from './components/CardContent';
 import { CardCover } from './components/CardCover';
 import { CardHeader } from './components/CardHeader';
 import { Checkbox } from './components/Checkbox';
+import { Dialog } from './components/Dialog';
+import { DialogActions } from './components/DialogAction';
+import { DialogContent } from './components/DialogContent';
+import { DialogTitle } from './components/DialogTitle';
 import { Divider } from './components/Divider';
 import { DrawerItem } from './components/DrawerItem';
 import { DrawerSection } from './components/DrawerSection';
+import { List } from './components/List';
+import { ListAvatar } from './components/ListAvatar';
+import { ListIcon } from './components/ListIcon';
 import { ListItem } from './components/ListItem';
-import { ListSection } from './components/ListSection';
 import { ListSubheader } from './components/ListSubheader';
 import { Picker } from './components/Picker';
 import { PickerItem } from './components/PickerItem';
@@ -23,7 +31,7 @@ import { Switch } from './components/Switch';
 import { Tab } from './components/Tab';
 import { Tabs } from './components/Tabs';
 import { TextInput } from './components/TextInput';
-import { createPlugin } from '@bluebase/core';
+import { withTheme } from './withTheme';
 
 export default createPlugin({
 	categories: ['ui'],
@@ -33,6 +41,7 @@ export default createPlugin({
 	version: '0.0.1',
 
 	components: {
+		Avatar,
 		BottomNavigation,
 		BottomNavigationAction,
 		Button,
@@ -42,13 +51,19 @@ export default createPlugin({
 		CardCover,
 		CardHeader,
 		Checkbox,
+		Dialog,
+		DialogActions,
+		DialogContent,
+		DialogTitle,
 		Divider,
 		DrawerActions,
 		DrawerItem,
 		DrawerLayout,
 		DrawerSection,
+		List,
+		ListAvatar,
+		ListIcon,
 		ListItem,
-		ListSection,
 		ListSubheader,
 		Picker,
 		PickerItem,
@@ -59,5 +74,12 @@ export default createPlugin({
 		Tab,
 		Tabs,
 		TextInput,
+	},
+
+	filters: {
+		'bluebase.boot.end': (bootOptions: BootOptions, _ctx: any, BB: BlueBase) => {
+			BB.Components.addHocs('BlueBaseContent', withTheme);
+			return bootOptions;
+		},
 	},
 });

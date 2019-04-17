@@ -1,3 +1,1 @@
-import CardContent from '@material-ui/core/CardContent';
-
-export { CardContent };
+export { default as CardContent } from '@material-ui/core/CardContent';

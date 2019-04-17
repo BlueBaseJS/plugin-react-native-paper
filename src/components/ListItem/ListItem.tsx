@@ -5,12 +5,12 @@ import React from 'react';
 
 export const ListItem = (props: ListItemProps) => {
 
-	const { active, disabled, description, left, onPress, right, title } = props;
+	const { disabled, description, inset, left, onPress, right, selected, title } = props;
 
 	return (
-		<MUIListItem button={!!onPress} disabled={disabled} selected={active} onClick={onPress}>
+		<MUIListItem button={!!onPress} disabled={disabled} selected={selected} onClick={onPress}>
 			{left}
-			{(title || description) ? <ListItemText inset={!!left} primary={title} secondary={description} /> : null}
+			{(title || description) ? <ListItemText inset={inset} primary={title} secondary={description} /> : null}
 			{right}
 		</MUIListItem>
 	);

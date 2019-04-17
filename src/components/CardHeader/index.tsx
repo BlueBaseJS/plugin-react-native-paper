@@ -1,10 +1,9 @@
+import { CardHeaderProps } from '@bluebase/components';
 import MuiCardHeader from '@material-ui/core/CardHeader';
-import React from 'react';
+import { componentMapper } from '@bluebase/component-mapper';
 
-const CardHeader = (props: any) => {
-	return (
-		<MuiCardHeader subheader={props.description} avatar={props.left} actions={props.right} {...props} />
-	);
-};
-
-export { CardHeader };
+export const CardHeader = componentMapper<CardHeaderProps>(MuiCardHeader, {
+	actions: 'right',
+	avatar: 'left',
+	subheader: 'description',
+}, { rest: true });

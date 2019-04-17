@@ -1,2 +1,1 @@
-import Card from '@material-ui/core/Card';
-export { Card };
+export { default as Card } from '@material-ui/core/Card';
