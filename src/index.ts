@@ -12,8 +12,10 @@ import { DialogTitle } from './components/DialogTitle';
 import { Divider } from './components/Divider';
 import { DrawerItem } from './components/DrawerItem';
 import { DrawerSection } from './components/DrawerSection';
+import { List } from './components/List';
+import { ListAvatar } from './components/ListAvatar';
+import { ListIcon } from './components/ListIcon';
 import { ListItem } from './components/ListItem';
-import { ListSection } from './components/ListSection';
 import { ListSubheader } from './components/ListSubheader';
 import { Picker } from './components/Picker';
 import { PickerItem } from './components/PickerItem';
@@ -48,8 +50,10 @@ export default createPlugin({
 		DrawerItem,
 		DrawerLayout,
 		DrawerSection,
+		List,
+		ListAvatar,
+		ListIcon,
 		ListItem,
-		ListSection,
 		ListSubheader,
 		Picker,
 		PickerItem,

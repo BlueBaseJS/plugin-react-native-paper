@@ -3,7 +3,6 @@ import {
   // DialogContentProps,
   DialogProps,
   DialogTitleProps,
-  getComponent,
 } from '@bluebase/components';
 
 import AddIcon from '@material-ui/icons/Add';
@@ -20,6 +19,7 @@ import Typography from '@material-ui/core/Typography';
 
 // import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
+import { getComponent } from '@bluebase/core';
 
 
 const Dialog = getComponent<DialogProps>('Dialog');

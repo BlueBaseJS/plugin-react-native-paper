@@ -3,7 +3,6 @@ import {
   DialogContentProps,
   DialogProps,
   DialogTitleProps,
-  getComponent,
 } from '@bluebase/components';
 
 import AddIcon from '@material-ui/icons/Add';
@@ -16,6 +15,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import PersonIcon from '@material-ui/icons/Person';
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
+import { getComponent } from '@bluebase/core';
 import { shallow } from 'enzyme';
 
 
