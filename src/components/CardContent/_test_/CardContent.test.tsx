@@ -1,15 +1,17 @@
-import { CardContent } from '../CardBody.component';
+import { CardContent } from '../';
 import React from 'react';
 import { Text } from 'react-native';
 import { shallow } from 'enzyme';
 
 
-test('CardContent component should show children', () => {
+
+
+test('CardContent component component should show children', () => {
 	const component = shallow(
-    <CardContent>
-      <Text>CardContent</Text>
+    <CardContent title="Foo" >
+      <Text>Card</Text>
     </CardContent>
   );
   // expect(component).toMatchSnapshot();
-	expect(component.childAt(0).text()).toEqual('CardContent');
+	expect(component.find('CardContent')).toBeDefined();
 });

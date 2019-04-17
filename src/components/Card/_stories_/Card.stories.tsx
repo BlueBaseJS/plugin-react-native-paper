@@ -28,20 +28,21 @@ stories.addDecorator(withKnobs);
 
 stories
 
-  .add('SimpleCard', () => (
+  .add('SimpleCard Stories', () => (
     <RecipeReviewCard />
   ));
 
 
 function RecipeReviewCard() {
-	const [expanded, setExpanded] = React.useState(false);
+  const [expanded, setExpanded] = React.useState(false);
 
-	function handleExpandClick() {
-		setExpanded(!expanded);
-	}
+  function handleExpandClick() {
+    setExpanded(!expanded);
+  }
 
-	return (
-    <Card >
+  return (
+    <Card style={{ width: 400 }}
+    >
       <CardHeader
         left={
           <Avatar aria-label="Recipe">
@@ -55,11 +56,13 @@ function RecipeReviewCard() {
         title="Shrimp and Chorizo Paella"
         description="September 14, 2016"
       >
-      {}
+        {}
       </CardHeader>
       <CardCover
-
-        source={{ uri: 'https://placeholdit.imgix.net/~text?txtsize=33&txt=318%C3%97180&w=318&h=180' }}
+        style={{ width: 400, height: 400 }}
+        source={{
+          uri: 'https://www.careerz360.pk/cdn.careerz360.pk/Content/UserData/empr/f1172787-3c92-459c-a5cc-5a9b7da8613e/profile_pics/thumbnail_bd47c439-bf95-4c30-8be8-fe77023194a0.png'
+        }}
       // title="Paella dish"
       />
       <CardContent>
@@ -112,7 +115,7 @@ function RecipeReviewCard() {
         </CardContent>
       </Collapse>
     </Card>
-	);
+  );
 }
 
 export default RecipeReviewCard;
