@@ -1,7 +1,6 @@
-import { BlueBaseApp } from '@bluebase/core';
+import { BlueBaseApp, getComponent } from '@bluebase/core';
 import { Radio } from '../Radio';
 import React from 'react';
-import { getComponent } from '@bluebase/components';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
 
