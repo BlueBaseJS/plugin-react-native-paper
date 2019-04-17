@@ -1,19 +1,13 @@
-
-
 import {
   DialogActionsProps,
   DialogContentProps,
   DialogProps,
   DialogTitleProps,
-  getComponent,
-
 } from '@bluebase/components';
 
 import AddIcon from '@material-ui/icons/Add';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
-
-
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemAvatar from '@material-ui/core/ListItemAvatar';
@@ -21,12 +15,11 @@ import ListItemText from '@material-ui/core/ListItemText';
 import PersonIcon from '@material-ui/icons/Person';
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-
+import { getComponent } from '@bluebase/core';
 import { shallow } from 'enzyme';
 
 
 test('DialogContent component should use child prop to show children', () => {
-
 
 	const component = shallow(
     <SimpleDialogDemo />

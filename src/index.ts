@@ -6,14 +6,16 @@ import { BottomNavigationAction } from './components/BottomNavigationAction';
 import { Button } from './components/Button';
 import { Checkbox } from './components/Checkbox';
 import { Dialog } from './components/Dialog';
-import { DialogActions } from './components/Dialog/DialogAction';
-import { DialogContent } from './components/Dialog/DialogContent';
-import { DialogTitle } from './components/Dialog/DialogTitle';
+import { DialogActions } from './components/DialogAction';
+import { DialogContent } from './components/DialogContent';
+import { DialogTitle } from './components/DialogTitle';
 import { Divider } from './components/Divider';
 import { DrawerItem } from './components/DrawerItem';
 import { DrawerSection } from './components/DrawerSection';
+import { List } from './components/List';
+import { ListAvatar } from './components/ListAvatar';
+import { ListIcon } from './components/ListIcon';
 import { ListItem } from './components/ListItem';
-import { ListSection } from './components/ListSection';
 import { ListSubheader } from './components/ListSubheader';
 import { Picker } from './components/Picker';
 import { PickerItem } from './components/PickerItem';
@@ -48,8 +50,10 @@ export default createPlugin({
 		DrawerItem,
 		DrawerLayout,
 		DrawerSection,
+		List,
+		ListAvatar,
+		ListIcon,
 		ListItem,
-		ListSection,
 		ListSubheader,
 		Picker,
 		PickerItem,

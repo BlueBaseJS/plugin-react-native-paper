@@ -1070,14 +1070,13 @@
     deepmerge "^3.2.0"
     tslib "^1.9.3"
 
-"@bluebase/components@^3.5.0":
-  version "3.5.0"
-  resolved "https://registry.yarnpkg.com/@bluebase/components/-/components-3.5.0.tgz#9cf1f765bef89112e223e07c5a8fddd673e6a875"
-  integrity sha512-LXwitjUzXhasW9aKr45+b1VhCcorS6wIqAAHU1owsfuj6bTTCP17xPiTHjRkJLmqkHyTSCyPbxyN9J1fkRhcqw==
+"@bluebase/components@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@bluebase/components/-/components-5.1.0.tgz#7f2fea8993bbcf1374a5c706f737da439046ae65"
+  integrity sha512-8aK/fKP3bJ4ORBVL4SpwX23Pzc+J1LyrMtmTu2FFLnyQGef8J865FT6mtFd6FL3vRfAqjq3zdyytrxugIgmHVA==
   dependencies:
     deepmerge "^3.2.0"
     tslib "^1.9.3"
-
 
 "@bluebase/core@^4.0.0-aplha.17":
   version "4.0.0-aplha.17"
@@ -1094,6 +1093,15 @@
     lodash.kebabcase "^4.1.1"
     react-loadable "^5.5.0"
     rtl-detect "^1.0.2"
+    tslib "^1.9.3"
+
+"@bluebase/plugin-vector-icons@^0.0.3":
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/@bluebase/plugin-vector-icons/-/plugin-vector-icons-0.0.3.tgz#a2cd395e90deff2c0c8819d743eabeb033f47415"
+  integrity sha512-G+2kZcxi0/ZjFfWcVHMDbZgg2t/q75cOrz+m4hjv1fQCaemJeRYFXH6BzZHVfMvPhlKqhsWBSRciC8vS+5M3KA==
+  dependencies:
+    deepmerge "^3.2.0"
+    react-native-vector-icons "^6.4.2"
     tslib "^1.9.3"
 
 "@bluebase/storybook-addon@^3.0.0":
@@ -8941,7 +8949,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha1-0CJTc662Uq3BvILklFM5qEJ1R3M=
 
-lodash@4.17.11, lodash@>4.17.4, lodash@^4.0.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@^4.6.1:
+lodash@4.17.11, lodash@>4.17.4, lodash@^4.0.0, lodash@^4.0.1, lodash@^4.15.0, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.4, lodash@^4.17.5, lodash@^4.3.0, lodash@^4.6.1:
   version "4.17.11"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.11.tgz#b39ea6229ef607ecd89e2c8df12536891cac9b8d"
   integrity sha512-cQKh8igo5QUhZ7lg38DYWAxMvjSAKG0A8wGSVimP07SIUEK2UO+arSRKbRZWtelMtN5V0Hkwh5ryOto/SshYIg==
@@ -11803,6 +11811,15 @@ react-native-typescript-transformer@^1.2.12:
     jju "^1.3.0"
     semver "^5.4.1"
     source-map "^0.5.6"
+
+react-native-vector-icons@^6.4.2:
+  version "6.4.2"
+  resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-6.4.2.tgz#ee0b097e783387544ed160a3192a437c097e551d"
+  integrity sha512-G7Y5HksOQkCanFWKJ+fjwP38XL8tQREOSnw7jrbq28AFrrv41YtafOF4uDSDS7HxMRXs17HeEzn24OzJb63iuA==
+  dependencies:
+    lodash "^4.0.0"
+    prop-types "^15.6.2"
+    yargs "^13.2.2"
 
 react-native-web@^0.9.10:
   version "0.9.13"

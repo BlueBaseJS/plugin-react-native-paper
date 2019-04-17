@@ -28,7 +28,10 @@ export const withTheme = (Component: React.ComponentType<any>) => {
 						},
 						shape: theme.shape,
 						spacing: theme.spacing,
-						typography: theme.typography as any,
+						typography: {
+							useNextVariants: true,
+							...theme.typography as any
+						},
 					});
 
 					return (

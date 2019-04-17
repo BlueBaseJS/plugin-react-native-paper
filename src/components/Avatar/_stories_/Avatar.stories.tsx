@@ -17,8 +17,8 @@ stories.addDecorator(withKnobs);
 stories.add('Simple Avatar ', () => (
 	<Avatar
 		type="image"
-		image={{ uri: 'https://via.placeholder.com/300/09f.png%20C/O%20https://placeholder.com/' }}
-		style={{ width: 200, height: 200 }}
+		image={{ uri: 'https://via.placeholder.com/300/09f.png' }}
+		size={200}
 	/>
 ));
 
@@ -27,7 +27,7 @@ stories.add('Simple Avatar ', () => (
 stories.add('Simple Avatar with text prop ', () => (
 	<Avatar
 		type="text"
-		text={'N'}  // why this prop is of imagesource type ? issue in typings.
+		text="N"
 	/>
 ));
 
@@ -46,26 +46,6 @@ stories.add('Simple Avatar local images ', () => (
 		image={require('./image/download.png')}
 		style={{ width: 100, height: 100 }}
 
-	/>
-
-));
-
-
-stories.add('Simple Avatar  with style prop ', () => (
-	<Avatar
-		style={{ height: 80, width: 80 }}
-		type="image"
-		image={require('./image/image.svg')}
-	/>
-
-));
-
-
-stories.add('Simple Avatar  with style prop ', () => (
-	<Avatar
-		style={{ height: 80, width: 80 }}
-		type="image"
-		image={require('./image/image.svg')}
 	/>
 
 ));
