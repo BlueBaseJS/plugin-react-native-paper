@@ -1,19 +1,14 @@
-
-
-
 import {
   DialogActionsProps,
-  DialogContentProps,
+  // DialogContentProps,
   DialogProps,
   DialogTitleProps,
   getComponent,
-
 } from '@bluebase/components';
 
 import AddIcon from '@material-ui/icons/Add';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
-
 
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
@@ -26,22 +21,11 @@ import Typography from '@material-ui/core/Typography';
 // import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
 
-storiesOf('Dialog', module)
-
-  .add('fullDialog component with all components props', () => (
-    <SimpleDialogDemo />
-
-  ));
-
-
-
-
 
 const Dialog = getComponent<DialogProps>('Dialog');
 const DialogAction = getComponent<DialogActionsProps>('DialogActions');
-const DialogContent = getComponent<DialogContentProps>('DialogContent');
+// const DialogContent = getComponent<DialogContentProps>('DialogContent');
 const DialogTitle = getComponent<DialogTitleProps>('DialogTitle');
-
 
 export interface Ipropsss {
 
@@ -64,7 +48,6 @@ function SimpleDialog(props: Ipropsss) {
 	return (
     <Dialog visible={true} onDismiss={handleClose} {...other}>
       <DialogTitle>Set backup account</DialogTitle>
-      <DialogContent>
         <List>
           <ListItem button onClick={() => handleListItemClick('addAccount')}>
             <ListItemAvatar>
@@ -83,7 +66,6 @@ function SimpleDialog(props: Ipropsss) {
             <ListItemText primary="add account" />
           </ListItem>
         </List>
-      </DialogContent>
       <DialogAction>
         <Button color="primary">
           Save changes
@@ -119,3 +101,10 @@ function SimpleDialogDemo() {
 }
 
 export default SimpleDialogDemo;
+
+storiesOf('Dialog', module)
+
+.add('fullDialog component with all components props', () => (
+  <SimpleDialogDemo />
+
+));
