@@ -905,18 +905,18 @@
     deepmerge "^3.2.0"
     tslib "^1.9.3"
 
-"@bluebase/components@^2.5.0":
-  version "2.5.0"
-  resolved "https://registry.yarnpkg.com/@bluebase/components/-/components-2.5.0.tgz#0485ed4e241fc454aaaea734abfa4eee54c95af4"
-  integrity sha512-3FnnlCQErJhwAxrTQ8gPjoDUkpkCayrBpacKm8l8pktTLNHO+QOvseyvQmGeXfuTBzsZsLSbZiCYoUbGC+R3Jw==
+"@bluebase/components@^5.1.0":
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/@bluebase/components/-/components-5.1.0.tgz#7f2fea8993bbcf1374a5c706f737da439046ae65"
+  integrity sha512-8aK/fKP3bJ4ORBVL4SpwX23Pzc+J1LyrMtmTu2FFLnyQGef8J865FT6mtFd6FL3vRfAqjq3zdyytrxugIgmHVA==
   dependencies:
     deepmerge "^3.2.0"
     tslib "^1.9.3"
 
-"@bluebase/core@^4.0.0-aplha.13":
-  version "4.0.0-aplha.13"
-  resolved "https://registry.yarnpkg.com/@bluebase/core/-/core-4.0.0-aplha.13.tgz#37422944ca7eb7904fd8366ac9c1ca18effe75d4"
-  integrity sha512-3KwH90eO8fTH/OT8LMoMdVFsIGZVHd0zqKAN/UXfjGSy9jiXuagwig/+0ZM8P5SUKX61tGgTMHI9sd+djqg3og==
+"@bluebase/core@^4.0.0-aplha.18":
+  version "4.0.0-aplha.18"
+  resolved "https://registry.yarnpkg.com/@bluebase/core/-/core-4.0.0-aplha.18.tgz#ced712c9957a5cbd5a709ce429b9f302af72b969"
+  integrity sha512-cnTdqnaSCtYTUsgTVIVjbTDFkaW+9TQOn0srOHRlvP60hnD0PDmtTb+aybzdSgECFB1T26M9eL6wZ7nsq3Is6w==
   dependencies:
     deepmerge "^3.2.0"
     hoist-non-react-statics "^3.3.0"
@@ -927,6 +927,7 @@
     lodash.isstring "^4.0.1"
     lodash.kebabcase "^4.1.1"
     react-loadable "^5.5.0"
+    rtl-detect "^1.0.2"
     tslib "^1.9.3"
 
 "@bluebase/storybook-addon@^3.0.0":
