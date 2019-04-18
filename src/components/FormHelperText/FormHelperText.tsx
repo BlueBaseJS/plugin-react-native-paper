@@ -4,7 +4,6 @@ import { Caption } from '@bluebase/components';
 import React from 'react';
 import { Theme } from '@bluebase/core';
 
-
 export interface FormHelperTextStyles {
 	root: StyleProp<TextStyle>;
 	normal: StyleProp<TextStyle>;
