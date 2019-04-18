@@ -13,6 +13,7 @@ function loadStories() {
   require('../../../src/components/CardHeader/_stories_/CardHeader.stories');
   require('../../../src/components/Checkbox/__stories__/Checkbox.stories');
   require('../../../src/components/Divider/__stories__/Divider.stories');
+  require('../../../src/components/DrawerSection/__stories__/DrawerSection.stories');
   require('../../../src/components/List/__stories__/List.stories');
   require('../../../src/components/Radio/__stories__/Radio.stories');
   require('../../../src/components/RadioGroup/__stories__/RadioGroup.stories');
@@ -30,6 +31,7 @@ const stories = [
   '../../../src/components/CardHeader/_stories_/CardHeader.stories',
   '../../../src/components/Checkbox/__stories__/Checkbox.stories',
   '../../../src/components/Divider/__stories__/Divider.stories',
+  '../../../src/components/DrawerSection/__stories__/DrawerSection.stories',
   '../../../src/components/List/__stories__/List.stories',
   '../../../src/components/Radio/__stories__/Radio.stories',
   '../../../src/components/RadioGroup/__stories__/RadioGroup.stories',
