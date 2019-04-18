@@ -16,27 +16,13 @@ const stories = storiesOf('CardContent', module);
 stories
 
   .add('SimpleCard', () => (
-    <RecipeReviewCard />
-  ));
+    <CardContent>
+      <Text>
+
+        This impressive paella is a perfect party dish and a fun meal to cook together with your
+        guests. Add 1 cup of frozen peas along with the mussels, if you like.
+    </Text>
+
+    </CardContent>));
 
 
-function RecipeReviewCard() {
-
-
-	return (
-    <>
-      <CardContent>
-        <Text>
-
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
-        </Text>
-
-      </CardContent>
-
-
-    </>
-  );
-}
-
-export default RecipeReviewCard;

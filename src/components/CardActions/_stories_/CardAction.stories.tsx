@@ -17,23 +17,8 @@ const stories = storiesOf('Card Action', module);
 stories
 
   .add('SimpleCard', () => (
-    <RecipeReviewCard />
-  ));
-
-
-function RecipeReviewCard() {
-	const [expanded, setExpanded] = React.useState(false);
-
-
-	return (
-
     <CardActions>
       <IconButton icon="more-vert" onPress={() => { }} />
       <IconButton icon="more-vert" onPress={() => { }} />
       <IconButton icon="more-vert" onPress={() => { }} />
-    </CardActions>
-
-  );
-}
-
-export default RecipeReviewCard;
+    </CardActions>));

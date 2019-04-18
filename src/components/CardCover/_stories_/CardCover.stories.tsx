@@ -17,14 +17,6 @@ const stories = storiesOf('CardMedia', module);
 stories
 
   .add('SimpleCard with Image', () => (
-    <RecipeReviewCard />
-  ));
-
-
-function RecipeReviewCard() {
-
-
-	return (
 
     <CardCover
       style={{ width: 400, height: 400 }}
@@ -33,8 +25,4 @@ function RecipeReviewCard() {
 }}
     // title="Paella dish"
     />
-
-  );
-}
-
-export default RecipeReviewCard;
+  ));
