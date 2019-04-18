@@ -1,4 +1,5 @@
 import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
+
 import {
 	Button,
 	Card,
@@ -7,6 +8,10 @@ import {
 	CardCover,
 	CardHeader,
 	Checkbox,
+	Dialog,
+	DialogActions,
+	DialogContent,
+	DialogTitle,
 	Divider,
 	FormControlLabel,
 	FormHelperText,
@@ -35,6 +40,10 @@ export default createPlugin({
 		CardCover,
 		CardHeader,
 		Checkbox,
+		Dialog,
+		DialogActions,
+		DialogContent,
+		DialogTitle,
 		Divider,
 		FormControlLabel,
 		FormHelperText,
