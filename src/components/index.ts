@@ -6,7 +6,7 @@ export * from './CardCover';
 export * from './CardHeader';
 export * from './Checkbox';
 export * from './Divider';
-export * from './DrawerItem';
+export * from './Drawer.Item';
 export * from './DrawerSection';
 export * from './FormControlLabel';
 export * from './FormHelperText';

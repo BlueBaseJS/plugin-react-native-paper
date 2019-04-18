@@ -1,4 +1,3 @@
-import { BlueBaseApp } from '@bluebase/core';
 import { DrawerItem } from '../DrawerItem';
 import React from 'react';
 import { shallow } from 'enzyme';
