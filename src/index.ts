@@ -1,5 +1,5 @@
-import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 import {
+	Avatar,
 	Button,
 	Card,
 	CardActions,
@@ -19,6 +19,8 @@ import {
 	Switch,
 	TextInput,
 } from './components';
+import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
+
 import { withReactNativePaper } from './withReactNativePaper';
 
 export default createPlugin({
@@ -28,6 +30,7 @@ export default createPlugin({
 	version: '1.0.0',
 
 	components: {
+		Avatar,
 		Button,
 		Card,
 		CardActions,
