@@ -1,2 +1,1 @@
-import {  Card } from 'react-native-paper';
-export { Card };
+export { Card } from 'react-native-paper';
