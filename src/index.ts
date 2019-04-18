@@ -4,16 +4,23 @@ import { Avatar } from './components/Avatar';
 import { BottomNavigation } from './components/BottomNavigation';
 import { BottomNavigationAction } from './components/BottomNavigationAction';
 import { Button } from './components/Button';
+import { Card } from './components/Card';
+import { CardActions } from './components/CardActions';
+import { CardContent } from './components/CardContent';
+import { CardCover } from './components/CardCover';
+import { CardHeader } from './components/CardHeader';
 import { Checkbox } from './components/Checkbox';
 import { Dialog } from './components/Dialog';
-import { DialogActions } from './components/Dialog/DialogAction';
-import { DialogContent } from './components/Dialog/DialogContent';
-import { DialogTitle } from './components/Dialog/DialogTitle';
+import { DialogActions } from './components/DialogAction';
+import { DialogContent } from './components/DialogContent';
+import { DialogTitle } from './components/DialogTitle';
 import { Divider } from './components/Divider';
 import { DrawerItem } from './components/DrawerItem';
 import { DrawerSection } from './components/DrawerSection';
+import { List } from './components/List';
+import { ListAvatar } from './components/ListAvatar';
+import { ListIcon } from './components/ListIcon';
 import { ListItem } from './components/ListItem';
-import { ListSection } from './components/ListSection';
 import { ListSubheader } from './components/ListSubheader';
 
 import { Menu } from './components/Menu/Menu';
@@ -41,6 +48,11 @@ export default createPlugin({
 		BottomNavigation,
 		BottomNavigationAction,
 		Button,
+		Card,
+		CardActions,
+		CardContent,
+		CardCover,
+		CardHeader,
 		Checkbox,
 		Dialog,
 		DialogActions,
@@ -51,8 +63,10 @@ export default createPlugin({
 		DrawerItem,
 		DrawerLayout,
 		DrawerSection,
+		List,
+		ListAvatar,
+		ListIcon,
 		ListItem,
-		ListSection,
 		ListSubheader,
 		Menu,
 		MenuItem,
