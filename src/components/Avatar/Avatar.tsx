@@ -15,7 +15,6 @@ const AvatarComponent = (props: AvatarProps) => {
 	if (props.type === 'image' && props.image !== undefined) {
 		return <Avatar.Image source={props.image} {...props} />;
 	}
-
 	return null;
 };
 

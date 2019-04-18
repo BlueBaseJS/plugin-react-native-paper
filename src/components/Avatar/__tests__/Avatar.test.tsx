@@ -73,6 +73,24 @@ test('avatar component should  return  source Image', async () => {
 
 
 
+test('avatar component should  return  empty', async () => {
+  const TemperoryAvatar=Avatar as any;
+
+	const wrapper = mount(
+    <BlueBaseApp plugins={[Plugin]}>
+        <TemperoryAvatar  />
+    </BlueBaseApp>
+  );
+
+
+	await waitForElement(wrapper, Avatar);
+
+	expect(wrapper.find('AvatarComponent').children().isEmpty()).toEqual(true);
+
+});
+
+
+
 test('avatar component should  return  type icon', async () => {
 
 
