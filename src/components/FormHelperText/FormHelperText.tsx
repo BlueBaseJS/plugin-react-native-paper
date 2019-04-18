@@ -1,7 +1,8 @@
 
-import { Caption, Theme } from '@bluebase/core';
 import { StyleProp, TextStyle } from 'react-native';
+import { Caption } from '@bluebase/components';
 import React from 'react';
+import { Theme } from '@bluebase/core';
 
 export interface FormHelperTextStyles {
 	root: StyleProp<TextStyle>;
@@ -23,7 +24,7 @@ export const FormHelperText = (props: FormHelperTextProps) => {
 
 	const color = (error === true) ? _styles.error : _styles.normal;
 
-	return (<Caption {...rest} style={[ _styles.root, color, style ]} />);
+	return (<Caption {...rest} style={[_styles.root, color, style]} />);
 };
 
 FormHelperText.defaultStyles = (theme: Theme) => ({

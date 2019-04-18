@@ -1,15 +1,28 @@
-import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 import {
+	Avatar,
 	Button,
+	Card,
+	CardActions,
+	CardContent,
+	CardCover,
+	CardHeader,
 	Checkbox,
 	Divider,
+	DrawerItem,
+	DrawerSection,
 	FormControlLabel,
 	FormHelperText,
+	List,
+	ListIcon,
+	ListItem,
+	ListSubheader,
 	Radio,
 	RadioGroup,
 	Switch,
 	TextInput,
 } from './components';
+import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
+
 import { withReactNativePaper } from './withReactNativePaper';
 
 export default createPlugin({
@@ -19,11 +32,23 @@ export default createPlugin({
 	version: '1.0.0',
 
 	components: {
+		Avatar,
 		Button,
+		Card,
+		CardActions,
+		CardContent,
+		CardCover,
+		CardHeader,
 		Checkbox,
 		Divider,
+		DrawerItem,
+		DrawerSection,
 		FormControlLabel,
 		FormHelperText,
+		List,
+		ListIcon,
+		ListItem,
+		ListSubheader,
 		Radio,
 		RadioGroup,
 		Switch,

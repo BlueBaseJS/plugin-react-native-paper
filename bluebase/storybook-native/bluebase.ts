@@ -1,7 +1,7 @@
 import { BootOptions } from '@bluebase/core';
 import commonBootOptions from '../common/bluebase';
 import deepmerge from 'deepmerge';
-
+import ReactnativePaperPlugin from '../../src';
 
 /**
  * Add your platform specific configs here.
@@ -10,7 +10,7 @@ import deepmerge from 'deepmerge';
  */
 const bootOptions: Partial<BootOptions> = {
 
-	plugins: [],
+	plugins: [ReactnativePaperPlugin],
 };
 
 export default deepmerge(commonBootOptions, bootOptions);

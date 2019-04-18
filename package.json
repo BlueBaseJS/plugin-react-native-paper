@@ -79,7 +79,7 @@
   },
   "dependencies": {
     "@bluebase/component-mapper": "^1.4.0",
-    "@bluebase/components": "^2.5.0",
+    "@bluebase/components": "^5.1.0",
     "deepmerge": "^3.2.0",
     "expo": "^32.0.0",
     "react-native": "0.57.7",
@@ -93,7 +93,7 @@
     "@babel/plugin-transform-flow-strip-types": "^7.4.0",
     "@bluebase/cli-essentials": "^0.0.4",
     "@bluebase/code-standards": "^1.0.3",
-    "@bluebase/core": "^4.0.0-aplha.13",
+    "@bluebase/core": "^4.0.0-aplha.18",
     "@bluebase/storybook-addon": "^3.0.0",
     "@blueeast/tslint-config-blueeast": "^0.7.0",
     "@storybook/addon-actions": "^5.0.6",
@@ -143,7 +143,6 @@
     "typescript": "3.4.1"
   },
   "peerDependencies": {
-    "@bluebase/core": "^4.*",
     "react": "^16.*"
   },
   "prettier": {
