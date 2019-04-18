@@ -1,39 +1,14 @@
+// import { Button, Card } from '@bluebase/components';
+// import React from 'react';
+// import storiesOf from '@bluebase/storybook-addon';
 
-import { CardActionsProps } from '@bluebase/components';
-import { IconButton } from 'react-native-paper';
+// const stories = storiesOf('Card', module);
 
-import { getComponent } from '@bluebase/core';
-import storiesOf from '@bluebase/storybook-addon';
-// import { withInfo } from '@storybook/addon-info';
-// import { withKnobs } from '@storybook/addon-knobs';
+// stories
 
-const CardActions = getComponent<CardActionsProps>('CardActions');
-
-const stories = storiesOf('Card Action', module);
-
-// stories.addDecorator(withInfo);
-// stories.addDecorator(withKnobs);
-
-stories
-
-  .add('SimpleCard', () => (
-    <RecipeReviewCard />
-  ));
-
-
-function RecipeReviewCard() {
-	const [expanded, setExpanded] = React.useState(false);
-
-
-	return (
-
-    <CardActions>
-      <IconButton icon="more-vert" onPress={() => { }} />
-      <IconButton icon="more-vert" onPress={() => { }} />
-      <IconButton icon="more-vert" onPress={() => { }} />
-    </CardActions>
-
-  );
-}
-
-export default RecipeReviewCard;
+// .add('CardActions', () => (
+//   <Card.Actions>
+//     <Button title="Button 1" onPress={() => { }} />
+//     <Button title="Button 2" onPress={() => { }} />
+//   </Card.Actions>
+// ));

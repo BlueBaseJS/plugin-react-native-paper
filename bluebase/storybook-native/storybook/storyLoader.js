@@ -10,7 +10,7 @@ function loadStories() {
   require('../../../src/components/CardActions/_stories_/CardAction.stories');
   require('../../../src/components/CardContent/_stories_/CardContent.stories');
   require('../../../src/components/CardCover/_stories_/CardCover.stories');
-  require('../../../src/components/CardHeader/_stories_/CardTitle.stories');
+  require('../../../src/components/CardHeader/_stories_/CardHeader.stories');
   require('../../../src/components/Checkbox/__stories__/Checkbox.stories');
   require('../../../src/components/Divider/__stories__/Divider.stories');
   require('../../../src/components/List/__stories__/List.stories');
@@ -27,7 +27,7 @@ const stories = [
   '../../../src/components/CardActions/_stories_/CardAction.stories',
   '../../../src/components/CardContent/_stories_/CardContent.stories',
   '../../../src/components/CardCover/_stories_/CardCover.stories',
-  '../../../src/components/CardHeader/_stories_/CardTitle.stories',
+  '../../../src/components/CardHeader/_stories_/CardHeader.stories',
   '../../../src/components/Checkbox/__stories__/Checkbox.stories',
   '../../../src/components/Divider/__stories__/Divider.stories',
   '../../../src/components/List/__stories__/List.stories',
