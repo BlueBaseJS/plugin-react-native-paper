@@ -1,14 +1,11 @@
 import { Avatar } from '../Avatar';
-import React from 'react';
-import { mount } from 'enzyme';
 import { BlueBaseApp } from '@bluebase/core';
 import Plugin from '../../../index';
+import React from 'react';
+import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
 
 const path = 'https://placeimg.com/1000/480/people';
-
-
-
 
 test('avatar component should  return  source Image', async () => {
 
@@ -62,7 +59,7 @@ test('avatar component should  return  source Image', async () => {
     <BlueBaseApp plugins={[Plugin]}>
 
       <Avatar
-        type="Text"
+        type="text"
         text="string"
       />
 

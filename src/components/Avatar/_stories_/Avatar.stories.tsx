@@ -19,7 +19,6 @@ stories.add('Simple Avatar ', () => (
   <Avatar
     type="image"
     image={{ uri: 'https://via.placeholder.com/300/09f.png%20C/O%20https://placeholder.com/' }}
-    style={{ width: 200, height: 200 }}
   />
 ));
 
@@ -28,7 +27,7 @@ stories.add('Simple Avatar ', () => (
 stories.add('Simple Avatar with text prop ', () => (
   <Avatar
     type="text"
-    text={'hello'}  // why this prop is of imagesource type ? issue in typings.
+    text={'AR'}  // why this prop is of imagesource type ? issue in typings.
   />
 ));
 
@@ -45,7 +44,6 @@ stories.add('Simple Avatar local images ', () => (
   <Avatar
     type="image"
     image={require('./download.png')}
-    style={{ width: 100, height: 100 }}
 
   />
 
@@ -54,7 +52,6 @@ stories.add('Simple Avatar local images ', () => (
 
 stories.add('Simple Avatar  with style prop ', () => (
   <Avatar
-    style={{ height: 80, width: 80 }}
     type="image"
     image={require('./download.png')}
   />
@@ -64,7 +61,7 @@ stories.add('Simple Avatar  with style prop ', () => (
 
 stories.add('Simple Avatar  with style prop ', () => (
   <Avatar
-    style={{ height: 80, width: 80 }}
+    size={80}
     type="image"
     image={require('./download.png')}
   />
@@ -74,7 +71,6 @@ stories.add('Simple Avatar  with style prop ', () => (
 
 stories.add('Simple Avatar  with style prop ', () => (
   <Avatar
-    style={{ height: 80, width: 80 }}
     type="image"
     image={require('./download.png')}
   />

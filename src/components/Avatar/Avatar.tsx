@@ -1,19 +1,22 @@
 import { Avatar } from 'react-native-paper';
+import { AvatarProps } from '@bluebase/components';
 import React from 'react';
 
-const AvatarComponent = (props: any) => {
+const AvatarComponent = (props: AvatarProps) => {
 
-	if (props.type === 'Icon') {
-		return <Avatar.Icon {...props} />;
+	if (props.type === 'icon' && props.icon !== undefined) {
+		return <Avatar.Icon icon={props.icon} {...props} />;
 	}
 
-	if (props.type === 'Text') {
+	if (props.type === 'text' && props.text !== undefined) {
 		return <Avatar.Text label={props.text} {...props} />;
 	}
 
-	const ImageSource = props.image && props.image.uri ? { uri: props.image.uri } : props.image;
+	if (props.type === 'image' && props.image !== undefined) {
+		return <Avatar.Image source={props.image} {...props} />;
+	}
 
-	return <Avatar.Image size={props.size} source={ImageSource} />;
+	return null;
 };
 
 export { AvatarComponent as Avatar };
