@@ -32,11 +32,17 @@ stories.add('Simple Avatar with text prop ', () => (
 ));
 
 
-
 stories.add('Simple Avatar with icon prop ', () => (
   <Avatar
     type="icon"
     icon="star"
+  />
+));
+
+
+stories.add('Simple Avatar without icon prop ', () => (
+  <Avatar
+    type={'foo' as any}
   />
 ));
 

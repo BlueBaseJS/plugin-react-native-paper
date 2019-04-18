@@ -80,7 +80,8 @@ test('avatar component should  return  type icon', async () => {
     <BlueBaseApp plugins={[Plugin]}>
 
       <Avatar
-        type="Icon"
+        type="icon"
+        icon="start"
       />
 
     </BlueBaseApp>
