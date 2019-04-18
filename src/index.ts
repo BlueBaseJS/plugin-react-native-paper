@@ -1,6 +1,5 @@
-import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
-
 import {
+	Avatar,
 	Button,
 	Card,
 	CardActions,
@@ -13,6 +12,8 @@ import {
 	DialogContent,
 	DialogTitle,
 	Divider,
+	DrawerItem,
+	DrawerSection,
 	FormControlLabel,
 	FormHelperText,
 	List,
@@ -24,6 +25,8 @@ import {
 	Switch,
 	TextInput,
 } from './components';
+import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
+
 import { withReactNativePaper } from './withReactNativePaper';
 
 export default createPlugin({
@@ -33,6 +36,7 @@ export default createPlugin({
 	version: '1.0.0',
 
 	components: {
+		Avatar,
 		Button,
 		Card,
 		CardActions,
@@ -45,6 +49,8 @@ export default createPlugin({
 		DialogContent,
 		DialogTitle,
 		Divider,
+		DrawerItem,
+		DrawerSection,
 		FormControlLabel,
 		FormHelperText,
 		List,

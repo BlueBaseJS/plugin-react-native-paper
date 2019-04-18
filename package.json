@@ -147,7 +147,6 @@
     "typescript": "3.4.1"
   },
   "peerDependencies": {
-    "@bluebase/core": "^4.*",
     "react": "^16.*"
   },
   "prettier": {

@@ -5,6 +5,7 @@
 // https://github.com/elderfo/react-native-storybook-loader.git
 
 function loadStories() {
+  require('../../../src/components/Avatar/_stories_/Avatar.stories');
   require('../../../src/components/Button/__stories__/Button.stories');
   require('../../../src/components/Card/_stories_/Card.stories');
   require('../../../src/components/CardActions/_stories_/CardAction.stories');
@@ -17,6 +18,7 @@ function loadStories() {
   require('../../../src/components/DialogContent/_stories_/DialogContent.stories');
   require('../../../src/components/DialogTitle/_stories_/DialogTitle.stories');
   require('../../../src/components/Divider/__stories__/Divider.stories');
+  require('../../../src/components/DrawerSection/__stories__/DrawerSection.stories');
   require('../../../src/components/List/__stories__/List.stories');
   require('../../../src/components/Radio/__stories__/Radio.stories');
   require('../../../src/components/RadioGroup/__stories__/RadioGroup.stories');
@@ -26,6 +28,7 @@ function loadStories() {
 }
 
 const stories = [
+  '../../../src/components/Avatar/_stories_/Avatar.stories',
   '../../../src/components/Button/__stories__/Button.stories',
   '../../../src/components/Card/_stories_/Card.stories',
   '../../../src/components/CardActions/_stories_/CardAction.stories',
@@ -38,6 +41,7 @@ const stories = [
   '../../../src/components/DialogContent/_stories_/DialogContent.stories',
   '../../../src/components/DialogTitle/_stories_/DialogTitle.stories',
   '../../../src/components/Divider/__stories__/Divider.stories',
+  '../../../src/components/DrawerSection/__stories__/DrawerSection.stories',
   '../../../src/components/List/__stories__/List.stories',
   '../../../src/components/Radio/__stories__/Radio.stories',
   '../../../src/components/RadioGroup/__stories__/RadioGroup.stories',
