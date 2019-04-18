@@ -22,6 +22,9 @@ import { ListAvatar } from './components/ListAvatar';
 import { ListIcon } from './components/ListIcon';
 import { ListItem } from './components/ListItem';
 import { ListSubheader } from './components/ListSubheader';
+
+import { Menu } from './components/Menu/Menu';
+import { MenuItem } from './components/Menu/MenuItem';
 import { Picker } from './components/Picker';
 import { PickerItem } from './components/PickerItem';
 import { Radio } from './components/Radio';
@@ -65,6 +68,8 @@ export default createPlugin({
 		ListIcon,
 		ListItem,
 		ListSubheader,
+		Menu,
+		MenuItem,
 		Picker,
 		PickerItem,
 		Radio,
