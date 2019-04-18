@@ -1,6 +1,6 @@
-import { List as L } from 'react-native-paper';
+import { List } from 'react-native-paper';
 import { componentMapper } from '@bluebase/component-mapper';
 
-export const ListIcon = componentMapper(L.Icon, {
+export const ListIcon = componentMapper(List.Icon, {
 	icon: 'name'
 }, { rest: true });

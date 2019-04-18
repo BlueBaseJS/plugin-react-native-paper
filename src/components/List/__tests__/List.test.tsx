@@ -16,12 +16,12 @@ describe('List', () => {
 					<List.Subheader>Some title</List.Subheader>
 					<List.Item
 						title="First Item"
-						left={() => <List.Icon name="folder" />}
+						left={<List.Icon name="folder" />}
 						onPress={console.log}
 					/>
 					<List.Item
 						title="Second Item"
-						left={() => <List.Icon color="#000" name="inbox" />}
+						left={<List.Icon color="#000" name="inbox" />}
 					/>
 				</List>
 			</BlueBaseApp>
