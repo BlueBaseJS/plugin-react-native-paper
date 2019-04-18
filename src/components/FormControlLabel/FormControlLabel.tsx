@@ -1,6 +1,7 @@
 import { StyleProp, TextStyle } from 'react-native';
-import { Text, Theme } from '@bluebase/core';
 import React from 'react';
+import { Text } from '@bluebase/components';
+import { Theme } from '@bluebase/core';
 
 export interface FormControlLabelStyles {
 	root: StyleProp<TextStyle>;

@@ -167,7 +167,7 @@ describe('RadioGroup', () => {
 	it('should only render display label and not helperText', async () => {
 
 		const component = mount(
-			<BlueBaseApp components={{ RadioGroup, Radio }}>
+			<BlueBaseApp plugins={[Plugin]}>
 				<RadioGroup label="FooBar">
 					<Radio label="Option A" value="option-a" />
 					<Radio label="Option B" value="option-b" />
@@ -191,7 +191,7 @@ describe('RadioGroup', () => {
 	it('should only render display helperText and not label', async () => {
 
 		const component = mount(
-			<BlueBaseApp components={{ RadioGroup, Radio }}>
+			<BlueBaseApp plugins={[Plugin]}>
 				<RadioGroup helperText="description">
 					<Radio label="Option A" value="option-a" />
 					<Radio label="Option B" value="option-b" />
