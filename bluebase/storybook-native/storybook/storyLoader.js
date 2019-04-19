@@ -13,6 +13,10 @@ function loadStories() {
   require('../../../src/components/CardCover/_stories_/CardCover.stories');
   require('../../../src/components/CardHeader/_stories_/CardHeader.stories');
   require('../../../src/components/Checkbox/__stories__/Checkbox.stories');
+  require('../../../src/components/Dialog/_stories_/Dialogs.stories');
+  require('../../../src/components/DialogAction/_stories_/DialogAction.stories');
+  require('../../../src/components/DialogContent/_stories_/DialogContent.stories');
+  require('../../../src/components/DialogTitle/_stories_/DialogTitle.stories');
   require('../../../src/components/Divider/__stories__/Divider.stories');
   require('../../../src/components/DrawerSection/__stories__/DrawerSection.stories');
   require('../../../src/components/List/__stories__/List.stories');
@@ -32,6 +36,10 @@ const stories = [
   '../../../src/components/CardCover/_stories_/CardCover.stories',
   '../../../src/components/CardHeader/_stories_/CardHeader.stories',
   '../../../src/components/Checkbox/__stories__/Checkbox.stories',
+  '../../../src/components/Dialog/_stories_/Dialogs.stories',
+  '../../../src/components/DialogAction/_stories_/DialogAction.stories',
+  '../../../src/components/DialogContent/_stories_/DialogContent.stories',
+  '../../../src/components/DialogTitle/_stories_/DialogTitle.stories',
   '../../../src/components/Divider/__stories__/Divider.stories',
   '../../../src/components/DrawerSection/__stories__/DrawerSection.stories',
   '../../../src/components/List/__stories__/List.stories',
