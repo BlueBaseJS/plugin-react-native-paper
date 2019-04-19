@@ -17,6 +17,8 @@ import { DialogTitle } from './components/DialogTitle';
 import { Divider } from './components/Divider';
 import { DrawerItem } from './components/DrawerItem';
 import { DrawerSection } from './components/DrawerSection';
+import { IconButton } from './components/IconButton';
+
 import { List } from './components/List';
 import { ListAvatar } from './components/ListAvatar';
 import { ListIcon } from './components/ListIcon';
@@ -63,6 +65,7 @@ export default createPlugin({
 		DrawerItem,
 		DrawerLayout,
 		DrawerSection,
+		IconButton,
 		List,
 		ListAvatar,
 		ListIcon,
