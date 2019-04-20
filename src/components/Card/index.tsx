@@ -3,22 +3,20 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import MuiCard from '@material-ui/core/Card';
 import React from 'react';
 
-
-
 export const Card = (props: CardProps) => {
-
-	if (props.onPress === undefined) {
-	 return (
-			<MuiCard style={props.style as any} {...props}>{props.children}</MuiCard>
-	);
+	const { onPress, style, children, ...others } = props;
+	if (onPress === undefined) {
+		return (
+			<MuiCard style={style as any} {...others}>{children}</MuiCard>
+		);
 	}
 	return (
-		<MuiCard   style={props.style as any} {...props}>
-			<CardActionArea onClick={props.onPress}>
-				{props.children}
+		<MuiCard style={style as any} {...others}>
+			<CardActionArea onClick={onPress}>
+				{children}
 			</CardActionArea>
 		</MuiCard>
 	);
 
 };
-Card.deafultProps=CardDefaultProps;
+Card.deafultProps = CardDefaultProps;
