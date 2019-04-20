@@ -955,9 +955,10 @@
     deepmerge "^3.2.0"
     tslib "^1.9.3"
 
-"@bluebase/components@^5.1.1":
+"@bluebase/components@^5.2.0":
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/@bluebase/components/-/components-5.2.0.tgz#ff370678edb4c411f85e3d8e8c41b5c83f9ca531"
+  integrity sha512-D8J+vCHaxnzXcxemdtVHbLpmhfRBDAzGIrQ7HcidFnO7tQrLu0+uBUCRNfkvxXalDpcBThEcDG3HzWLYwQwiPg==
   dependencies:
     deepmerge "^3.2.0"
     tslib "^1.9.3"
