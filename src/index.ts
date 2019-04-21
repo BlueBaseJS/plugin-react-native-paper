@@ -34,6 +34,7 @@ import { RadioGroup } from './components/RadioGroup';
 import { Slider } from './components/Slider';
 import { Switch } from './components/Switch';
 import { Tab } from './components/Tab';
+import { Table } from './components/Table';
 import { Tabs } from './components/Tabs';
 import { TextInput } from './components/TextInput';
 import { withTheme } from './withTheme';
@@ -80,6 +81,7 @@ export default createPlugin({
 		Slider,
 		Switch,
 		Tab,
+		Table,
 		Tabs,
 		TextInput,
 	},
