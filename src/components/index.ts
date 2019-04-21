@@ -14,6 +14,7 @@ export * from './Drawer.Item';
 export * from './DrawerSection';
 export * from './FormControlLabel';
 export * from './FormHelperText';
+export * from './IconButton';
 export * from './List';
 export * from './List.Icon';
 export * from './ListItem';
