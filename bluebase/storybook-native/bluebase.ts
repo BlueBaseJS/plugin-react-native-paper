@@ -1,7 +1,9 @@
-import { BootOptions } from '@bluebase/core';
+import ReactnativePaperPlugin from '../../src';
+import VectorIconPlugin from '@bluebase/plugin-vector-icons/dist/MaterialIcons/index';
 import commonBootOptions from '../common/bluebase';
 import deepmerge from 'deepmerge';
-import ReactnativePaperPlugin from '../../src';
+
+import { BootOptions } from '@bluebase/core';
 
 /**
  * Add your platform specific configs here.
@@ -10,7 +12,7 @@ import ReactnativePaperPlugin from '../../src';
  */
 const bootOptions: Partial<BootOptions> = {
 
-	plugins: [ReactnativePaperPlugin],
+	plugins: [ReactnativePaperPlugin, VectorIconPlugin],
 };
 
 export default deepmerge(commonBootOptions, bootOptions);
