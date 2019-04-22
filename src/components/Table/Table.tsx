@@ -1,10 +1,15 @@
 import { TableDefaultProps, TableProps } from '@bluebase/components';
-import MUIButton from '@material-ui/core/Button';
-import { componentMapper } from '@bluebase/component-mapper';
+import React from "react"
+import MuiTable from '@material-ui/core/Table';
 
-export const Table = componentMapper<TableProps>(MUIButton, {
-	children: ({ style, children }: TableProps) => children ? children : style,
-	
-}, { rest: true, });
+
+const Table = (props: TableProps) => {
+
+	return (
+		<MuiTable {...props}>
+			{props.children}
+		</MuiTable>
+	);
+};
 
 Table.defaultProps = TableDefaultProps;
