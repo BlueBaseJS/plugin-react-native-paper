@@ -13,7 +13,7 @@ const AvatarComponent = (props: AvatarProps) => {
 	}
 
 	if (props.type === 'image' && props.image !== undefined) {
-		return <Avatar.Image source={props.image} {...props} />;
+		return <Avatar.Image source={props.image as any} {...props} />;
 	}
 	return null;
 };
