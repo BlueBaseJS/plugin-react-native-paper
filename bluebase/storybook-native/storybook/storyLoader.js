@@ -6,6 +6,7 @@
 
 function loadStories() {
   require('../../../src/components/Avatar/__stories__/Avatar.stories');
+  require('../../../src/components/Badge/__stories__/Badge.stories');
   require('../../../src/components/Button/__stories__/Button.stories');
   require('../../../src/components/Card/_stories_/Card.stories');
   require('../../../src/components/CardActions/_stories_/CardAction.stories');
@@ -30,6 +31,7 @@ function loadStories() {
 
 const stories = [
   '../../../src/components/Avatar/__stories__/Avatar.stories',
+  '../../../src/components/Badge/__stories__/Badge.stories',
   '../../../src/components/Button/__stories__/Button.stories',
   '../../../src/components/Card/_stories_/Card.stories',
   '../../../src/components/CardActions/_stories_/CardAction.stories',
