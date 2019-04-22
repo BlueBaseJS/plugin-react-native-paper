@@ -16,9 +16,12 @@ const stories = storiesOf('Badge', module);
 
 stories
 
-.add('1st Badge', () => (
-    <Badge style = {{marginTop: 96}}>3</Badge>
-))
-.add('2nd Badge', () => (
-    <Badge style = {{color: 'red'}}></Badge>
-))
+    .add('Badge with Text', () => (
+        <Badge visible={true} style={{ marginTop: 150, backgroundColor: 'blue' }}>Badge</Badge>
+    ))
+    .add('Badge with Number', () => (
+        <Badge visible={true} style={{ marginTop: 150, color: 'white', backgroundColor: 'blue' }}>9</Badge>
+    ))
+    .add('Badge with Red Background Color', () => (
+        <Badge visible={true} style={{ marginTop: 150, backgroundColor: 'red' }}>349</Badge>
+    ))

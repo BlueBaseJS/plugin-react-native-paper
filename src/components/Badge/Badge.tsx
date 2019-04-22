@@ -1,7 +1,7 @@
-import { BadgeProps } from '@bluebase/components';
-import { getComponent } from '@bluebase/core';
-import React from 'react';
 import { Badge as RNPBadge } from 'react-native-paper';
+import { BadgeProps } from '@bluebase/components';
+import React from 'react';
+import { getComponent } from '@bluebase/core';
 
 const Text = getComponent('Text');
 const Badge = (props: BadgeProps) => (
