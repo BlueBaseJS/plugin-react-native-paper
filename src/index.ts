@@ -56,6 +56,7 @@ export default createPlugin({
 		FormHelperText,
 		IconButton,
 		List,
+		ListAvatar: Avatar,
 		ListIcon,
 		ListItem,
 		ListSubheader,
