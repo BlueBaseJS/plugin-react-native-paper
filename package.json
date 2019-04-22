@@ -96,7 +96,7 @@
     "@babel/plugin-transform-flow-strip-types": "^7.4.0",
     "@bluebase/cli-essentials": "^0.0.4",
     "@bluebase/code-standards": "^1.0.3",
-    "@bluebase/core": "^4.0.0-aplha.18",
+    "@bluebase/core": "^4.0.0-aplha.22",
     "@bluebase/storybook-addon": "^3.0.0",
     "@blueeast/tslint-config-blueeast": "^0.7.0",
     "@storybook/addon-actions": "^5.0.6",
