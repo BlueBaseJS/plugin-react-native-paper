@@ -1,4 +1,4 @@
-import { Table } from '../index';
+import { TableHead } from '../index';
 import React from 'react';
 import { BlueBaseApp } from '@bluebase/core';
 
@@ -7,14 +7,14 @@ import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
 import Plugin from '../../../index';
 
-test('Table component with children text', async () => {
+test('TableHeader component with children text', async () => {
 	const wrapper = mount(
 		<BlueBaseApp plugins={[Plugin]}>
-			<Table>
-				<Text>Table test</Text>
-			</Table>
+			<TableHead>
+				<Text>TableHeader test</Text>
+			</TableHead>
 		</BlueBaseApp>
 	);
-	await waitForElement(wrapper, Table);
+	await waitForElement(wrapper, TableHead);
 	expect(wrapper.props().children).toBeDefined();
 });

@@ -1,9 +1,14 @@
 import { TableCellDefaultProps, TableCellProps } from '@bluebase/components';
 import MuiTableCell from '@material-ui/core/TableCell';
-import { componentMapper } from '@bluebase/component-mapper';
+import React from 'react';
 
-export const TableCell = componentMapper<TableCellProps>(MuiTableCell, {
-	children: ({ style, children }: TableCellProps) => children ? children : style,
-}, { rest: true, });
+export const TableCell = (props: TableCellProps) => {
+	const { style, children, ...rest } = props;
+	return (
+		<MuiTableCell style={style as any} {...rest}>
+			{children}
+		</MuiTableCell>
+	);
+};
 
 TableCell.defaultProps = TableCellDefaultProps;

@@ -1,9 +1,12 @@
 import { TableHeadDefaultProps, TableHeadProps } from '@bluebase/components';
-import MuiTableFooter from '@material-ui/core/TableFooter';
-import { componentMapper } from '@bluebase/component-mapper';
-
-export const TableHead = componentMapper<TableHeadProps>(MuiTableFooter, {
-	children: ({ style, children }: TableHeadProps) => children ? children : style,
-}, { rest: true, });
-
+import MuiTableHead from '@material-ui/core/TableHead';
+import React from 'react';
+export const TableHead = (props: TableHeadProps) => {
+	const { style, children, ...rest } = props;
+	return (
+		<MuiTableHead style={style as any} {...rest}>
+			{children}
+		</MuiTableHead>
+	);
+};
 TableHead.defaultProps = TableHeadDefaultProps;
