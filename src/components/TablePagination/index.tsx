@@ -5,9 +5,9 @@ export const TablePagination = (props: TablePaginationProps) => {
 	const { style, children, ...rest } = props;
 	return (
 		<MuiTablePagination
-			rowsPerPage={12}
+			rowsPerPage={null as any}
 			onChangePage={props.onPageChange as any}
-			count={0}
+			count={null as any}
 			style={style as any}
 			{...rest}
 		>
