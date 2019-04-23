@@ -4,7 +4,6 @@ import storiesOf from '@bluebase/storybook-addon';
 import { TableCell } from '../../TableCell';
 import { TableRow } from '../../TableRow';
 import { TableHead } from '../../TableHeader';
-import { TableBody } from '../../TableBody';
 
 const stories = storiesOf('Table', module);
 let id = 0;
@@ -31,16 +30,15 @@ stories.add('Table', () => (
 				<TableCell>Protein (g)</TableCell>
 			</TableRow>
 		</TableHead>
-		<TableBody>
-			{rows.map(row => (
-				<TableRow key={row.id}>
-					<TableCell>{row.name}</TableCell>
-					<TableCell>{row.calories}</TableCell>
-					<TableCell>{row.fat}</TableCell>
-					<TableCell>{row.carbs}</TableCell>
-					<TableCell>{row.protein}</TableCell>
-				</TableRow>
-			))}
-		</TableBody>
+
+		{rows.map(row => (
+			<TableRow key={row.id}>
+				<TableCell>{row.name}</TableCell>
+				<TableCell>{row.calories}</TableCell>
+				<TableCell>{row.fat}</TableCell>
+				<TableCell>{row.carbs}</TableCell>
+				<TableCell>{row.protein}</TableCell>
+			</TableRow>
+		))}
 	</Table>
 ));

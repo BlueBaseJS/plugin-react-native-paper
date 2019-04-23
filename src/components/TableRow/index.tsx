@@ -1,13 +1,14 @@
-import { TableRowDefaultProps, TableRowProps } from '@bluebase/components';
-import MuiTableRow from '@material-ui/core/TableRow';
+import { TableDefaultProps, TableProps } from '@bluebase/components';
 import React from 'react';
-export const TableRow = (props: TableRowProps) => {
+import { DataTable } from 'react-native-paper';
+const TableRow = (props: TableProps) => {
 	const { style, children, ...rest } = props;
 	return (
-		<MuiTableRow style={style as any} {...rest}>
+		<DataTable.Row style={style as any} {...rest}>
 			{children}
-		</MuiTableRow>
+		</DataTable.Row>
 	);
 };
 
-TableRow.defaultProps = TableRowDefaultProps;
+TableRow.defaultProps = TableDefaultProps;
+export { TableRow };

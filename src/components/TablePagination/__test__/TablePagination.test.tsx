@@ -10,7 +10,7 @@ import Plugin from '../../../index';
 test('TablePagination component with children text', async () => {
 	const wrapper = mount(
 		<BlueBaseApp plugins={[Plugin]}>
-			<TablePagination>
+			<TablePagination page={2} numberOfPages={2} onPageChange={() => null}>
 				<Text>TablePagination test</Text>
 			</TablePagination>
 		</BlueBaseApp>

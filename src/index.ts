@@ -35,9 +35,9 @@ import { Slider } from './components/Slider';
 import { Switch } from './components/Switch';
 import { Tab } from './components/Tab';
 import { Table } from './components/Table';
-import { TableBody } from './components/TableBody';
+
 import { TableCell } from './components/TableCell';
-import { TableFooter } from './components/TableFooter';
+
 import { TableHead } from './components/TableHeader';
 import { TablePagination } from './components/TablePagination';
 import { TableRow } from './components/TableRow';
@@ -89,9 +89,7 @@ export default createPlugin({
 		Switch,
 		Tab,
 		Table,
-		TableBody,
 		TableCell,
-		TableFooter,
 		TableHead,
 		TablePagination,
 		TableRow,

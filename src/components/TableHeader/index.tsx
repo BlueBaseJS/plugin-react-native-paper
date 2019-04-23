@@ -1,12 +1,9 @@
-import { TableHeadDefaultProps, TableHeadProps } from '@bluebase/components';
-import MuiTableHead from '@material-ui/core/TableHead';
+import { TableDefaultProps, TableProps } from '@bluebase/components';
 import React from 'react';
-export const TableHead = (props: TableHeadProps) => {
-	const { style, children, ...rest } = props;
-	return (
-		<MuiTableHead style={style as any} {...rest}>
-			{children}
-		</MuiTableHead>
-	);
+import { DataTable } from 'react-native-paper';
+const TableHead = (props: TableProps) => {
+	const { style, children } = props;
+	return <DataTable.Header style={style as any}>{children}</DataTable.Header>;
 };
-TableHead.defaultProps = TableHeadDefaultProps;
+TableHead.defaultProps = TableDefaultProps;
+export { TableHead };

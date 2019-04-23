@@ -1,12 +1,14 @@
-import { TableTitleDefaultProps, TableTitleProps } from '@bluebase/components';
-import MuiTableSortLabel from '@material-ui/core/TableSortLabel';
+import { TableDefaultProps, TableProps } from '@bluebase/components';
 import React from 'react';
-export const TableTitle = (props: TableTitleProps) => {
-	const { direction, style, children, ...rest } = props;
+import { DataTable } from 'react-native-paper';
+const TableTitle = (props: TableProps) => {
+	const { style, children, ...rest } = props;
 	return (
-		<MuiTableSortLabel direction={direction as any} style={style as any} {...rest}>
+		<DataTable.Title style={style as any} {...rest}>
 			{children}
-		</MuiTableSortLabel>
+		</DataTable.Title>
 	);
 };
-TableTitle.defaultProps = TableTitleDefaultProps;
+
+TableTitle.defaultProps = TableDefaultProps;
+export { TableTitle };

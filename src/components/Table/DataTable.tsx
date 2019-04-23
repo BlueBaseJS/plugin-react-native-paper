@@ -1,13 +1,12 @@
 import { TableDefaultProps, TableProps } from '@bluebase/components';
 import React from 'react';
-import MuiTable from '@material-ui/core/Table';
-
+import { DataTable } from 'react-native-paper';
 const Table = (props: TableProps) => {
 	const { style, children, ...rest } = props;
 	return (
-		<MuiTable style={style as any} {...rest}>
+		<DataTable style={style as any} {...rest}>
 			{children}
-		</MuiTable>
+		</DataTable>
 	);
 };
 
