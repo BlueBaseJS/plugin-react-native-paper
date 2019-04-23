@@ -1,4 +1,4 @@
-import { DefaultTheme, Provider } from 'react-native-paper';
+import { DefaultTheme, Portal, Provider } from 'react-native-paper';
 import { ThemeContext, ThemeContextData } from '@bluebase/core';
 import { Font } from 'expo';
 import React from 'react';
@@ -42,7 +42,9 @@ export const withReactNativePaper = (Component: React.ComponentType<any>) => {
 
 			return (
 				<Provider theme={rnpTheme}>
-					<Component {...this.props} />
+					<Portal.Host>
+						<Component {...this.props} />
+					</Portal.Host>
 				</Provider>
 			);
 		}
