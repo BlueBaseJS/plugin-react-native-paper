@@ -57,7 +57,7 @@
   },
   "size-limit": [
     {
-      "limit": "20 KB",
+      "limit": "25 KB",
       "webpack": false,
       "path": "dist/**/*.js"
     }
@@ -91,9 +91,11 @@
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-transform-flow-strip-types": "^7.4.0",
+    "@bluebase/cli": "^0.0.15",
     "@bluebase/cli-essentials": "^0.0.4",
     "@bluebase/code-standards": "^1.0.3",
     "@bluebase/core": "^4.0.0-aplha.22",
+    "@bluebase/plugin-vector-icons": "^0.1.1",
     "@bluebase/storybook-addon": "^3.0.0",
     "@blueeast/tslint-config-blueeast": "^0.7.0",
     "@storybook/addon-actions": "^5.0.6",
@@ -102,7 +104,6 @@
     "@types/enzyme": "^3.9.0",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/enzyme-async-helpers": "^0.9.1",
-    "@bluebase/plugin-vector-icons": "^0.1.1",
     "@types/expo": "^32.0.9",
     "@types/jest": "^24.0.9",
     "@types/react": "^16.8.7",
