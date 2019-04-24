@@ -12,7 +12,7 @@
   "config": {},
   "size-limit": [
     {
-      "limit": "33 KB",
+      "limit": "34 KB",
       "webpack": false,
       "path": "dist/**/!(*.test).js"
     }
@@ -75,7 +75,7 @@
   },
   "dependencies": {
     "@bluebase/component-mapper": "^1.4.0",
-    "@bluebase/components": "^5.2.0",
+    "@bluebase/components": "^5.5.1",
     "@material-ui/core": "^3.9.3",
     "@material-ui/lab": "^3.0.0-alpha.30",
     "deepmerge": "^3.2.0",
