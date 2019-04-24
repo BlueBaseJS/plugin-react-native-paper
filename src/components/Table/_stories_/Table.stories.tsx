@@ -3,7 +3,7 @@ import { Table } from '@bluebase/components';
 import storiesOf from '@bluebase/storybook-addon';
 import { TableCell } from '../../TableCell';
 import { TableRow } from '../../TableRow';
-import { TableHead } from '../../TableHeader';
+import { TableHead } from '../../TableHead';
 
 const stories = storiesOf('Table', module);
 let id = 0;
