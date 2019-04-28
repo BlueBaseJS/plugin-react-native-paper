@@ -38,7 +38,7 @@ export default createPlugin({
 	version: '1.0.0',
 
 	assets: {
-		'Material Icons': require('react-native-vector-icons/Fonts/MaterialIcons.ttf')
+		'Material Icons': require('react-native-vector-icons/Fonts/MaterialIcons.ttf'),
 	},
 
 	components: {
