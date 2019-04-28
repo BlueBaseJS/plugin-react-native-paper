@@ -34,6 +34,7 @@ import {
 } from './components';
 import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 
+import { withPortal } from './withPortal';
 import { withReactNativePaper } from './withReactNativePaper';
 
 export default createPlugin({
@@ -41,6 +42,10 @@ export default createPlugin({
 	key: '@bluebase/plugin-react-native-paper',
 	name: 'React Native Paper',
 	version: '1.0.0',
+
+	assets: {
+		'Material Icons': require('react-native-vector-icons/Fonts/MaterialIcons.ttf'),
+	},
 
 	components: {
 		Avatar,
@@ -81,6 +86,7 @@ export default createPlugin({
 	filters: {
 		'bluebase.boot.end': (bootOptions: BootOptions, _ctx: any, BB: BlueBase) => {
 			BB.Components.addHocs('BlueBaseContent', withReactNativePaper);
+			BB.Components.addHocs('Navigation', withPortal);
 			return bootOptions;
 		},
 	},
