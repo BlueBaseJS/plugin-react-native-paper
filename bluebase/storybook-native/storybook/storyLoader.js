@@ -24,6 +24,12 @@ function loadStories() {
   require('../../../src/components/Radio/__stories__/Radio.stories');
   require('../../../src/components/RadioGroup/__stories__/RadioGroup.stories');
   require('../../../src/components/Switch/__stories__/Switch.stories');
+  require('../../../src/components/Table/_stories_/Table.stories');
+  require('../../../src/components/TableCell/__Stories__/TableCell.stories');
+  require('../../../src/components/TableHead/__stories__/TableHead.stories');
+  require('../../../src/components/TablePagination/__stories__/TablePagination.stories');
+  require('../../../src/components/TableRow/__stories__/TableRow.stories');
+  require('../../../src/components/TableTitle/__stories__/TableTitle.stories');
   require('../../../src/components/TextInput/__stories__/TextInput.stories');
   
 }
@@ -48,6 +54,12 @@ const stories = [
   '../../../src/components/Radio/__stories__/Radio.stories',
   '../../../src/components/RadioGroup/__stories__/RadioGroup.stories',
   '../../../src/components/Switch/__stories__/Switch.stories',
+  '../../../src/components/Table/_stories_/Table.stories',
+  '../../../src/components/TableCell/__Stories__/TableCell.stories',
+  '../../../src/components/TableHead/__stories__/TableHead.stories',
+  '../../../src/components/TablePagination/__stories__/TablePagination.stories',
+  '../../../src/components/TableRow/__stories__/TableRow.stories',
+  '../../../src/components/TableTitle/__stories__/TableTitle.stories',
   '../../../src/components/TextInput/__stories__/TextInput.stories',
   
 ];

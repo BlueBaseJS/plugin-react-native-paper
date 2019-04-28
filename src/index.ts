@@ -24,6 +24,12 @@ import {
 	Radio,
 	RadioGroup,
 	Switch,
+	Table,
+	TableCell,
+	TableHead,
+	TablePagination,
+	TableRow,
+	TableTitle,
 	TextInput,
 } from './components';
 import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
@@ -68,6 +74,12 @@ export default createPlugin({
 		Radio,
 		RadioGroup,
 		Switch,
+		Table,
+		TableCell,
+		TableHead,
+		TablePagination,
+		TableRow,
+		TableTitle,
 		TextInput,
 	},
 
