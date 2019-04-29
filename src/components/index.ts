@@ -12,6 +12,8 @@ export * from './DialogTitle';
 export * from './DialogContent';
 export * from './Divider';
 export * from './Drawer.Item';
+export * from './Menu';
+export * from './MenuItem';
 export * from './DrawerSection';
 export * from './FormControlLabel';
 export * from './FormHelperText';

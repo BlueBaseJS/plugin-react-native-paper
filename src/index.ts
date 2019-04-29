@@ -17,6 +17,8 @@ import {
 	FormControlLabel,
 	FormHelperText,
 	IconButton,
+	Menu,
+	MenuItem,
 	List,
 	ListIcon,
 	ListItem,
@@ -56,6 +58,9 @@ export default createPlugin({
 		CardCover,
 		CardHeader,
 		Checkbox,
+		Menu,
+	MenuItem,
+
 		Dialog,
 		DialogActions,
 		DialogContent,
