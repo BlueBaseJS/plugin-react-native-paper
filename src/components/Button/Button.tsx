@@ -23,11 +23,14 @@ const ButtonComponent = (props: ButtonProps) => (
 	<ThemeConsumer>
 		{({ theme }: ThemeContextData) => {
 
-			const { children, color, title, variant, ...rest } = props;
-			const rnpColor = (color === 'secondary') ? theme.palette.secondary.main : theme.palette.primary.main;
-
+			const { children, color, title, variant, icon, ...rest } = props;
+			const rnpColor = (color === 'primary' ||
+				color === 'secondary' ||
+				color === 'error' ||
+				color === 'warning' ||
+				color === 'success') ? (theme.palette as any)[color].main : color;
 			return (
-				<RNP_Button {...rest} mode={variant} color={rnpColor}>{children || title}</RNP_Button>
+				<RNP_Button {...rest} mode={variant} color={rnpColor as any}>{children || title}</RNP_Button>
 			);
 		}}
 	</ThemeConsumer>
