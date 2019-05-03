@@ -5,8 +5,8 @@ import React from 'react';
 import TestRenderer from 'react-test-renderer';
 import { Text } from 'react-native';
 import deepmerge from 'deepmerge';
-
-
+import { shallow } from 'enzyme';
+import { withPortal as Portal } from '../withPortal';
 const Button = getComponent('Button');
 
 test('Plugin should be correctly registered', async () => {
@@ -16,9 +16,22 @@ test('Plugin should be correctly registered', async () => {
 	expect(BB.Plugins.has('@bluebase/plugin-react-native-paper')).toBeTruthy();
 });
 
+
+
+test('WithPortal hoc', async () => {
+
+	const Component: any = () => 'string';
+	const HOC = Portal(Component) as any;
+	const wrapper = shallow(
+		<HOC component={() => 'PortalHoc'} />
+	);
+
+	expect(wrapper.props().children.props.component()).toEqual('PortalHoc');
+});
+
 test('should apply bluebase theme to react native paper components', (done) => {
 	const rendered = TestRenderer.create(
-    <BlueBaseApp plugins={[Plugin]}>
+		<BlueBaseApp plugins={[Plugin]}>
 			<Button>A Button</Button>
 		</BlueBaseApp>
 	);

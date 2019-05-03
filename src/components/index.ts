@@ -1,3 +1,4 @@
+export * from './Avatar';
 export * from './Button';
 export * from './Badge';
 export * from './Card';
@@ -24,4 +25,9 @@ export * from './Radio';
 export * from './RadioGroup';
 export * from './Switch';
 export * from './TextInput';
-export * from './Avatar';
+export * from './Table';
+export * from './TableCell';
+export * from './TableRow';
+export * from './TablePagination';
+export * from './TableHead';
+export * from './TableTitle';
