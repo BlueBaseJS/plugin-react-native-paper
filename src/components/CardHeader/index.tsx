@@ -6,6 +6,7 @@ export const CardHeader = (props: any) => {
 		return (
 			<Card.Title
 				title={props.title}
+				// tslint:disable-next-line: jsx-no-lambda
 				right={() => props.right}
 				subtitle={props.description}
 				style={props.style}
@@ -16,6 +17,7 @@ export const CardHeader = (props: any) => {
 		return (
 			<Card.Title
 				title={props.title}
+				// tslint:disable-next-line: jsx-no-lambda
 				left={() => props.left}
 				subtitle={props.description}
 				style={props.style}
@@ -25,7 +27,9 @@ export const CardHeader = (props: any) => {
 	return (
 		<Card.Title
 			title={props.title}
+			// tslint:disable-next-line: jsx-no-lambda
 			right={() => props.right}
+			// tslint:disable-next-line: jsx-no-lambda
 			left={() => props.left}
 			subtitle={props.description}
 			style={props.style}
