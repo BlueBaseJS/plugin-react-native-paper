@@ -1,8 +1,38 @@
 import { Card } from 'react-native-paper';
-import { componentMapper } from '@bluebase/component-mapper';
+import React from 'react';
 
-export const CardHeader = componentMapper(Card.Title, {
-	left: ({ left }) => () => left,
-	right: ({ right }) => () => right,
-	subtitle: 'description',
-}, { rest: true });
+export const CardHeader = (props: any) => {
+	if (props.left === undefined) {
+		return (
+			<Card.Title
+				title={props.title}
+				// tslint:disable-next-line: jsx-no-lambda
+				right={() => props.right}
+				subtitle={props.description}
+				style={props.style}
+			/>
+		);
+	}
+	if (props.right === undefined) {
+		return (
+			<Card.Title
+				title={props.title}
+				// tslint:disable-next-line: jsx-no-lambda
+				left={() => props.left}
+				subtitle={props.description}
+				style={props.style}
+			/>
+		);
+	}
+	return (
+		<Card.Title
+			title={props.title}
+			// tslint:disable-next-line: jsx-no-lambda
+			right={() => props.right}
+			// tslint:disable-next-line: jsx-no-lambda
+			left={() => props.left}
+			subtitle={props.description}
+			style={props.style}
+		/>
+	);
+};

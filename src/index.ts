@@ -1,5 +1,6 @@
 import {
 	Avatar,
+	Badge,
 	Button,
 	Card,
 	CardActions,
@@ -49,6 +50,7 @@ export default createPlugin({
 
 	components: {
 		Avatar,
+		Badge,
 		Button,
 		Card,
 		CardActions,
