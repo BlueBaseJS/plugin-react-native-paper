@@ -1,5 +1,5 @@
 import { BootOptions } from '@bluebase/core';
-import  { MaterialIcons } from  '@bluebase/plugin-vector-icons';
+import  { MaterialCommunityIcons } from  '@bluebase/plugin-vector-icons';
 import ReactnativePaperPlugin from '../../src';
 import commonBootOptions from '../common/bluebase';
 import deepmerge from 'deepmerge';
@@ -11,7 +11,7 @@ import deepmerge from 'deepmerge';
  */
 const bootOptions: Partial<BootOptions> = {
 
-	plugins: [ReactnativePaperPlugin,MaterialIcons],
+	plugins: [ReactnativePaperPlugin,MaterialCommunityIcons],
 };
 
 export default deepmerge(commonBootOptions, bootOptions);

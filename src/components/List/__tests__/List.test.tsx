@@ -30,7 +30,7 @@ describe('List', () => {
 		await waitForElement(rendered, List);
 
 		expect(rendered.find('ListSubheader Text').last().text()).toBe('Some title');
-		expect(rendered.find('ListItem Icon').last().prop('name')).toBe('inbox');
+		expect(rendered.find('DynamicIcon').last().prop('name')).toBe('inbox');
 		// expect(rendered).toMatchSnapshot();
 
 	});

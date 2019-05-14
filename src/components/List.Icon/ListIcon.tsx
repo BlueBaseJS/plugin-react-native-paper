@@ -1,9 +1,9 @@
-import { DynamicIcon } from '@bluebase/core/dist/components';
+import { DynamicIcon, ListIconProps } from '@bluebase/components';
+
 import React from 'react';
 
-export const ListIcon = (props: any) => {
+export const ListIcon = (props: ListIconProps) => (
 
-	return (
-		<DynamicIcon type="icon" name={props.name} size={props.size} />
+	<DynamicIcon type="icon" name={props.name} size={props.size} />
 	);
-};
+
