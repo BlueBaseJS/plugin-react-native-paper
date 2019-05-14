@@ -11,15 +11,16 @@ storiesOf('List', module)
 
 	.add('Basic Example', () => (
 		<List>
-			<List.Subheader>Some title</List.Subheader>
+			<List.Subheader>Social Accounts</List.Subheader>
 			<List.Item
-				title="First Item"
-				left={() => <List.Icon name="delete" />}
-				onPress={console.log}
+				title="Facebook"
+				left={<List.Icon name="facebook" />}
+				onPress={() => console.log('Facebook')}
 			/>
 			<List.Item
-				title="Second Item"
-				left={() => <List.Icon color="#000" name="folder" />}
+				title="Google"
+				left={<List.Icon color="red" name="google" />}
+				onPress={() => console.log('Google')}
 			/>
 		</List>
 	))

@@ -1,7 +1,7 @@
-import { getComponent } from '@bluebase/core';
-
 import React from 'react';
+import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
+
 // import { withInfo } from '@storybook/addon-info';
 // import { withKnobs } from '@storybook/addon-knobs';
 
@@ -14,21 +14,21 @@ stories.add('Contained IconButtons', () => (
 	<React.Fragment>
 		<IconButton
 			onPress={() => { }}
-			name="star"
-			size={20}
-			color="red"
+			name="facebook"
+			// size={20}
+			// color="red"
 		/>
 		<IconButton
 			onPress={() => { }}
 			name="alarm"
-			size={20}
-			color="black"
+			// size={20}
+			// color="black"
 		/>
 		<IconButton
 			onPress={() => { }}
 			name="delete"
-			size={20}
-			color="black"
+			// size={20}
+			// color="black"
 		/>
 	</React.Fragment>
 ))

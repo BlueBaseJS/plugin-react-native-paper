@@ -19,7 +19,7 @@ function loadStories() {
   require('../../../src/components/DialogTitle/_stories_/DialogTitle.stories');
   require('../../../src/components/Divider/__stories__/Divider.stories');
   require('../../../src/components/DrawerSection/__stories__/DrawerSection.stories');
-  require('../../../src/components/IconButton/_stories_/IconButton.stories');
+  require('../../../src/components/IconButton/__stories__/IconButton.stories');
   require('../../../src/components/List.Icon/ListIcon.stories');
   require('../../../src/components/List/__stories__/List.stories');
   require('../../../src/components/Radio/__stories__/Radio.stories');
@@ -50,7 +50,7 @@ const stories = [
   '../../../src/components/DialogTitle/_stories_/DialogTitle.stories',
   '../../../src/components/Divider/__stories__/Divider.stories',
   '../../../src/components/DrawerSection/__stories__/DrawerSection.stories',
-  '../../../src/components/IconButton/_stories_/IconButton.stories',
+  '../../../src/components/IconButton/__stories__/IconButton.stories',
   '../../../src/components/List.Icon/ListIcon.stories',
   '../../../src/components/List/__stories__/List.stories',
   '../../../src/components/Radio/__stories__/Radio.stories',

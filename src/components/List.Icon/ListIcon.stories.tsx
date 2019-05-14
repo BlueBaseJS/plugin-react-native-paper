@@ -9,8 +9,11 @@ const ListIcon = getComponent<ListItemProps>('ListIcon');
 storiesOf('ListIcon', module)
 
 
-	.add('Basic Example', () => (
-		<List>
-			<List.Icon name="facebook-box" />
-		</List>
-	));
+.add('Basic Example', () => (
+	<ListIcon name="facebook-box" />
+))
+
+
+.add('Custom Size', () => (
+	<ListIcon name="facebook-box" size={100} />
+));

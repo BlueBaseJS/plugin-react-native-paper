@@ -1,7 +1,6 @@
-import { IconButton } from '../../IconButton';
+import { IconButton } from '..';
 import React from 'react';
 import { shallow } from 'enzyme';
-
 
 test('IconButton component with name Prop', () => {
 	const component = shallow(
