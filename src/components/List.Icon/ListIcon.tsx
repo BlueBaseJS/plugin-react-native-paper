@@ -12,16 +12,9 @@ export interface ListIconStyles {
 export const ListIcon = (props: ListIconProps & { styles: ListIconStyles }) => (
 	<List.Icon
 		// tslint:disable-next-line: jsx-no-lambda
-		icon={({ color, size }) => (
-			<Icon
-				{...props}
-				color={color}
-				size={size}
-				style={[props.styles.root, props.style, { color }]}
-			/>
-		)}
+		icon={({ color, size }) => <Icon {...props} color={color} size={size} />}
 		// size={props.size}
-		color={props.color || props.styles.root.color as string}
+		color={props.color || (props.styles.root.color as string)}
 	/>
 );
 

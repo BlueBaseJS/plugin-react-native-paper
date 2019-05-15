@@ -4,7 +4,6 @@ import { Avatar } from 'react-native-paper';
 import React from 'react';
 
 const AvatarComponent = (props: AvatarProps) => {
-
 	if (props.type === 'icon' && props.icon !== undefined) {
 		const icon = ({ color, size }: IconProps) => (
 			<Icon
@@ -12,18 +11,11 @@ const AvatarComponent = (props: AvatarProps) => {
 				name={props.icon}
 				color={color}
 				size={size}
-				style={[props.style, { color }]}
+				// style={[props.style, { color }]}
 			/>
 		);
 
-		return (
-			<Avatar.Icon
-				{...props}
-				icon={icon}
-				size={props.size}
-				color={props.color}
-			/>
-		);
+		return <Avatar.Icon {...props} icon={icon} size={props.size} color={props.color} />;
 	}
 
 	if (props.type === 'text' && props.text !== undefined) {
