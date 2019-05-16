@@ -142,6 +142,18 @@ stories
 	/>
 ))
 
+
+.add('Icon', () => (
+	<Button
+		variant="contained"
+		color="primary"
+		fullWidth={true}
+		onPress={() => console.log('Button onPress')}
+		title="Facebook"
+		icon={{ type: 'icon', name: 'facebook' }}
+	/>
+))
+
 .add('Loading', () => (
 	<Button
 		variant="contained"

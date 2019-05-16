@@ -1,15 +1,14 @@
-import { Card } from '@bluebase/components';
+// import { Card } from '@bluebase/components';
+import { CardActions } from '../';
 import React from 'react';
 import { Text } from 'react-native';
 import { shallow } from 'enzyme';
 
-
 test('CardActions component component should show children', () => {
 	const component = shallow(
-    <Card.Actions>
-      <Text>Card</Text>
-    </Card.Actions>
-  );
+		<CardActions>
+			<Text>Card</Text>
+		</CardActions>
+	);
 	expect(component.find('CardActions')).toBeDefined();
 });
-

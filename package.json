@@ -57,7 +57,7 @@
   },
   "size-limit": [
     {
-      "limit": "26 KB",
+      "limit": "27 KB",
       "webpack": false,
       "path": "dist/**/*.js"
     }
@@ -79,7 +79,7 @@
   },
   "dependencies": {
     "@bluebase/component-mapper": "^1.4.0",
-    "@bluebase/components": "^5.2.0",
+    "@bluebase/components": "^5.10.0",
     "deepmerge": "^3.2.0",
     "expo": "^32.0.0",
     "react-native": "0.57.7",
@@ -94,7 +94,7 @@
     "@bluebase/cli": "^0.0.15",
     "@bluebase/cli-essentials": "^0.0.4",
     "@bluebase/code-standards": "^1.0.3",
-    "@bluebase/core": "^4.0.0-aplha.22",
+    "@bluebase/core": "^4.0.0-aplha.27",
     "@bluebase/plugin-vector-icons": "^0.1.1",
     "@bluebase/storybook-addon": "^3.0.0",
     "@blueeast/tslint-config-blueeast": "^0.7.0",
