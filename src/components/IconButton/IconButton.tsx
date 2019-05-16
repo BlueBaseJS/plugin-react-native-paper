@@ -4,7 +4,6 @@ import { IconButton as RNPIconButton } from 'react-native-paper';
 import React from 'react';
 
 export const IconButton = (props: IconButtonProps) => {
-
 	const icon = ({ color, size }: IconProps) => (
 		<Icon
 			{...props}
@@ -13,10 +12,7 @@ export const IconButton = (props: IconButtonProps) => {
 			// style={[props.styles.root, props.style, { color }]}
 		/>
 	);
-	return (
-		<RNPIconButton icon={icon} {...props} />
-	);
+	return <RNPIconButton icon={icon} {...props} />;
 };
 
 IconButton.defaultProps = IconButtonDefaultProps;
-
