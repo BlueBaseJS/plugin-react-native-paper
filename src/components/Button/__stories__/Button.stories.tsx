@@ -20,28 +20,33 @@ stories
 		<React.Fragment>
 			<Button variant="contained" onPress={() => console.log('Button onPress')}>
 				Default
-		</Button>
+			</Button>
 			<Button variant="contained" color="primary" onPress={() => console.log('Button onPress')}>
 				Primary
-		</Button>
+			</Button>
 			<Button variant="contained" color="secondary" onPress={() => console.log('Button onPress')}>
 				Secondary
-		</Button>
+			</Button>
 			<Button variant="contained" color="error" onPress={() => console.log('Button onPress')}>
 				Error
-		</Button>
+			</Button>
 			<Button variant="contained" color="warning" onPress={() => console.log('Button onPress')}>
 				Warning
-		</Button>
+			</Button>
 			<Button variant="contained" color="success" onPress={() => console.log('Button onPress')}>
 				Success
-		</Button>
-			<Button variant="contained" color="secondary" disabled onPress={() => console.log('Button onPress')}>
+			</Button>
+			<Button
+				variant="contained"
+				color="secondary"
+				disabled
+				onPress={() => console.log('Button onPress')}
+			>
 				Disabled
-		</Button>
+			</Button>
 			<Button variant="contained" onPress={() => console.log('Button onPress')}>
 				Link
-		</Button>
+			</Button>
 		</React.Fragment>
 	))
 
@@ -50,25 +55,23 @@ stories
 			<Button onPress={() => console.log('Button onPress')}>Default</Button>
 			<Button color="primary" onPress={() => console.log('Button onPress')}>
 				Primary
-		</Button>
+			</Button>
 			<Button color="secondary" onPress={() => console.log('Button onPress')}>
 				Secondary
-		</Button>
+			</Button>
 			<Button color="error" onPress={() => console.log('Button onPress')}>
 				Error
-		</Button>
+			</Button>
 			<Button color="warning" onPress={() => console.log('Button onPress')}>
 				Warning
-		</Button>
+			</Button>
 			<Button color="success" onPress={() => console.log('Button onPress')}>
 				Success
-		</Button>
+			</Button>
 			<Button disabled onPress={() => console.log('Button onPress')}>
 				Disabled
-		</Button>
-			<Button onPress={() => console.log('Button onPress')}>
-				Link
-		</Button>
+			</Button>
+			<Button onPress={() => console.log('Button onPress')}>Link</Button>
 		</React.Fragment>
 	))
 
@@ -76,28 +79,28 @@ stories
 		<React.Fragment>
 			<Button variant="outlined" onPress={() => console.log('Button onPress')}>
 				Default
-		</Button>
+			</Button>
 			<Button variant="outlined" color="primary" onPress={() => console.log('Button onPress')}>
 				Primary
-		</Button>
+			</Button>
 			<Button variant="outlined" color="secondary" onPress={() => console.log('Button onPress')}>
 				Secondary
-		</Button>
+			</Button>
 			<Button variant="outlined" color="error" onPress={() => console.log('Button onPress')}>
 				Error
-		</Button>
+			</Button>
 			<Button variant="outlined" color="warning" onPress={() => console.log('Button onPress')}>
 				Warning
-		</Button>
+			</Button>
 			<Button variant="outlined" color="success" onPress={() => console.log('Button onPress')}>
 				Success
-		</Button>
+			</Button>
 			<Button variant="outlined" disabled onPress={() => console.log('Button onPress')}>
 				Disabled
-		</Button>
+			</Button>
 			<Button variant="outlined" onPress={() => console.log('Button onPress')}>
 				Link
-		</Button>
+			</Button>
 		</React.Fragment>
 	))
 
@@ -106,44 +109,75 @@ stories
 			<View>
 				<Button size="small" onPress={() => console.log('Button onPress')}>
 					Small
-			</Button>
+				</Button>
 				<Button size="medium" onPress={() => console.log('Button onPress')}>
 					Medium
-			</Button>
+				</Button>
 				<Button size="large" onPress={() => console.log('Button onPress')}>
 					Large
-			</Button>
+				</Button>
 			</View>
 			<View>
-				<Button variant="outlined" size="small" color="primary" onPress={() => console.log('Button onPress')}>
+				<Button
+					variant="outlined"
+					size="small"
+					color="primary"
+					onPress={() => console.log('Button onPress')}
+				>
 					Small
-			</Button>
-				<Button variant="outlined" size="medium" color="primary" onPress={() => console.log('Button onPress')}>
+				</Button>
+				<Button
+					variant="outlined"
+					size="medium"
+					color="primary"
+					onPress={() => console.log('Button onPress')}
+				>
 					Medium
-			</Button>
-				<Button variant="outlined" size="large" color="primary" onPress={() => console.log('Button onPress')}>
+				</Button>
+				<Button
+					variant="outlined"
+					size="large"
+					color="primary"
+					onPress={() => console.log('Button onPress')}
+				>
 					Large
-			</Button>
+				</Button>
 			</View>
 			<View>
-				<Button variant="contained" size="small" color="primary" onPress={() => console.log('Button onPress')}>
+				<Button
+					variant="contained"
+					size="small"
+					color="primary"
+					onPress={() => console.log('Button onPress')}
+				>
 					Small
-			</Button>
-				<Button variant="contained" size="medium" color="primary" onPress={() => console.log('Button onPress')}>
+				</Button>
+				<Button
+					variant="contained"
+					size="medium"
+					color="primary"
+					onPress={() => console.log('Button onPress')}
+				>
 					Medium
-			</Button>
-				<Button variant="contained" size="large" color="primary" onPress={() => console.log('Button onPress')}>
+				</Button>
+				<Button
+					variant="contained"
+					size="large"
+					color="primary"
+					onPress={() => console.log('Button onPress')}
+				>
 					Large
-			</Button>
+				</Button>
 			</View>
 		</React.Fragment>
 	))
 
-
 	.add('width', () => (
 		<View>
 			<View style={{ padding: 8 }}>
-				<Button variant="contained" color="primary" onPress={() => console.log('Button onPress')}>Normal</Button>
+				<Button variant="contained" color="primary" onPress={() => console.log('Button onPress')}>
+					Normal
+				</Button>
 			</View>
 			<View style={{ padding: 8 }}>
 				<Button
@@ -153,11 +187,10 @@ stories
 					onPress={() => console.log('Button onPress')}
 				>
 					Full Width
-			</Button>
+				</Button>
 			</View>
 		</View>
 	))
-
 
 	.add('Title', () => (
 		<Button
@@ -170,12 +203,57 @@ stories
 	))
 
 	.add('Loading', () => (
-		<Button
-			variant="contained"
-			color="primary"
-			fullWidth={true}
-			onPress={() => console.log('Button onPress')}
-			title="Button Title"
-			loading
-		/>
+		<React.Fragment>
+			<Button
+				variant="contained"
+				color="primary"
+				fullWidth={true}
+				onPress={() => console.log('Button onPress')}
+				title="Button Title"
+				loading
+			/>
+			<Button
+				variant="outlined"
+				color="primary"
+				fullWidth={true}
+				onPress={() => console.log('Button onPress')}
+				title="Button Title"
+				loading
+			/>
+			<Button
+				variant="text"
+				color="primary"
+				fullWidth={true}
+				onPress={() => console.log('Button onPress')}
+				title="Button Title"
+				loading
+			/>
+			<Button
+				variant="contained"
+				color="primary"
+				fullWidth={true}
+				onPress={() => console.log('Button onPress')}
+				title="Button Title"
+				loading
+				disabled
+			/>
+			<Button
+				variant="outlined"
+				color="primary"
+				fullWidth={true}
+				onPress={() => console.log('Button onPress')}
+				title="Button Title"
+				loading
+				disabled
+			/>
+			<Button
+				variant="text"
+				color="primary"
+				fullWidth={true}
+				onPress={() => console.log('Button onPress')}
+				title="Button Title"
+				loading
+				disabled
+			/>
+		</React.Fragment>
 	));
