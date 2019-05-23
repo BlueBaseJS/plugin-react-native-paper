@@ -9,7 +9,7 @@ import { waitForElement } from 'enzyme-async-helpers';
 test('TablePagination component with children text', async () => {
 	const wrapper = mount(
 		<BlueBaseApp plugins={[Plugin]}>
-			<TablePagination count={2} numberOfPages={2} page={2} onPageChange={() => null as any}>
+			<TablePagination numberOfPages={2} page={2} onPageChange={() => null as any} count={0}>
 				<Text>TablePagination test</Text>
 			</TablePagination>
 		</BlueBaseApp>
