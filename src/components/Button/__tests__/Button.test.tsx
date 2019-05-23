@@ -1,55 +1,35 @@
+import { Button as BB_Button } from '@bluebase/components';
 import { BlueBaseApp } from '@bluebase/core';
 import { Button } from '../';
-import { Button as BB_Button } from '@bluebase/components';
 import React from 'react';
-import TestRenderer from 'react-test-renderer';
-import { Text } from 'react-native';
-import deepmerge from 'deepmerge';
+import { View } from 'react-native';
+import { mount } from 'enzyme';
+import { waitForElement } from 'enzyme-async-helpers';
 
-test('render and contained button with primary color', (done) => {
-
-	const rendered = TestRenderer.create(
-    <BlueBaseApp components={{ Button }}>
-			<BB_Button variant="contained" color="primary" />
+test('render and outline button with primary color', async () => {
+	const wrapper = mount(
+		<BlueBaseApp components={{ Button }}>
+			<BB_Button variant="outlined" color="primary" />
 		</BlueBaseApp>
 	);
 
-	setTimeout(() => {
-		// expect(rendered).toMatchSnapshot();
-
-		const style: any[] = (rendered as any).toJSON().props.style;
-		// const style = deepmerge.all(styleProp.filter(x => x !== undefined));
-
-		expect((style as any).backgroundColor).toBe('#3f51b5');
-		done();
-	});
-
+	await waitForElement(wrapper, BB_Button);
+	console.log('wrapperrr', wrapper.props());
+	expect((wrapper as any).find('ButtonComponent').prop('color')).toBe('primary');
+	expect((wrapper as any).find('ButtonComponent').prop('variant')).toBe('outlined');
 });
 
-test('render and outline button with secondary color', (done) => {
-
-	const rendered = TestRenderer.create(
-    <BlueBaseApp components={{ Button }}>
-			<BB_Button variant="outlined" color="secondary" />
+const icon = () => {
+	return <View />;
+};
+test('render and outline button with secondary color', async () => {
+	const wrapper = mount(
+		<BlueBaseApp components={{ Button }}>
+			<BB_Button variant="outlined" color="secondary" icon={icon as any} />
 		</BlueBaseApp>
 	);
 
-	setTimeout(() => {
-		const style: any[] = (rendered as any).toJSON().props.style;
-		expect((style as any).backgroundColor).toBe('transparent');
-
-		// Text
-		const textProps = rendered.root.findByType(Text).props;
-
-		const textStyle: any = deepmerge(
-			textProps.style[0],
-			deepmerge.all(
-				textProps.style[1].filter((x: any) => x !== undefined)
-			)
-		);
-
-		expect((textStyle as any).color).toBe('#f50057');
-		done();
-	});
-
+	await waitForElement(wrapper, BB_Button);
+	console.log('wrapperrr', wrapper.props());
+	expect((wrapper as any).find('ButtonComponent').prop('color')).toBe('secondary');
 });

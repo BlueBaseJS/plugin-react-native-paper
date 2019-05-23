@@ -1,9 +1,8 @@
-
 import { AvatarProps } from '@bluebase/components';
-
 import React from 'react';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
+
 // import { withInfo } from '@storybook/addon-info';
 // import { withKnobs } from '@storybook/addon-knobs';
 
@@ -35,7 +34,7 @@ stories.add('Simple Avatar with text prop ', () => (
 stories.add('Simple Avatar with icon prop ', () => (
   <Avatar
     type="icon"
-    icon="star"
+    icon="facebook"
   />
 ));
 
