@@ -1,4 +1,5 @@
 import { CheckboxProps } from '@bluebase/components';
+// tslint:disable-next-line: sort-imports
 import { Checkbox as RNPCheckbox } from 'react-native-paper';
 import { SelectionControl } from '../SelectionControl';
 import { Theme } from '@bluebase/core';
