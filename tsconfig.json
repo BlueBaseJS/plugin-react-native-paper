@@ -3,10 +3,12 @@
 	"compilerOptions": {
 		"outDir": "dist",
 		"rootDir": ".",
-		"typeRoots": ["node_modules/@types", "typings/*"],
-		"baseUrl": "."
+		"typeRoots": ["node_modules/@types"],
+		"baseUrl": ".",
+		"paths": {
+			"*": ["typings/*"]
+		}
 	},
-
 	"include": ["src/**/*.ts"],
 	"exclude": ["node_modules/**", "**/*.spec.ts", "**/*.test.ts", "**/*.stories.ts"],
 	"compileOnSave": false
