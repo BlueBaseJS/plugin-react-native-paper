@@ -1,7 +1,6 @@
 import { DefaultTheme, Provider } from 'react-native-paper';
 import { ThemeContext, ThemeContextData } from '@bluebase/core';
 
-// import { Font } from 'expo';
 import React from 'react';
 
 export const withReactNativePaper = (Component: React.ComponentType<any>) => {

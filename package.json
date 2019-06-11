@@ -81,8 +81,8 @@
     "@bluebase/component-mapper": "^1.4.0",
     "@bluebase/components": "^5.14.0",
     "deepmerge": "^3.2.0",
-    "expo": "^32.0.0",
-    "react-native": "0.57.7",
+    "expo": "^33.0.0",
+    "react-native": "0.59.8",
     "react-native-paper": "^2.15.0",
     "react-native-vector-icons": "^6.5.0",
     "tslib": "^1.9.3"

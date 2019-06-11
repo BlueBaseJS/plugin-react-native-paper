@@ -34,9 +34,11 @@ import {
 } from './components';
 import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 
-import MaterialIcons from 'react-native-vector-icons/Fonts/MaterialIcons.ttf';
+// import MaterialIcons from 'react-native-vector-icons/Fonts/MaterialIcons.ttf';
 import { withPortal } from './withPortal';
 import { withReactNativePaper } from './withReactNativePaper';
+
+const MaterialIcons = require('../Fonts/MaterialIcons.ttf');
 
 export default createPlugin({
 	description: 'React Native Paper comes to BlueBase!',
