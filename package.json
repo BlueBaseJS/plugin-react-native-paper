@@ -93,7 +93,7 @@
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-transform-flow-strip-types": "^7.4.0",
     "@bluebase/cli": "^0.0.15",
-    "@bluebase/cli-essentials": "^0.0.4",
+    "@bluebase/cli-essentials": "^0.0.5",
     "@bluebase/code-standards": "^1.0.3",
     "@bluebase/core": "^4.0.0-aplha.27",
     "@bluebase/plugin-vector-icons": "^0.1.1",
