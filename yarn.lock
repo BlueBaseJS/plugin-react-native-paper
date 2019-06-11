@@ -859,9 +859,10 @@
     rtl-detect "^1.0.2"
     tslib "^1.9.3"
 
-"@bluebase/plugin-vector-icons@^0.1.1":
-  version "0.1.1"
-  resolved "https://registry.yarnpkg.com/@bluebase/plugin-vector-icons/-/plugin-vector-icons-0.1.1.tgz#8f30fd63f5b0fd1ca5ea44ee8e9f700985a4fe9f"
+"@bluebase/plugin-vector-icons@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@bluebase/plugin-vector-icons/-/plugin-vector-icons-0.2.0.tgz#18765c690be139e75315d786f3f64d1c2e546834"
+  integrity sha512-Pzjw4VkVK5HYqSD7f6oK81Nhd4Kt7aHUdFigSD40j2H2Fwj8uzMndkuIK58LfBKoZlKu/4KJfvTa5J6WcmAXag==
   dependencies:
     deepmerge "^3.2.0"
     react-native-vector-icons "^6.4.2"
