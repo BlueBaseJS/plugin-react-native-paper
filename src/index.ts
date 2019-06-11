@@ -34,10 +34,13 @@ import {
 } from './components';
 import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 
-// import MaterialIcons from 'react-native-vector-icons/Fonts/MaterialIcons.ttf';
 import { withPortal } from './withPortal';
 import { withReactNativePaper } from './withReactNativePaper';
 
+// TODO: This is a temp fix for:
+// https://github.com/react-native-community/cli/issues/228
+// import MaterialIcons from 'react-native-vector-icons/Fonts/MaterialIcons.ttf';
+// tslint:disable-next-line: no-var-requires
 const MaterialIcons = require('../Fonts/MaterialIcons.ttf');
 
 export default createPlugin({
