@@ -789,14 +789,15 @@
     winston "^3.0.0"
     yarn-install "^1.0.0"
 
-"@bluebase/cli-essentials@^0.0.4":
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/@bluebase/cli-essentials/-/cli-essentials-0.0.4.tgz#9e53bb39a1ca0253ac99fab163b48f58ff5f8af4"
+"@bluebase/cli-essentials@^0.0.5":
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/@bluebase/cli-essentials/-/cli-essentials-0.0.5.tgz#c1b65525fcc1302d2f4c703fffdbca11e989b92d"
+  integrity sha512-VctDcvJ2LrEiO1X6KXtelc1aNXwkVQ4thtYuGudWVy5qSvp4vgl4/aq1jpuCquYMsN4BJrnslakcM6BoR6UNKg==
   dependencies:
     awesome-typescript-loader "^5.2.1"
     react-art "^16.7.0"
     react-docgen-typescript-webpack-plugin "^1.1.0"
-    react-native-web "^0.9.10"
+    react-native-web "^0.11.4"
     webpack "^4.28.2"
 
 "@bluebase/cli@^0.0.15":
@@ -11301,9 +11302,10 @@ react-native-view-shot@2.6.0:
   resolved "https://registry.yarnpkg.com/react-native-view-shot/-/react-native-view-shot-2.6.0.tgz#3b23675826f67658366352c4b97b59a6aded2f43"
   integrity sha512-yO9vWi/11m2hEJl8FrW1SMeVzFfPtMKh20MUInGqlsL0H8Ya2JGGlFfrBzx1KiFR2hFb5OdsTLYNtcVZtJ6pLQ==
 
-react-native-web@^0.9.10:
-  version "0.9.13"
-  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.9.13.tgz#b277ccce2e4985a256ed340823104c08505f3096"
+react-native-web@^0.11.4:
+  version "0.11.4"
+  resolved "https://registry.yarnpkg.com/react-native-web/-/react-native-web-0.11.4.tgz#86e8158d83a6a41983e43b1c84acaaa342d443b2"
+  integrity sha512-xuiHd9mxtOUlCY/CY8UO25a3cX5u3qsEdhl7zXLDNbJ0nu1Tf98GsplBZgdnDB0q/LpYVPQWmjnTEerncsO2vw==
   dependencies:
     array-find-index "^1.0.2"
     create-react-class "^15.6.2"
