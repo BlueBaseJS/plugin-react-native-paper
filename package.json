@@ -99,7 +99,7 @@
     "@bluebase/plugin-vector-icons": "^0.1.1",
     "@bluebase/storybook-addon": "^3.0.0",
     "@blueeast/tslint-config-blueeast": "^0.7.0",
-    "@storybook/addon-actions": "^5.0.6",
+    "@storybook/addon-actions": "^5.1.5",
     "@storybook/react-native": "^4.1.14",
     "@types/deepmerge": "^2.2.0",
     "@types/enzyme": "^3.9.0",
