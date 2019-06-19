@@ -26,7 +26,6 @@ export const Checkbox = componentMapper<CheckboxProps>(SelectionControl, {
 		if (onPress) {
 			onPress();
 		}
-
 		if (onValueChange) {
 			onValueChange(value, !checked);
 		}
