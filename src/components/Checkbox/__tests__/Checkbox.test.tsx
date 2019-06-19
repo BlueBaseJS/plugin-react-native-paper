@@ -1,4 +1,5 @@
 import { BlueBaseApp, getComponent } from '@bluebase/core';
+
 import { Checkbox } from '../Checkbox';
 import React from 'react';
 import { mount } from 'enzyme';
@@ -108,6 +109,29 @@ describe.only('Checkbox', () => {
 
 		// expect(component).toMatchSnapshot();
 		expect(component.find('Checkbox Text').last().text()).toEqual('Foo');
+	});
+
+	it('should check that the onPress and onValueChange is binded correctly', async () => {
+		const onPressFunc = jest.fn();
+		const onValueChangeFunc = jest.fn();
+
+		const BBCheckbox = getComponent('Checkbox');
+
+		const component = mount(
+			<BlueBaseApp components={{ Checkbox }}>
+				<BBCheckbox color="default" onPress={onPressFunc} value={1} onValueChange={onValueChangeFunc} />
+			</BlueBaseApp>
+		);
+
+		await waitForElement(component as any, BBCheckbox);
+
+		const  onPress = component.find('TouchableHighlight').last().prop('onPress') as any;
+		onPress();
+		expect(onPressFunc).toBeCalled();
+
+		const  onValueChange = component.find('TouchableHighlight').last().prop('onValueChange') as any;
+		onValueChange();
+		expect(onValueChangeFunc).toBeCalledWith(1, true);
 	});
 
 });

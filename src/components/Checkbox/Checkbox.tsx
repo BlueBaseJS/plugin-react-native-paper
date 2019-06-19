@@ -1,5 +1,6 @@
-import { Checkbox as RNPCheckbox } from 'react-native-paper';
 import { CheckboxProps } from '@bluebase/components';
+// tslint:disable-next-line: sort-imports
+import { Checkbox as RNPCheckbox } from 'react-native-paper';
 import { SelectionControl } from '../SelectionControl';
 import { Theme } from '@bluebase/core';
 import { componentMapper } from '@bluebase/component-mapper';
@@ -20,6 +21,14 @@ export const Checkbox = componentMapper<CheckboxProps>(SelectionControl, {
 		}
 
 		return color;
+	},
+	onPress: ({ onPress, onValueChange, value, checked }: any) => ()  => {
+		if (onPress) {
+			onPress();
+		}
+		if (onValueChange) {
+			onValueChange(value, !checked);
+		}
 	},
 
 	status: ({ checked, indeterminate }: CheckboxProps) => {
