@@ -53,7 +53,9 @@
     "screenshot": "storybook-chrome-screenshot -p 9001 -c ./bluebase/storybook/configs",
     "build-storybook": "build-storybook",
     "web:start": "bluebase web:start",
-    "expo:start": "bluebase expo:start"
+    "expo:start": "bluebase expo:start",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "size-limit": [
     {
@@ -82,10 +84,11 @@
     "@bluebase/components": "^5.14.0",
     "deepmerge": "^3.2.0",
     "expo": "^33.0.0",
-    "react-native": "0.59.8",
+    "react-native": "0.60.0",
     "react-native-paper": "2.15.2",
     "react-native-vector-icons": "^6.5.0",
-    "tslib": "^1.9.3"
+    "tslib": "^1.9.3",
+    "snyk": "^1.189.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.3",
@@ -155,5 +158,6 @@
   },
   "publishConfig": {
     "access": "public"
-  }
+  },
+  "snyk": true
 }
