@@ -37,6 +37,7 @@ import {
 } from './components';
 import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 
+import { View } from "@bluebase/components"
 import { withPortal } from './withPortal';
 import { withReactNativePaper } from './withReactNativePaper';
 
@@ -90,11 +91,15 @@ export default createPlugin({
 		TableRow,
 		TableTitle,
 		TextInput,
-		'HomeScreen': () => <Picker
-			selectedValue={''}
-			onValueChange={(value, i) => console.log('value', value)}
-			items={[{ name: 'SanPyaeLin', code: '22' }, { name: 'Jhon', code: '1' }, { name: 'Marry', code: '2' }]}
-		/>
+		'HomeScreen': () =>
+			<View style={{ marginTop: 60 }}>
+				<Picker
+					label='enter label'
+					selectedValue={'sample'}
+					onValueChange={(value, i) => console.log('value', value)}
+					items={[{ label: 'SanPyaeLin', value: '22' }, { label: 'Jhon', value: '1' }, { label: 'Marry', value: '2' }]}
+				/>
+			</View>
 
 	},
 
