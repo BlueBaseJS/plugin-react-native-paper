@@ -1,3 +1,5 @@
+import * as React from "react"
+
 import {
 	Avatar,
 	Button,
@@ -21,6 +23,7 @@ import {
 	ListIcon,
 	ListItem,
 	ListSubheader,
+	Picker,
 	Radio,
 	RadioGroup,
 	Switch,
@@ -87,6 +90,12 @@ export default createPlugin({
 		TableRow,
 		TableTitle,
 		TextInput,
+		'HomeScreen': () => <Picker
+			selectedValue={''}
+			onValueChange={(value, i) => console.log('value', value)}
+			data={[{ name: 'SanPyaeLin', code: '22' }, { name: 'Jhon', code: '1' }, { name: 'Marry', code: '2' }]}
+		/>
+
 	},
 
 	filters: {

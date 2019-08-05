@@ -20,6 +20,7 @@ export * from './List';
 export * from './List.Icon';
 export * from './ListItem';
 export * from './List.Subheader';
+export * from './Picker';
 export * from './Radio';
 export * from './RadioGroup';
 export * from './Switch';
