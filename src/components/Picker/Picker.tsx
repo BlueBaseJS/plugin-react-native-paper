@@ -1,64 +1,39 @@
-import { Text,Button, Modal, Picker, StyleSheet, TouchableOpacity, View } from 'react-native';
+import { Card, Picker, View, } from "@bluebase/components"
+import { Modal, TouchableOpacity } from 'react-native';
 import React, { Component } from 'react';
 
-import PropTypes from 'prop-types';
-
-const propTypes = {
-    mode: PropTypes.string,
-    selectedValue: PropTypes.string,
-    selectedValueIndex: PropTypes.string,
-    onValueChange: PropTypes.func,
-    data: PropTypes.array,
-    style: PropTypes.object,
-    textStyle: PropTypes.object,
-    pickerItemStyle: PropTypes.object,
-    collapseViewStyle: PropTypes.object,
-}
-
-// const defaultProps = {
-//     data: any,
-//     mode: 'collapse',
-
-// };
+import { Button } from '@bluebase/core/dist/native';
 
 export interface IOSPickerProps {
-    data: [],
-    // selectedValueIndex?: number,
-    selectedValue?: any,
+    items: [],
+    selectedValue: string,
     style?: object,
-    textStyle?: object
-    onValueChange?: any
+    onValueChange: (data: object, index: number) => void
 }
 
 export interface IOSPickerState {
-    data?: [],
     selectedValueIndex?: number
     textStyle?: string
     modalVisible?: boolean
-    selectedValue: any
+    selectedValue: string
     selected?: number
 
 }
 class PickerComponent extends Component<IOSPickerProps, IOSPickerState> {
     constructor(props: any) {
         super(props);
-        // let selected = 0;
-        // if (this.props.data !== null) {
-        //     selected = this.props.data[this.props.selectedValueIndex || 0];
-        // } else {
-        //     selected = this.props.selectedValue;
-        // }
+
         this.state = {
             modalVisible: false,
-            selectedValue: 'SanPyaeLin',
+            selectedValue: '',
             selected: 0,
         };
     }
 
     componentWillReceiveProps(nextProps: IOSPickerProps) {
-        if (this.props.data == null && nextProps.selectedValue!= this.state.selectedValue) {
+        if (this.props.items == null && nextProps.selectedValue != this.state.selectedValue) {
             this.setState({
-                 selectedValue: nextProps.selectedValue,
+                selectedValue: nextProps.selectedValue,
             });
         }
     }
@@ -72,54 +47,49 @@ class PickerComponent extends Component<IOSPickerProps, IOSPickerState> {
         this.props.onValueChange(data, index);
     }
 
-    
+
 
     renderModalPicker() {
-        //  const { style, textStyle } = this.props;
         return (
             <View>
                 <TouchableOpacity
                     activeOpacity={0.5}
                     onPress={this.pressItem}
-                // style={[defaultStyles.container, style]}
                 >
-                    {/* <Text style={textStyle}>
-                        {this.state.selectedValue}
-                    </Text> */}
                 </TouchableOpacity>
             </View>
         )
     }
     handler = () => {
-        //  const { style, textStyle } = this.props;
         this.setState({ modalVisible: true });
     }
 
     render = () => {
-        const { children, data } = this.props;
+        const { children, items } = this.props;
         return (
             <>
-                <Button onPress={this.handler} title='press' />
-                <Text>{this.state.selected}</Text>
-                <View style={{ backgroundColor: 'green' }}>
-                    <Modal transparent visible={true}>
-                        <TouchableOpacity activeOpacity={1} onPress={() => this.setState({ modalVisible: false })} style={defaultStyles.overlay}>
-                            <View style={defaultStyles.picker}>
+
+                <Modal transparent visible={true}>
+                    <TouchableOpacity activeOpacity={1} onPress={() => this.setState({ modalVisible: false })} >
+                        <View>
+                            <Card>
                                 <Picker
                                     selectedValue={this.state.selected}
                                     onValueChange={this.valueChange as any}
                                 >
                                     {
-                                        data.map((item: any, i) =>
+                                        items.map((item: any, i: number) =>
                                             <Picker.Item key={i} label={item.name} value={item.name} />
                                         )
                                     }
                                     {children}
                                 </Picker>
-                            </View>
-                        </TouchableOpacity>
-                    </Modal>
-                </View>
+                            </Card>
+                        </View>
+                    </TouchableOpacity>
+                </Modal>
+                <Button style={{ backgroundColor: 'green' }} title={this.state.selected} onPress={this.handler} />
+
             </>
         );
     }
@@ -127,28 +97,3 @@ class PickerComponent extends Component<IOSPickerProps, IOSPickerState> {
 
 export { PickerComponent as Picker };
 
-const defaultStyles = StyleSheet.create({
-    container: {
-        padding: 5,
-        minHeight: 40,
-        borderTopWidth: 0.5,
-        borderColor: '#ddd',
-        backgroundColor: '#fff',
-        justifyContent: 'center',
-    },
-    overlay: {
-        flex: 1,
-        width: null,
-        justifyContent: 'flex-end',
-        backgroundColor: 'rgba(0,0,0,0.5)'
-    },
-    picker: {
-        padding: 10,
-        borderTopWidth: 0.5,
-        borderColor: '#aaa',
-        backgroundColor: 'white'
-    },
-    picker2: {
-        backgroundColor: 'white'
-    }
-});

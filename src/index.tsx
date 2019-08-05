@@ -93,7 +93,7 @@ export default createPlugin({
 		'HomeScreen': () => <Picker
 			selectedValue={''}
 			onValueChange={(value, i) => console.log('value', value)}
-			data={[{ name: 'SanPyaeLin', code: '22' }, { name: 'Jhon', code: '1' }, { name: 'Marry', code: '2' }]}
+			items={[{ name: 'SanPyaeLin', code: '22' }, { name: 'Jhon', code: '1' }, { name: 'Marry', code: '2' }]}
 		/>
 
 	},
