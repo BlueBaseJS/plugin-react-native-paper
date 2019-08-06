@@ -1,4 +1,3 @@
-import * as React from "react"
 
 import {
 	Avatar,
@@ -23,6 +22,7 @@ import {
 	ListIcon,
 	ListItem,
 	ListSubheader,
+	Picker,
 	Radio,
 	RadioGroup,
 	Switch,
@@ -36,7 +36,6 @@ import {
 } from './components';
 import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 
-import { Picker } from "./components/Picker"
 import { withPortal } from './withPortal';
 import { withReactNativePaper } from './withReactNativePaper';
 
@@ -80,7 +79,7 @@ export default createPlugin({
 		ListIcon,
 		ListItem,
 		ListSubheader,
-		//	Picker,
+			Picker,
 		Radio,
 		RadioGroup,
 		Switch,
