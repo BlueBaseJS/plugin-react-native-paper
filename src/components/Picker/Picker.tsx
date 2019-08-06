@@ -70,10 +70,6 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 		}
 	})
 
-
-
-
-
 	valueChange = (data: string, index: number) => {
 		this.setState({ modalVisible: false, selectedValue: data, selected: data });
 		this.props.onValueChange(data, index);
@@ -87,7 +83,7 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 
 	render = () => {
 
-		const { children, items, label, styles } = this.props;
+		const { items, label, styles } = this.props;
 		return (
 			<>
 				<View testID="list-id">
@@ -113,7 +109,7 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 										<Picker.Item key={i} label={item.label} value={item.value} />
 									)
 								}
-								{children}
+
 							</Picker>
 						</View>
 
