@@ -1,7 +1,8 @@
-import { Picker } from './index';
 import React from 'react';
 import storiesOf from '@bluebase/storybook-addon';
+import  {getComponent} from  "@bluebase/core";
 
+const Picker=getComponent('Picker');
 storiesOf('Picker', module)
     .add('Picker', () => (
         <Picker

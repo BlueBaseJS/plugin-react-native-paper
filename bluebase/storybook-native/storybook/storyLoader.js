@@ -22,6 +22,7 @@ function loadStories() {
   require('../../../src/components/IconButton/__stories__/IconButton.stories');
   require('../../../src/components/List.Icon/ListIcon.stories');
   require('../../../src/components/List/__stories__/List.stories');
+  require('../../../src/components/Picker/picker.stories');
   require('../../../src/components/Radio/__stories__/Radio.stories');
   require('../../../src/components/RadioGroup/__stories__/RadioGroup.stories');
   require('../../../src/components/Switch/__stories__/Switch.stories');
@@ -53,6 +54,7 @@ const stories = [
   '../../../src/components/IconButton/__stories__/IconButton.stories',
   '../../../src/components/List.Icon/ListIcon.stories',
   '../../../src/components/List/__stories__/List.stories',
+  '../../../src/components/Picker/picker.stories',
   '../../../src/components/Radio/__stories__/Radio.stories',
   '../../../src/components/RadioGroup/__stories__/RadioGroup.stories',
   '../../../src/components/Switch/__stories__/Switch.stories',
