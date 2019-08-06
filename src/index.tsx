@@ -1,4 +1,3 @@
-
 import {
 	Avatar,
 	Button,
@@ -22,7 +21,7 @@ import {
 	ListIcon,
 	ListItem,
 	ListSubheader,
-	Picker,
+	PickerComponent,
 	Radio,
 	RadioGroup,
 	Switch,
@@ -79,7 +78,7 @@ export default createPlugin({
 		ListIcon,
 		ListItem,
 		ListSubheader,
-			Picker,
+		PickerComponent,
 		Radio,
 		RadioGroup,
 		Switch,

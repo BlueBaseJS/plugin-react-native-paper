@@ -1,6 +1,7 @@
+import * as React from 'react';
+
 import { List, Picker, Text, View, } from '@bluebase/components';
 import { Modal, TouchableOpacity, ViewStyle } from 'react-native';
-import React, { Component } from 'react';
 
 import { Theme } from '@bluebase/core';
 
@@ -34,7 +35,7 @@ export interface PickerState {
 	selected?: string
 
 }
-class PickerComponent extends Component<PickerProps, PickerState> {
+export class PickerComponent extends React.PureComponent<PickerProps, PickerState> {
 	constructor(props: PickerProps) {
 		super(props);
 
@@ -45,6 +46,11 @@ class PickerComponent extends Component<PickerProps, PickerState> {
 		};
 	}
 
+	componentWillReceiveProps(props: any) {
+		console.log('props', props);
+
+
+	}
 
 	static defaultStyles = (_theme: Theme) => ({
 		container: {
@@ -72,9 +78,7 @@ class PickerComponent extends Component<PickerProps, PickerState> {
 		}
 	});
 
-	pressItem = () => {
-		this.setState({ modalVisible: true });
-	}
+
 
 	valueChange = (data: string, index: number) => {
 		this.setState({ modalVisible: false, selectedValue: data, selected: data });
@@ -90,6 +94,7 @@ class PickerComponent extends Component<PickerProps, PickerState> {
 	render = () => {
 
 		const { children, items, label, styles } = this.props;
+		console.log('items', items);
 		return (
 			<>
 				<List>
@@ -124,8 +129,4 @@ class PickerComponent extends Component<PickerProps, PickerState> {
 		);
 	}
 }
-
-
-
-export { PickerComponent as Picker };
 
