@@ -2,11 +2,11 @@ import { BlueBaseApp, getComponent } from '@bluebase/core';
 
 import React from 'react';
 import { mount } from 'enzyme';
-import plugin from '../../index';
+import plugin from '../../../../src/index';
 import { waitForElement } from 'enzyme-async-helpers';
 
 const PickerComponent = getComponent('PickerComponent');
-test('avatar component should  return  source Image', async () => {
+test('component should  return  source Image', async () => {
 
 
   const wrapper = mount(
@@ -23,8 +23,17 @@ test('avatar component should  return  source Image', async () => {
   );
 
   await waitForElement(wrapper, PickerComponent);
+  // expect(wrapper).toMatchSnapshot();
+  const onPress: any = wrapper.find('ListItem').first().prop('onPress')
+  onPress();
+  wrapper.update();
 
-  expect(wrapper.find('Modal')).toBeDefined();
+
+  // setTimeout(() => {
+  expect(wrapper.find('Modal').last().prop('visible')).toBe(true)
+
+  // }, 2000)
+
 
 });
 

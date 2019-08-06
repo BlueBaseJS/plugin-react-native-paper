@@ -6,7 +6,6 @@ import { Modal, TouchableOpacity, ViewStyle } from 'react-native';
 import { Theme } from '@bluebase/core';
 
 export interface ItemsProps {
-
 	value: string, label: string
 }
 
@@ -14,7 +13,6 @@ export interface ItemsProps {
 export interface PickerStyles {
 	picker: ViewStyle,
 	overlay: ViewStyle
-
 }
 
 
@@ -41,42 +39,38 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 
 		this.state = {
 			modalVisible: false,
-			selectedValue: '',
 			selected: '',
+			selectedValue: '',
 		};
-	}
-
-	componentWillReceiveProps(props: any) {
-		console.log('props', props);
-
-
 	}
 
 	static defaultStyles = (_theme: Theme) => ({
 		container: {
-			padding: 5,
-			minHeight: 40,
-			borderTopWidth: 0.5,
-			borderColor: '#ddd',
 			backgroundColor: '#fff',
+			borderColor: '#ddd',
+			borderTopWidth: 0.5,
 			justifyContent: 'center',
+			minHeight: 40,
+			padding: 5,
 		},
 		overlay: {
+			backgroundColor: 'rgba(0,0,0,0.5)',
 			flex: 1,
-			width: null,
 			justifyContent: 'flex-end',
-			backgroundColor: 'rgba(0,0,0,0.5)'
+			width: null,
 		},
 		picker: {
-			padding: 10,
-			borderTopWidth: 0.5,
+			backgroundColor: 'white',
 			borderColor: '#aaa',
-			backgroundColor: 'white'
+			borderTopWidth: 0.5,
+			padding: 10,
 		},
 		picker2: {
 			backgroundColor: 'white'
 		}
-	});
+	})
+
+
 
 
 
@@ -96,15 +90,16 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 		const { children, items, label, styles } = this.props;
 		return (
 			<>
-				<List>
-					<List.Item
-
-						title={label}
-						description={<Text>{this.state.selected}</Text>}
-						onPress={this.DialogHandler}
-					/>
-				</List>
-				<Modal transparent visible={this.state.modalVisible} animationType='fade'>
+				<View testID="list-id">
+					<List>
+						<List.Item
+							title={label}
+							description={<Text>{this.state.selected}</Text>}
+							onPress={this.DialogHandler}
+						/>
+					</List>
+				</View>
+				<Modal transparent visible={this.state.modalVisible} animationType="fade">
 
 					<TouchableOpacity activeOpacity={1} onPress={this.DialogHandler} style={styles.overlay}>
 						<View style={styles.picker}>

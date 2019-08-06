@@ -89,13 +89,6 @@ export default createPlugin({
 		TableRow,
 		TableTitle,
 		TextInput,
-		// 'HomeScreen': () => <Picker
-		// 	label='enter label'
-		// 	selectedValue={'sample'}
-		// 	onValueChange={(value, i) => console.log('value', value)}
-		// 	items={[{ label: 'SanPyaeLin', value: 'SanPyaeLin' }, { label: 'Jhon', value: 'Jhon' }, { label: 'Marry', value: 'Marry' }]}
-		// />
-
 	},
 
 	filters: {
