@@ -1,5 +1,5 @@
 import { List, Picker, Text, View } from '@bluebase/components';
-import { Modal, TouchableOpacity } from 'react-native';
+import { Modal, StyleSheet, TouchableOpacity } from 'react-native';
 import React, { Component } from 'react';
 
 export interface IOSPickerProps {
@@ -65,12 +65,11 @@ class PickerComponent extends Component<IOSPickerProps, IOSPickerState> {
 					/>
 
 				</List>
-				<Modal
-					transparent={false}
-					animationType="slide"
-					visible={this.state.modalVisible}>
-					<TouchableOpacity activeOpacity={1} onPress={this.DialogHandler} >
-						<View >
+				<Modal transparent visible={this.state.modalVisible} animationType='fade'>
+
+					<TouchableOpacity activeOpacity={1} onPress={this.DialogHandler} style={defaultStyles.overlay}>
+						<View style={defaultStyles.picker}>
+
 							<Picker
 								selectedValue={this.state.selected}
 								onValueChange={this.valueChange as any}
@@ -83,6 +82,7 @@ class PickerComponent extends Component<IOSPickerProps, IOSPickerState> {
 								{children}
 							</Picker>
 						</View>
+
 					</TouchableOpacity>
 				</Modal>
 			</>
@@ -90,5 +90,31 @@ class PickerComponent extends Component<IOSPickerProps, IOSPickerState> {
 	}
 }
 
+
+const defaultStyles = StyleSheet.create({
+	container: {
+		padding: 5,
+		minHeight: 40,
+		borderTopWidth: 0.5,
+		borderColor: '#ddd',
+		backgroundColor: '#fff',
+		justifyContent: 'center',
+	},
+	overlay: {
+		flex: 1,
+		width: null,
+		justifyContent: 'flex-end',
+		backgroundColor: 'rgba(0,0,0,0.5)'
+	},
+	picker: {
+		padding: 10,
+		borderTopWidth: 0.5,
+		borderColor: '#aaa',
+		backgroundColor: 'white'
+	},
+	picker2: {
+		backgroundColor: 'white'
+	}
+});
 export { PickerComponent as Picker };
 

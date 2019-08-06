@@ -1,3 +1,5 @@
+import * as React from "react"
+
 import {
 	Avatar,
 	Button,
@@ -21,7 +23,6 @@ import {
 	ListIcon,
 	ListItem,
 	ListSubheader,
-	Picker,
 	Radio,
 	RadioGroup,
 	Switch,
@@ -35,6 +36,7 @@ import {
 } from './components';
 import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 
+import { Picker } from "./components/Picker"
 import { withPortal } from './withPortal';
 import { withReactNativePaper } from './withReactNativePaper';
 
@@ -78,7 +80,7 @@ export default createPlugin({
 		ListIcon,
 		ListItem,
 		ListSubheader,
-		Picker,
+		//	Picker,
 		Radio,
 		RadioGroup,
 		Switch,
@@ -88,7 +90,13 @@ export default createPlugin({
 		TablePagination,
 		TableRow,
 		TableTitle,
-		TextInput
+		TextInput,
+		// 'HomeScreen': () => <Picker
+		// 	label='enter label'
+		// 	selectedValue={'sample'}
+		// 	onValueChange={(value, i) => console.log('value', value)}
+		// 	items={[{ label: 'SanPyaeLin', value: 'SanPyaeLin' }, { label: 'Jhon', value: 'Jhon' }, { label: 'Marry', value: 'Marry' }]}
+		// />
 
 	},
 

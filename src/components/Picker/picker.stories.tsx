@@ -8,7 +8,7 @@ storiesOf('Picker', module)
             label='enter label'
             selectedValue={'sample'}
             onValueChange={(value, i) => console.log('value', value)}
-            items={[{ label: 'SanPyaeLin', value: '22' }, { label: 'Jhon', value: '1' }, { label: 'Marry', value: '2' }]}
+            items={[{ label: 'SanPyaeLin', value: 'SanPyaeLin' }, { label: 'Jhon', value: 'Jhon' }, { label: 'Marry', value: 'Marry' }]}
         />
     ))
 
