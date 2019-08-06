@@ -94,7 +94,6 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 	render = () => {
 
 		const { children, items, label, styles } = this.props;
-		console.log('items', items);
 		return (
 			<>
 				<List>
