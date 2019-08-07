@@ -6,7 +6,7 @@ import plugin from '../../../../src/index';
 import { waitForElement } from 'enzyme-async-helpers';
 
 const PickerComponent = getComponent('PickerComponent');
-test('component should  return  source Image', async () => {
+test('component should  return  picker component', async () => {
 
 
   const wrapper = mount(
@@ -22,11 +22,21 @@ test('component should  return  source Image', async () => {
 
   );
 
-  await waitForElement(wrapper, PickerComponent);
-  // expect(wrapper).toMatchSnapshot();
-  const onPress: any = wrapper.find('ListItem').first().prop('onPress')
+  await waitForElement(wrapper, 'Modal');
+
+
+  const instance: any = wrapper
+    .find('PickerComponent[label="enter label"]')
+    .last()
+    .instance();
+
+
+  instance.valueChange();
+  const onPress: any = wrapper.find('ListItem').first().prop('onPress');
   onPress();
+
   wrapper.update();
+
 
 
   // setTimeout(() => {
