@@ -65,23 +65,19 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 			borderTopWidth: 0.5,
 			padding: 10,
 		},
-		picker2: {
-			backgroundColor: 'white'
-		}
+
 	})
 
-	valueChange = (data: string, index: number) => {
+	onValueChange = (data: string, index: number) => {
 		this.setState({ modalVisible: false, selectedValue: data, selected: data });
 		this.props.onValueChange(data, index);
 	}
 
-
-	DialogHandler = () => {
+	dialogHandler = () => {
 		this.setState({ modalVisible: !this.state.modalVisible });
 	}
 
-
-	render = () => {
+	render() {
 
 		const { items, label, styles } = this.props;
 		return (
@@ -91,18 +87,18 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 						<List.Item
 							title={label}
 							description={<Text>{this.state.selected}</Text>}
-							onPress={this.DialogHandler}
+							onPress={this.dialogHandler}
 						/>
 					</List>
 				</View>
 				<Modal transparent visible={this.state.modalVisible} animationType="fade">
 
-					<TouchableOpacity activeOpacity={1} onPress={this.DialogHandler} style={styles.overlay}>
+					<TouchableOpacity activeOpacity={1} onPress={this.dialogHandler} style={styles.overlay}>
 						<View style={styles.picker}>
 
 							<Picker
 								selectedValue={this.state.selected}
-								onValueChange={this.valueChange}
+								onValueChange={this.onValueChange}
 							>
 								{
 									items.map((item: { label: string, value: string }, i: number) =>
