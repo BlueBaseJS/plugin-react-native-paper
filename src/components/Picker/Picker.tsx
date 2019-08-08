@@ -8,8 +8,6 @@ import { Theme } from '@bluebase/core';
 export interface ItemsProps {
 	value: string, label: string
 }
-
-
 export interface PickerStyles {
 	picker: ViewStyle,
 	overlay: ViewStyle
@@ -22,6 +20,7 @@ export interface PickerProps {
 	selectedValue: string,
 	styles: PickerStyles,
 	label: string,
+	mode: string;
 	onValueChange: (data: string, index: number) => void
 }
 
@@ -72,13 +71,22 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 		this.setState({ modalVisible: false, selectedValue: data, selected: data });
 		this.props.onValueChange(data, index);
 	}
-
-	dialogHandler = () => {
-		this.setState({ modalVisible: !this.state.modalVisible });
+	renderDropdownPicker = () => {
+		const { items } = this.props;
+		return (
+			<Picker
+				selectedValue={this.state.selected}
+				onValueChange={this.onValueChange}
+			>
+				{
+					items.map((item: { label: string, value: string }, i: number) =>
+						<Picker.Item key={i} label={item.label} value={item.value} />
+					)
+				}
+			</Picker>
+		);
 	}
-
-	render() {
-
+	renderModalPicker = () => {
 		const { items, label, styles } = this.props;
 		return (
 			<>
@@ -92,7 +100,6 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 					</List>
 				</View>
 				<Modal transparent visible={this.state.modalVisible} animationType="fade">
-
 					<TouchableOpacity activeOpacity={1} onPress={this.dialogHandler} style={styles.overlay}>
 						<View style={styles.picker}>
 
@@ -111,6 +118,19 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 
 					</TouchableOpacity>
 				</Modal>
+			</>
+		);
+	}
+
+	dialogHandler = () => {
+		this.setState({ modalVisible: !this.state.modalVisible });
+	}
+
+	render() {
+		const { mode } = this.props;
+		return (
+			<>
+				{mode === 'modal' ? this.renderModalPicker() : this.renderDropdownPicker()}
 			</>
 		);
 	}
