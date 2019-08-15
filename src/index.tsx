@@ -89,6 +89,7 @@ export default createPlugin({
 		TableRow,
 		TableTitle,
 		TextInput,
+
 	},
 
 	filters: {
