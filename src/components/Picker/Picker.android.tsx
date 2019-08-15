@@ -55,7 +55,7 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 		overlay: {
 			backgroundColor: 'rgba(0,0,0,0.5)',
 			flex: 1,
-			justifyContent: 'flex-end',
+			justifyContent: 'center',
 			width: null,
 		},
 		picker: {

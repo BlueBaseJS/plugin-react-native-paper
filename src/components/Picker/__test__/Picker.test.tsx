@@ -18,7 +18,7 @@ describe('picker component', () => {
           label='enter label'
           selectedValue={'sample'}
           mode='modal'
-          onValueChange={(value: object) => value)}
+          onValueChange={(value: object) => (value)}
           items={[{ label: 'SanPyaeLin', value: 'SanPyaeLin' }, { label: 'Jhon', value: 'Jhon' }, { label: 'Marry', value: 'Marry' }]}
         />
       </BlueBaseApp>
