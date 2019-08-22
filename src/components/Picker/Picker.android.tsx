@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { List, Picker, Text, View, } from '@bluebase/components';
+import { List, ListItem, Picker, Text, View, } from '@bluebase/components';
 import { Modal, TouchableOpacity, ViewStyle } from 'react-native';
 
 import { Theme } from '@bluebase/core';
@@ -11,6 +11,7 @@ export interface ItemsProps {
 export interface PickerStyles {
 	picker: ViewStyle,
 	overlay: ViewStyle
+	actionSheetOverlay: ViewStyle,
 }
 
 
@@ -86,7 +87,10 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 			</Picker>
 		);
 	}
-	renderModalPicker = () => {
+
+
+
+	renderActionSheetPicker = () => {
 		const { items, label, styles } = this.props;
 		return (
 			<>
@@ -100,7 +104,7 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 					</List>
 				</View>
 				<Modal transparent visible={this.state.modalVisible} animationType="fade">
-					<TouchableOpacity activeOpacity={1} onPress={this.dialogHandler} style={styles.overlay}>
+					<TouchableOpacity activeOpacity={1} onPress={this.dialogHandler} style={styles.actionSheetOverlay}>
 						<View style={styles.picker}>
 
 							<Picker
@@ -121,16 +125,64 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 			</>
 		);
 	}
+	onPressHandler = (id: number) => () => {
+		this.props.items.map((item: { label: string, value: string }, i: number) => {
+			if (id === i) {
+				this.setState({ selected: item.label });
+			}
+		});
+		this.dialogHandler();
+	}
+
+	renderPicker = () => {
+
+		const picker = { modal: this.renderModalPicker(), actionSheet: this.renderActionSheetPicker() }
+
+		return picker[this.props.mode];
+
+	}
+	renderModalPicker = () => {
+		const { items, label, styles } = this.props;
+		return (
+			<>
+				<View testID="list-id">
+					<List>
+						<List.Item
+							title={label}
+							description={<Text>{this.state.selected}</Text>}
+							onPress={this.dialogHandler}
+						/>
+					</List>
+				</View>
+				<Modal transparent visible={this.state.modalVisible} animationType="fade">
+					<TouchableOpacity activeOpacity={1} onPress={this.dialogHandler} style={styles.overlay}>
+						<View style={styles.picker}>
+							{
+								items.map((item: { label: string, value: string }, i: number) => (
+									<List>
+										<ListItem key={i} title={item.label} onPress={this.onPressHandler(i)} />
+									</List>
+
+								)
+								)
+							}
+
+						</View>
+
+					</TouchableOpacity>
+				</Modal>
+			</>
+		);
+	}
 
 	dialogHandler = () => {
 		this.setState({ modalVisible: !this.state.modalVisible });
 	}
 
 	render() {
-		const { mode } = this.props;
 		return (
 			<>
-				{mode === 'modal' ? this.renderModalPicker() : this.renderDropdownPicker()}
+				{this.renderPicker()}
 			</>
 		);
 	}
