@@ -21,5 +21,15 @@ storiesOf('Picker', module)
             onValueChange={(value, i) => console.log('value', value)}
             items={[{ label: 'SanPyaeLin', value: 'SanPyaeLin' }, { label: 'Jhon', value: 'Jhon' }, { label: 'Marry', value: 'Marry' }]}
         />
+    ))
+
+    .add('dropdown Picker ', () => (
+        <Picker
+            label='enter label'
+            selectedValue={'sample'}
+            mode='actionSheet'
+            onValueChange={(value, i) => console.log('value', value)}
+            items={[{ label: 'SanPyaeLin', value: 'SanPyaeLin' }, { label: 'Jhon', value: 'Jhon' }, { label: 'Marry', value: 'Marry' }]}
+        />
     ));
 

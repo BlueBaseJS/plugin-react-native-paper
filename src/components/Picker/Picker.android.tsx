@@ -21,7 +21,7 @@ export interface PickerProps {
 	selectedValue: string,
 	styles: PickerStyles,
 	label: string,
-	mode: 'mode' | 'actionSheet';
+	mode: 'modal' | 'actionSheet';
 	onValueChange: (data: string, index: number) => void
 }
 
@@ -148,7 +148,7 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 		const { items, label, styles } = this.props;
 		return (
 			<>
-				<View testID="list-id">
+				<View>
 					<List>
 						<List.Item
 							title={label}
@@ -159,7 +159,7 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 				</View>
 				<Modal transparent visible={this.state.modalVisible} animationType="fade">
 					<TouchableOpacity activeOpacity={1} onPress={this.dialogHandler} style={styles.overlay}>
-						<View style={styles.picker}>
+						<View style={styles.picker} testID="picker-test">
 							{
 								items.map((item: { label: string, value: string }, i: number) => (
 									<List>

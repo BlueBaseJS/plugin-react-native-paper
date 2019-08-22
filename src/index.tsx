@@ -43,7 +43,6 @@ import { withReactNativePaper } from './withReactNativePaper';
 // import MaterialIcons from 'react-native-vector-icons/Fonts/MaterialIcons.ttf';
 // tslint:disable-next-line: no-var-requires
 const MaterialIcons = require('../Fonts/MaterialIcons.ttf');
-
 export default createPlugin({
 	description: 'React Native Paper comes to BlueBase!',
 	key: '@bluebase/plugin-react-native-paper',
@@ -89,6 +88,7 @@ export default createPlugin({
 		TableRow,
 		TableTitle,
 		TextInput,
+
 
 	},
 
