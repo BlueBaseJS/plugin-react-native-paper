@@ -21,7 +21,7 @@ export interface PickerProps {
 	selectedValue: string,
 	styles: PickerStyles,
 	label: string,
-	mode: string;
+	mode: 'mode' | 'actionSheet';
 	onValueChange: (data: string, index: number) => void
 }
 
@@ -57,6 +57,12 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 			backgroundColor: 'rgba(0,0,0,0.5)',
 			flex: 1,
 			justifyContent: 'center',
+			width: null,
+		},
+		actionSheetOverlay: {
+			backgroundColor: 'rgba(0,0,0,0.5)',
+			flex: 1,
+			justifyContent: 'flex-end',
 			width: null,
 		},
 		picker: {
@@ -106,18 +112,15 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 				<Modal transparent visible={this.state.modalVisible} animationType="fade">
 					<TouchableOpacity activeOpacity={1} onPress={this.dialogHandler} style={styles.actionSheetOverlay}>
 						<View style={styles.picker}>
+							{
+								items.map((item: { label: string, value: string }, i: number) => (
+									<List>
+										<ListItem key={i} title={item.label} onPress={this.onPressHandler(i)} />
+									</List>
 
-							<Picker
-								selectedValue={this.state.selected}
-								onValueChange={this.onValueChange}
-							>
-								{
-									items.map((item: { label: string, value: string }, i: number) =>
-										<Picker.Item key={i} label={item.label} value={item.value} />
-									)
-								}
-
-							</Picker>
+								)
+								)
+							}
 						</View>
 
 					</TouchableOpacity>
@@ -180,9 +183,10 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 	}
 
 	render() {
+		const { mode } = this.props;
 		return (
 			<>
-				{this.renderPicker()}
+				{mode ? this.renderPicker() : this.renderDropdownPicker()}
 			</>
 		);
 	}
