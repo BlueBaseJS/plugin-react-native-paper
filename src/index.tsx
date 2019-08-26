@@ -1,3 +1,5 @@
+import * as  React from "react"
+
 import {
 	Avatar,
 	Button,
@@ -33,10 +35,13 @@ import {
 	TableTitle,
 	TextInput,
 } from './components';
-import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
+import { BlueBase, BootOptions, createPlugin, getComponent } from '@bluebase/core';
 
 import { withPortal } from './withPortal';
 import { withReactNativePaper } from './withReactNativePaper';
+
+const Picker = getComponent('PickerComponent');
+
 
 // TODO: This is a temp fix for:
 // https://github.com/react-native-community/cli/issues/228
@@ -88,7 +93,13 @@ export default createPlugin({
 		TableRow,
 		TableTitle,
 		TextInput,
-
+		'HomeScreen': () => <Picker
+			label='enter label'
+			selectedValue={'sample'}
+			mode='actionSheet'
+			onValueChange={(value, i) => console.log('value', value)}
+			items={[{ label: 'SanPyaeLin', value: 'SanPyaeLin' }, { label: 'Jhon', value: 'Jhon' }, { label: 'Marry', value: 'Marry' }]}
+		/>
 
 	},
 

@@ -40,3 +40,6 @@ dist/
 
 # Jest
 .jest
+
+# storybook Loader
+.bluebase/storybook-native/storybook/storyLoader.js

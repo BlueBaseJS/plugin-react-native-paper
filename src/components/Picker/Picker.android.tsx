@@ -21,7 +21,7 @@ export interface PickerProps {
 	selectedValue: string,
 	styles: PickerStyles,
 	label: string,
-	mode: 'modal' | 'actionSheet';
+	mode: 'modal' | 'actionsheet';
 	onValueChange: (data: string, index: number) => void
 }
 
@@ -33,7 +33,7 @@ export interface PickerState {
 	selected?: string
 
 }
-export class PickerComponent extends React.PureComponent<PickerProps, PickerState> {
+export class PickerComponent extends React.Component<PickerProps, PickerState> {
 	constructor(props: PickerProps) {
 		super(props);
 
@@ -139,7 +139,7 @@ export class PickerComponent extends React.PureComponent<PickerProps, PickerStat
 
 	renderPicker = () => {
 
-		const picker = { modal: this.renderModalPicker(), actionSheet: this.renderActionSheetPicker() }
+		const picker = { modal: this.renderModalPicker(), actionsheet: this.renderActionSheetPicker() }
 
 		return picker[this.props.mode];
 
