@@ -1,4 +1,4 @@
 export default {
 	plugins: [
-		require('../../src')	]
+		require('../../src')]
 };
