@@ -1,1 +1,2 @@
-export { Slider, SliderProps } from 'react-native';
+import Slider from '@react-native-community/slider';
+export {Slider};
