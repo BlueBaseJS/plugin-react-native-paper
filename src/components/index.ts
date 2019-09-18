@@ -23,6 +23,7 @@ export * from './List.Subheader';
 export * from './Radio';
 export * from './RadioGroup';
 export * from './Switch';
+export * from './Slider';
 export * from './TextInput';
 export * from './Table';
 export * from './TableCell';
