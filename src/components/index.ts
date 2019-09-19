@@ -22,7 +22,7 @@ export * from './ListItem';
 export * from './List.Subheader';
 export * from './Radio';
 export * from './RadioGroup';
-// export * from './Slider';
+export * from './Slider';
 export * from './Switch';
 export * from './TextInput';
 export * from './Table';
