@@ -89,7 +89,7 @@
     "tslib": "^1.9.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.4.3",
+    "@babel/cli": "7.5.5",
     "@babel/core": "^7.4.3",
     "@babel/plugin-proposal-class-properties": "^7.4.0",
     "@babel/plugin-transform-flow-strip-types": "^7.4.0",
