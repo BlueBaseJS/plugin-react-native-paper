@@ -104,7 +104,7 @@
     "@storybook/react-native": "5.1.11",
     "@types/deepmerge": "^2.2.0",
     "@types/enzyme": "^3.9.0",
-    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/enzyme-adapter-react-16": "^1.14.0",
     "@types/enzyme-async-helpers": "^0.9.1",
     "@types/expo": "^32.0.9",
     "@types/jest": "^24.0.9",
