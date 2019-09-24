@@ -136,7 +136,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-native-storybook-loader": "^1.8.0",
-    "react-native-typescript-transformer": "^1.2.12",
+    "react-native-typescript-transformer": "1.2.13",
     "react-test-renderer": "16.9.0",
     "schedule": "0.4.0",
     "size-limit": "^0.21.1",
