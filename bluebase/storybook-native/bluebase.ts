@@ -11,7 +11,7 @@ import deepmerge from 'deepmerge';
  */
 const bootOptions: Partial<BootOptions> = {
 
-	plugins: [ReactnativePaperPlugin,MaterialCommunityIcons],
+	plugins: [ReactnativePaperPlugin,MaterialCommunityIcons]
 };
 
 export default deepmerge(commonBootOptions, bootOptions);
