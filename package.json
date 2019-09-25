@@ -82,7 +82,7 @@
     "@bluebase/components": "^5.14.0",
     "@react-native-community/slider": "^2.0.0",
     "deepmerge": "^3.2.0",
-    "expo": "^33.0.0",
+    "expo": "^35.0.0",
     "react-native": "0.60.5",
     "react-native-paper": "2.15.2",
     "react-native-vector-icons": "^6.5.0",
