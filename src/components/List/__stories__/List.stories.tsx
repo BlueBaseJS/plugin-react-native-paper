@@ -7,8 +7,6 @@ import storiesOf from '@bluebase/storybook-addon';
 const ListItem = getComponent<ListItemProps>('ListItem');
 
 storiesOf('List', module)
-
-
 	.add('Basic Example', () => (
 		<List>
 			<List.Subheader>Social Accounts</List.Subheader>
@@ -22,9 +20,14 @@ storiesOf('List', module)
 				left={<List.Icon color="red" name="google" />}
 				onPress={() => console.log('Google')}
 			/>
+			<List.Item
+				title="AccountPassword"
+				description="Enter your password"
+				left={<List.Avatar type="icon" color="white" icon="google" />}
+				onPress={() => console.log('Avatar')}
+			/>
 		</List>
 	))
-
 
 	.add('Basic Example with description', () => (
 		<List>
@@ -34,6 +37,5 @@ storiesOf('List', module)
 				onPress={console.log}
 				description="description"
 			/>
-
 		</List>
 	));
