@@ -1,11 +1,21 @@
-import { TextInput as RNP_TextInput } from 'react-native-paper';
+import { HelperText, TextInput as RNP_TextInput } from 'react-native-paper';
+
+import React from 'react';
 import { TextInputProps } from '@bluebase/components';
-import { componentMapper } from '@bluebase/component-mapper';
 
-export const TextInput = componentMapper<TextInputProps>(RNP_TextInput, {
-	mode: ({ variant }: TextInputProps) =>
-		variant !== 'outlined'
-		? 'flat'
-		: 'outlined',
+export const TextInput = (props: TextInputProps) => {
+	const { error, helperText, variant, ...rest } = props;
+	const mode = variant !== 'outlined' ? 'flat' : 'outlined';
+	const node = <RNP_TextInput error={error} mode={mode} {...(rest as any)} />;
 
-}, { rest: true, });
+	if (helperText) {
+		return (
+			<>
+				{node}
+				<HelperText type={!!error ? 'error' : 'info'}>{helperText}</HelperText>
+			</>
+		);
+	}
+
+	return node;
+};
