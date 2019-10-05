@@ -1,1 +1,1 @@
-export {Slider, SliderProps} from 'react-native';
+export { Slider, SliderProps } from 'react-native';
