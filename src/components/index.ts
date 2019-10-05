@@ -17,6 +17,7 @@ export * from './FormControlLabel';
 export * from './FormHelperText';
 export * from './IconButton';
 export * from './List';
+export * from './ListAvatar';
 export * from './List.Icon';
 export * from './ListItem';
 export * from './List.Subheader';
