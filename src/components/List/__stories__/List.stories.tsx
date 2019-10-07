@@ -1,4 +1,4 @@
-import { List, ListItemProps } from '@bluebase/components';
+import { Icon, List, ListItemProps } from '@bluebase/components';
 
 import React from 'react';
 import { getComponent } from '@bluebase/core';
@@ -19,6 +19,13 @@ storiesOf('List', module)
 				title="Google"
 				left={<List.Icon color="red" name="google" />}
 				onPress={() => console.log('Google')}
+			/>
+			<List.Item
+				title="Account Password"
+				description="Enter your password"
+				left={<List.Avatar type="icon" color="white" icon="google" />}
+				right={<Icon name="open-in-new" />}
+				onPress={() => console.log('Avatar')}
 			/>
 		</List>
 	))

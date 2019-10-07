@@ -1,8 +1,6 @@
-import { BootOptions } from '@bluebase/core';
-import commonBootOptions from '../common/bluebase';
-import deepmerge from 'deepmerge';
+import { BootOptions, merge } from '@bluebase/core';
 
-// const assetsPath = `../../assets/expo`;
+import commonBootOptions from '../common/bluebase';
 
 /**
  * Add your platform specific configs here.
@@ -10,15 +8,7 @@ import deepmerge from 'deepmerge';
  * the common folder, and extend them here.
  */
 const bootOptions: Partial<BootOptions> = {
-
-	// config: {
-
-	// 	wallpaper: {
-	// 		backgroundColor: 'white',
-	// 		resizeMode: 'cover',
-	// 		source: require(`${assetsPath}/wallpaper.jpg`),
-	// 	},
-	// }
+	plugins: [],
 };
 
-export default deepmerge(commonBootOptions, bootOptions);
+export default merge(commonBootOptions as any, bootOptions);

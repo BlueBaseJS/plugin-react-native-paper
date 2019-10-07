@@ -23,7 +23,11 @@ stories
 			color="blue"
 		/>
 		<Checkbox
-			onValueChange={action('Checked')}
+			value="test1"
+			onValueChange={(a, b)=>{
+				// console.log(a);
+				// console.log(b);
+			}}
 			label="Unchecked"
 			color="blue"
 			checked={false}

@@ -1,19 +1,17 @@
-import React from 'react';
-import { getStorybookUI, configure, addDecorator } from '@storybook/react-native';
-
 import './rn-addons';
 
-// Custom
-import { loadStories } from './storyLoader';
-import { BlueBaseDecorator } from '@bluebase/storybook-addon';
+import { addDecorator, configure, getStorybookUI } from '@storybook/react-native';
+
 import BRConfigs from '../bluebase';
+import { BlueBaseDecorator } from '@bluebase/storybook-addon';
+import { loadStories } from './storyLoader';
 
 // BlueBase
 addDecorator(BlueBaseDecorator(BRConfigs));
 
 // import stories
 configure(() => {
-  loadStories();
+	loadStories();
 }, module);
 
 // Refer to https://github.com/storybooks/storybook/tree/master/app/react-native#start-command-parameters

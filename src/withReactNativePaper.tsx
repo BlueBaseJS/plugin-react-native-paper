@@ -1,27 +1,13 @@
 import { DefaultTheme, Provider } from 'react-native-paper';
 import { ThemeContext, ThemeContextData } from '@bluebase/core';
-import { Font } from 'expo';
+
 import React from 'react';
 
 export const withReactNativePaper = (Component: React.ComponentType<any>) => {
-
 	return class ReactNativePaperProvider extends React.Component {
 		static contextType = ThemeContext;
 
-		readonly state = {
-			isFontLoaded: false
-		};
-
-		async componentWillMount() {
-			await Font.loadAsync({ 'Material Icons': require('react-native-vector-icons/Fonts/MaterialIcons.ttf') });
-			this.setState({ isFontLoaded: true });
-		}
-
 		render() {
-			if (!this.state.isFontLoaded) {
-				return null;
-			}
-
 			const { theme }: ThemeContextData = this.context;
 
 			const rnpTheme = {

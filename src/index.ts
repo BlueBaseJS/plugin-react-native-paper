@@ -18,11 +18,13 @@ import {
 	FormHelperText,
 	IconButton,
 	List,
+	ListAvatar,
 	ListIcon,
 	ListItem,
 	ListSubheader,
 	Radio,
 	RadioGroup,
+	Slider,
 	Switch,
 	Table,
 	TableCell,
@@ -37,6 +39,12 @@ import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 import { withPortal } from './withPortal';
 import { withReactNativePaper } from './withReactNativePaper';
 
+// TODO: This is a temp fix for:
+// https://github.com/react-native-community/cli/issues/228
+// import MaterialIcons from 'react-native-vector-icons/Fonts/MaterialIcons.ttf';
+// tslint:disable-next-line: no-var-requires
+const MaterialIcons = require('../Fonts/MaterialIcons.ttf');
+
 export default createPlugin({
 	description: 'React Native Paper comes to BlueBase!',
 	key: '@bluebase/plugin-react-native-paper',
@@ -44,7 +52,7 @@ export default createPlugin({
 	version: '1.0.0',
 
 	assets: {
-		'Material Icons': require('react-native-vector-icons/Fonts/MaterialIcons.ttf'),
+		'Material Icons': MaterialIcons,
 	},
 
 	components: {
@@ -67,12 +75,13 @@ export default createPlugin({
 		FormHelperText,
 		IconButton,
 		List,
-		ListAvatar: Avatar,
+		ListAvatar,
 		ListIcon,
 		ListItem,
 		ListSubheader,
 		Radio,
 		RadioGroup,
+		Slider,
 		Switch,
 		Table,
 		TableCell,
