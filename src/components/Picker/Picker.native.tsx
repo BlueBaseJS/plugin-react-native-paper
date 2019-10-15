@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import { List, ListItem, Picker, Text, View } from '@bluebase/components';
+import { Dialog, Icon, List, ListItem, Picker, ScrollView, Text, View } from '@bluebase/components';
 import { Modal, TouchableOpacity, ViewStyle } from 'react-native';
 
 import { Theme } from '@bluebase/core';
@@ -20,14 +20,16 @@ export interface PickerProps {
 	selectedValue: string;
 	styles: PickerStyles;
 	label: string;
-	mode: 'modal' | 'actionsheet' | 'default';
+	mode: 'dialog' | 'actionsheet' | 'default';
 	onValueChange: (data: string, index: number) => void;
+	left?: any;
+	right?: any;
 }
 
 export interface PickerState {
 	selectedValueIndex?: number;
 	textStyle?: string;
-	modalVisible?: boolean;
+	dialogVisible: boolean;
 	selectedValue: string;
 	selected?: string;
 }
@@ -36,8 +38,8 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 		super(props);
 
 		this.state = {
-			modalVisible: false,
-			selected: '',
+			dialogVisible: false,
+			selected: 'None',
 			selectedValue: '',
 		};
 	}
@@ -67,12 +69,13 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 			backgroundColor: 'white',
 			borderColor: '#aaa',
 			borderTopWidth: 0.5,
+			height: 250,
 			padding: 10,
 		},
 	});
 
 	onValueChange = (data: string, index: number) => {
-		this.setState({ modalVisible: false, selectedValue: data, selected: data });
+		this.setState({ dialogVisible: false, selectedValue: data, selected: data });
 		this.props.onValueChange(data, index);
 	};
 	renderDropdownPicker = () => {
@@ -94,7 +97,7 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 		);
 	};
 
-	renderActionSheetPicker = () => {
+	renderDialogPicker = () => {
 		const { items, label, styles } = this.props;
 		return (
 			<>
@@ -103,16 +106,14 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 						<List.Item
 							title={label}
 							description={<Text>{this.state.selected}</Text>}
+							// right={<Icon name="arrow-down-thick" />}
 							onPress={this.dialogHandler}
 						/>
 					</List>
 				</View>
-				<Modal transparent visible={this.state.modalVisible} animationType="fade">
-					<TouchableOpacity
-						activeOpacity={1}
-						onPress={this.dialogHandler}
-						style={styles.actionSheetOverlay}
-					>
+				<Dialog visible={this.state.dialogVisible} style={{ maxHeight: 350 }}>
+					{/* <TouchableOpacity activeOpacity={1} onPress={this.dialogHandler}> */}
+					<ScrollView>
 						<View style={styles.picker}>
 							{items.map((item: { label: string; value: string }, i: number) => (
 								<List>
@@ -120,8 +121,9 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 								</List>
 							))}
 						</View>
-					</TouchableOpacity>
-				</Modal>
+					</ScrollView>
+					{/* </TouchableOpacity> */}
+				</Dialog>
 			</>
 		);
 	};
@@ -136,27 +138,27 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 
 	renderPicker = () => {
 		const picker = {
-			actionsheet: this.renderActionSheetPicker(),
+			actionsheet: this.renderDialogPicker(),
 			default: this.renderDropdownPicker(),
-			modal: this.renderModalPicker(),
+			dialog: this.renderdialogPicker(),
 		};
 
 		return picker[this.props.mode];
 	};
-	renderModalPicker = () => {
-		const { items, label, styles } = this.props;
+	renderdialogPicker = () => {
+		const { items, styles } = this.props;
 		return (
-			<>
+			<View>
 				<View>
 					<List>
 						<List.Item
-							title={label}
+							title="This is Dialog"
 							description={<Text>{this.state.selected}</Text>}
 							onPress={this.dialogHandler}
 						/>
 					</List>
 				</View>
-				<Modal visible={this.state.modalVisible} animationType="fade">
+				<Modal visible={this.state.dialogVisible} animationType="fade">
 					<TouchableOpacity activeOpacity={1} onPress={this.dialogHandler} style={styles.overlay}>
 						{items.map((item: { label: string; value: string }, i: number) => (
 							<List>
@@ -170,12 +172,12 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 						))}
 					</TouchableOpacity>
 				</Modal>
-			</>
+			</View>
 		);
 	};
 
 	dialogHandler = () => {
-		this.setState({ modalVisible: !this.state.modalVisible });
+		this.setState({ dialogVisible: !this.state.dialogVisible });
 	};
 
 	render() {
