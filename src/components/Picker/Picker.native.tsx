@@ -20,7 +20,7 @@ export interface PickerProps {
 	selectedValue: string;
 	styles: PickerStyles;
 	label: string;
-	mode: 'modal' | 'actionsheet';
+	mode: 'modal' | 'actionsheet' | 'default';
 	onValueChange: (data: string, index: number) => void;
 }
 
@@ -43,6 +43,12 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 	}
 
 	static defaultStyles = (_theme: Theme) => ({
+		actionSheetOverlay: {
+			backgroundColor: 'rgba(0,0,0,0.5)',
+			flex: 1,
+			justifyContent: 'flex-end',
+			width: null,
+		},
 		container: {
 			backgroundColor: '#fff',
 			borderColor: '#ddd',
@@ -55,12 +61,6 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 			backgroundColor: 'rgba(0,0,0,0.5)',
 			flex: 1,
 			justifyContent: 'center',
-			width: null,
-		},
-		actionSheetOverlay: {
-			backgroundColor: 'rgba(0,0,0,0.5)',
-			flex: 1,
-			justifyContent: 'flex-end',
 			width: null,
 		},
 		picker: {
@@ -76,9 +76,17 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 		this.props.onValueChange(data, index);
 	};
 	renderDropdownPicker = () => {
-		const { items } = this.props;
+		const { items, label } = this.props;
 		return (
-			<Picker selectedValue={this.state.selected} onValueChange={this.onValueChange}>
+			<Picker
+				style={{ width: 200 }}
+				selectedValue={this.state.selected}
+				onValueChange={this.onValueChange}
+				label={label}
+				// required={true}
+				// variant="standard"
+				// mode="dropdown"
+			>
 				{items.map((item: { label: string; value: string }, i: number) => (
 					<Picker.Item key={i} label={item.label} value={item.value} />
 				))}
@@ -127,7 +135,11 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 	};
 
 	renderPicker = () => {
-		const picker = { modal: this.renderModalPicker(), actionsheet: this.renderActionSheetPicker() };
+		const picker = {
+			actionsheet: this.renderActionSheetPicker(),
+			default: this.renderDropdownPicker(),
+			modal: this.renderModalPicker(),
+		};
 
 		return picker[this.props.mode];
 	};
@@ -144,15 +156,18 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 						/>
 					</List>
 				</View>
-				<Modal transparent visible={this.state.modalVisible} animationType="fade">
+				<Modal visible={this.state.modalVisible} animationType="fade">
 					<TouchableOpacity activeOpacity={1} onPress={this.dialogHandler} style={styles.overlay}>
-						<View style={styles.picker} testID="picker-test">
-							{items.map((item: { label: string; value: string }, i: number) => (
-								<List>
-									<ListItem key={i} title={item.label} onPress={this.onPressHandler(i)} />
-								</List>
-							))}
-						</View>
+						{items.map((item: { label: string; value: string }, i: number) => (
+							<List>
+								<ListItem
+									key={i}
+									title={item.label}
+									onPress={this.onPressHandler(i)}
+									style={styles.picker}
+								/>
+							</List>
+						))}
 					</TouchableOpacity>
 				</Modal>
 			</>
@@ -165,6 +180,6 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 
 	render() {
 		const { mode } = this.props;
-		return <View>{mode ? this.renderPicker() : this.renderDropdownPicker()}</View>;
+		return <>{mode ? this.renderPicker() : this.renderDropdownPicker()}</>;
 	}
 }
