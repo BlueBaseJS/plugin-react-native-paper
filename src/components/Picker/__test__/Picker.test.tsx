@@ -8,132 +8,156 @@ import { waitForElement } from 'enzyme-async-helpers';
 const PickerComponent = getComponent('PickerComponent');
 
 describe('picker component', () => {
-  it('should  return  menu picker component', async () => {
+	it('should  return  menu picker component', async () => {
+		const wrapper = mount(
+			<BlueBaseApp plugins={[plugin]}>
+				<PickerComponent
+					label="enter label"
+					selectedValue={'sample'}
+					onValueChange={(value: object) => value}
+					items={[
+						{ label: 'SanPyaeLin', value: 'SanPyaeLin' },
+						{ label: 'Jhon', value: 'Jhon' },
+						{ label: 'Marry', value: 'Marry' },
+					]}
+				/>
+			</BlueBaseApp>
+		);
 
+		await waitForElement(wrapper, 'Picker');
+		expect(
+			wrapper
+				.find('Picker')
+				.last()
+				.prop('children')
+		).toHaveLength(3);
+	});
 
-    const wrapper = mount(
-      <BlueBaseApp plugins={[plugin]}>
+	it('should  return  modal picker component', async () => {
+		const wrapper = mount(
+			<BlueBaseApp plugins={[plugin]}>
+				<PickerComponent
+					label="enter label"
+					selectedValue={'sample'}
+					mode="modal"
+					onValueChange={(value: object) => value}
+					items={[
+						{ label: 'SanPyaeLin', value: 'SanPyaeLin' },
+						{ label: 'Jhon', value: 'Jhon' },
+						{ label: 'Marry', value: 'Marry' },
+					]}
+				/>
+			</BlueBaseApp>
+		);
 
-        <PickerComponent
-          label='enter label'
-          selectedValue={'sample'}
-          onValueChange={(value: object) => (value)}
-          items={[{ label: 'SanPyaeLin', value: 'SanPyaeLin' }, { label: 'Jhon', value: 'Jhon' }, { label: 'Marry', value: 'Marry' }]}
-        />
-      </BlueBaseApp>
+		await waitForElement(wrapper, 'Modal');
 
-    );
+		const instance: any = wrapper
+			.find('PickerComponent[label="enter label"]')
+			.last()
+			.instance();
 
-    await waitForElement(wrapper, 'Picker');
-    expect(wrapper.find('Picker').last().prop('children')).toHaveLength(3);
-  });
+		instance.onValueChange();
+		const onPress: any = wrapper
+			.find('ListItem')
+			.first()
+			.prop('onPress');
+		onPress();
 
-  it('should  return  modal picker component', async () => {
+		wrapper.update();
+		const ListItemPress: any = wrapper
+			.find('View[testID="picker-test"]')
+			.last()
+			.find('ListItem')
+			.last()
+			.prop('onPress');
 
+		ListItemPress();
 
-    const wrapper = mount(
-      <BlueBaseApp plugins={[plugin]}>
+		expect(
+			wrapper
+				.find('Modal')
+				.last()
+				.prop('visible')
+		).toBe(true);
+	});
 
-        <PickerComponent
-          label='enter label'
-          selectedValue={'sample'}
-          mode='modal'
-          onValueChange={(value: object) => (value)}
-          items={[{ label: 'SanPyaeLin', value: 'SanPyaeLin' }, { label: 'Jhon', value: 'Jhon' }, { label: 'Marry', value: 'Marry' }]}
-        />
-      </BlueBaseApp>
+	it('should  return  menu picker component for android', async () => {
+		const { PickerComponent } = require('../Picker.native');
 
-    );
+		const wrapper = mount(
+			<BlueBaseApp plugins={[plugin]}>
+				<PickerComponent
+					label="enter label"
+					selectedValue={'sample'}
+					onValueChange={(value: object) => value}
+					items={[
+						{ label: 'SanPyaeLin', value: 'SanPyaeLin' },
+						{ label: 'Jhon', value: 'Jhon' },
+						{ label: 'Marry', value: 'Marry' },
+					]}
+				/>
+			</BlueBaseApp>
+		);
 
-    await waitForElement(wrapper, 'Modal');
+		await waitForElement(wrapper, 'Picker');
+		expect(
+			wrapper
+				.find('Picker')
+				.last()
+				.prop('children')
+		).toHaveLength(3);
+	});
 
+	it('should  return  modal picker component for android', async () => {
+		const { PickerComponent } = require('../Picker.native');
 
-    const instance: any = wrapper
-      .find('PickerComponent[label="enter label"]')
-      .last()
-      .instance();
+		const wrapper = mount(
+			<BlueBaseApp plugins={[plugin]}>
+				<PickerComponent
+					label="enter label"
+					selectedValue={'sample'}
+					styles={{ overlay: {} }}
+					mode="modal"
+					onValueChange={(value: object) => value}
+					items={[
+						{ label: 'SanPyaeLin', value: 'SanPyaeLin' },
+						{ label: 'Jhon', value: 'Jhon' },
+						{ label: 'Marry', value: 'Marry' },
+					]}
+				/>
+			</BlueBaseApp>
+		);
 
+		await waitForElement(wrapper, 'Modal');
 
-    instance.onValueChange();
-    const onPress: any = wrapper.find('ListItem').first().prop('onPress');
-    onPress();
+		const instance: any = wrapper
+			.find('PickerComponent[label="enter label"]')
+			.last()
+			.instance();
 
-    wrapper.update();
-    const ListItemPress: any = wrapper.find('View[testID="picker-test"]').last().find('ListItem').last().prop('onPress');
+		instance.onValueChange();
+		const onPress: any = wrapper
+			.find('ListItem')
+			.first()
+			.prop('onPress');
+		onPress();
 
-    ListItemPress();
+		wrapper.update();
+		const ListItemPress: any = wrapper
+			.find('View[testID="picker-test"]')
+			.last()
+			.find('ListItem')
+			.last()
+			.prop('onPress');
 
-    expect(wrapper.find('Modal').last().prop('visible')).toBe(true);
+		ListItemPress();
 
-  });
-
-
-
-
-
-  it('should  return  menu picker component for android', async () => {
-
-    const { PickerComponent } = require('../Picker.android');
-
-    const wrapper = mount(
-      <BlueBaseApp plugins={[plugin]}>
-
-        <PickerComponent
-          label='enter label'
-          selectedValue={'sample'}
-          onValueChange={(value: object) => (value)}
-          items={[{ label: 'SanPyaeLin', value: 'SanPyaeLin' }, { label: 'Jhon', value: 'Jhon' }, { label: 'Marry', value: 'Marry' }]}
-        />
-      </BlueBaseApp>
-
-    );
-
-    await waitForElement(wrapper, 'Picker');
-    expect(wrapper.find('Picker').last().prop('children')).toHaveLength(3);
-  });
-
-  it('should  return  modal picker component for android', async () => {
-    const { PickerComponent } = require('../Picker.android');
-
-    const wrapper = mount(
-      <BlueBaseApp plugins={[plugin]}>
-
-        <PickerComponent
-          label='enter label'
-          selectedValue={'sample'}
-          styles={{ overlay: {} }}
-          mode='modal'
-          onValueChange={(value: object) => (value)}
-          items={[{ label: 'SanPyaeLin', value: 'SanPyaeLin' }, { label: 'Jhon', value: 'Jhon' }, { label: 'Marry', value: 'Marry' }]}
-        />
-      </BlueBaseApp>
-
-    );
-
-    await waitForElement(wrapper, 'Modal');
-
-
-    const instance: any = wrapper
-      .find('PickerComponent[label="enter label"]')
-      .last()
-      .instance();
-
-
-    instance.onValueChange();
-    const onPress: any = wrapper.find('ListItem').first().prop('onPress');
-    onPress();
-
-    wrapper.update();
-    const ListItemPress: any = wrapper.find('View[testID="picker-test"]').last().find('ListItem').last().prop('onPress');
-
-    ListItemPress();
-
-    expect(wrapper.find('Modal').last().prop('visible')).toBe(true);
-
-  });
-
-
-
+		expect(
+			wrapper
+				.find('Modal')
+				.last()
+				.prop('visible')
+		).toBe(true);
+	});
 });
-
-

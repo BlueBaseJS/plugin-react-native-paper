@@ -33,3 +33,5 @@ export * from './TablePagination';
 export * from './TableHead';
 export * from './Picker';
 export * from './TableTitle';
+export * from './Menu';
+export * from './Menu/MenuItem';

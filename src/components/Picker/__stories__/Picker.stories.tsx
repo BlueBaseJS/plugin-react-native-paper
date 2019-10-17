@@ -8,12 +8,12 @@ import storiesOf from '@bluebase/storybook-addon';
 // const Picker = getComponent('PickerComponent');
 storiesOf('Picker', module)
 	.add('Modal Picker', () => (
-		<View style={{ marginTop: 80 }}>
+		<View style={{ marginTop: 80, width: 200 }}>
 			<Picker
 				styles={{ picker: {}, overlay: {}, actionSheetOverlay: {} }}
 				label="enter label"
 				selectedValue={'sample'}
-				mode="modal"
+				mode="dialog"
 				onValueChange={(value, i) => console.log('value', value)}
 				items={[
 					{ label: 'SanPyaeLin', value: 'SanPyaeLin' },
