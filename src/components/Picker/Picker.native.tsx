@@ -1,11 +1,12 @@
 import * as React from 'react';
 
-import { Button, Menu, Provider } from 'react-native-paper';
+import { Button, Provider } from 'react-native-paper';
 import {
 	Dialog,
 	Divider,
 	List,
 	ListItem,
+	Menu,
 	Picker,
 	ScrollView,
 	Text,
