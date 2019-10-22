@@ -1,20 +1,18 @@
 import * as React from 'react';
 
-import { Button, Provider } from 'react-native-paper';
 import {
 	Dialog,
-	Divider,
 	List,
 	ListItem,
 	Menu,
+	MenuItem,
 	Picker,
 	ScrollView,
-	Text,
 	View,
 } from '@bluebase/components';
+import { StyleProp, ViewStyle } from 'react-native';
 
 import { Theme } from '@bluebase/core';
-import { ViewStyle } from 'react-native';
 
 export interface ItemsProps {
 	value: string;
@@ -27,36 +25,32 @@ export interface PickerStyles {
 }
 
 export interface PickerProps {
-	items: ItemsProps[];
-	selectedValue: string;
-	styles: PickerStyles;
+	styles?: PickerStyles;
 	label: string;
-	mode: 'dialog' | 'actionsheet' | 'default';
+	mode: 'dialog' | 'menu' | 'default';
 	onValueChange: (data: string, index: number) => void;
-	left?: any;
-	right?: any;
+	children: any;
+	style?: StyleProp<ViewStyle>;
 }
 
 export interface PickerState {
-	selectedValueIndex?: number;
-	textStyle?: string;
-	dialogVisible: boolean;
-	selectedValue: string;
-	selected?: string;
-	visible: boolean;
+	pickerVisible: boolean;
+	selected: string;
+	selectedIndex: number;
+	items: any;
 }
 export class PickerComponent extends React.Component<PickerProps, PickerState> {
+	initialDataSet: boolean;
 	constructor(props: PickerProps) {
 		super(props);
-
 		this.state = {
-			dialogVisible: false,
+			items: [],
+			pickerVisible: false,
 			selected: 'None',
-			selectedValue: '',
-			visible: false,
+			selectedIndex: -1,
 		};
+		this.initialDataSet = false;
 	}
-
 	static defaultStyles = (_theme: Theme) => ({
 		actionSheetOverlay: {
 			backgroundColor: 'rgba(0,0,0,0.5)',
@@ -87,24 +81,54 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 		},
 	});
 
-	_openMenu = () => this.setState({ visible: true });
+	_onPressHandler = (id: number, data: any) => () => {
+		data.map((item: { label: string; value: string }, i: number) => {
+			if (id === i) {
+				this.setState({ selected: item.label, selectedIndex: i }, () =>
+					this.props.onValueChange(this.state.selected, this.state.selectedIndex)
+				);
+			}
+		});
+		this._pickerHandler();
+	};
 
-	_closeMenu = () => this.setState({ visible: false });
-	onValueChange = (data: string, index: number) => {
-		this.setState({ dialogVisible: false, selectedValue: data, selected: data });
+	_renderPicker = () => {
+		const picker = {
+			default: this._renderDropdownPicker(),
+			dialog: this._renderDialogPicker(),
+			menu: this._renderMenuPicker(),
+		};
+
+		return picker[this.props.mode];
+	};
+
+	_pickerHandler = () => {
+		this.setState({
+			pickerVisible: !this.state.pickerVisible,
+		});
+	};
+
+	_openMenu = () => this.setState({ pickerVisible: !this.state.pickerVisible });
+
+	_closeMenu = () => this.setState({ pickerVisible: !this.state.pickerVisible });
+
+	_onValueChange = (data: string, index: number) => {
+		this.setState({
+			pickerVisible: !this.state.pickerVisible,
+			selected: data,
+		});
 		this.props.onValueChange(data, index);
 	};
-	renderDropdownPicker = () => {
-		const { items, label } = this.props;
+
+	_renderDropdownPicker = () => {
+		const { label } = this.props;
+		const { items } = this.state;
 		return (
 			<Picker
 				style={{ width: 200 }}
 				selectedValue={this.state.selected}
-				onValueChange={this.onValueChange}
+				onValueChange={this._onValueChange}
 				label={label}
-				// required={true}
-				// variant="standard"
-				// mode="dropdown"
 			>
 				{items.map((item: { label: string; value: string }, i: number) => (
 					<Picker.Item key={i} label={item.label} value={item.value} />
@@ -113,112 +137,78 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 		);
 	};
 
-	renderDialogPicker = () => {
-		const { items, label, styles } = this.props;
+	_renderDialogPicker = () => {
+		const { label } = this.props;
+		const { items } = this.state;
 		return (
 			<>
 				<View testID="list-id">
 					<List>
 						<List.Item
 							title={label}
-							description={<Text>{this.state.selected}</Text>}
-							// right={<Icon name="arrow-down-thick" />}
-							onPress={this.dialogHandler}
+							onPress={this._pickerHandler}
+							description={this.state.selected}
 						/>
 					</List>
 				</View>
-				<Dialog visible={this.state.dialogVisible} style={{ maxHeight: 350 }}>
-					{/* <TouchableOpacity activeOpacity={1} onPress={this.dialogHandler}> */}
+				<Dialog
+					visible={this.state.pickerVisible}
+					style={{ maxHeight: '40%' }}
+					onDismiss={this._pickerHandler}
+				>
 					<ScrollView>
-						<View style={styles.picker}>
+						<View>
 							{items.map((item: { label: string; value: string }, i: number) => (
 								<List>
-									<ListItem key={i} title={item.label} onPress={this.onPressHandler(i)} />
+									<ListItem key={i} title={item.label} onPress={this._onPressHandler(i, items)} />
 								</List>
 							))}
 						</View>
 					</ScrollView>
-					{/* </TouchableOpacity> */}
 				</Dialog>
 			</>
 		);
 	};
-	onPressHandler = (id: number) => () => {
-		this.props.items.map((item: { label: string; value: string }, i: number) => {
-			if (id === i) {
-				this.setState({ selected: item.label });
-			}
-		});
-		this.dialogHandler();
-	};
 
-	renderPicker = () => {
-		const picker = {
-			actionsheet: this.renderDialogPicker(),
-			default: this.renderDropdownPicker(),
-			dialog: this.renderdialogPicker(),
-		};
-
-		return picker[this.props.mode];
-	};
-	renderdialogPicker = () => {
-		// const { items, styles } = this.props;
+	_renderMenuPicker = () => {
+		const { label } = this.props;
+		const { items } = this.state;
 		return (
-			<Provider>
-				<View
-					style={{
-						paddingTop: 50,
-						flexDirection: 'row',
-						justifyContent: 'center',
-					}}
+			<View>
+				<Menu
+					style={{ maxHeight: '40%' }}
+					visible={this.state.pickerVisible}
+					anchor={
+						<List>
+							<List.Item title={label} onPress={this._openMenu} description={this.state.selected} />
+						</List>
+					}
+					onDismiss={this._closeMenu}
 				>
-					<Menu
-						visible={this.state.visible}
-						onDismiss={this._closeMenu}
-						anchor={<Button onPress={this._openMenu}>Show menu</Button>}
-					>
-						<Menu.Item onPress={() => {}} title="Item 1" />
-						<Menu.Item onPress={() => {}} title="Item 2" />
-						<Divider />
-						<Menu.Item onPress={() => {}} title="Item 3" />
-					</Menu>
-				</View>
-			</Provider>
-			// <View style={{ backgroundColor: 'red', width: 180 }}>
-			// 	<View>
-			// 		<List>
-			// 			<List.Item
-			// 				title="This is Dialog"
-			// 				description={<Text>{this.state.selected}</Text>}
-			// 				onPress={this.dialogHandler}
-			// 			/>
-			// 		</List>
-			// 	</View>
-
-			// 	<Menu visible={this.state.dialogVisible}>
-			// 		<TouchableOpacity activeOpacity={1} onPress={this.dialogHandler} style={styles.overlay}>
-			// 			{items.map((item: { label: string; value: string }, i: number) => (
-			// 				<List>
-			// 					<ListItem
-			// 						key={i}
-			// 						title={item.label}
-			// 						onPress={this.onPressHandler(i)}
-			// 						style={styles.picker}
-			// 					/>
-			// 				</List>
-			// 			))}
-			// 		</TouchableOpacity>
-			// 	</Menu>
-			// </View>
+					<ScrollView>
+						{items.map((item: { label: string; value: string }, i: number) => (
+							<MenuItem
+								key={item.value}
+								title={item.label}
+								onPress={this._onPressHandler(i, items)}
+							/>
+						))}
+					</ScrollView>
+				</Menu>
+			</View>
 		);
 	};
 
-	dialogHandler = () => {
-		this.setState({ dialogVisible: !this.state.dialogVisible });
-	};
-
 	render() {
-		const { mode } = this.props;
-		return <>{mode ? this.renderPicker() : this.renderDropdownPicker()}</>;
+		const { mode, children } = this.props;
+		const items: any = [];
+		children.map((item: any) => {
+			items.push(item.props);
+		});
+		if (!this.initialDataSet) {
+			this.initialDataSet = true;
+			this.setState({ items: items });
+		}
+		return <>{mode ? this._renderPicker() : this._renderDropdownPicker()}</>;
 	}
 }

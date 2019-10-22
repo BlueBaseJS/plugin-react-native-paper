@@ -1,26 +1,26 @@
 import { Icon, View } from '@bluebase/components';
 
-import { PickerComponent as Picker } from '../index';
+// const Picker = getComponent('PickerComponent');
+import { PickerComponent as Picker } from '../Picker.native';
 import React from 'react';
-// import { getComponent } from '@bluebase/core';
+import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
 
-// const Picker = getComponent('PickerComponent');
+const PickerItem = getComponent('BBPickerItem');
 storiesOf('Picker', module)
-	.add('Modal Picker', () => (
+	.add('Menu Picker', () => (
 		<View style={{ marginTop: 80, width: 200 }}>
 			<Picker
-				styles={{ picker: {}, overlay: {}, actionSheetOverlay: {} }}
-				label="enter label"
+				label="Select One"
+				mode="menu"
 				selectedValue={'sample'}
-				mode="dialog"
-				onValueChange={(value, i) => console.log('value', value)}
-				items={[
-					{ label: 'SanPyaeLin', value: 'SanPyaeLin' },
-					{ label: 'Jhon', value: 'Jhon' },
-					{ label: 'Marry', value: 'Marry' },
-				]}
-			/>
+				onValueChange={(value, i) => console.log('value---->', value, 'index---->', i)}
+			>
+				<PickerItem label="Ok" value="0" />
+				<PickerItem label="Ok1" value="1" />
+				<PickerItem label="Ok2" value="2" />
+				<PickerItem label="Ok3" value="3" />
+			</Picker>
 		</View>
 	))
 
@@ -31,13 +31,13 @@ storiesOf('Picker', module)
 				styles={{ picker: {}, overlay: {}, actionSheetOverlay: {} }}
 				label="enter label"
 				selectedValue={'sample'}
-				onValueChange={(value, i) => console.log('value', value)}
-				items={[
-					{ label: 'SanPyaeLin', value: 'SanPyaeLin' },
-					{ label: 'Jhon', value: 'Jhon' },
-					{ label: 'Marry', value: 'Marry' },
-				]}
-			/>
+				onValueChange={(value, i) => console.log('value---->', value, 'index---->', i)}
+			>
+				<PickerItem label="Ok" value="0" />
+				<PickerItem label="Ok1" value="1" />
+				<PickerItem label="Ok2" value="2" />
+				<PickerItem label="Ok3" value="3" />
+			</Picker>
 		</View>
 	))
 
@@ -47,24 +47,13 @@ storiesOf('Picker', module)
 				styles={{ picker: {}, overlay: {}, actionSheetOverlay: {} }}
 				label="Select Person"
 				selectedValue={'sample'}
-				left={<Icon name="home" />}
-				mode="actionsheet"
-				onValueChange={(value, i) => console.log('value', value)}
-				items={[
-					{ label: 'SanPyaeLin', value: 'SanPyaeLin' },
-					{ label: 'Jhon', value: 'Jhon' },
-					{ label: 'Marry', value: 'Marry' },
-					{ label: 'This is test', value: 'q' },
-					{ label: 'Test is working fine', value: 'qp' },
-					{ label: 'Test with jest', value: 'p' },
-					{ label: 'Bluebase', value: 'w' },
-					{ label: 'BB is cool', value: 'f' },
-					{ label: 'BB stands for?', value: 'b' },
-					{ label: 'BB for Bluebase', value: 'n' },
-					{ label: 'Bluerain', value: 'm' },
-					{ label: 'Mevris', value: 'a' },
-					{ label: 'Make every thing smart', value: 's' },
-				]}
-			/>
+				mode="dialog"
+				onValueChange={(value, i) => console.log('value---->', value, 'index---->', i)}
+			>
+				<PickerItem label="Ok" value="0" />
+				<PickerItem label="Ok1" value="1" />
+				<PickerItem label="Ok2" value="2" />
+				<PickerItem label="Ok3" value="3" />
+			</Picker>
 		</View>
 	));

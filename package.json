@@ -71,11 +71,11 @@
   "dependencies": {
     "@bluebase/component-mapper": "^1.4.0",
     "@bluebase/components": "^5.14.0",
-    "@react-native-community/slider": "^2.0.1",
-    "deepmerge": "^4.1.1",
+    "@react-native-community/slider": "^2.0.2",
+    "deepmerge": "^4.2.0",
     "expo": "33.0.0",
     "react-native": "0.59.8",
-    "react-native-paper": "2.15.2",
+    "react-native-paper": "2.16.0",
     "react-native-vector-icons": "^6.5.0",
     "tslib": "^1.9.3"
   },

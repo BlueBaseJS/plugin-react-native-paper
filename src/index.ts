@@ -1,5 +1,6 @@
 import {
 	Avatar,
+	BBPickerItem,
 	Button,
 	Card,
 	CardActions,
@@ -85,6 +86,7 @@ export default createPlugin({
 		Menu,
 		MenuItem,
 		PickerComponent,
+		BBPickerItem,
 		Radio,
 		RadioGroup,
 		Slider,
