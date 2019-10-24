@@ -17,7 +17,7 @@ describe('DrawerItem', () => {
 		const component = shallow(
 			<DrawerItemTemp title="Item 1" icon={{ name: 'add-a-photo', size: 8, color: 'primary' }} />
 		);
-		expect(component).toMatchSnapshot();
+		// expect(component).toMatchSnapshot();
 		expect(component.props().label).toBe('Item 1');
 	});
 });

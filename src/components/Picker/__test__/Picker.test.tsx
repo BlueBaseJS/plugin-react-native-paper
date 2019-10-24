@@ -13,12 +13,7 @@ describe('picker component', () => {
 		const func = jest.fn();
 		const wrapper = mount(
 			<BlueBaseApp plugins={[plugin]}>
-				<PickerComponent
-					label="Select One"
-					mode="menu"
-					selectedValue={'sample'}
-					onValueChange={func}
-				>
+				<PickerComponent label="Select One" mode="menu" onValueChange={func}>
 					<PickerItem label="Ok" value="0" />
 					<PickerItem label="Ok1" value="1" />
 					<PickerItem label="Ok2" value="2" />
@@ -48,7 +43,7 @@ describe('picker component', () => {
 		const func = jest.fn();
 		const wrapper = mount(
 			<BlueBaseApp plugins={[plugin]}>
-				<PickerComponent label="Select One" selectedValue={'sample'} onValueChange={func}>
+				<PickerComponent label="Select One" onValueChange={func}>
 					<PickerItem label="Ok" value="0" />
 					<PickerItem label="Ok1" value="1" />
 					<PickerItem label="Ok2" value="2" />

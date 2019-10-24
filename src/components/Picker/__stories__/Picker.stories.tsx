@@ -13,7 +13,6 @@ storiesOf('Picker', module)
 			<Picker
 				label="Select One"
 				mode="menu"
-				selectedValue={'sample'}
 				onValueChange={(value, i) => console.log('value---->', value, 'index---->', i)}
 			>
 				<PickerItem label="Ok" value="0" />
@@ -27,10 +26,10 @@ storiesOf('Picker', module)
 	.add('Simple Picker ', () => (
 		<View style={{ marginTop: 80 }}>
 			<Picker
+				style={{ width: 200 }}
 				mode={undefined}
 				styles={{ picker: {}, overlay: {}, actionSheetOverlay: {} }}
 				label="enter label"
-				selectedValue={'sample'}
 				onValueChange={(value, i) => console.log('value---->', value, 'index---->', i)}
 			>
 				<PickerItem label="Ok" value="0" />
@@ -46,7 +45,6 @@ storiesOf('Picker', module)
 			<Picker
 				styles={{ picker: {}, overlay: {}, actionSheetOverlay: {} }}
 				label="Select Person"
-				selectedValue={'sample'}
 				mode="dialog"
 				onValueChange={(value, i) => console.log('value---->', value, 'index---->', i)}
 			>

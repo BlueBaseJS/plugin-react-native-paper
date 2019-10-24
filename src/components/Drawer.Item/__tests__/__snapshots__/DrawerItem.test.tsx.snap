@@ -1,8 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`DrawerItem should forward icon.name prop as icon 1`] = `
-<withTheme(Drawer.Item)
-  icon={[Function]}
-  label="Item 1"
-/>
-`;

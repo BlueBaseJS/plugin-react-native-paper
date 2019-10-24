@@ -12,8 +12,6 @@ import {
 } from '@bluebase/components';
 import { StyleProp, ViewStyle } from 'react-native';
 
-import { Theme } from '@bluebase/core';
-
 export interface ItemsProps {
 	value: string;
 	label: string;
@@ -51,36 +49,6 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 		};
 		this.initialDataSet = false;
 	}
-	static defaultStyles = (_theme: Theme) => ({
-		actionSheetOverlay: {
-			backgroundColor: 'rgba(0,0,0,0.5)',
-			flex: 1,
-			justifyContent: 'flex-end',
-			width: null,
-		},
-		container: {
-			backgroundColor: '#fff',
-			borderColor: '#ddd',
-			borderTopWidth: 0.5,
-			justifyContent: 'center',
-			minHeight: 40,
-			padding: 5,
-		},
-		overlay: {
-			backgroundColor: 'rgba(0,0,0,0.5)',
-			flex: 1,
-			justifyContent: 'center',
-			width: null,
-		},
-		picker: {
-			backgroundColor: 'white',
-			borderColor: '#aaa',
-			borderTopWidth: 0.5,
-			height: 250,
-			padding: 10,
-		},
-	})
-
 	_onPressHandler = (id: number, data: any) => () => {
 		data.map((item: { label: string; value: string }, i: number) => {
 			if (id === i) {
@@ -176,7 +144,7 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 		return (
 			<View>
 				<Menu
-					style={{ maxHeight: '40%' }}
+					style={{ maxHeight: '100%' }}
 					visible={this.state.pickerVisible}
 					anchor={
 						<List>
