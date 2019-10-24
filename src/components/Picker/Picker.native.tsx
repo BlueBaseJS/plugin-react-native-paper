@@ -52,7 +52,7 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 			}
 		});
 		this._pickerHandler();
-	};
+	}
 
 	_renderPicker = () => {
 		const picker = {
@@ -62,13 +62,13 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 		};
 
 		return picker[this.props.mode];
-	};
+	}
 
 	_pickerHandler = () => {
 		this.setState({
 			pickerVisible: !this.state.pickerVisible,
 		});
-	};
+	}
 
 	_openMenu = () => this.setState({ pickerVisible: !this.state.pickerVisible });
 
@@ -80,7 +80,7 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 			selected: data,
 		});
 		this.props.onValueChange(data, index);
-	};
+	}
 
 	_renderDropdownPicker = () => {
 		const { label } = this.props;
@@ -97,7 +97,7 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 				))}
 			</Picker>
 		);
-	};
+	}
 
 	_renderDialogPicker = () => {
 		const { label } = this.props;
@@ -130,7 +130,7 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 				</Dialog>
 			</>
 		);
-	};
+	}
 
 	_renderMenuPicker = () => {
 		const { label } = this.props;
@@ -159,7 +159,7 @@ export class PickerComponent extends React.Component<PickerProps, PickerState> {
 				</Menu>
 			</View>
 		);
-	};
+	}
 
 	render() {
 		const { mode, children } = this.props;
