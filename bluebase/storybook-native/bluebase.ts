@@ -1,6 +1,10 @@
-import { BootOptions, merge } from '@bluebase/core';
-
+import { BootOptions } from '@bluebase/core';
+// tslint:disable-next-line: sort-imports
+import DummyPlugin from './sample'; // TODO: Only for evaluation, remove this
+import { MaterialCommunityIcons } from '@bluebase/plugin-vector-icons';
+import ReactnativePaperPlugin from '../../src';
 import commonBootOptions from '../common/bluebase';
+import deepmerge from 'deepmerge';
 
 /**
  * Add your platform specific configs here.
@@ -8,7 +12,12 @@ import commonBootOptions from '../common/bluebase';
  * the common folder, and extend them here.
  */
 const bootOptions: Partial<BootOptions> = {
-	plugins: [],
+	plugins: [
+		// TODO: Only for evaluation, remove this
+		DummyPlugin,
+		ReactnativePaperPlugin,
+		MaterialCommunityIcons,
+	],
 };
 
-export default merge(commonBootOptions as any, bootOptions);
+export default deepmerge(commonBootOptions, bootOptions);

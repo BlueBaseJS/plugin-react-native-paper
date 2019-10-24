@@ -1,5 +1,7 @@
 import { BootOptions, merge } from '@bluebase/core';
 
+import { MaterialCommunityIcons } from '@bluebase/plugin-vector-icons';
+import ReactnativePaperPlugin from '../../src';
 import commonBootOptions from '../common/bluebase';
 
 /**
@@ -8,7 +10,7 @@ import commonBootOptions from '../common/bluebase';
  * the common folder, and extend them here.
  */
 const bootOptions: Partial<BootOptions> = {
-	plugins: [],
+	plugins: [MaterialCommunityIcons, ReactnativePaperPlugin],
 };
 
 export default merge(commonBootOptions as any, bootOptions);
