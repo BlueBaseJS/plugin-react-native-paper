@@ -1,4 +1,4 @@
 import { Picker } from 'react-native';
-const BBPickerItem = Picker.Item;
+const PickerItem = Picker.Item;
 
-export { BBPickerItem };
+export { PickerItem };
