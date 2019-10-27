@@ -1,24 +1,27 @@
 import { Radio, RadioGroup, RadioGroupProps } from '@bluebase/components';
+
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import storiesOf from '@bluebase/storybook-addon';
 
-class ControlledRadioGroup extends React.PureComponent<RadioGroupProps, { value: RadioGroupProps['value'] }> {
-
-	// static state = {
-	// 	value: 'option-b'
-	// };
+class ControlledRadioGroup extends React.PureComponent<
+	RadioGroupProps,
+	{ value: RadioGroupProps['value'] }
+> {
+	static state = {
+		value: 'option-b',
+	};
 	constructor(props: RadioGroupProps) {
 		super(props);
 
 		this.state = {
-			value: this.props.value
+			value: this.props.value,
 		};
 	}
 
 	render() {
-
 		const handleChange = (value: any) => {
+			debugger;
 			this.setState({ value });
 			action('Controlled RadioGroup')(value);
 		};
@@ -34,7 +37,12 @@ class ControlledRadioGroup extends React.PureComponent<RadioGroupProps, { value:
 const stories = storiesOf('RadioGroup', module);
 
 stories.add('Uncontrolled', () => (
-	<RadioGroup value="option-b" onValueChange={action('Uncontrolled RadioGroup')} label="Options" helperText="Chose any">
+	<RadioGroup
+		value="option-b"
+		onValueChange={action('Uncontrolled RadioGroup')}
+		label="Options"
+		helperText="Chose any"
+	>
 		<Radio label="Option A" value="option-a" />
 		<Radio label="Option B" value="option-b" />
 		<Radio label="Option C" value="option-c" />
@@ -42,7 +50,13 @@ stories.add('Uncontrolled', () => (
 ));
 
 stories.add('Uncontrolled (Error)', () => (
-	<RadioGroup value="option-b" error onValueChange={action('RadioGroup')} label="Options" helperText="Chose any">
+	<RadioGroup
+		value="option-b"
+		error
+		onValueChange={action('RadioGroup')}
+		label="Options"
+		helperText="Chose any"
+	>
 		<Radio label="Option A" value="option-a" />
 		<Radio label="Option B" value="option-b" />
 		<Radio label="Option C" value="option-c" />
@@ -56,4 +70,3 @@ stories.add('Controlled', () => (
 		<Radio label="Option C" value="option-c" />
 	</ControlledRadioGroup>
 ));
-
