@@ -11,9 +11,7 @@ const CAPTION_COLOR = 'rgba(0, 0, 0, 0.38)';
 const ERROR_COLOR = '#f44336';
 
 describe('RadioGroup', () => {
-
 	it('should map onValueChange fn to onChange fn', async () => {
-
 		const cb = jest.fn();
 		const component = mount(
 			<BlueBaseApp plugins={[Plugin]}>
@@ -32,6 +30,7 @@ describe('RadioGroup', () => {
 		// expect(component).toMatchSnapshot();
 		const onPress = radio.prop('onPress') as any;
 
+		debugger;
 		onPress();
 
 		expect(cb).toBeCalledTimes(1);
@@ -59,7 +58,6 @@ describe('RadioGroup', () => {
 	// });
 
 	it('should display label & helperText', async () => {
-
 		const component = mount(
 			<BlueBaseApp plugins={[Plugin]}>
 				<RadioGroup label="FooBar" helperText="description">
@@ -81,11 +79,9 @@ describe('RadioGroup', () => {
 
 		expect(helperText.getElements()).toHaveLength(1);
 		expect(helperText.text()).toBe('description');
-
 	});
 
 	it('should display label & helperText in grey color if error is true', async () => {
-
 		const component = mount(
 			<BlueBaseApp plugins={[Plugin]}>
 				<RadioGroup label="FooBar" helperText="description">
@@ -105,9 +101,7 @@ describe('RadioGroup', () => {
 		const labelStyleProp: any = label.prop('style');
 		const labelStyle: any = deepmerge(
 			labelStyleProp[0],
-			deepmerge.all(
-				labelStyleProp[1].filter((x: any) => !!x)
-			)
+			deepmerge.all(labelStyleProp[1].filter((x: any) => !!x))
 		);
 
 		expect(labelStyle.color).toBe(CAPTION_COLOR);
@@ -115,17 +109,13 @@ describe('RadioGroup', () => {
 		const helperTextStyleProp: any = helperText.prop('style');
 		const helperTextStyle: any = deepmerge(
 			helperTextStyleProp[0],
-			deepmerge.all(
-				helperTextStyleProp[1].filter((x: any) => !!x)
-			)
+			deepmerge.all(helperTextStyleProp[1].filter((x: any) => !!x))
 		);
 
 		expect(helperTextStyle.color).toBe(CAPTION_COLOR);
-
 	});
 
 	it('should display label & helperText in red color if error is true', async () => {
-
 		const component = mount(
 			<BlueBaseApp plugins={[Plugin]}>
 				<RadioGroup error label="FooBar" helperText="description">
@@ -145,9 +135,7 @@ describe('RadioGroup', () => {
 		const labelStyleProp: any = label.prop('style');
 		const labelStyle: any = deepmerge(
 			labelStyleProp[0],
-			deepmerge.all(
-				labelStyleProp[1].filter((x: any) => !!x)
-			)
+			deepmerge.all(labelStyleProp[1].filter((x: any) => !!x))
 		);
 
 		expect(labelStyle.color).toBe(ERROR_COLOR);
@@ -155,17 +143,13 @@ describe('RadioGroup', () => {
 		const helperTextStyleProp: any = helperText.prop('style');
 		const helperTextStyle: any = deepmerge(
 			helperTextStyleProp[0],
-			deepmerge.all(
-				helperTextStyleProp[1].filter((x: any) => !!x)
-			)
+			deepmerge.all(helperTextStyleProp[1].filter((x: any) => !!x))
 		);
 
 		expect(helperTextStyle.color).toBe(ERROR_COLOR);
-
 	});
 
 	it('should only render display label and not helperText', async () => {
-
 		const component = mount(
 			<BlueBaseApp plugins={[Plugin]}>
 				<RadioGroup label="FooBar">
@@ -189,7 +173,6 @@ describe('RadioGroup', () => {
 	});
 
 	it('should only render display helperText and not label', async () => {
-
 		const component = mount(
 			<BlueBaseApp plugins={[Plugin]}>
 				<RadioGroup helperText="description">
@@ -211,7 +194,4 @@ describe('RadioGroup', () => {
 		expect(helperText.getElements()).toHaveLength(1);
 		expect(helperText.text()).toBe('description');
 	});
-
 });
-
-

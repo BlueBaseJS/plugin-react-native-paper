@@ -4,30 +4,42 @@ import { SelectionControl } from '../SelectionControl';
 import { Theme } from '@bluebase/core';
 import { componentMapper } from '@bluebase/component-mapper';
 
-export const Radio = componentMapper<RadioProps>(SelectionControl, {
+export const Radio = componentMapper<RadioProps>(
+	SelectionControl,
+	{
+		ControlComponent: () => RNPRadio,
 
-	ControlComponent: () => RNPRadio.Android,
+		color: ({ color, styles }: any) => {
+			if (color === 'primary') {
+				return styles.primary.color;
+			}
+			if (color === 'secondary') {
+				return styles.secondary.color;
+			}
+			if (color === 'default') {
+				return '';
+			}
 
-	color: ({ color, styles }: any) => {
-		if (color === 'primary') {
-			return styles.primary.color;
-		}
-		if (color === 'secondary') {
-			return styles.secondary.color;
-		}
-		if (color === 'default') {
-			return '';
-		}
+			return color;
+		},
 
-		return color;
+		status: ({ checked }: RadioProps) => {
+			if (checked === true) {
+				return 'checked';
+			}
+
+			if (checked === false) {
+				return 'unchecked';
+			}
+
+			return;
+		},
 	},
-
-	status: ({ checked }: RadioProps) => (checked === true) ? 'checked' : 'unchecked'
-}, {
-	ignore: ['checked', 'styles'],
-	rest: true,
-});
-
+	{
+		ignore: ['checked', 'styles'],
+		rest: true,
+	}
+);
 
 (Radio as any).defaultStyles = (theme: Theme) => ({
 	primary: { color: theme.palette.primary.main },
