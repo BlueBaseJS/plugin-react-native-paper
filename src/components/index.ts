@@ -34,3 +34,5 @@ export * from './TableHead';
 export * from './TableTitle';
 export * from './Menu';
 export * from './Menu/MenuItem';
+export * from './Picker';
+export * from './PickerItem';
