@@ -1,15 +1,13 @@
 import { Dialog, List, PickerDefaultProps, PickerItem, View } from '@bluebase/components';
 import React, { createContext } from 'react';
 
-// import FilledInput from '@material-ui/core/FilledInput';
-// import Input from '@material-ui/core/Input';
-// import OutlinedInput from '@material-ui/core/OutlinedInput';
-// import { SelectProps } from '@material-ui/core/Select';
+import { ScrollView } from 'react-native';
 
 export interface DialogPickerState {
 	value?: any;
 	visible: boolean;
 	setValue: (value: any) => void;
+	onValueChange: (value: any, index: number) => void;
 }
 
 export const DialogPickerContext: React.Context<DialogPickerState> = createContext(
@@ -23,65 +21,51 @@ export class DialogPicker extends React.PureComponent<any, DialogPickerState> {
 	};
 
 	readonly state: DialogPickerState = {
+		onValueChange: (value: any) => this.setState({ value, visible: !this.state.visible }),
 		setValue: (value: any) => this.setState({ value, visible: !this.state.visible }),
 		visible: false,
 	};
 
 	toggleDialog = () => this.setState({ visible: !this.state.visible });
 
+	onValueChnage = (value: any) => () => {
+		this.props.onValueChange(value);
+		this.toggleDialog();
+	};
 	componentWillMount() {
 		this.setState({ value: this.props.value });
 	}
 	render() {
 		const {
 			children,
-			disabled,
-			displayEmpty,
-			error,
-			id,
-			name,
+			// disabled,
+			// displayEmpty,
+			// error,
+			// id,
+			// name,
+			label,
 			// native,
 			// onChange,
-			readOnly,
+			// readOnly,
 			// value,
 			placeholder,
-			variant,
+			// variant,
 		} = this.props;
-
-		// let InputComponent = Input;
-
-		// if (variant === 'filled') {
-		// 	InputComponent = FilledInput;
-		// }
-		// if (variant === 'outlined') {
-		// 	InputComponent = OutlinedInput as any;
-		// }
-
-		// const selectProps = {
-		// 	id,
-		// 	name,
-
-		// 	disabled,
-		// 	displayEmpty,
-		// 	error,
-		// 	input: <InputComponent {...{ id, name }} />,
-		// 	// native,
-		// 	// onChange,
-		// 	readOnly,
-		// 	value: this.state.value,
-		// };
 
 		return (
 			<View>
 				<List>
-					<List.Item title="THis is " onPress={this.toggleDialog} description="ok" />
+					<List.Item title={label} onPress={this.toggleDialog} description="ok" />
 				</List>
 				<DialogPickerContext.Provider value={this.state}>
-					<Dialog visible={this.state.visible} onDismiss={this.toggleDialog}>
+					<Dialog
+						visible={this.state.visible}
+						onDismiss={this.toggleDialog}
+						style={{ maxHeight: '70%' }}
+					>
 						{placeholder ? <PickerItem value="" label={placeholder} disabled /> : null}
-						{children}
+						<ScrollView>{children}</ScrollView>
 					</Dialog>
-					{/* <InputComponent {...selectProps} onClick={this.toggleDialog} />, */}
 				</DialogPickerContext.Provider>
 			</View>
 		);
