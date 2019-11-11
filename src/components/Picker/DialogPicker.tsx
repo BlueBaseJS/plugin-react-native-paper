@@ -1,40 +1,44 @@
-import { Dialog, List, PickerDefaultProps, PickerItem, View } from '@bluebase/components';
-import React, { createContext } from 'react';
+import {
+	Dialog,
+	List,
+	PickerDefaultProps,
+	PickerItem,
+	PickerProps,
+	ScrollView,
+	View,
+} from '@bluebase/components';
 
-import { ScrollView } from 'react-native';
+import { PickerContext } from './PickerContext';
+import React from 'react';
+
+export interface DialogPickerProps extends PickerProps {
+	mode: 'dialog';
+}
 
 export interface DialogPickerState {
 	value?: any;
 	visible: boolean;
-	setValue: (value: any) => void;
-	onValueChange: (value: any, index: number) => void;
 }
 
-export const DialogPickerContext: React.Context<DialogPickerState> = createContext(
-	undefined as any
-);
-
-export class DialogPicker extends React.PureComponent<any, DialogPickerState> {
-	static defaultProps = {
-		...PickerDefaultProps,
-		PickerItem,
-	};
+export class DialogPicker extends React.PureComponent<DialogPickerProps, DialogPickerState> {
+	static defaultProps = PickerDefaultProps;
 
 	readonly state: DialogPickerState = {
-		onValueChange: (value: any) => this.setState({ value, visible: !this.state.visible }),
-		setValue: (value: any) => this.setState({ value, visible: !this.state.visible }),
 		visible: false,
 	};
 
 	toggleDialog = () => this.setState({ visible: !this.state.visible });
 
 	onValueChnage = (value: any) => () => {
-		this.props.onValueChange(value);
+		const { onValueChange } = this.props;
+
+		if (onValueChange) {
+			onValueChange(value, -1);
+		}
+
 		this.toggleDialog();
 	};
-	componentWillMount() {
-		this.setState({ value: this.props.value });
-	}
+
 	render() {
 		const {
 			children,
@@ -50,23 +54,32 @@ export class DialogPicker extends React.PureComponent<any, DialogPickerState> {
 			// value,
 			placeholder,
 			// variant,
+			mode,
 		} = this.props;
 
 		return (
 			<View>
 				<List>
-					<List.Item title={label} onPress={this.toggleDialog} description="ok" />
+					<List.Item title={label} onPress={this.toggleDialog} description={this.state.value} />
 				</List>
-				<DialogPickerContext.Provider value={this.state}>
-					<Dialog
-						visible={this.state.visible}
-						onDismiss={this.toggleDialog}
-						style={{ maxHeight: '70%' }}
-					>
-						{placeholder ? <PickerItem value="" label={placeholder} disabled /> : null}
-						<ScrollView>{children}</ScrollView>
-					</Dialog>
-				</DialogPickerContext.Provider>
+				<Dialog
+					visible={this.state.visible}
+					onDismiss={this.toggleDialog}
+					style={{ maxHeight: '70%' }}
+				>
+					<ScrollView>
+						<PickerContext.Provider
+							value={{
+								mode,
+								setValue: (value: any) => this.setState({ value, visible: !this.state.visible }),
+								value: this.state.value,
+							}}
+						>
+							{placeholder ? <PickerItem value="" label={placeholder} disabled /> : null}
+							{children}
+						</PickerContext.Provider>
+					</ScrollView>
+				</Dialog>
 			</View>
 		);
 	}

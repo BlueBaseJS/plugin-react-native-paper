@@ -1,10 +1,13 @@
 import { MenuItem, PickerItemProps } from '@bluebase/components';
 
-import { DialogPickerContext } from '../Picker/DialogPicker';
+import { PickerContextData } from '../Picker/PickerContext';
 import React from 'react';
 
-export const DialogPickerItem = ({ label, ...rest }: PickerItemProps) => (
-	<DialogPickerContext.Consumer>
-		{({ setValue }) => <MenuItem {...rest} onPress={() => setValue(rest.value)} title={label} />}
-	</DialogPickerContext.Consumer>
-);
+export const DialogPickerItem = ({
+	label,
+	setValue,
+	...rest
+}: PickerItemProps & PickerContextData) => {
+	const onPress = () => setValue(rest.value);
+	return <MenuItem {...rest} onPress={onPress} title={label} />;
+};

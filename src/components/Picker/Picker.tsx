@@ -1,12 +1,6 @@
-import {
-	PickerDefaultProps,
-	PickerItem as PickerItemBB,
-	PickerProps,
-	View,
-} from '@bluebase/components';
+import { PickerDefaultProps, PickerItem as PickerItemBB, PickerProps } from '@bluebase/components';
 
 import { DialogPicker } from './DialogPicker';
-import { PickerContext } from './PickerContext';
 import React from 'react';
 import { SelectPicker } from './SelectPicker';
 import { StyleSheet } from 'react-native';
@@ -47,34 +41,9 @@ const fieldMap = {
 export const Picker = (props: PickerProps & { PickerItem?: typeof PickerItemBB }) => {
 	const newProps = objectMapper(props, fieldMap);
 
-	const {
-		// children,
-		// disabled,
-		// displayEmpty,
-		// error,
-		// helperText,
-		// id,
-		// label,
-		mode,
-		// name,
-		// native,
-		// onChange,
-		// readOnly,
-		// value,
-		// placeholder,
-		// required,
-		// variant,
-		// PickerItem,
-		// ...rest
-	} = newProps;
+	const PickerComponent = newProps.mode === 'dialog' ? DialogPicker : SelectPicker;
 
-	const PickerComponent = mode === 'dialog' ? DialogPicker : SelectPicker;
-
-	return (
-		<PickerContext.Provider value={mode}>
-			<PickerComponent {...(props as any)} />
-		</PickerContext.Provider>
-	);
+	return <PickerComponent {...newProps} />;
 };
 
 Picker.defaultProps = {
