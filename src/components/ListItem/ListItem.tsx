@@ -10,6 +10,7 @@ export const ListItem = componentMapper(
 		descriptionNumberOfLines: () => null,
 		left: ({ left }) => () => left,
 		right: ({ right, styles }) => () => (right ? <View style={styles.root}>{right}</View> : null),
+		titleNumberOfLines: () => null,
 	},
 	{ rest: true, ignore: ['styles'] }
 );
