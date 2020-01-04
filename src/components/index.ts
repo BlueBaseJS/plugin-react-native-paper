@@ -27,6 +27,7 @@ export * from './Slider';
 export * from './Switch';
 export * from './TextInput';
 export * from './Table';
+export * from './TableBody';
 export * from './TableCell';
 export * from './TableRow';
 export * from './TablePagination';
