@@ -1,9 +1,6 @@
 import React from 'react';
 import { Table } from '@bluebase/components';
 import storiesOf from '@bluebase/storybook-addon';
-import { TableCell } from '../../TableCell';
-import { TableRow } from '../../TableRow';
-import { TableHead } from '../../TableHead';
 
 const stories = storiesOf('Table', module);
 let id = 0;
@@ -21,24 +18,24 @@ const rows = [
 ];
 stories.add('Table', () => (
 	<Table>
-		<TableHead>
-			<TableRow>
-				<TableCell>Dessert (100g serving)</TableCell>
-				<TableCell>Calories</TableCell>
-				<TableCell>Fat (g)</TableCell>
-				<TableCell>Carbs (g)</TableCell>
-				<TableCell>Protein (g)</TableCell>
-			</TableRow>
-		</TableHead>
+		<Table.Head>
+			<Table.Cell>Dessert (100g serving)</Table.Cell>
+			<Table.Cell>Calories</Table.Cell>
+			<Table.Cell>Fat (g)</Table.Cell>
+			<Table.Cell>Carbs (g)</Table.Cell>
+			<Table.Cell>Protein (g)</Table.Cell>
+		</Table.Head>
 
-		{rows.map(row => (
-			<TableRow key={row.id}>
-				<TableCell>{row.name}</TableCell>
-				<TableCell>{row.calories}</TableCell>
-				<TableCell>{row.fat}</TableCell>
-				<TableCell>{row.carbs}</TableCell>
-				<TableCell>{row.protein}</TableCell>
-			</TableRow>
-		))}
+		<Table.Body>
+			{rows.map(row => (
+				<Table.Row key={row.id}>
+					<Table.Cell>{row.name}</Table.Cell>
+					<Table.Cell>{row.calories}</Table.Cell>
+					<Table.Cell>{row.fat}</Table.Cell>
+					<Table.Cell>{row.carbs}</Table.Cell>
+					<Table.Cell>{row.protein}</Table.Cell>
+				</Table.Row>
+			))}
+		</Table.Body>
 	</Table>
 ));

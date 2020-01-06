@@ -1,1 +1,4 @@
-export { View as TableBody } from 'react-native';
+// import { Noop } from '@bluebase/components';
+import { View } from 'react-native';
+
+export const TableBody = View;
