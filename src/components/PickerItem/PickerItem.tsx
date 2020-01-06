@@ -1,23 +1,21 @@
-import { PickerContext, PickerContextData } from '../Picker/PickerContext';
+import React, { useContext } from 'react';
 
 import { DefaultPickerItem } from './DefaultPickerItem';
 import { DialogPickerItem } from './DialogPickerItem';
 import { DropDownPickerItem } from './DropDownPickerItem';
+import { PickerContext } from '../Picker/PickerContext';
 import { PickerItemProps } from '@bluebase/components';
-import React from 'react';
 
-export const PickerItem = (props: PickerItemProps) => (
-	<PickerContext.Consumer>
-		{(ctx: PickerContextData) => {
-			if (ctx.mode === 'default') {
-				return <DefaultPickerItem {...ctx} {...props} />;
-			}
+export const PickerItem = (props: PickerItemProps) => {
+	const { mode } = useContext(PickerContext);
 
-			if (ctx.mode === 'dialog') {
-				return <DialogPickerItem {...ctx} {...props} />;
-			}
+	if (mode === 'default') {
+		return <DefaultPickerItem {...props} />;
+	}
 
-			return <DropDownPickerItem {...ctx} {...props} />;
-		}}
-	</PickerContext.Consumer>
-);
+	if (mode === 'dialog') {
+		return <DialogPickerItem {...props} />;
+	}
+
+	return <DropDownPickerItem {...props} />;
+};

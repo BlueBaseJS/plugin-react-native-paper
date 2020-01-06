@@ -1,8 +1,7 @@
 import { MenuItem, PickerItemProps } from '@bluebase/components';
 
-import { PickerContextData } from '../Picker/PickerContext';
 import React from 'react';
 
-export const DropDownPickerItem = ({ label, ...rest }: PickerItemProps & PickerContextData) => {
+export const DropDownPickerItem = ({ label, ...rest }: PickerItemProps) => {
 	return <MenuItem {...rest} title={label} />;
 };

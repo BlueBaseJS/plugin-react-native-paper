@@ -1,7 +1,5 @@
-import { PickerContextData } from '../Picker/PickerContext';
+import { Picker } from 'react-native';
 import { PickerItemProps } from '@bluebase/components';
 import React from 'react';
 
-export const DefaultPickerItem = ({ label, ...rest }: PickerItemProps & PickerContextData) => (
-	<option {...rest}>{label}</option>
-);
+export const DefaultPickerItem = (props: PickerItemProps) => <Picker.Item {...props} />;

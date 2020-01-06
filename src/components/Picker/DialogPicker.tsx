@@ -1,86 +1,47 @@
-import {
-	Dialog,
-	List,
-	PickerDefaultProps,
-	PickerItem,
-	PickerProps,
-	ScrollView,
-	View,
-} from '@bluebase/components';
+import { Dialog, List, PickerItem, PickerProps, ScrollView, View } from '@bluebase/components';
+import React, { useState } from 'react';
 
 import { PickerContext } from './PickerContext';
-import React from 'react';
 
 export interface DialogPickerProps extends PickerProps {
 	mode: 'dialog';
 }
 
-export interface DialogPickerState {
-	value?: any;
-	visible: boolean;
-}
+export const DialogPicker = (props: DialogPickerProps) => {
+	const { style, label, placeholder, onValueChange, mode, selectedValue } = props;
 
-export class DialogPicker extends React.PureComponent<DialogPickerProps, DialogPickerState> {
-	static defaultProps = PickerDefaultProps;
+	const [dialogVisible, setDialogVisible] = useState(false);
+	const toggleDialogVisible = () => setDialogVisible(!dialogVisible);
 
-	readonly state: DialogPickerState = {
-		visible: false,
-	};
-
-	toggleDialog = () => this.setState({ visible: !this.state.visible });
-
-	onValueChnage = (value: any) => () => {
-		const { onValueChange } = this.props;
-
+	const setValue = (value: any) => {
 		if (onValueChange) {
 			onValueChange(value, -1);
 		}
 
-		this.toggleDialog();
+		toggleDialogVisible();
 	};
 
-	render() {
-		const {
-			children,
-			// disabled,
-			// displayEmpty,
-			// error,
-			// id,
-			// name,
-			label,
-			// native,
-			// onChange,
-			// readOnly,
-			// value,
-			placeholder,
-			// variant,
-			mode,
-		} = this.props;
-
-		return (
-			<View>
-				<List>
-					<List.Item title={label} onPress={this.toggleDialog} description={this.state.value} />
-				</List>
+	return (
+		<View style={style}>
+			<PickerContext.Provider
+				value={{
+					mode,
+					onValueChange: setValue,
+					selectedValue,
+				}}
+			>
+				<List.Item title={label} onPress={toggleDialogVisible} description={selectedValue} />
 				<Dialog
-					visible={this.state.visible}
-					onDismiss={this.toggleDialog}
+					visible={dialogVisible}
+					onDismiss={toggleDialogVisible}
 					style={{ maxHeight: '70%' }}
 				>
 					<ScrollView>
-						<PickerContext.Provider
-							value={{
-								mode,
-								setValue: (value: any) => this.setState({ value, visible: !this.state.visible }),
-								value: this.state.value,
-							}}
-						>
-							{placeholder ? <PickerItem value="" label={placeholder} disabled /> : null}
-							{children}
-						</PickerContext.Provider>
+						{placeholder ? <PickerItem value="" label={placeholder} disabled /> : null}
+						{(props as any).children}
 					</ScrollView>
 				</Dialog>
-			</View>
-		);
-	}
-}
+			</PickerContext.Provider>
+		</View>
+	);
+};
