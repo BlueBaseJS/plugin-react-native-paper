@@ -1,4 +1,2 @@
-// import { Noop } from '@bluebase/components';
-import { View } from 'react-native';
-
-export const TableBody = View;
+export const TableBody = ({ children }: any) => children;
+TableBody.defaultProps = { children: null };
