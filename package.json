@@ -88,7 +88,7 @@
     "@bluebase/storybook-addon": "^3.0.0",
     "@blueeast/tslint-config-blueeast": "^0.7.0",
     "@storybook/addon-actions": "^5.0.6",
-    "@storybook/react-native": "5.2.1",
+    "@storybook/react-native": "5.3.6",
     "@types/enzyme": "^3.9.0",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/enzyme-async-helpers": "^0.9.1",
