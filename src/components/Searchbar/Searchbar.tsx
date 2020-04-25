@@ -11,7 +11,7 @@ export const Searchbar = (props: SearchbarProps) => {
 
 	const renderClearIcon =
 		clearIcon &&
-		(({ size, color }: any) => <Icon name="magnify" color={color} size={size} {...clearIcon} />);
+		(({ size, color }: any) => <Icon name="close" color={color} size={size} {...clearIcon} />);
 
 	return <SearchbarRNP icon={renderIcon} clearIcon={renderClearIcon} value={value!} {...rest} />;
 };
