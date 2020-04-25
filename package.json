@@ -68,12 +68,12 @@
   },
   "dependencies": {
     "@bluebase/component-mapper": "^1.4.0",
-    "@bluebase/components": "^5.20.0",
+    "@bluebase/components": "^5.24.1",
     "@react-native-community/slider": "^2.0.1",
     "expo": "^35.0.0",
     "react-native": "0.59.8",
-    "react-native-paper": "^3.0.0",
-    "react-native-vector-icons": "^6.5.0",
+    "react-native-paper": "^3.8.0",
+    "react-native-vector-icons": "^6.6.0",
     "tslib": "^1.9.3"
   },
   "devDependencies": {
