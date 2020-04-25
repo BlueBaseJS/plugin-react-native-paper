@@ -992,10 +992,10 @@
     deepmerge "^3.2.0"
     tslib "^1.9.3"
 
-"@bluebase/components@^5.20.0":
-  version "5.20.0"
-  resolved "https://registry.yarnpkg.com/@bluebase/components/-/components-5.20.0.tgz#4441d4f50d65dd189e74f11c0b8d4b8edc3fce23"
-  integrity sha512-U8iTuK1msm8gjGdQTT3LjaXhszCivAmaSM2Eel/8kENSqBL4HeAjToSpOkjA1xGYpq/dWhMlvBlX8FEpZ/psWA==
+"@bluebase/components@^5.24.1":
+  version "5.24.1"
+  resolved "https://registry.yarnpkg.com/@bluebase/components/-/components-5.24.1.tgz#f543ce4e0461e1920223baf43801cd606224cd07"
+  integrity sha512-Kzn+he4/4QeII1mPSAy4+2S8ILWiQugUUc/QFaByGVTu+MFV3mCGhWRg+Oi2PF+xHmBL44cLnAfUUKkBayW/gg==
   dependencies:
     deepmerge "^3.2.0"
     tslib "^1.9.3"
@@ -10440,19 +10440,19 @@ react-native-maps@*:
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.25.0.tgz#81bc51eb50e33811a9e1c345cc48869413ead67d"
   integrity sha512-PFJuW1pt+HnnnN0m0OGk29RSvICFVkK/DScX6cUk0SuCSN2DAHx0y6y57lZyYXcYqU4J4usNpfxgp/ccjASDiw==
 
-react-native-paper@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-3.0.0.tgz#b7d667dcb38f5e69552db140c398f50ea46ee98e"
-  integrity sha512-cKnSAS3OsTf/vkb/HooPV+Cc4fCqxoB+Iael80+rvIZ28T5ARtI0HjFXKiTOsliGJPQsu9xaX8wdEg0F2nF6qA==
+react-native-paper@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/react-native-paper/-/react-native-paper-3.8.0.tgz#94d9b50b945ce91c90491cce34d1c27845503990"
+  integrity sha512-3oNHjhjhpi/UDbYwwgeWQKf1qRbqQ7aTO0EUHbcxPNEq5BLClpI3kBoS6JTKk4Ge86xeJikXHHXN953g1mVr3Q==
   dependencies:
     "@callstack/react-theme-provider" "^3.0.5"
     color "^3.1.2"
-    react-native-safe-area-view "^0.12.0"
+    react-native-safe-area-view "^0.14.6"
 
-react-native-safe-area-view@^0.12.0:
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.12.0.tgz#5c312f087300ecf82e8541c3eac25d560e147f22"
-  integrity sha512-UrAXmBC4KNR5K2eczIDZgqceWyKsgG9gmWFerHCvoyApfei8ceBB9u/c//PWCpS5Gt8MRLTmX5jPtzdXo2yNqg==
+react-native-safe-area-view@^0.14.6:
+  version "0.14.9"
+  resolved "https://registry.yarnpkg.com/react-native-safe-area-view/-/react-native-safe-area-view-0.14.9.tgz#90ee8383037010d9a5055a97cf97e4c1da1f0c3d"
+  integrity sha512-WII/ulhpVyL/qbYb7vydq7dJAfZRBcEhg4/UWt6F6nAKpLa3gAceMOxBxI914ppwSP/TdUsandFy6lkJQE0z4A==
   dependencies:
     hoist-non-react-statics "^2.3.1"
 
@@ -10489,7 +10489,7 @@ react-native-typescript-transformer@1.2.13:
     semver "^5.4.1"
     source-map "^0.5.6"
 
-react-native-vector-icons@^6.4.2, react-native-vector-icons@^6.5.0:
+react-native-vector-icons@^6.4.2, react-native-vector-icons@^6.6.0:
   version "6.6.0"
   resolved "https://registry.yarnpkg.com/react-native-vector-icons/-/react-native-vector-icons-6.6.0.tgz#66cf004918eb05d90778d64bd42077c1800d481b"
   integrity sha512-MImKVx8JEvVVBnaShMr7/yTX4Y062JZMupht1T+IEgbqBj4aQeQ1z2SH4VHWKNtWtppk4kz9gYyUiMWqx6tNSw==
