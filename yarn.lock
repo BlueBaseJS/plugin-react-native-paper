@@ -1479,10 +1479,10 @@
     xcode "^2.0.0"
     xmldoc "^0.4.0"
 
-"@react-native-community/slider@^2.0.1":
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-2.0.1.tgz#2ab0cd52d3ab30ef4f6d838159590e2ccdf7803a"
-  integrity sha512-u1si6+pACAhwr3dyyy+cxM5VxqlWQIZx1qk6je2qP5XkUKUb+33NVnAWZw2+gaw2b2H5bhR/TAZLSlWonAuStQ==
+"@react-native-community/slider@^3.0.2":
+  version "3.0.2"
+  resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-3.0.2.tgz#a57e0f62a3fe8cb318137b486d3a6e2ce12d49d2"
+  integrity sha512-f6faupEfvL0wYkUvoDknBZpt7gwKrzcIfRlvPK9xaHcBmvKDSvjcAX3BkhTvhVB3kC5y1UBFSWZbAtD16qAnQw==
 
 "@semantic-release/changelog@^3.0.4":
   version "3.0.4"

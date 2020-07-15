@@ -69,7 +69,7 @@
   "dependencies": {
     "@bluebase/component-mapper": "^1.4.0",
     "@bluebase/components": "^5.24.1",
-    "@react-native-community/slider": "^2.0.1",
+    "@react-native-community/slider": "^3.0.2",
     "expo": "^35.0.0",
     "react-native": "0.59.8",
     "react-native-paper": "^3.8.0",
