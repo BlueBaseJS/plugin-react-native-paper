@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import { ButtonProps } from '@bluebase/components';
 import React from 'react';
 import { View } from 'react-native';

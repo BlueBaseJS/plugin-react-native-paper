@@ -32,6 +32,7 @@ const AvatarComponent = (props: AvatarProps) => {
 		);
 
 		return (
+			// eslint-disable-next-line react/jsx-no-bind
 			<Avatar.Icon {...props} icon={icon} size={size} color={props.color} style={avatarStyle} />
 		);
 	}

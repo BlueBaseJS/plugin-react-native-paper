@@ -1,53 +1,8 @@
-import {
-	Avatar,
-	Button,
-	Card,
-	CardActions,
-	CardContent,
-	CardCover,
-	CardHeader,
-	Checkbox,
-	Dialog,
-	DialogActions,
-	DialogContent,
-	DialogTitle,
-	Divider,
-	DrawerItem,
-	DrawerSection,
-	FormControlLabel,
-	FormHelperText,
-	IconButton,
-	List,
-	ListAvatar,
-	ListIcon,
-	ListItem,
-	ListSubheader,
-	Menu,
-	MenuItem,
-	Radio,
-	RadioGroup,
-	Searchbar,
-	Slider,
-	Switch,
-	Table,
-	TableBody,
-	TableCell,
-	TableHead,
-	TablePagination,
-	TableRow,
-	TableTitle,
-	TextInput,
-} from './components';
 import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 
+import { components } from './components';
 import { withPortal } from './withPortal';
 import { withReactNativePaper } from './withReactNativePaper';
-
-// TODO: This is a temp fix for:
-// https://github.com/react-native-community/cli/issues/228
-// import MaterialIcons from 'react-native-vector-icons/Fonts/MaterialIcons.ttf';
-// tslint:disable-next-line: no-var-requires
-const MaterialIcons = require('../Fonts/MaterialIcons.ttf');
 
 export default createPlugin({
 	description: 'React Native Paper comes to BlueBase!',
@@ -55,50 +10,7 @@ export default createPlugin({
 	name: 'React Native Paper',
 	version: '1.0.0',
 
-	assets: {
-		'Material Icons': MaterialIcons,
-	},
-
-	components: {
-		Avatar,
-		Button,
-		Card,
-		CardActions,
-		CardContent,
-		CardCover,
-		CardHeader,
-		Checkbox,
-		Dialog,
-		DialogActions,
-		DialogContent,
-		DialogTitle,
-		Divider,
-		DrawerItem,
-		DrawerSection,
-		FormControlLabel,
-		FormHelperText,
-		IconButton,
-		List,
-		ListAvatar,
-		ListIcon,
-		ListItem,
-		ListSubheader,
-		Menu,
-		MenuItem,
-		Radio,
-		RadioGroup,
-		Searchbar,
-		Slider,
-		Switch,
-		Table,
-		TableBody,
-		TableCell,
-		TableHead,
-		TablePagination,
-		TableRow,
-		TableTitle,
-		TextInput,
-	},
+	components,
 
 	filters: {
 		'bluebase.boot.end': (bootOptions: BootOptions, _ctx: any, BB: BlueBase) => {

@@ -12,6 +12,8 @@ export const IconButton = (props: IconButtonProps) => {
 			// style={[props.styles.root, props.style, { color }]}
 		/>
 	);
+
+	// eslint-disable-next-line react/jsx-no-bind
 	return <RNPIconButton icon={icon} {...props} />;
 };
 

@@ -1,4 +1,4 @@
-import { Button as BB_Button } from '@bluebase/components';
+import { Button as BBButton } from '@bluebase/components';
 import { BlueBaseApp } from '@bluebase/core';
 import { Button } from '../';
 import React from 'react';
@@ -9,23 +9,13 @@ import { waitForElement } from 'enzyme-async-helpers';
 test('render and outline button with primary color', async () => {
 	const wrapper = mount(
 		<BlueBaseApp components={{ Button }}>
-			<BB_Button variant="outlined" color="primary" />
+			<BBButton variant="outlined" color="primary" />
 		</BlueBaseApp>
 	);
 
-	await waitForElement(wrapper, BB_Button);
-	expect(
-		(wrapper as any)
-			.find('Button')
-			.first()
-			.prop('color')
-	).toBe('primary');
-	expect(
-		(wrapper as any)
-			.find('Button')
-			.first()
-			.prop('variant')
-	).toBe('outlined');
+	await waitForElement(wrapper, BBButton);
+	expect((wrapper as any).find('Button').first().prop('color')).toBe('primary');
+	expect((wrapper as any).find('Button').first().prop('variant')).toBe('outlined');
 });
 
 const icon = () => {
@@ -34,15 +24,10 @@ const icon = () => {
 test('render and outline button with secondary color', async () => {
 	const wrapper = mount(
 		<BlueBaseApp components={{ Button }}>
-			<BB_Button variant="outlined" color="secondary" icon={icon as any} />
+			<BBButton variant="outlined" color="secondary" icon={icon as any} />
 		</BlueBaseApp>
 	);
 
-	await waitForElement(wrapper, BB_Button);
-	expect(
-		(wrapper as any)
-			.find('Button')
-			.first()
-			.prop('color')
-	).toBe('secondary');
+	await waitForElement(wrapper, BBButton);
+	expect((wrapper as any).find('Button').first().prop('color')).toBe('secondary');
 });

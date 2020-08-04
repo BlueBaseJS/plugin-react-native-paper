@@ -27,7 +27,7 @@ stories.add('Table', () => (
 		</Table.Head>
 
 		<Table.Body>
-			{rows.map(row => (
+			{rows.map((row: any) => (
 				<Table.Row key={row.id}>
 					<Table.Cell>{row.name}</Table.Cell>
 					<Table.Cell>{row.calories}</Table.Cell>

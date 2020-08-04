@@ -1,33 +1,35 @@
-import { SelectionControl } from '../SelectionControl';
 import { Switch as RNPSwitch } from 'react-native-paper';
+import { SelectionControl } from '../SelectionControl';
 import { SwitchProps } from '@bluebase/components';
 import { Theme } from '@bluebase/core';
 import { componentMapper } from '@bluebase/component-mapper';
 
-export const Switch = componentMapper<SwitchProps>(SelectionControl, {
+export const Switch = componentMapper<SwitchProps>(
+	SelectionControl,
+	{
+		ControlComponent: () => RNPSwitch,
 
-	ControlComponent: () => RNPSwitch,
+		color: ({ color, styles }: any) => {
+			if (color === 'primary') {
+				return styles.primary.color;
+			}
+			if (color === 'secondary') {
+				return styles.secondary.color;
+			}
+			if (color === 'default') {
+				return '';
+			}
 
-	color: ({ color, styles }: any) => {
-		if (color === 'primary') {
-			return styles.primary.color;
-		}
-		if (color === 'secondary') {
-			return styles.secondary.color;
-		}
-		if (color === 'default') {
-			return '';
-		}
+			return color;
+		},
 
-		return color;
+		value: 'checked',
 	},
-
-	value: 'checked'
-}, {
-	ignore: ['checked', 'styles'],
-	rest: true,
-});
-
+	{
+		ignore: ['checked', 'styles'],
+		rest: true,
+	}
+);
 
 (Switch as any).defaultStyles = (theme: Theme) => ({
 	primary: { color: theme.palette.primary.main },

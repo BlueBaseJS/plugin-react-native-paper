@@ -1,8 +1,8 @@
 import React from 'react';
+import { TableBody } from '@bluebase/components';
+import { TableCell } from '../../TableCell';
 import { TableHead } from '../index';
 import storiesOf from '@bluebase/storybook-addon';
-import { TableCell } from '../../TableCell';
-import { TableBody } from '@bluebase/components';
 
 const stories = storiesOf('TableHead', module);
 

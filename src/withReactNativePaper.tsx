@@ -5,7 +5,7 @@ import React from 'react';
 
 export const withReactNativePaper = (Component: React.ComponentType<any>) => {
 	return class ReactNativePaperProvider extends React.Component {
-		static contextType = ThemeContext;
+		static contextType: typeof ThemeContext = ThemeContext;
 
 		render() {
 			const { theme }: ThemeContextData = this.context;
@@ -22,7 +22,7 @@ export const withReactNativePaper = (Component: React.ComponentType<any>) => {
 					surface: theme.palette.background.card,
 					text: theme.palette.text.primary,
 				},
-				dark: theme.mode === 'dark' ? true : false,
+				dark: theme.mode === 'dark',
 				// roundness: theme.
 			};
 

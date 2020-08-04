@@ -8,13 +8,13 @@ const stories = storiesOf('Card', module);
 
 stories
 
-.add('CardHeader', () => (
-  <CardHeader
-    style={{}}
-    left={<Text>kk</Text>}
-    right={
-      <IconButton icon="more-vert" onPress={console.log} />}
-    title="Shrimp and Chorizo Paella"
-    description="September 14, 2016"
-  />
-));
+	.add('CardHeader', () => (
+		<CardHeader
+			style={{}}
+			left={<Text>kk</Text>}
+			right={
+				<IconButton icon="more-vert" onPress={console.log} />}
+			title="Shrimp and Chorizo Paella"
+			description="September 14, 2016"
+		/>
+	));

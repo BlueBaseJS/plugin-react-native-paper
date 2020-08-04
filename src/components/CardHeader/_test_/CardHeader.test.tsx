@@ -8,15 +8,15 @@ import { waitForElement } from 'enzyme-async-helpers';
 
 test('CardHeader component component should show children', async () => {
 	const rendered = mount(
-    <BlueBaseApp plugins={[Plugin]}>
-      <CardHeader
-        title="First Item"
-        description="description"
-        left={<Button title="Left" />}
-        right={<Button title="right" />}
-      />
-    </BlueBaseApp>
-  );
+		<BlueBaseApp plugins={[Plugin]}>
+			<CardHeader
+				title="First Item"
+				description="description"
+				left={<Button title="Left" />}
+				right={<Button title="right" />}
+			/>
+		</BlueBaseApp>
+	);
 
 	await waitForElement(rendered, CardHeader);
 

@@ -1,5 +1,6 @@
 import 'jest-enzyme';
 import 'react-native';
+
 import Adapter from 'enzyme-adapter-react-16';
 import Enzyme from 'enzyme';
 
@@ -8,7 +9,9 @@ import Enzyme from 'enzyme';
  */
 const { JSDOM } = require('jsdom');
 
-const jsdom = new JSDOM('<!doctype html><html><body></body></html>');
+const jsdom = new JSDOM('<!doctype html><html><body></body></html>', {
+	url: 'http://localhost',
+});
 const { window } = jsdom;
 
 function copyProps(src: any, target: any) {
@@ -19,9 +22,9 @@ function copyProps(src: any, target: any) {
 }
 
 declare const global: {
-	document: any,
-	navigator: any,
-	window: any,
+	document: any;
+	navigator: any;
+	window: any;
 };
 
 global.window = window;
@@ -52,9 +55,8 @@ console.error = (message: any) => {
 	originalConsoleError(message);
 };
 
-
 jest.mock('expo', () => ({
 	Font: {
-		loadAsync: () => Promise.resolve()
-	}
+		loadAsync: () => Promise.resolve(),
+	},
 }));

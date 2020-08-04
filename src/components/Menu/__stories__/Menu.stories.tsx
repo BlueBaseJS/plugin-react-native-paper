@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import { ButtonProps, MenuItemProps, MenuProps, View } from '@bluebase/components';
 
 import React from 'react';
@@ -30,17 +31,20 @@ class TestMenu extends React.Component<any, MenuStates> {
 		super(props);
 		this.state = { menuVisible: false, value: '' };
 	}
-	onDismiss = () => {
+	onDismiss: any = () => {
 		this.setState({ menuVisible: !this.state.menuVisible });
 	};
-	onOpen = () => {
+
+	onOpen: any = () => {
 		this.setState({ menuVisible: !this.state.menuVisible });
 	};
-	setValue = (value: string) => {
+
+	setValue: any = (value: string) => {
 		this.setState({ value, menuVisible: !this.state.menuVisible }, () =>
 			console.log('after state set', this.state.value)
 		);
 	};
+
 	render() {
 		return (
 			<Menu

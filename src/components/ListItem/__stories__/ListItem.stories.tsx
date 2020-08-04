@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import { Body2, List } from '@bluebase/components';
 
 import React from 'react';

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import { BlueBaseApp } from '@bluebase/core';
 import Plugin from '../../../index';
 import React from 'react';

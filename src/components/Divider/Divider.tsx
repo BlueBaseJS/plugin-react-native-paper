@@ -1,1 +1,3 @@
-export { Divider } from 'react-native-paper';
+import { Divider as RNPDivider } from 'react-native-paper';
+
+export const Divider: any = RNPDivider;

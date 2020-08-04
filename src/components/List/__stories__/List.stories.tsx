@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import { Icon, List, ListItemProps } from '@bluebase/components';
 
 import React from 'react';

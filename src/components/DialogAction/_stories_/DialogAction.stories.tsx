@@ -1,4 +1,4 @@
-import { DialogActionsProps, Button } from '@bluebase/components';
+import { Button, DialogActionsProps } from '@bluebase/components';
 import React from 'react';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
@@ -10,12 +10,12 @@ const stories = storiesOf('DialogAction', module);
 
 stories
 
-  .add('DialogAction with children props', () => (
-    <React.Fragment>
-      <DialogAction style={{ display: 'flex', flexDirection: 'row-reverse' }}>
-        <Button color="primary">
+	.add('DialogAction with children props', () => (
+		<React.Fragment>
+			<DialogAction style={{ display: 'flex', flexDirection: 'row-reverse' }}>
+				<Button color="primary">
           Save changes
-          </Button>
-      </DialogAction>
-    </React.Fragment >
-  ));
+				</Button>
+			</DialogAction>
+		</React.Fragment >
+	));

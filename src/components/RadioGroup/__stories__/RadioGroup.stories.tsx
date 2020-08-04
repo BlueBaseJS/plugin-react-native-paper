@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import { Radio, RadioGroup, RadioGroupProps } from '@bluebase/components';
 
 import React from 'react';
@@ -8,7 +9,7 @@ class ControlledRadioGroup extends React.PureComponent<
 	RadioGroupProps,
 	{ value: RadioGroupProps['value'] }
 > {
-	static state = {
+	static state: any = {
 		value: 'option-b',
 	};
 	constructor(props: RadioGroupProps) {
@@ -21,7 +22,6 @@ class ControlledRadioGroup extends React.PureComponent<
 
 	render() {
 		const handleChange = (value: any) => {
-			debugger;
 			this.setState({ value });
 			action('Controlled RadioGroup')(value);
 		};
