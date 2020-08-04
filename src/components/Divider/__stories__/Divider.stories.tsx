@@ -7,10 +7,10 @@ const Divider = getComponent('Divider');
 
 storiesOf('Divider', module)
 
-.add('Default props', () => (
-	<View style={{ padding: 20, width: 500 }}><Divider /></View>
-))
+	.add('Default props', () => (
+		<View style={{ padding: 20, width: 500 }}><Divider /></View>
+	))
 
-.add('Inset', () => (
-	<View style={{ padding: 20, width: 500 }}><Divider inset /></View>
-));
+	.add('Inset', () => (
+		<View style={{ padding: 20, width: 500 }}><Divider inset /></View>
+	));

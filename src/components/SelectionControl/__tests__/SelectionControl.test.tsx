@@ -5,10 +5,7 @@ import { SelectionControl } from '..';
 import TestRenderer from 'react-test-renderer';
 
 describe('SelectionControl', () => {
-
-
-	it('should render label on the right', (done) => {
-
+	it('should render label on the right', (done: any) => {
 		const rendered = TestRenderer.create(
 			<BlueBaseApp>
 				<SelectionControl label="foo" ControlComponent={Noop} />
@@ -23,12 +20,9 @@ describe('SelectionControl', () => {
 			expect((style as any).flexDirection).toBe('row');
 			done();
 		});
-
 	});
 
-
-	it('should render label on the left', (done) => {
-
+	it('should render label on the left', (done: any) => {
 		const rendered = TestRenderer.create(
 			<BlueBaseApp>
 				<SelectionControl label="foo" labelPlacement="end" ControlComponent={Noop} />
@@ -43,12 +37,9 @@ describe('SelectionControl', () => {
 			expect((style as any).flexDirection).toBe('row-reverse');
 			done();
 		});
-
 	});
 
-
-	it('should render label on the top', (done) => {
-
+	it('should render label on the top', (done: any) => {
 		const rendered = TestRenderer.create(
 			<BlueBaseApp>
 				<SelectionControl label="foo" labelPlacement="top" ControlComponent={Noop} />
@@ -63,12 +54,9 @@ describe('SelectionControl', () => {
 			expect((style as any).flexDirection).toBe('column');
 			done();
 		});
-
 	});
 
-
-	it('should render label on the bottom', (done) => {
-
+	it('should render label on the bottom', (done: any) => {
 		const rendered = TestRenderer.create(
 			<BlueBaseApp>
 				<SelectionControl label="foo" labelPlacement="bottom" ControlComponent={Noop} />
@@ -83,7 +71,5 @@ describe('SelectionControl', () => {
 			expect((style as any).flexDirection).toBe('column-reverse');
 			done();
 		});
-
 	});
-
 });

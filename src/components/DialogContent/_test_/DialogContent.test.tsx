@@ -6,10 +6,10 @@ import { shallow } from 'enzyme';
 
 test('DialogContent component should use child prop to show children', () => {
 	const component = shallow(
-    <DialogContent>
-      <Text>DialogContent</Text>
-    </DialogContent>
-  );
+		<DialogContent>
+			<Text>DialogContent</Text>
+		</DialogContent>
+	);
 	expect(component.childAt(0).childAt(0).text()).toEqual('DialogContent');
 
 });

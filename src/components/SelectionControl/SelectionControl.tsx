@@ -1,9 +1,12 @@
 import { StyleProp, ViewStyle } from 'react-native';
 import { Text, View } from '@bluebase/components';
 import { ThemeConsumer, ThemeContextData } from '@bluebase/core';
+
 import React from 'react';
 
 export interface SelectionControlProps {
+	[key: string]: any;
+
 	ControlComponent: React.ComponentType<any>;
 
 	/**
@@ -15,12 +18,9 @@ export interface SelectionControlProps {
 	 * The position of the label.
 	 */
 	labelPlacement?: 'end' | 'start' | 'top' | 'bottom';
-
-	[key: string]: any;
 }
 
 export const SelectionControl = (props: SelectionControlProps) => {
-
 	const { ControlComponent, label, labelPlacement, styles, ...rest } = props;
 
 	const node = React.createElement(ControlComponent, {
@@ -33,7 +33,7 @@ export const SelectionControl = (props: SelectionControlProps) => {
 	}
 
 	const rootStyles: StyleProp<ViewStyle> = {
-		flexDirection: 'row'
+		flexDirection: 'row',
 	};
 
 	if (labelPlacement === 'end') {
@@ -55,7 +55,7 @@ export const SelectionControl = (props: SelectionControlProps) => {
 			{({ theme }: ThemeContextData) => (
 				<View style={rootStyles}>
 					{node}
-					<Text style={[{ padding: theme.spacing.unit, }]}>{label}</Text>
+					<Text style={[{ padding: theme.spacing.unit }]}>{label}</Text>
 				</View>
 			)}
 		</ThemeConsumer>

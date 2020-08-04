@@ -1,4 +1,4 @@
-import { Dialog as RNPDialog, Portal } from 'react-native-paper';
+import { Portal, Dialog as RNPDialog } from 'react-native-paper';
 import { DialogProps } from '@bluebase/components';
 import React from 'react';
 

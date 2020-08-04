@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import { Icon, ListIconProps } from '@bluebase/components';
 
 import { List } from 'react-native-paper';
@@ -11,9 +12,7 @@ export interface ListIconStyles {
 
 export const ListIcon = (props: ListIconProps & { styles: ListIconStyles }) => (
 	<List.Icon
-		// tslint:disable-next-line: jsx-no-lambda
-		icon={({ color, size }) => <Icon {...props} color={color} size={size} />}
-		// size={props.size}
+		icon={({ color, size }: any) => <Icon {...props} color={color} size={size} />}
 		color={props.color || (props.styles.root.color as string)}
 	/>
 );

@@ -21,6 +21,7 @@ export const Button = (props: ButtonProps) => {
 
 	if (props.icon) {
 		const iconProps = props.icon;
+		// eslint-disable-next-line react/display-name
 		icon = ({ color: iColor, size }: IconProps) => (
 			<DynamicIcon {...iconProps} color={iColor} size={size} />
 		);

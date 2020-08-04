@@ -30,7 +30,6 @@ describe('RadioGroup', () => {
 		// expect(component).toMatchSnapshot();
 		const onPress = radio.prop('onPress') as any;
 
-		debugger;
 		onPress();
 
 		expect(cb).toBeCalledTimes(1);

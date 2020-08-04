@@ -10,10 +10,10 @@ const stories = storiesOf('DialogTitle', module);
 
 stories
 
-  .add('DialogTitle with children props', () => (
-    <React.Fragment>
-      <DialogTitle>
+	.add('DialogTitle with children props', () => (
+		<React.Fragment>
+			<DialogTitle>
         Modal title
-          </DialogTitle>
-    </React.Fragment>
-  ));
+			</DialogTitle>
+		</React.Fragment>
+	));
