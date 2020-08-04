@@ -19,6 +19,11 @@
       "outputFile": "bluebase/storybook-native/storybook/storyLoader.js"
     }
   },
+	"remarkConfig": {
+		"plugins": [
+			"remark-preset-lint-recommended"
+		]
+	},
   "scripts": {
     "storybook-native:start": "bluebase storybook-native:start",
     "start": "yarn run storybook",
@@ -29,11 +34,13 @@
     "build:main": "tsc -p tsconfig.json && babel ./src --out-dir dist --ignore \"**/__tests__\",\"**/__stories__\" --extensions \".ts,.tsx,.js,.jsx\"",
     "fix": "run-s fix:*",
     "fix:prettier": "prettier \"src/**/*.ts\" --write",
+		"fix:md": "remark . -o",
     "fix:lint": "eslint src bluebase --ext=ts,tsx --fix .",
     "test:lint": "eslint src bluebase --ext=ts,tsx",
     "test": "run-s build test:*",
     "test:only": "jest --coverage",
     "test:prettier": "prettier \"src/**/*.ts\" --list-different",
+		"test:md": "remark . -f",
     "report-coverage": "codecov && cat ./coverage/lcov.info | codacy-coverage",
     "doc": "run-s doc:html && run-s doc:build-storybook",
     "doc:html": "typedoc src/ --target ES6 --mode file --out docs && cp -r assets docs",
@@ -49,18 +56,6 @@
     "build-storybook": "build-storybook",
     "web:start": "bluebase web:start",
     "expo:start": "bluebase expo:start"
-  },
-  "scripts-info": {
-    "info": "Display information about the package scripts",
-    "build": "Clean and rebuild the project",
-    "fix": "Try to automatically fix any linting problems",
-    "test": "Lint and unit test the project",
-    "watch": "Watch and rebuild the project on save",
-    "cov": "Rebuild, run tests, then create and open the coverage report",
-    "doc": "Generate HTML API documentation and open it in a browser",
-    "doc:json": "Generate API documentation in typedoc JSON format",
-    "version": "Bump package.json version, update CHANGELOG.md, tag release",
-    "reset": "Delete all untracked files and reset the repo to the last commit"
   },
   "engines": {
     "node": ">=8.9"
@@ -126,6 +121,8 @@
     "react-native-storybook-loader": "^1.8.0",
     "react-native-typescript-transformer": "1.2.13",
     "react-test-renderer": "16.13.1",
+		"remark-cli": "^6.0.1",
+		"remark-preset-lint-recommended": "^3.0.2",
     "schedule": "0.5.0",
     "ts-jest": "^26.1.4",
     "typedoc": "0.17.8",

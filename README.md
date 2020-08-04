@@ -15,20 +15,20 @@
 [![Build Status](https://travis-ci.com/BlueBaseJS/plugin-react-native-paper.svg?branch=master)](https://travis-ci.com/BlueBaseJS/plugin-react-native-paper)
 [![codecov](https://codecov.io/gh/BlueBaseJS/plugin-react-native-paper/branch/master/graph/badge.svg)](https://codecov.io/gh/BlueBaseJS/plugin-react-native-paper)
 [![Greenkeeper badge](https://badges.greenkeeper.io/BlueBaseJS/plugin-react-native-paper.svg)](https://greenkeeper.io/) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/BlueBaseJS/plugin-react-native-paper/blob/master/CONTRIBUTING.md)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3c79162871414b6aa7c15d1a423adeca)](https://www.codacy.com/app/BlueBaseJS/plugin-react-native-paper?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BlueBaseJS/plugin-react-native-paper&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/3c79162871414b6aa7c15d1a423adeca)](https://www.codacy.com/app/BlueBaseJS/plugin-react-native-paper?utm_source=github.com&utm_medium=referral&utm_content=BlueBaseJS/plugin-react-native-paper&utm_campaign=Badge_Grade)
 [![Known Vulnerabilities](https://snyk.io/test/github/BlueBaseJS/plugin-react-native-paper/badge.svg)](https://snyk.io/test/github/BlueBaseJS/plugin-react-native-paper)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
 ## 🤝 Compatibility
 
 | 🌏 Web | 🖥 Electron | 📱 React Native |
-| :---: | :--------: | :------------: |
-|❌|❌|✅|
+| :----: | :---------: | :-------------: |
+|    ❌   |      ❌      |        ✅        |
 
 ## Docs
 
-- [Storybook](https://BlueBaseJS.github.io/plugin-react-native-paper/storybook/)
-- [API Docs](https://BlueBaseJS.github.io/plugin-react-native-paper/)
+-   [Storybook](https://BlueBaseJS.github.io/plugin-react-native-paper/storybook/)
+-   [API Docs](https://BlueBaseJS.github.io/plugin-react-native-paper/)
 
 ## Installation
 
@@ -66,6 +66,6 @@ export default {
 
 This plugin registers following plugins in BlueBase:
 
-- [x] Button
-- [x] Divider
-- [x] TextInput
+-   [x] Button
+-   [x] Divider
+-   [x] TextInput
