@@ -6,7 +6,5 @@ import storiesOf from '@bluebase/storybook-addon';
 const stories = storiesOf('TablePagination', module);
 
 stories.add('TablePagination', () => (
-	<TablePagination count={1} page={2} numberOfPages={2} onPageChange={() => null}>
-		{'TablePagination'}
-	</TablePagination>
+	<TablePagination page={1} count={25} rowsPerPage={10} onPageChange={() => null} />
 ));
