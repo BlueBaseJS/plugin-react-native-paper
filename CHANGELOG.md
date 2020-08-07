@@ -1,3 +1,9 @@
+# [3.1.0](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v3.0.0...v3.1.0) (2020-08-07)
+
+### Features
+
+-   **TablePagination:** Implemented as per spec ([9ae4935](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/9ae4935))
+
 # [3.0.0](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v2.4.0...v3.0.0) (2020-08-04)
 
 ### chore
