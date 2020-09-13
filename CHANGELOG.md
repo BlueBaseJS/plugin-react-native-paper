@@ -1,3 +1,9 @@
+## [3.1.1](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v3.1.0...v3.1.1) (2020-09-13)
+
+### Bug Fixes
+
+-   **Fonts:** Removed useless Fonts folder ([a8cb4e9](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/a8cb4e9))
+
 # [3.1.0](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v3.0.0...v3.1.0) (2020-08-07)
 
 ### Features
