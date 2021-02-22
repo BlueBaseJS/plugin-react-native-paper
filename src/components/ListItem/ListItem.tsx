@@ -5,7 +5,7 @@ import React from 'react';
 import { componentMapper } from '@bluebase/component-mapper';
 
 export const selectListItem = (props: any) => {
-	const styles = useStyles('ChartCard', props, {
+	const styles = useStyles( props, {
 		background: {
 			backgroundColor: 'rgb(166, 166, 166)',
 		},
