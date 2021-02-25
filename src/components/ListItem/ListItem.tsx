@@ -1,13 +1,14 @@
 import { ListItemProps, View } from '@bluebase/components';
-import { Theme, useStyles } from '@bluebase/core';
+import { Theme, useStyles, useTheme } from '@bluebase/core';
 import { List } from 'react-native-paper';
 import React from 'react';
 import { componentMapper } from '@bluebase/component-mapper';
 
 export const selectListItem = (props: any) => {
+	const theme = useTheme();
 	const styles = useStyles('ListItem', props, {
 		background: {
-			backgroundColor: 'rgb(166, 166, 166)',
+			backgroundColor: theme.theme.mode === 'dark' ? '#686868' : '#dbdbdb',
 		},
 	});
 
