@@ -41,7 +41,6 @@ jobs:
           echo "@mevris:registry=https://benpm.mevris.io" >> .npmrc
           echo "@blueeast:registry=https://benpm.mevris.io" >> .npmrc
           echo "@commi:registry=https://benpm.mevris.io" >> .npmrc
-
       - name: Install Dependencies
         run: yarn install
 
