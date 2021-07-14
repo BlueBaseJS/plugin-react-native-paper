@@ -66,14 +66,6 @@ jobs:
       - name: Move Build
         run: mkdir --parents ./build/web/client; mv -v ./web-build/* ./build/web/client
 
-      - name: Now Deploy
-        uses: BlueBaseJS/now-deploy-github-action@master
-        with:
-          configs: '{ "teamId":"team_jx3GHNNxYWDffKwJNB7oMHCS"}'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NOW_TOKEN: ${{ secrets.ZEIT_TOKEN }}
-
       - name: Increase Watchers
         run: echo fs.inotify.max_user_watches=524288 | tee -a /etc/sysctl.conf && sysctl -p
 
