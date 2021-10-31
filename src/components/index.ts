@@ -23,6 +23,7 @@ import { ListItem } from './ListItem';
 import { ListSubheader } from './List.Subheader';
 import { Menu } from './Menu';
 import { MenuItem } from './Menu/MenuItem';
+import { Picker } from './Picker';
 import { Radio } from './Radio';
 import { RadioGroup } from './RadioGroup';
 import { Searchbar } from './Searchbar';
@@ -63,6 +64,7 @@ export const components = {
 	ListSubheader,
 	Menu,
 	MenuItem,
+	Picker,
 	Radio,
 	RadioGroup,
 	Searchbar,

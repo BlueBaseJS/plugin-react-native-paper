@@ -1,1 +1,1 @@
-export { Slider, SliderProps } from 'react-native';
+export { default as Slider, SliderProps } from '@react-native-community/slider';
