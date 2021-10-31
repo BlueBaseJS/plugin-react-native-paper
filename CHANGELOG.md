@@ -1,3 +1,20 @@
+# [4.0.0-beta.1](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v3.1.1...v4.0.0-beta.1) (2021-10-31)
+
+### Bug Fixes
+
+-   **selectListItem:** fix selected list item ([84688b7](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/84688b7))
+-   **styles:** styles ([cc71d1c](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/cc71d1c))
+-   **styles:** styles ([2e6bfa0](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/2e6bfa0))
+-   **theme:** theme check ([ae427d5](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/ae427d5))
+
+### chore
+
+-   Moved Picker & Slider to community modules ([d3a367c](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/d3a367c))
+
+### BREAKING CHANGES
+
+-   Moved Picker & Slider to community modules, since they are deprecated in the react-native package
+
 ## [3.1.1](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v3.1.0...v3.1.1) (2020-09-13)
 
 ### Bug Fixes
