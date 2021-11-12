@@ -1,1 +1,1 @@
-export { Picker } from '@react-native-community/picker';
+export { Picker } from '@react-native-picker/picker';
