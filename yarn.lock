@@ -1610,10 +1610,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@bluebase/cli-essentials@^0.0.5":
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/@bluebase/cli-essentials/-/cli-essentials-0.0.5.tgz#c1b65525fcc1302d2f4c703fffdbca11e989b92d"
-  integrity sha512-VctDcvJ2LrEiO1X6KXtelc1aNXwkVQ4thtYuGudWVy5qSvp4vgl4/aq1jpuCquYMsN4BJrnslakcM6BoR6UNKg==
+"@bluebase/cli-essentials@^2.2.0":
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/@bluebase/cli-essentials/-/cli-essentials-2.2.0.tgz#b6e370e8dd1ff6c538e66dbc8738fdab5ea193ca"
+  integrity sha512-MP4U10wRv1Nqr1VMcscIKJNRNmuzon9dXvrJ6A5CIb4XKFyl0XR+dBP3SJ8733QDAB6Zk6r+rRuIYd1RftyH1g==
   dependencies:
     awesome-typescript-loader "^5.2.1"
     react-art "^16.7.0"

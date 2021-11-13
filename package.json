@@ -75,7 +75,7 @@
     "@babel/core": "^7.11.0",
     "@babel/plugin-proposal-class-properties": "^7.10.4",
     "@babel/plugin-transform-flow-strip-types": "^7.10.4",
-    "@bluebase/cli-essentials": "^0.0.5",
+    "@bluebase/cli-essentials": "^2.2.0",
     "@bluebase/code-standards": "^2.7.0",
     "@bluebase/core": "^5.11.1",
     "@bluebase/plugin-vector-icons": "^0.3.0",
