@@ -1,0 +1,34 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  ignore:
+  - dependency-name: npm
+    versions:
+    - 6.14.11
+    - 6.14.12
+  - dependency-name: "@types/react-native"
+    versions:
+    - 0.63.46
+    - 0.63.48
+    - 0.63.49
+    - 0.63.50
+    - 0.63.51
+    - 0.63.52
+    - 0.64.0
+    - 0.64.2
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: react-native-storybook-loader
+    versions:
+    - 2.0.2
+  - dependency-name: handlebars
+    versions:
+    - 4.7.6
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
