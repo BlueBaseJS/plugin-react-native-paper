@@ -37,6 +37,8 @@ import { TablePagination } from './TablePagination';
 import { TableRow } from './TableRow';
 import { TableTitle } from './TableTitle';
 import { TextInput } from './TextInput';
+import { TextInputAffix } from './TextInputAffix';
+import { TextInputIcon } from './TextInputIcon';
 
 export const components = {
 	Avatar,
@@ -78,4 +80,6 @@ export const components = {
 	TableRow,
 	TableTitle,
 	TextInput,
+	TextInputAffix,
+	TextInputIcon,
 };

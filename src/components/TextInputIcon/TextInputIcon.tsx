@@ -1,9 +1,9 @@
-import { Icon, IconButtonDefaultProps, IconButtonProps } from '@bluebase/components';
+import { Icon, TextInputIconDefaultProps, TextInputIconProps } from '@bluebase/components';
 
 import React, { useCallback } from 'react';
-import { IconButton as RNPIconButton } from 'react-native-paper';
+import { TextInput } from 'react-native-paper';
 
-export const IconButton = (props: IconButtonProps) => {
+export const TextInputIcon = (props: TextInputIconProps) => {
 	const { onPress, color, disabled, name, size, style, accessibilityLabel } = props;
 
 	const node = useCallback(() => (
@@ -15,8 +15,8 @@ export const IconButton = (props: IconButtonProps) => {
 	), [name, color, size]);
 
 	return (
-		<RNPIconButton
-			icon={node}
+		<TextInput.Icon
+			name={node}
 			accessibilityLabel={accessibilityLabel}
 			onPress={onPress}
 			disabled={disabled}
@@ -24,4 +24,4 @@ export const IconButton = (props: IconButtonProps) => {
 		/>);
 };
 
-IconButton.defaultProps = IconButtonDefaultProps;
+TextInputIcon.defaultProps = TextInputIconDefaultProps;

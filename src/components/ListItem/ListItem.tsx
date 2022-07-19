@@ -1,37 +1,31 @@
 import { ListItemProps, View } from '@bluebase/components';
-import { Theme, useStyles, useTheme } from '@bluebase/core';
+import React, { useCallback } from 'react';
 import { List } from 'react-native-paper';
-import React from 'react';
-import { componentMapper } from '@bluebase/component-mapper';
+import { useTheme } from '@bluebase/core';
 
-export const selectListItem = (props: any) => {
-	const theme = useTheme();
-	const styles = useStyles('ListItem', props, {
-		background: {
-			backgroundColor: theme.theme.mode === 'dark' ? '#686868' : '#dbdbdb',
-		},
-	});
+export const ListItem = (props: ListItemProps) => {
+	const { selected, right, ...rest } = props;
+	const { theme } = useTheme();
 
-	const { selected, ...rest } = props;
-	if (selected) return <List.Item {...rest} style={styles.background} />;
-	return <List.Item {...rest} />;
+	const rightNode = useCallback(() => (
+		<View style={{
+			justifyContent: 'center',
+			padding: theme.spacing.unit
+		}}>
+			{right}
+		</View>
+	), [right, theme.spacing.unit]);
+
+	return (
+		<List.Item
+			{...rest as any}
+			style={[
+				selected && { backgroundColor: theme.palette.action.selected },
+				props.style,
+			]}
+			right={right ? rightNode : undefined}
+		/>
+	);
 };
 
-export const ListItem = componentMapper(
-	selectListItem,
-	{
-		descriptionNumberOfLines: () => null,
-		left: ({ left }: ListItemProps) => () => left,
-		right: ({ right, styles }: ListItemProps & any) => () =>
-			right ? <View style={styles.root}>{right}</View> : null,
-		titleNumberOfLines: () => null,
-	},
-	{ rest: true, ignore: ['styles'] }
-);
-
-(ListItem as any).defaultStyles = (theme: Theme) => ({
-	root: {
-		justifyContent: 'center',
-		padding: theme.spacing.unit,
-	},
-});
+ListItem.displayName = 'ListItem';
