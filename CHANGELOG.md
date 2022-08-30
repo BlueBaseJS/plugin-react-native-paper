@@ -1,3 +1,9 @@
+## [4.0.3](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.0.2...v4.0.3) (2022-08-30)
+
+### Bug Fixes
+
+-   **Divider:** Improved styles ([fb0aece](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/fb0aece))
+
 ## [4.0.2](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.0.1...v4.0.2) (2022-08-30)
 
 ### Bug Fixes
