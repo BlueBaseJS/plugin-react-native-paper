@@ -16,6 +16,14 @@ export const ListItem = (props: ListItemProps) => {
 		</View>
 	), [right, theme.spacing.unit]);
 
+	const leftNode = useCallback(() => {
+		if (typeof props.left === 'function') {
+			return props.left;
+		}
+
+		return () => props.left;
+	}, [props.left]);
+
 	return (
 		<List.Item
 			{...rest as any}
@@ -23,6 +31,7 @@ export const ListItem = (props: ListItemProps) => {
 				selected && { backgroundColor: theme.palette.action.selected },
 				props.style,
 			]}
+			left={leftNode}
 			right={right ? rightNode : undefined}
 		/>
 	);
