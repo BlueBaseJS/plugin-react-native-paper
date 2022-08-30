@@ -1,3 +1,9 @@
+## [4.0.1](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.0.0...v4.0.1) (2022-08-30)
+
+### Bug Fixes
+
+-   **ListItem:** Fixed a crash on List.Item left prop ([a4721db](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/a4721db))
+
 # [4.0.0](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v3.1.1...v4.0.0) (2022-07-19)
 
 ### Bug Fixes
