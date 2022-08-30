@@ -1,3 +1,9 @@
+## [4.0.2](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.0.1...v4.0.2) (2022-08-30)
+
+### Bug Fixes
+
+-   **ListItem:** Fixed left & right props ([c0b6beb](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/c0b6beb))
+
 ## [4.0.1](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.0.0...v4.0.1) (2022-08-30)
 
 ### Bug Fixes
