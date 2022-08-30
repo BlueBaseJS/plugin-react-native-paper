@@ -1,13 +1,13 @@
 import { ListItemProps, View } from '@bluebase/components';
-import React, { useCallback } from 'react';
+import React, { useMemo } from 'react';
 import { List } from 'react-native-paper';
 import { useTheme } from '@bluebase/core';
 
 export const ListItem = (props: ListItemProps) => {
-	const { selected, right, ...rest } = props;
+	const { selected, right, left, ...rest } = props;
 	const { theme } = useTheme();
 
-	const rightNode = useCallback(() => (
+	const rightNode = useMemo(() => !right ? right : () => (
 		<View style={{
 			justifyContent: 'center',
 			padding: theme.spacing.unit
@@ -16,13 +16,18 @@ export const ListItem = (props: ListItemProps) => {
 		</View>
 	), [right, theme.spacing.unit]);
 
-	const leftNode = useCallback(() => {
-		if (typeof props.left === 'function') {
-			return props.left;
+	const leftNode = useMemo(() => {
+
+		if (!left) {
+			return null;
 		}
 
-		return () => props.left;
-	}, [props.left]);
+		if (typeof left === 'function') {
+			return left;
+		}
+
+		return () => left;
+	}, [left]);
 
 	return (
 		<List.Item
