@@ -1,8 +1,8 @@
-import { Card } from '../';
+import { shallow } from 'enzyme';
 import React from 'react';
 import { Text } from 'react-native';
-import { shallow } from 'enzyme';
 
+import { Card } from '../';
 
 test('Card component component should show children', () => {
 	const component = shallow(

@@ -1,8 +1,9 @@
-import { Switch as RNPSwitch } from 'react-native-paper';
-import { SelectionControl } from '../SelectionControl';
+import { componentMapper } from '@bluebase/component-mapper';
 import { SwitchProps } from '@bluebase/components';
 import { Theme } from '@bluebase/core';
-import { componentMapper } from '@bluebase/component-mapper';
+import { Switch as RNPSwitch } from 'react-native-paper';
+
+import { SelectionControl } from '../SelectionControl';
 
 export const Switch = componentMapper<SwitchProps>(
 	SelectionControl,

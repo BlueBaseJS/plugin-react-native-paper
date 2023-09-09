@@ -1,7 +1,6 @@
-import { HelperText, TextInput as RNPTextInput } from 'react-native-paper';
-
-import React from 'react';
 import { TextInputProps } from '@bluebase/components';
+import React from 'react';
+import { HelperText, TextInput as RNPTextInput } from 'react-native-paper';
 
 export const TextInput = (props: TextInputProps) => {
 	const { error, helperText, variant, ...rest } = props;

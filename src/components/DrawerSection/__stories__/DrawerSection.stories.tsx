@@ -1,15 +1,13 @@
 import { DrawerItem, DrawerSection } from '@bluebase/components';
-
-import React from 'react';
-import { action } from '@storybook/addon-actions';
 import storiesOf from '@bluebase/storybook-addon';
+import { action } from '@storybook/addon-actions';
+import React from 'react';
 
 const stories = storiesOf('DrawerSection', module);
 
 stories.add('Default props', () => (
 	<DrawerSection title="Drawer Section Header" />
 ));
-
 
 stories.add('With Drawer Items', () => (
 	<DrawerSection title="Drawer Section Header">

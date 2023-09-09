@@ -1,12 +1,13 @@
 import { RadioGroupProps, View } from '@bluebase/components';
+import { getComponent } from '@bluebase/core';
+import React from 'react';
+import { RadioButton as RNPRadio } from 'react-native-paper';
+
 import { FormControlLabelProps } from '../FormControlLabel';
 import { FormHelperTextProps } from '../FormHelperText';
-import { RadioButton as RNPRadio } from 'react-native-paper';
-import React from 'react';
-import { getComponent } from '@bluebase/core';
 
-const FormControlLabel = getComponent<FormControlLabelProps>('FormControlLabel');
-const FormHelperText = getComponent<FormHelperTextProps>('FormHelperText');
+const FormControlLabel = getComponent<FormControlLabelProps & any>('FormControlLabel');
+const FormHelperText = getComponent<FormHelperTextProps & any>('FormHelperText');
 
 export const RadioGroup = (props: RadioGroupProps) => {
 

@@ -1,5 +1,4 @@
 import { Icon, SearchbarDefaultProps, SearchbarProps } from '@bluebase/components';
-
 import React from 'react';
 import { Searchbar as SearchbarRNP } from 'react-native-paper';
 

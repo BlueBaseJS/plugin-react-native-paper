@@ -1,10 +1,11 @@
-import { Avatar } from '../Avatar';
 import { BlueBaseApp } from '@bluebase/core';
-import Plugin from '../../../index';
-import { Avatar as RNPAvatar } from 'react-native-paper';
-import React from 'react';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
+import React from 'react';
+import { Avatar as RNPAvatar } from 'react-native-paper';
+
+import Plugin from '../../../index';
+import { Avatar } from '../Avatar';
 
 const path = 'https://placeimg.com/1000/480/people';
 

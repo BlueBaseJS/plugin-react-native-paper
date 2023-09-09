@@ -1,8 +1,8 @@
 /* eslint-disable max-len */
 
 import { CardCover } from '@bluebase/components';
-import React from 'react';
 import storiesOf from '@bluebase/storybook-addon';
+import React from 'react';
 
 const stories = storiesOf('Card', module);
 

@@ -1,6 +1,6 @@
 import { TableDefaultProps, TableProps } from '@bluebase/components';
-import { DataTable } from 'react-native-paper';
 import React from 'react';
+import { DataTable } from 'react-native-paper';
 const TableCell = (props: TableProps) => {
 	const { style, children, ...rest } = props;
 	return (

@@ -1,11 +1,12 @@
-import { Dialog } from '../index';
+import { shallow } from 'enzyme';
 import React from 'react';
 import { Text } from 'react-native';
-import { shallow } from 'enzyme';
+
+import { Dialog } from '../index';
 
 test('Dialog component should use child prop to show children', () => {
 	const component = shallow(
-		<Dialog visible={true}>
+		<Dialog visible>
 			<Text>Dialog</Text>
 		</Dialog>
 	);

@@ -1,8 +1,8 @@
-import React from 'react';
 import { TextInputProps } from '@bluebase/components';
-import { action } from '@storybook/addon-actions';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
+import { action } from '@storybook/addon-actions';
+import React from 'react';
 
 const TextInput = getComponent<TextInputProps>('TextInput');
 
@@ -26,7 +26,7 @@ stories
 		<TextInput
 			id="standard-name"
 			label="Name"
-			value={'Jon Doe'}
+			value="Jon Doe"
 		/>
 	))
 
@@ -74,7 +74,6 @@ stories
 			multiline
 		/>
 	))
-
 
 	.add('Multiline Static', () => (
 		<TextInput

@@ -1,13 +1,11 @@
 import { DialogContentProps, Text } from '@bluebase/components';
-import React from 'react';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
-
+import React from 'react';
 
 const DialogContent = getComponent<DialogContentProps>('DialogContent');
 
 const stories = storiesOf('DialogContent', module);
-
 
 stories
 

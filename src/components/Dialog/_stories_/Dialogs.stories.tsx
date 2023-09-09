@@ -1,8 +1,7 @@
-import { Button, DialogProps, Image, Text, TextInput, View } from '@bluebase/components';
-
-import React from 'react';
+import { Button, DialogProps, Image, View } from '@bluebase/components';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
+import React from 'react';
 
 const Dialog = getComponent<DialogProps>('Dialog');
 const Card = getComponent<DialogProps>('Card');
@@ -14,13 +13,13 @@ export interface Ipropsss {
 }
 
 export default class DialogComponent extends React.Component {
-	state: any = {
+	public state: any = {
 		visible: false,
 	};
 
-	_hideDialog: any = () => this.setState({ visible: !this.state.visible });
+	public _hideDialog: any = () => this.setState({ visible: !this.state.visible });
 
-	render() {
+	public render() {
 		return (
 			<>
 				<Dialog visible={this.state.visible} onDismiss={this._hideDialog}>

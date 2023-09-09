@@ -1,8 +1,9 @@
-import { RadioButton as RNPRadio } from 'react-native-paper';
-import { RadioProps } from '@bluebase/components';
-import { SelectionControl } from '../SelectionControl';
-import { Theme } from '@bluebase/core';
 import { componentMapper } from '@bluebase/component-mapper';
+import { RadioProps } from '@bluebase/components';
+import { Theme } from '@bluebase/core';
+import { RadioButton as RNPRadio } from 'react-native-paper';
+
+import { SelectionControl } from '../SelectionControl';
 
 export const Radio = componentMapper<RadioProps>(
 	SelectionControl,

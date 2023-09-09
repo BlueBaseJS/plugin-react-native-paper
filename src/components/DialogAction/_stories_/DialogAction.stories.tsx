@@ -1,8 +1,7 @@
 import { Button, DialogActionsProps } from '@bluebase/components';
-import React from 'react';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
-
+import React from 'react';
 
 const DialogAction = getComponent<DialogActionsProps>('DialogActions');
 

@@ -1,15 +1,16 @@
-import { BlueBaseApp } from '@bluebase/core';
 import { Divider } from '@bluebase/components';
-import Plugin from '../../../index';
+import { BlueBaseApp } from '@bluebase/core';
+import deepmerge from 'deepmerge';
 import React from 'react';
 import TestRenderer from 'react-test-renderer';
-import deepmerge from 'deepmerge';
+
+import Plugin from '../../../index';
 
 describe('android enviornment', () => {
 	test('Divider component with inset prop=true', (done: any) => {
 		const rendered = TestRenderer.create(
 			<BlueBaseApp plugins={[Plugin]}>
-				<Divider inset={true} />
+				<Divider inset />
 			</BlueBaseApp>
 		);
 

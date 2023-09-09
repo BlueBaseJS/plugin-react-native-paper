@@ -1,5 +1,5 @@
-import { Portal } from 'react-native-paper';
 import React from 'react';
+import { Portal } from 'react-native-paper';
 
 export const withPortal =
 (Component: React.ComponentType<any>) =>

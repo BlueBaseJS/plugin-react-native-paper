@@ -1,8 +1,9 @@
 import { BlueBaseApp, getComponent } from '@bluebase/core';
-import { Radio } from '../Radio';
-import React from 'react';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
+import React from 'react';
+
+import { Radio } from '../Radio';
 
 describe.only('Radio', () => {
 

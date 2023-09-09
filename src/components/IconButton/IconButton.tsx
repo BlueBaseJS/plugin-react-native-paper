@@ -1,5 +1,4 @@
 import { Icon, IconButtonDefaultProps, IconButtonProps } from '@bluebase/components';
-
 import React, { useCallback } from 'react';
 import { IconButton as RNPIconButton } from 'react-native-paper';
 

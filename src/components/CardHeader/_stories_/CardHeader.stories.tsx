@@ -1,8 +1,8 @@
 
 import { CardHeader, Text } from '@bluebase/components';
-import { IconButton } from 'react-native-paper';
-import React from 'react';
 import storiesOf from '@bluebase/storybook-addon';
+import React from 'react';
+import { IconButton } from 'react-native-paper';
 
 const stories = storiesOf('Card', module);
 

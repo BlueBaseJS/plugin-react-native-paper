@@ -1,11 +1,12 @@
-import { BlueBaseApp } from '@bluebase/core';
 import { Icon } from '@bluebase/components';
-import Plugin from '../../../index';
-import React from 'react';
-import { Searchbar } from '../index';
-import { Searchbar as SearchbarRNP } from 'react-native-paper';
+import { BlueBaseApp } from '@bluebase/core';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
+import React from 'react';
+import { Searchbar as SearchbarRNP } from 'react-native-paper';
+
+import Plugin from '../../../index';
+import { Searchbar } from '../index';
 
 describe('Searchbar', () => {
 	it('should render Searchbar', async () => {

@@ -1,10 +1,9 @@
 /* eslint-disable react/jsx-no-bind */
 import { Icon, ListIconProps } from '@bluebase/components';
-
-import { List } from 'react-native-paper';
+import { Theme } from '@bluebase/core';
 import React from 'react';
 import { TextStyle } from 'react-native';
-import { Theme } from '@bluebase/core';
+import { List } from 'react-native-paper';
 
 export interface ListIconStyles {
 	root: TextStyle;

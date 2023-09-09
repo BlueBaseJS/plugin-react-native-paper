@@ -1,7 +1,8 @@
 /* eslint-disable react/jsx-no-bind */
-import React from 'react';
-import { TablePagination } from '../index';
 import storiesOf from '@bluebase/storybook-addon';
+import React from 'react';
+
+import { TablePagination } from '../index';
 
 const stories = storiesOf('TablePagination', module);
 

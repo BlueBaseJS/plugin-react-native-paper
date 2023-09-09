@@ -1,6 +1,6 @@
-import { Card } from 'react-native-paper';
-import { CardHeaderProps } from '@bluebase/components';
 import { componentMapper } from '@bluebase/component-mapper';
+import { CardHeaderProps } from '@bluebase/components';
+import { Card } from 'react-native-paper';
 
 export const CardHeader = componentMapper(
 	Card.Title,

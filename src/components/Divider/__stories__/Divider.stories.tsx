@@ -1,7 +1,7 @@
-import React from 'react';
-import { View } from 'react-native';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
+import React from 'react';
+import { View } from 'react-native';
 
 const Divider = getComponent('Divider');
 

@@ -1,9 +1,8 @@
 /* eslint-disable react/jsx-no-bind */
 import { ButtonProps, MenuItemProps, MenuProps, View } from '@bluebase/components';
-
-import React from 'react';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
+import React from 'react';
 
 const MenuItem = getComponent<MenuItemProps>('MenuItem');
 const Menu = getComponent<MenuProps>('Menu');

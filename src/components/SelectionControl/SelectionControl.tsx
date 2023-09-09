@@ -1,8 +1,7 @@
-import { StyleProp, ViewStyle } from 'react-native';
 import { Text, View } from '@bluebase/components';
 import { ThemeConsumer, ThemeContextData } from '@bluebase/core';
-
 import React from 'react';
+import { StyleProp, ViewStyle } from 'react-native';
 
 export interface SelectionControlProps {
 	[key: string]: any;

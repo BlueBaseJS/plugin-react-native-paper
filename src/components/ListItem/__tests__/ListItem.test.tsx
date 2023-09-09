@@ -1,10 +1,10 @@
 import { List, ListItem } from '@bluebase/components';
-
 import { BlueBaseApp } from '@bluebase/core';
-import Plugin from '../../../index';
-import React from 'react';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
+import React from 'react';
+
+import Plugin from '../../../index';
 
 describe('ListItem', () => {
 	it('should render item with left icon', async () => {

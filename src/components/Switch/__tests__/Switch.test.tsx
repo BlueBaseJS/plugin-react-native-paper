@@ -1,8 +1,9 @@
 import { BlueBaseApp, getComponent } from '@bluebase/core';
-import React from 'react';
-import { Switch } from '../Switch';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
+import React from 'react';
+
+import { Switch } from '../Switch';
 
 describe.only('Switch', () => {
 
@@ -102,5 +103,4 @@ describe.only('Switch', () => {
 	});
 
 });
-
 

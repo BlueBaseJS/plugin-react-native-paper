@@ -1,10 +1,11 @@
 import { Button, CardHeader } from '@bluebase/components';
 import { BlueBaseApp } from '@bluebase/core';
-import { Card } from 'react-native-paper';
-import Plugin from '../../../';
-import React from 'react';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
+import React from 'react';
+import { Card } from 'react-native-paper';
+
+import Plugin from '../../../';
 
 test('CardHeader component component should show children', async () => {
 	const rendered = mount(

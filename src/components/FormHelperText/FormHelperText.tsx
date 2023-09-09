@@ -1,8 +1,8 @@
 
-import { StyleProp, TextStyle } from 'react-native';
 import { Caption } from '@bluebase/components';
-import React from 'react';
 import { Theme } from '@bluebase/core';
+import React from 'react';
+import { StyleProp, TextStyle } from 'react-native';
 
 export interface FormHelperTextStyles {
 	root: StyleProp<TextStyle>;

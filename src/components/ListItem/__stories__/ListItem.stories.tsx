@@ -1,9 +1,8 @@
 /* eslint-disable react/jsx-no-bind */
 import { Body2, List } from '@bluebase/components';
-
+import storiesOf from '@bluebase/storybook-addon';
 import React from 'react';
 import { SafeAreaView } from 'react-native';
-import storiesOf from '@bluebase/storybook-addon';
 
 storiesOf('ListItem', module)
 	.add('Basic Example', () => (

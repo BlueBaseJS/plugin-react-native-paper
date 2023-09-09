@@ -1,8 +1,7 @@
-import { DrawerItemProps, Icon, IconProps } from '@bluebase/components';
-
-import { Drawer } from 'react-native-paper';
-import React from 'react';
 import { componentMapper } from '@bluebase/component-mapper';
+import { DrawerItemProps, Icon, IconProps } from '@bluebase/components';
+import React from 'react';
+import { Drawer } from 'react-native-paper';
 
 export const DrawerItem = componentMapper<DrawerItemProps>(
 	Drawer.Item,

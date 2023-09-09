@@ -1,7 +1,8 @@
-import { IconButton } from '..';
-import React from 'react';
 // import { View } from 'react-native';
 import { shallow } from 'enzyme';
+import React from 'react';
+
+import { IconButton } from '..';
 
 test('IconButton component with name Prop', () => {
 	const onPress = () => null;
@@ -9,7 +10,7 @@ test('IconButton component with name Prop', () => {
 	const color = 'primary';
 	const size = 8;
 	Icon.props.icon(color, size);
-	const component = shallow(<IconButton color={'primary'} size={8} name="star" />);
+	const component = shallow(<IconButton color="primary" size={8} name="star" />);
 	// expect(component).toMatchSnapshot();
 	expect(component.props().name).toEqual('star');
 	expect(component.props().color).toEqual('primary');

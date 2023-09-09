@@ -1,8 +1,9 @@
 // import { Card } from '@bluebase/components';
-import { CardContent } from '../';
+import { shallow } from 'enzyme';
 import React from 'react';
 import { Text } from 'react-native';
-import { shallow } from 'enzyme';
+
+import { CardContent } from '../';
 
 test('CardContent component component should show children', () => {
 	const component = shallow(

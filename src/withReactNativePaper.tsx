@@ -1,14 +1,13 @@
-import { DefaultTheme, Provider } from 'react-native-paper';
 import { ThemeContext, ThemeContextData } from '@bluebase/core';
-
 import React from 'react';
+import { DefaultTheme, Provider } from 'react-native-paper';
 
 export const withReactNativePaper = (Component: React.ComponentType<any>) => {
 	return class ReactNativePaperProvider extends React.Component {
 		static contextType: typeof ThemeContext = ThemeContext;
 
 		render() {
-			const { theme }: ThemeContextData = this.context;
+			const { theme } = this.context as ThemeContextData;
 
 			const rnpTheme = {
 				...DefaultTheme,

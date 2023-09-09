@@ -1,10 +1,10 @@
 /* eslint-disable react/jsx-no-bind */
 import { ButtonProps } from '@bluebase/components';
-import React from 'react';
-import { View } from 'react-native';
 // import { action } from '@storybook/addon-actions';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
+import React from 'react';
+import { View } from 'react-native';
 // import { withInfo } from '@storybook/addon-info';
 // import { withKnobs } from '@storybook/addon-knobs';
 
@@ -184,7 +184,7 @@ stories
 				<Button
 					variant="contained"
 					color="primary"
-					fullWidth={true}
+					fullWidth
 					onPress={() => console.log('Button onPress')}
 				>
 					Full Width
@@ -197,7 +197,7 @@ stories
 		<Button
 			variant="contained"
 			color="primary"
-			fullWidth={true}
+			fullWidth
 			onPress={() => console.log('Button onPress')}
 			title="Button Title"
 		/>
@@ -208,7 +208,7 @@ stories
 			<Button
 				variant="contained"
 				color="primary"
-				fullWidth={true}
+				fullWidth
 				onPress={() => console.log('Button onPress')}
 				title="Button Title"
 				loading
@@ -216,7 +216,7 @@ stories
 			<Button
 				variant="outlined"
 				color="primary"
-				fullWidth={true}
+				fullWidth
 				onPress={() => console.log('Button onPress')}
 				title="Button Title"
 				loading
@@ -224,7 +224,7 @@ stories
 			<Button
 				variant="text"
 				color="primary"
-				fullWidth={true}
+				fullWidth
 				onPress={() => console.log('Button onPress')}
 				title="Button Title"
 				loading
@@ -232,7 +232,7 @@ stories
 			<Button
 				variant="contained"
 				color="primary"
-				fullWidth={true}
+				fullWidth
 				onPress={() => console.log('Button onPress')}
 				title="Button Title"
 				loading
@@ -241,7 +241,7 @@ stories
 			<Button
 				variant="outlined"
 				color="primary"
-				fullWidth={true}
+				fullWidth
 				onPress={() => console.log('Button onPress')}
 				title="Button Title"
 				loading
@@ -250,7 +250,7 @@ stories
 			<Button
 				variant="text"
 				color="primary"
-				fullWidth={true}
+				fullWidth
 				onPress={() => console.log('Button onPress')}
 				title="Button Title"
 				loading
@@ -263,7 +263,7 @@ stories
 		<Button
 			variant="contained"
 			color="primary"
-			fullWidth={true}
+			fullWidth
 			onPress={() => console.log('Button onPress')}
 			title="Facebook"
 			icon={{ type: 'icon', name: 'facebook' }}

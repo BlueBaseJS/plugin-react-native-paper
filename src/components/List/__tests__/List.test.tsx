@@ -1,10 +1,11 @@
-import { BlueBaseApp } from '@bluebase/core';
 import { List } from '@bluebase/components';
-import Plugin from '../../../index';
-import React from 'react';
+import { BlueBaseApp } from '@bluebase/core';
 // import TestRenderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
+import React from 'react';
+
+import Plugin from '../../../index';
 
 describe('List', () => {
 	it('should render a list with 2 items', async () => {

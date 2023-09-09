@@ -1,9 +1,7 @@
 import { AvatarProps, View } from '@bluebase/components';
-
-import React from 'react';
-import { ViewBase } from 'react-native';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
+import React from 'react';
 
 // import { withInfo } from '@storybook/addon-info';
 // import { withKnobs } from '@storybook/addon-knobs';
@@ -22,7 +20,7 @@ stories.add('Simple Avatar ', () => (
 	/>
 ));
 
-stories.add('Simple Avatar with text prop ', () => <Avatar type="text" text={'AR'} />);
+stories.add('Simple Avatar with text prop ', () => <Avatar type="text" text="AR" />);
 stories.add('Text Avatar Customized ', () => (
 	<Avatar type="text" text="AR" style={{ backgroundColor: '#ddd' }} textStyle={{ color: 'red' }} />
 ));

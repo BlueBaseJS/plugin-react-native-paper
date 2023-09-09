@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-no-bind */
-import React from 'react';
 import { getComponent } from '@bluebase/core';
 import storiesOf from '@bluebase/storybook-addon';
+import React from 'react';
 
 // import { withInfo } from '@storybook/addon-info';
 // import { withKnobs } from '@storybook/addon-knobs';

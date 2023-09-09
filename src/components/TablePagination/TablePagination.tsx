@@ -1,7 +1,6 @@
 import { TablePaginationDefaultProps, TablePaginationProps } from '@bluebase/components';
-
-import { DataTable } from 'react-native-paper';
 import React from 'react';
+import { DataTable } from 'react-native-paper';
 
 export const TablePagination = (props: TablePaginationProps) => {
 	const { count, onPageChange, page, rowsPerPage } = props;

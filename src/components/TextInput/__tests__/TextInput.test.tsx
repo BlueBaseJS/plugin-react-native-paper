@@ -1,7 +1,8 @@
-import { HelperText } from 'react-native-paper';
-import React from 'react';
-import { TextInput } from '..';
 import { shallow } from 'enzyme';
+import React from 'react';
+import { HelperText } from 'react-native-paper';
+
+import { TextInput } from '..';
 
 describe('TextInput', () => {
 	test('should forward mode=outlined if variant=outlined', () => {

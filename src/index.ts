@@ -1,7 +1,7 @@
 import { BlueBase, BootOptions, createPlugin } from '@bluebase/core';
 
-import { VERSION } from './version';
 import { components } from './components';
+import { VERSION } from './version';
 import { withPortal } from './withPortal';
 import { withReactNativePaper } from './withReactNativePaper';
 

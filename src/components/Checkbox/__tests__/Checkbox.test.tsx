@@ -1,9 +1,9 @@
 import { BlueBaseApp, getComponent } from '@bluebase/core';
-
-import { Checkbox } from '../Checkbox';
-import React from 'react';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
+import React from 'react';
+
+import { Checkbox } from '../Checkbox';
 
 describe.only('Checkbox', () => {
 	it('should set the status to checked when checked is true', () => {

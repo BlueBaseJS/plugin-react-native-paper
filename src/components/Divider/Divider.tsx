@@ -1,7 +1,7 @@
 import { DividerProps } from '@bluebase/components';
-import { Divider as RNPDivider } from 'react-native-paper';
-import React from 'react';
 import { useTheme } from '@bluebase/core';
+import React from 'react';
+import { Divider as RNPDivider } from 'react-native-paper';
 
 export const Divider = (props: DividerProps) => {
 	const { theme } = useTheme();

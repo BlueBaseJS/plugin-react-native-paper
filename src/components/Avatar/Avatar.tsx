@@ -1,7 +1,6 @@
 import { AvatarProps, BlueBaseImage, Icon, IconProps } from '@bluebase/components';
-import React, { useContext } from 'react';
 import { ThemeContext, ThemeContextData } from '@bluebase/core';
-
+import React, { useContext } from 'react';
 import { Avatar } from 'react-native-paper';
 
 const AvatarComponent = (props: AvatarProps) => {

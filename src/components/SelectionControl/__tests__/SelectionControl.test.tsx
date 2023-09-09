@@ -1,8 +1,9 @@
-import { BlueBaseApp } from '@bluebase/core';
 import { Noop } from '@bluebase/components';
+import { BlueBaseApp } from '@bluebase/core';
 import React from 'react';
-import { SelectionControl } from '..';
 import TestRenderer from 'react-test-renderer';
+
+import { SelectionControl } from '..';
 
 describe('SelectionControl', () => {
 	it('should render label on the right', (done: any) => {

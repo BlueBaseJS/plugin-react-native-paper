@@ -1,10 +1,11 @@
 // import { Card } from '@bluebase/components';
 import { BlueBaseApp } from '@bluebase/core';
-import { CardCover } from '../';
-import Plugin from '../../../index';
-import React from 'react';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
+import React from 'react';
+
+import Plugin from '../../../index';
+import { CardCover } from '../';
 
 test('CardCover component component should show children', async () => {
 	const component = mount(

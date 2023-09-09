@@ -1,5 +1,4 @@
 import { Icon, TextInputIconDefaultProps, TextInputIconProps } from '@bluebase/components';
-
 import React, { useCallback } from 'react';
 import { TextInput } from 'react-native-paper';
 

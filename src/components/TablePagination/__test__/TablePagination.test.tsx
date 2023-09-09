@@ -1,10 +1,11 @@
 /* eslint-disable react/jsx-no-bind */
 import { BlueBaseApp } from '@bluebase/core';
-import Plugin from '../../../index';
-import React from 'react';
-import { TablePagination } from '../index';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
+import React from 'react';
+
+import Plugin from '../../../index';
+import { TablePagination } from '../index';
 
 describe('TablePagination', () => {
 	it('should show table pagination component on page 1', async () => {

@@ -1,10 +1,11 @@
 import { Button as BBButton } from '@bluebase/components';
 import { BlueBaseApp } from '@bluebase/core';
-import { Button } from '../';
-import React from 'react';
-import { View } from 'react-native';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
+import React from 'react';
+import { View } from 'react-native';
+
+import { Button } from '../';
 
 test('render and outline button with primary color', async () => {
 	const wrapper = mount(

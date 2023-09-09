@@ -16,5 +16,6 @@ module.exports = {
 		...configs.rules,
 		'@typescript-eslint/interface-name-prefix': 0,
 		'prefer-arrow/prefer-arrow-functions': 0,
+		'@typescript-eslint/member-ordering': 0
 	},
 };

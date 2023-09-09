@@ -1,8 +1,7 @@
 import { ButtonProps, DynamicIcon, IconProps } from '@bluebase/components';
-
-import { Button as BButton } from 'react-native-paper';
-import React from 'react';
 import { useTheme } from '@bluebase/core';
+import React from 'react';
+import { Button as BButton } from 'react-native-paper';
 
 export const Button = (props: ButtonProps) => {
 	const { theme } = useTheme();

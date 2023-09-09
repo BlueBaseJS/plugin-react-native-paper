@@ -1,14 +1,14 @@
 /* eslint-disable react/jsx-no-bind */
 import { BlueBase, BlueBaseApp, getComponent } from '@bluebase/core';
-
-import { Card } from 'react-native-paper';
-import Plugin from '../index';
-import { withPortal as Portal } from '../withPortal';
-import React from 'react';
-import TestRenderer from 'react-test-renderer';
-import { Text } from 'react-native';
 import deepmerge from 'deepmerge';
 import { shallow } from 'enzyme';
+import React from 'react';
+import { Text } from 'react-native';
+import { Card } from 'react-native-paper';
+import TestRenderer from 'react-test-renderer';
+
+import Plugin from '../index';
+import { withPortal as Portal } from '../withPortal';
 
 const Button = getComponent('Button');
 

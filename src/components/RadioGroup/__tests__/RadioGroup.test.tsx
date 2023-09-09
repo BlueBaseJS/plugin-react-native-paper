@@ -1,11 +1,12 @@
 import { BlueBaseApp } from '@bluebase/core';
-import Plugin from '../../../index';
-import { Radio } from '../../Radio';
-import { RadioGroup } from '../RadioGroup';
-import React from 'react';
 import deepmerge from 'deepmerge';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
+import React from 'react';
+
+import Plugin from '../../../index';
+import { Radio } from '../../Radio';
+import { RadioGroup } from '../RadioGroup';
 
 const CAPTION_COLOR = 'rgba(0, 0, 0, 0.38)';
 const ERROR_COLOR = '#f44336';

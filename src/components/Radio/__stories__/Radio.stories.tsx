@@ -1,10 +1,10 @@
 import { RadioProps } from '@bluebase/components';
+import { getComponent } from '@bluebase/core';
+import storiesOf from '@bluebase/storybook-addon';
+import { action } from '@storybook/addon-actions';
 import React from 'react';
 // import { View } from 'react-native';
 import { View } from 'react-native';
-import { action } from '@storybook/addon-actions';
-import { getComponent } from '@bluebase/core';
-import storiesOf from '@bluebase/storybook-addon';
 
 const Radio = getComponent<RadioProps>('Radio');
 

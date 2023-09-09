@@ -1,9 +1,10 @@
-import { BlueBaseApp } from '@bluebase/core';
 import { DrawerSection } from '@bluebase/components';
-import Plugin from '../../../';
-import React from 'react';
+import { BlueBaseApp } from '@bluebase/core';
 import { mount } from 'enzyme';
 import { waitForElement } from 'enzyme-async-helpers';
+import React from 'react';
+
+import Plugin from '../../../';
 
 describe('DrawerSection', () => {
 
@@ -17,6 +18,5 @@ describe('DrawerSection', () => {
 		await waitForElement(component, DrawerSection);
 		expect(component.find('DrawerSection Text').last().text()).toBe('Item 1');
 	});
-
 
 });

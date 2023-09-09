@@ -1,7 +1,7 @@
 import { ListItemProps, View } from '@bluebase/components';
+import { useTheme } from '@bluebase/core';
 import React, { useMemo } from 'react';
 import { List } from 'react-native-paper';
-import { useTheme } from '@bluebase/core';
 
 export const ListItem = (props: ListItemProps) => {
 	const { selected, right, left, ...rest } = props;
@@ -11,7 +11,8 @@ export const ListItem = (props: ListItemProps) => {
 		<View style={{
 			justifyContent: 'center',
 			padding: theme.spacing.unit
-		}}>
+		}}
+		>
 			{right}
 		</View>
 	), [right, theme.spacing.unit]);
