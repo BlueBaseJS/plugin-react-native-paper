@@ -1,3 +1,9 @@
+# [4.1.0](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.0.3...v4.1.0) (2023-09-09)
+
+### Features
+
+-   Expo 49 ([25affce](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/25affce5803a53a440b8fe3204b22d309b133cef))
+
 ## [4.0.3](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.0.2...v4.0.3) (2022-08-30)
 
 ### Bug Fixes
