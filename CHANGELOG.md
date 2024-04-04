@@ -1,3 +1,9 @@
+## [4.2.1](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.2.0...v4.2.1) (2024-04-04)
+
+### Bug Fixes
+
+-   Fixed CI ([6c8fdbe](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/6c8fdbe5ca76523fa574362b6a51d8ca8a19ca7c))
+
 # [4.2.0](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.1.0...v4.2.0) (2024-04-04)
 
 ### Features
