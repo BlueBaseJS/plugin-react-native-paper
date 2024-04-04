@@ -1,3 +1,9 @@
+# [4.2.0](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.1.0...v4.2.0) (2024-04-04)
+
+### Features
+
+-   Added icon to MenuItem ([306c9a6](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/306c9a6ef7726de9b1cecfe9615799f1c82fdb1c))
+
 # [4.1.0](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.0.3...v4.1.0) (2023-09-09)
 
 ### Features
