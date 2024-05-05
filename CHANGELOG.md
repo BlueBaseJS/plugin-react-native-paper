@@ -1,3 +1,9 @@
+## [4.2.2](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.2.1...v4.2.2) (2024-05-05)
+
+### Bug Fixes
+
+-   **ListItem:** Dont wrap description in Text if it is not a string ([657c4d8](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/657c4d8e7b61593a128d537a3203ad2dafc55663))
+
 ## [4.2.1](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.2.0...v4.2.1) (2024-04-04)
 
 ### Bug Fixes
