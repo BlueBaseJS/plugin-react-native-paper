@@ -17,18 +17,19 @@ export const MenuItem = (props: MenuItemProps) => {
 		<RNMenu.Item
 			{...rest}
 			title={
-				<Text style={{ flexDirection: 'row', justifyContent: 'center' }}>
-					{icon ? (
-						<View style={{ marginRight: theme.spacing.unit, marginBottom: -3 }}>
-							<DynamicIcon
-								size={20}
-								color={theme.palette.text.secondary}
-								{...icon}
-							/>
+				icon ? (
+					<View style={{ flexDirection: 'row', justifyContent: 'center' }}>
+						<DynamicIcon
+							size={20}
+							color={theme.palette.text.secondary}
+							{...icon}
+						/>
+						<View style={{ paddingStart: theme.spacing.unit, justifyContent: 'center' }}>
+							<Text>{title}</Text>
 						</View>
-					) : null}
-					<Text>{title}</Text>
-				</Text>
+					</View>
+				)
+					: <Text>{title}</Text>
 			}
 		/>
 	);
