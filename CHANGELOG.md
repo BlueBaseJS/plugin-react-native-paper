@@ -1,3 +1,9 @@
+## [4.2.3](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.2.2...v4.2.3) (2024-05-05)
+
+### Bug Fixes
+
+-   **MenuItem:** Fixed icon position ([642d596](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/642d596450d58d460837775b634fa28579615094))
+
 ## [4.2.2](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.2.1...v4.2.2) (2024-05-05)
 
 ### Bug Fixes
