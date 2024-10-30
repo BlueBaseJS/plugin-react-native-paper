@@ -1,3 +1,9 @@
+## [4.2.4](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.2.3...v4.2.4) (2024-10-30)
+
+### Bug Fixes
+
+-   Removed peerDependencies ([438b862](https://github.com/BlueBaseJS/plugin-react-native-paper/commit/438b862e145aa2c836a5c71fdccd611ff798c54f))
+
 ## [4.2.3](https://github.com/BlueBaseJS/plugin-react-native-paper/compare/v4.2.2...v4.2.3) (2024-05-05)
 
 ### Bug Fixes
