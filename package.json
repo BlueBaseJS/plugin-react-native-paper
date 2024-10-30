@@ -128,9 +128,6 @@
     "typedoc": "0.17.8",
     "typescript": "^5.1.3"
   },
-  "peerDependencies": {
-    "react": "^16.*"
-  },
   "prettier": {
     "singleQuote": true,
     "useTabs": true,
